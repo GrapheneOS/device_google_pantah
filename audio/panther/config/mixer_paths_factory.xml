@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mixer>
+    <ctl name="TDM_0_RX Mixer EP3" value="0" />
+    <ctl name="TDM_0_RX Mixer EP6" value="0" />
+    <ctl name="I2S_0_RX Mixer EP3" value="0" />
+    <ctl name="Main AMP Enable Switch" value="0" />
+    <ctl name="R Main AMP Enable Switch" value="0" />
+    <ctl name="MIC HW Gain At Lower Power Mode (cB)" value="-160" />
+    <ctl name="MIC HW Gain At High Power Mode (cB)" value="0" />
+    <ctl name="MIC Record Soft Gain (dB)" value="0"/>
+
+    <ctl name="EP1 TX Mixer TDM_0_TX" value="0" />
+    <ctl name="DEFAULT_MIC_ID" value="0" />
+    <ctl name="MIC0" value="0" />
+    <ctl name="MIC1" value="0" />
+    <ctl name="MIC2" value="0" />
+    <ctl name="MIC3" value="0" />
+    <ctl name="AoC Speaker Mixer ASP Mode" value="ASP_ON" />
+
+    <ctl name="TDM_0_RX Sample Rate" value="SR_48K" />
+    <ctl name="TDM_0_TX Sample Rate" value="SR_48K" />
+    <ctl name="TDM_0_RX Mixer US" value="0" />
+    <ctl name="US Record Enable" value="0" />
+
+    <path name="mfg-playback">
+    </path>
+
+    <path name="deep-buffer-playback speaker">
+        <ctl name="AoC Speaker Mixer ASP Mode" value="ASP_BYPASS" />
+        <ctl name="TDM_0_RX Mixer EP6" value="1" />
+        <path name="mfg-playback" />
+    </path>
+
+    <path name="deep-buffer-playback headphones">
+        <ctl name="I2S_0_RX Mixer EP6" value="1" />
+        <path name="mfg-playback" />
+    </path>
+
+    <path name="mfg-record">
+        <ctl name="EP1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="mfg-record usb-headset-mic">
+        <ctl name="Audio Capture Mic Source" value="USB_MIC"/>
+        <ctl name="USB Capture FORMAT v2" value="1" />
+        <ctl name="USB Config To AoC v2" value="1"/>
+        <ctl name="EP1 TX Mixer USB_TX" value="1"/>
+    </path>
+
+    <path name="us-mfg-record">
+        <ctl name="US Record Enable" value="1" />
+        <ctl name="EP1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="mic1-status">
+        <ctl name="MIC0" value="1" />
+    </path>
+
+    <path name="mic2-status">
+        <ctl name="MIC1" value="1" />
+    </path>
+
+    <path name="mic3-status">
+        <ctl name="MIC2" value="1" />
+    </path>
+
+    <path name="mic4-status">
+        <ctl name="MIC3" value="0" />
+    </path>
+
+    <path name="mic1-gain">
+        <ctl name="MIC HW Gain At Lower Power Mode (cB)" />
+        <ctl name="MIC HW Gain At High Power Mode (cB)" />
+    </path>
+
+    <path name="mic2-gain">
+        <ctl name="MIC HW Gain At Lower Power Mode (cB)" />
+        <ctl name="MIC HW Gain At High Power Mode (cB)" />
+    </path>
+
+    <path name="mic3-gain">
+        <ctl name="MIC HW Gain At Lower Power Mode (cB)" />
+        <ctl name="MIC HW Gain At High Power Mode (cB)" />
+    </path>
+
+    <path name="mic4-gain">
+        <ctl name="MIC HW Gain At Lower Power Mode (cB)" />
+        <ctl name="MIC HW Gain At High Power Mode (cB)" />
+    </path>
+
+    <path name="mic1-sw-gain">
+        <ctl name="MIC Record Soft Gain (dB)" />
+    </path>
+
+    <path name="mic2-sw-gain">
+        <ctl name="MIC Record Soft Gain (dB)" />
+    </path>
+
+    <path name="mic3-sw-gain">
+        <ctl name="MIC Record Soft Gain (dB)" />
+    </path>
+
+    <path name="mic4-sw-gain">
+        <ctl name="MIC Record Soft Gain (dB)" />
+    </path>
+
+    <path name="usb-capture-gain">
+        <ctl name="MIC Record Soft Gain (dB)" />
+    </path>
+
+    <path name="mic1-only">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+        <ctl name="MIC0" value="1" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="mic2-only">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="3" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+        <ctl name="MIC1" value="1" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="mic3-only">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="2" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+        <ctl name="MIC2" value="1" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="mic4-only">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="3" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="-1" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+        <ctl name="MIC3" value="0" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="mic-all">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+        <ctl name="MIC0" value="1" />
+        <ctl name="MIC1" value="1" />
+        <ctl name="MIC2" value="1" />
+        <ctl name="MIC3" value="0" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="amp_iv-only">
+        <ctl name="R ASPTX1 Slot Position" value="2" />
+        <ctl name="R ASPTX2 Slot Position" value="3" />
+        <ctl name="R ASPTX3 Slot Position" value="6" />
+        <ctl name="R ASPTX4 Slot Position" value="7" />
+        <ctl name="ASPTX1 Slot Position" value="0" />
+        <ctl name="ASPTX2 Slot Position" value="1" />
+        <ctl name="ASPTX3 Slot Position" value="4" />
+        <ctl name="ASPTX4 Slot Position" value="5" />
+        <ctl name="R ASP TX1 Source" value="VMON" />
+        <ctl name="R ASP TX2 Source" value="ASPRX1" />
+        <ctl name="R ASP TX3 Source" value="Zero" />
+        <ctl name="R ASP TX4 Source" value="Zero" />
+        <ctl name="ASP TX1 Source" value="VMON" />
+        <ctl name="ASP TX2 Source" value="ASPRX1" />
+        <ctl name="ASP TX3 Source" value="Zero" />
+        <ctl name="ASP TX4 Source" value="Zero" />
+        <ctl name="NoHost1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="amp_iv1-only">
+        <ctl name="R ASPTX1 Slot Position" value="4" />
+        <ctl name="R ASPTX2 Slot Position" value="5" />
+        <ctl name="R ASPTX3 Slot Position" value="6" />
+        <ctl name="R ASPTX4 Slot Position" value="7" />
+        <ctl name="ASPTX1 Slot Position" value="0" />
+        <ctl name="ASPTX2 Slot Position" value="1" />
+        <ctl name="ASPTX3 Slot Position" value="2" />
+        <ctl name="ASPTX4 Slot Position" value="3" />
+        <ctl name="R ASP TX1 Source" value="Zero" />
+        <ctl name="R ASP TX2 Source" value="Zero" />
+        <ctl name="R ASP TX3 Source" value="Zero" />
+        <ctl name="R ASP TX4 Source" value="Zero" />
+        <ctl name="ASP TX1 Source" value="VMON" />
+        <ctl name="ASP TX2 Source" value="IMON" />
+        <ctl name="ASP TX3 Source" value="VPMON" />
+        <ctl name="ASP TX4 Source" value="ASPRX1" />
+        <ctl name="NoHost1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="amp_iv2-only">
+        <ctl name="R ASPTX1 Slot Position" value="0" />
+        <ctl name="R ASPTX2 Slot Position" value="1" />
+        <ctl name="R ASPTX3 Slot Position" value="2" />
+        <ctl name="R ASPTX4 Slot Position" value="3" />
+        <ctl name="ASPTX1 Slot Position" value="4" />
+        <ctl name="ASPTX2 Slot Position" value="5" />
+        <ctl name="ASPTX3 Slot Position" value="6" />
+        <ctl name="ASPTX4 Slot Position" value="7" />
+        <ctl name="R ASP TX1 Source" value="VMON" />
+        <ctl name="R ASP TX2 Source" value="IMON" />
+        <ctl name="R ASP TX3 Source" value="VPMON" />
+        <ctl name="R ASP TX4 Source" value="ASPRX1" />
+        <ctl name="ASP TX1 Source" value="Zero" />
+        <ctl name="ASP TX2 Source" value="Zero" />
+        <ctl name="ASP TX3 Source" value="Zero" />
+        <ctl name="ASP TX4 Source" value="Zero" />
+        <ctl name="NoHost1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="us-amp_iv-only">
+        <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
+        <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
+        <path name="amp_iv-only" />
+    </path>
+
+    <path name="us-amp_iv1-only">
+        <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
+        <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
+        <path name="amp_iv1-only" />
+    </path>
+
+    <path name="us-amp_iv2-only">
+        <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
+        <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
+        <path name="amp_iv2-only" />
+    </path>
+
+    <path name="speaker1-status">
+        <ctl name="Main AMP Enable Switch" value="1" />
+    </path>
+
+    <path name="speaker2-status">
+        <ctl name="R Main AMP Enable Switch" value="1" />
+    </path>
+
+    <path name="speaker1-gain">
+        <ctl name="AMP PCM Gain" />
+    </path>
+
+    <path name="speaker2-gain">
+        <ctl name="R AMP PCM Gain" />
+    </path>
+
+    <path name="usb-playback-gain">
+        <ctl name="Headset Playback Volume" />
+    </path>
+
+    <path name="mfg-playback speaker">
+        <ctl name="AoC Speaker Mixer ASP Mode" value="ASP_BYPASS" />
+        <ctl name="TDM_0_RX Mixer EP3" value="1" />
+        <ctl name="ASPRX1 Slot Position" value="0" />
+        <ctl name="R ASPRX1 Slot Position" value="1" />
+        <ctl name="SINK_IDS" id="0" value="0" />
+        <ctl name="SINK_IDS" id="1" value="-1" />
+    </path>
+
+    <path name="mfg-playback headphones">
+        <ctl name="I2S_0_RX Chan" value="Two" />
+        <ctl name="I2S_0_RX Format" value="S32_LE" />
+        <ctl name="I2S_0_RX Mixer EP3" value="1" />
+        <ctl name="SINK_IDS" id="0" value="1" />
+        <ctl name="SINK_IDS" id="1" value="-1" />
+    </path>
+
+    <path name="mfg-playback usb-headphones">
+        <ctl name="USB Dev ID v2" value="2" />
+        <ctl name="USB Playback EP ID v2" value="1" />
+        <ctl name="USB Playback FORMAT v2" value="6" />
+        <ctl name="USB Playback SR v2" value="48000" />
+        <ctl name="USB Playback CH v2" value="2" />
+        <ctl name="USB Playback BW v2" value="16" />
+        <ctl name="USB Config To AoC v2" value="1" />
+        <ctl name="USB_RX Mixer EP3" value="1" />
+    </path>
+
+    <path name="us-mfg-playback speaker">
+        <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
+        <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
+        <ctl name="TDM_0_RX Mixer US" value="1" />
+    </path>
+
+    <path name="speaker1-only">
+        <ctl name="Main AMP Enable Switch" value="1" />
+        <path name="mfg-playback speaker" />
+        <ctl name="AMP PCM Gain" value="17" />
+        <ctl name="PCM Source" value="ASP" />
+    </path>
+
+    <path name="speaker2-only">
+        <ctl name="R Main AMP Enable Switch" value="1" />
+        <path name="mfg-playback speaker" />
+        <ctl name="R AMP PCM Gain" value="17" />
+        <ctl name="R PCM Source" value="ASP" />
+    </path>
+
+    <path name="us-speaker1-only">
+        <path name="us-mfg-playback speaker" />
+        <ctl name="PCM Source" value="ASP" />
+        <ctl name="Main AMP Enable Switch" value="1" />
+    </path>
+
+    <path name="us-speaker2-only">
+        <path name="us-mfg-playback speaker" />
+        <ctl name="R PCM Source" value="ASP" />
+        <ctl name="R Main AMP Enable Switch" value="1" />
+    </path>
+
+    <path name="headphones">
+        <ctl name="DAC1 MIXL DAC1 Switch" value="1" />
+        <ctl name="DAC1 MIXR DAC1 Switch" value="1" />
+        <ctl name="Stereo1 DAC MIXL DAC L1 Switch" value="1" />
+        <ctl name="Stereo1 DAC MIXR DAC R1 Switch" value="1" />
+        <ctl name="DAC L1 Source" value="Stereo1 DAC Mixer" />
+        <ctl name="DAC R1 Source" value="Stereo1 DAC Mixer" />
+        <ctl name="HPOL Playback Switch" value="1" />
+        <ctl name="HPOR Playback Switch" value="1" />
+        <path name="mfg-playback headphones" />
+    </path>
+
+    <path name="speaker-all">
+        <ctl name="Main AMP Enable Switch" value="1" />
+        <ctl name="PCM Source" value="ASP" />
+        <ctl name="R Main AMP Enable Switch" value="1" />
+        <ctl name="R PCM Source" value="ASP" />
+        <path name="mfg-playback speaker" />
+    </path>
+
+    <path name="us-speaker-all">
+        <path name="us-mfg-playback speaker" />
+        <ctl name="PCM Source" value="ASP" />
+        <ctl name="Main AMP Enable Switch" value="1" />
+        <ctl name="R PCM Source" value="ASP" />
+        <ctl name="R Main AMP Enable Switch" value="1" />
+    </path>
+
+    <path name="loopback-mic-speaker">
+        <ctl name="EP1 TX Mixer TDM_0_TX" value="1" />
+        <ctl name="SINK_IDS" id="0" value="0" />
+        <ctl name="SINK_IDS" id="1" value="-1" />
+        <path name="mfg-playback" />
+    </path>
+
+    <path name="loopback-mic-headphones">
+        <ctl name="EP1 TX Mixer TDM_0_TX" value="1" />
+        <ctl name="SINK_IDS" id="0" value="1" />
+        <ctl name="SINK_IDS" id="1" value="-1" />
+        <path name="mfg-playback" />
+    </path>
+
+    <path name="loopback-mic-usb-headphones">
+        <ctl name="MIC HW Gain At Lower Power Mode (cB)" value="-160" />
+        <ctl name="MIC HW Gain At High Power Mode (cB)" value="0" />
+        <ctl name="TDM_0_TX Format" value="S32_LE" />
+        <ctl name="TDM_0_TX Chan" value="One" />
+        <ctl name="EP1 TX Mixer TDM_0_TX" value="1" />
+    </path>
+
+    <path name="loopback-usb-mic-speaker">
+        <ctl name="Audio Capture Mic Source" value='USB_MIC' />
+        <ctl name="USB Capture FORMAT v2" value="1" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <path name="loopback-usb-mic-usb-headphone">
+        <ctl name="Audio Capture Mic Source" value='USB_MIC' />
+        <ctl name="USB Capture FORMAT v2" value="1" />
+        <ctl name="MIC Record Soft Gain (dB)" value="0" />
+    </path>
+
+    <pcm_id name="loopback-mic1" value="EP1 capture (*)"/>
+    <pcm_id name="loopback-mic2" value="EP1 capture (*)"/>
+    <pcm_id name="loopback-mic3" value="EP1 capture (*)"/>
+    <pcm_id name="loopback-mic4" value="EP1 capture (*)"/>
+    <pcm_id name="loopback-speaker1" value="EP3 playback (*)"/>
+    <pcm_id name="loopback-speaker2" value="EP3 playback (*)"/>
+    <pcm_id name="loopback-speaker3" value="EP3 playback (*)"/>
+    <pcm_id name="loopback-headphones" value="EP3 playback (*)"/>
+    <pcm_id name="loopback-usb-headphones" value="EP3 playback (*)"/>
+    <pcm_id name="loopback-usb-mic" value="EP1 capture (*)"/>
+    <pcm_id name="loopback-amp_iv" value="nohost1 capture (*)"/>
+</mixer>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audio_effects_conf version="2.0" xmlns="http://schemas.android.com/audio/audio_effects_conf/v2_0">
+    <libraries>
+        <library name="bundle" path="libbundlewrapper.so"/>
+        <library name="reverb" path="libreverbwrapper.so"/>
+        <library name="visualizer_sw" path="libvisualizer.so"/>
+        <library name="downmix" path="libdownmix.so"/>
+        <library name="dynamics_processing" path="libdynproc.so"/>
+        <library name="loudness_enhancer" path="libldnhncr.so"/>
+        <library name="proxy" path="libeffectproxy.so"/>
+        <library name="offload_effect" path="liboffloadeffect.so"/>
+        <library name="haptic_generator" path="libhapticgenerator.so"/>
+    </libraries>
+    <effects>
+        <effectProxy name="bassboost" library="proxy" uuid="2f0871a2-c93c-4824-9664-42eb2909f2ef">
+            <libsw library="bundle" uuid="8631f300-72e2-11df-b57e-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="c7e3b29d-e797-4cf9-9912-17c1956510cc"/>
+        </effectProxy>
+        <effectProxy name="virtualizer" library="proxy" uuid="626499c6-647e-455e-8c45-2d106e23c755">
+            <libsw library="bundle" uuid="1d4033c0-8557-11df-9f2d-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="f8f88a03-fdf8-4554-8e60-77fbf8f2d3b0"/>
+        </effectProxy>
+        <effectProxy name="equalizer" library="proxy" uuid="49004f03-3391-4c44-97dd-a043d526ea7d">
+            <libsw library="bundle" uuid="ce772f20-847d-11df-bb17-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="50deaa30-4a83-4b1f-bfe3-dec6d605ede0"/>
+        </effectProxy>
+        <effect name="volume" library="bundle" uuid="119341a0-8469-11df-81f9-0002a5d5c51b"/>
+        <effectProxy name="reverb_env_aux" library="proxy" uuid="b8154738-a0a1-4fc0-bb79-c845a3197739">
+            <libsw library="reverb" uuid="4a387fc0-8ab3-11df-8bad-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="0c84bcd9-bce4-441b-ba9e-51f80897c949"/>
+        </effectProxy>
+        <effectProxy name="reverb_env_ins" library="proxy" uuid="ba0f19fe-8790-4831-a58b-1f3299dd0bae">
+            <libsw library="reverb" uuid="c7a511a0-a3bb-11df-860e-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="86d1877a-127f-4bdc-9665-c958903ad7b2"/>
+        </effectProxy>
+        <effectProxy name="reverb_pre_aux" library="proxy" uuid="80974a8b-b3be-4c21-8c0b-b392a54e13bc">
+            <libsw library="reverb" uuid="f29a1400-a3bb-11df-8ddc-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="4f90220c-9742-4467-a9d7-122f85c01195"/>
+        </effectProxy>
+        <effectProxy name="reverb_pre_ins" library="proxy" uuid="c02d7dce-ca56-4aea-8c83-bbb53e5600e8">
+            <libsw library="reverb" uuid="172cdf00-a3bc-11df-a72f-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="a2cf6b45-360b-49f3-94d7-fdb9837f89e8"/>
+        </effectProxy>
+        <effectProxy name="visualizer" library="proxy" uuid="b27271d9-64d6-413c-b316-80005ad09008">
+            <libsw library="visualizer_sw" uuid="d069d9e0-8329-11df-9168-0002a5d5c51b"/>
+            <libhw library="offload_effect" uuid="99fb2ecb-3426-4a0e-8082-1a1da5604b7d"/>
+        </effectProxy>
+        <effect name="downmix" library="downmix" uuid="93f04452-e4fe-41cc-91f9-e475b6d1d69f"/>
+        <effect name="loudness_enhancer" library="loudness_enhancer" uuid="fa415329-2034-4bea-b5dc-5b381c8d1e2c"/>
+        <effect name="aec" library="offload_effect" uuid="28c28780-ec8b-48b6-8590-8c84557d797d"/>
+        <effect name="ns" library="offload_effect" uuid="62ff2836-d050-43c3-9c2d-94a73dad2c64"/>
+        <effect name="haptic_generator" library="haptic_generator" uuid="97c4acd1-8b82-4f2f-832e-c2fe5d7a9931"/>
+        <effect name="dynamics_processing" library="dynamics_processing" uuid="e0e6539b-1781-7261-676f-6d7573696340"/>
+    </effects>
+    <postprocess>
+    </postprocess>
+    <preprocess>
+        <stream type="voice_communication">
+            <apply effect="aec"/>
+            <apply effect="ns"/>
+        </stream>
+    </preprocess>
+</audio_effects_conf>
