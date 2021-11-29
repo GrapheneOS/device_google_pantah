@@ -192,7 +192,7 @@
         <usecase id="UC_AUDIO_RECORD" dev1="8" dyn_path="true" dsp_vol="false" mmap="false" period="20" period_num="4"/>
         <usecase id="UC_HOSTLESS_UL" dev1="15"/>
         <!-- for VOIP input, 4 * 10ms buffer -->
-        <usecase id="UC_VOIP_RECORD" dev1="17" dyn_path="true" dsp_vol="false" mmap="false" period="10" period_num="4"/>
+        <usecase id="UC_VOIP_RECORD" dev1="17" dyn_path="true" dsp_vol="false" mmap="false" period="20" period_num="2"/>
         <!-- for input wit AUDIO_INPUT_FLAG_FAST  480 periods * 1ms buffer, 16-bit, 2ch, buffer size 92160 bytes-->
         <usecase id="UC_LOW_LATENCY_AUDIO_RECORD" dev1="10" dyn_path="true" dsp_vol="false" mmap="true" period="1" period_num="480"/>
         <!-- for input wit AUDIO_INPUT_FLAG_MMAP_NOIRQ 240 periods * 1ms buffer, 32-bit,2 ch, buffer size 92160 bytes -->
