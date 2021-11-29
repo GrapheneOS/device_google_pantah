@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  This is the constraints template for users to define (1) constraint terms
+  and (2) tuning architecture.
+
+  The architecture can be divided into multiple audio features that a mobile
+  device will support.
+
+  1. Telephony
+  2. Audio Output
+  3. Audio Input
+  4. Ambient Compute / Smart Features
+  5. Others
+
+  Also, the tuning architecture could be in reality treated as a tree like structure
+  below and each node represents a triplet of (category, node name, constraint name).
+
+  They'd be parsed into the logic behind the combobox drop down list dependent items.
+  For more information, please check go/bluenote-uc-dd and go/blutenote-uc-treenote.
+
+  e.g.
+
+  (ROOT, root, Root)
+   |
+   -(FEATURE, telephony1, Telephony)
+     |
+     -(CATEGORY, voip1, VoIP)
+      |
+      -(USECASE, headset1, Headset1)
+      | |
+      | -(CARRIER, generic1, Generic)
+      |  |
+      |  -(NETWORK, gsm1, GSM)
+      |     |
+      |     -(CODEC, codec3, Codec3)
+      |     |  |
+      |     |  -(BAND, fb1, FB)
+      |     |  |
+      |     |  -(BAND, nb1, NB)
+      |
+      -(USECASE, handset1, Handset1)
+      |  |
+      |  -(CARRIER, tmo1, TMOUS)
+      |   |
+      |   -(NETWORK, gsm1, GSM)
+      |    |
+      |    -(CODEC, codec3, Codec3)
+      |      |
+      |      -(BAND, fb1, FB)
+      |      |
+      |      -(BAND, nb1, NB)
+      |
+      -(USECASE, handset2, Handset1)
+         |
+         -(CARRIER, vzw1, VZW)
+          |
+          -(NETWORK, gsm2, GSM)
+          | |
+          | -(CODEC, codec1, Codec1)
+          |   |
+          |   -(BAND, fb1, FB)
+          |   |
+          |   -(BAND, swb1, SWB)
+          |
+          |
+          -(NETWORK, cdma1, CDMA)
+            |
+            -(CODEC, codec1, Codec1)
+              |
+              -(BAND, fb1, FB)
+              |
+              -(BAND, swb1, SWB)
+
+
+  NOTE: Users required to edit the terms and tree nodes (UI combobox mapping) below
+  for constraint combination.
+
+  Attributes:
+
+    value             The constraint value in given field.
+    name              The constraint term.
+    type              What feature type it belongs to.
+    id                The unique identifier for object or node.
+    node              The reference node.
+    tx-path           The transmit audio path.
+    rx-path           The receive audio path.
+    mixer-ref         The referenced mixer name.
+    ref               The referenced hardware.
+
+-->
+<constraints>
+
+  <!-- (1) Constraint Terms -->
+  <!--
+    Feature (4 bits)
+  -->
+  <feature value="1" name="Telephony" />
+  <feature value="2" name="Playback" />
+  <feature value="3" name="Recording" />
+  <feature value="4" name="SmartFeature" />
+
+  <!--
+    Category
+  -->
+  <category type="telephony" name="Cellular" />
+  <category type="telephony" name="VoIP EC NS" />
+  <category type="telephony" name="TTY" />
+  <category type="telephony" name="Google-Fi" />
+  <category type="playback" name="Sound" />
+  <category type="record" name="Record" />
+  <category type="record" name="Camcorder" />
+  <category type="record" name="VR" />
+  <category type="record" name="Unprocessed" />
+  <category type="hotword" name="Default" />
+
+  <!--
+    Usecase
+  -->
+  <usecase type="telephony" name="Receiver mode"
+           tx-path="device_in_voice_handset_mic"
+           rx-path="device_out_voice_handset" />
+  <usecase type="telephony" name="Receiver mode + HAC"
+           tx-path="device_in_voice_hac_handset_mic"
+           rx-path="device_out_voice_hac_handset" />
+  <usecase type="telephony" name="Speaker mode"
+           tx-path="device_in_voice_speaker_handset_mic"
+           rx-path="device_out_voice_speaker" />
+  <usecase type="telephony" name="Speaker mode + BT HAC"
+           tx-path="device_in_voice_speaker_bt_hac_handset_mic"
+           rx-path="device_out_voice_bt_hac_speaker" />
+  <usecase type="telephony" name="USB-C dongle mode1 without mic"
+           tx-path="device_in_voice_usb_dongle_handset_mic"
+           rx-path="device_out_voice_usb_dongle_headphone" />
+  <usecase type="telephony" name="USB-C dongle mode1 with mic"
+           tx-path="device_in_voice_usb_dongle_headset_mic"
+           rx-path="device_out_voice_usb_dongle_headset" />
+  <usecase type="telephony" name="USB-C dongle mode2 (Sprint testing only)"
+           tx-path="device_in_voice_usb_dongle_testing_headset_mic"
+           rx-path="device_out_voice_usb_dongle_testing_headset" />
+  <usecase type="telephony" name="USB-C dongle mode3 (Sprint electrical only)"
+           tx-path="device_in_voice_usb_dongle_electrical_headset_mic"
+           rx-path="device_out_voice_usb_dongle_electrical_headset" />
+  <usecase type="telephony" name="USB-C headset (in-box earphone)"
+           tx-path="device_in_voice_usb_headset_mic"
+           rx-path="device_out_voice_usb_headset" />
+  <usecase type="telephony" name="BT_NB (wb=off, nrec=off)"
+           tx-path="device_in_voice_bt_mic"
+           rx-path="device_out_voice_bt_headset" />
+  <usecase type="telephony" name="BT_NB_NREC (wb=off, nrec=on)"
+           tx-path="device_in_voice_bt_nrec_mic"
+           rx-path="device_out_voice_bt_nrec_headset" />
+  <usecase type="telephony" name="BT_WB (wb=on, nrec=off)"
+           tx-path="device_in_voice_bt_wb_mic"
+           rx-path="device_out_voice_bt_wb_headset" />
+  <usecase type="telephony" name="BT_WB_NREC (wb=on, nrec=on)"
+           tx-path="device_in_voice_bt_wb_nrec_mic"
+           rx-path="device_out_voice_bt_wb_nrec_headset" />
+  <usecase type="telephony" name="USB-C dongle (full mode)"
+           tx-path="device_in_voice_usb_tty_full_mic"
+           rx-path="device_out_voice_usb_tty_full" />
+  <usecase type="telephony" name="USB-C dongle (hco mode)"
+           tx-path="device_in_voice_usb_tty_hco_mic"
+           rx-path="device_out_voice_tty_hco_handset" />
+  <usecase type="telephony" name="USB-C dongle (vco mode)"
+           tx-path="device_in_voice_tty_vco_handset_mic"
+           rx-path="device_out_voice_usb_tty_vco" />
+  <usecase type="telephony" name="Receiver mode (Fi Asti)"
+           tx-path="device_in_voice_receiver_fi_handset_mic"
+           rx-path="device_out_voice_fi_handset" />
+  <usecase type="telephony" name="Speaker mode (Fi Asti)"
+           tx-path="device_in_voice_speaker_fi_handset_mic"
+           rx-path="device_out_voice_fi_speaker" />
+  <usecase type="telephony" name="USB-C headset/dongle without mic (Fi Asti)"
+           tx-path="device_in_voice_fi_handset_mic"
+           rx-path="device_out_voice_fi_usb_headphone" />
+  <usecase type="telephony" name="USB-C headset/dongle with mic (Fi Asti)"
+           tx-path="device_in_voice_fi_with_headset_mic"
+           rx-path="device_out_voice_fi_usb_headset" />
+  <usecase type="telephony" name="USB-C headset (in-box) (Fi Asti)"
+           tx-path="device_in_voice_fi_inbox_headset_mic"
+           rx-path="device_out_voice_fi_usb_inbox_headset" />
+  <usecase type="telephony" name="Receiver mode (VoIP)"
+           tx-path="device_in_voice_voip_receiver_handset_mic"
+           rx-path="device_out_voice_voip_handset" />
+  <usecase type="telephony" name="Speaker mode (VoIP)"
+           tx-path="device_in_voice_voip_speaker_handset_mic"
+           rx-path="device_out_voice_voip_speaker" />
+  <usecase type="telephony" name="USB-C headset/dongle without mic"
+           tx-path="device_in_voice_voip_handset_mic"
+           rx-path="device_out_voice_voip_usb_headphone" />
+  <usecase type="telephony" name="USB-C headset/dongle with mic"
+           tx-path="device_in_voice_voip_usb_headset_mic"
+           rx-path="device_out_voice_voip_usb_mic_headphone" />
+  <usecase type="telephony" name="USB-C headset (in-box)"
+           tx-path="device_in_voice_voip_usb_inbox_headset_mic"
+           rx-path="device_out_voice_voip_usb_inbox_headphone" />
+  <usecase type="playback" name="Earpiece playback (Handset mode)"
+           rx-path="device_out_handset" />
+  <usecase type="playback" name="Stereo speaker playback (Speaker mode)"
+           rx-path="device_out_stereo_speaker" />
+  <usecase type="playback" name="Mono speaker playback (Bottom speaker only)"
+           rx-path="device_out_mono_speaker" />
+  <usecase type="playback" name="USB-C headset (BlackBird)"
+           rx-path="device_out_usb_blackbird_headset" />
+  <usecase type="playback" name="USB-C headset (Others)"
+           rx-path="device_out_usb_others_headset" />
+  <usecase type="playback" name="USB-C dongle with 4 pin headset"
+           rx-path="device_out_usb_4_pin_headset" />
+  <usecase type="playback" name="USB-C dongle with 3 pin headphone"
+           rx-path="device_out_usb_headphone" />
+  <usecase type="playback" name="USB-C headset/dongle (Bottom speaker only)"
+           rx-path="device_out_usb_others_headset_headphone" />
+  <usecase type="playback" name="A2DP"
+           rx-path="device_out_bt_a2dp" />
+  <usecase type="record" name="Voice note with main mic (Google Keep and 3rd party)"
+           tx-path="device_in_handset_mic" />
+  <usecase type="record" name="SoloTester with dual mic (3rd party)"
+           tx-path="device_in_handset_dual_mic" />
+  <usecase type="record" name="SoloTester with tri mic (3rd party)"
+           tx-path="device_in_handset_tri_mic" />
+  <usecase type="record" name="Meetings and lectures with rear mic"
+           tx-path="device_in_handset_rear_mic" />
+  <usecase type="record" name="Music and raw sound"
+           tx-path="device_in_handset_rec_mic" />
+  <usecase type="record" name="Voice wakeup Hotword (OK Google)"
+           tx-path="device_in_wakeup_handset_mic" />
+  <usecase type="record" name="Voice wakeup Hotword barge-in (OK Google)"
+           tx-path="device_in_wakeup_barge_in_handset_mic" />
+  <usecase type="record" name="USB-C headset/dongle mic"
+           tx-path="device_in_usb_headset_dongle_mic" />
+  <usecase type="record" name="Three mic enabled (Back Cam, Landscape)"
+           tx-path="device_in_back_cam_land_tri_mic" />
+  <usecase type="record" name="Three mic enabled (Back Cam, Invert-Landscape)"
+           tx-path="device_in_back_cam_invert_land_tri_mic" />
+  <usecase type="record" name="Three mic enabled (Back Cam, Portrait)"
+           tx-path="device_in_back_cam_port_tri_mic" />
+  <usecase type="record" name="Three mic enabled (Selfie, Landscape)"
+           tx-path="device_in_selfie_land_tri_mic" />
+  <usecase type="record" name="Three mic enabled (Selfie, Invert-Landscape)"
+           tx-path="device_in_selfie_invert_land_tri_mic" />
+  <usecase type="record" name="Three mic enabled (Selfie, Portrait)"
+           tx-path="device_in_selfie_port_tri_mic" />
+  <usecase type="record" name="USB-C headset mic"
+           tx-path="device_in_usb_headset_mic" />
+  <usecase type="record" name="Voice recognition"
+           tx-path="device_in_voice_handset_rec_mic" />
+  <usecase type="record" name="USB-C headset/dongle voice recognition"
+           tx-path="device_in_usb_headset_voice_mic" />
+  <usecase type="record" name="Unprocessed record (channel count = 1)"
+           tx-path="device_in_unprocessed_handset_mic" />
+  <usecase type="record" name="Unprocessed record (channel count = 2)"
+           tx-path="device_in_unprocessed_handset_dual_mic" />
+  <usecase type="record" name="Unprocessed record (channel count = 3)"
+           tx-path="device_in_unprocessed_handset_tri_mic" />
+  <usecase type="record" name="Unprocessed record (channel count = 4)"
+           tx-path="device_in_unprocessed_handset_quad_mic" />
+  <usecase type="record" name="USB-C headset mic (BlackBird + Others)"
+           tx-path="device_in_unprocessed_usb_headset_mic" />
+  <usecase type="record" name="USB-C Dongle with 4 pin headset"
+           tx-path="device_in_unprocessed_usb_4_pin_headset_mic" />
+  <usecase type="record" name="BT SCO"
+           tx-path="device_in_bt_sco_mic" />
+  <usecase type="hotword" name="Default" tx-path="device_in_hotword" />
+
+  <!--
+    Tx/Rx paths (14 bits)
+  -->
+  <path value="0" id="device_in_hotword" mixer-ref="handset_mic" />
+  <path value="1" id="device_in_voice_handset_mic" mixer-ref="voice_mic" />
+  <path value="2" id="device_out_voice_handset" mixer-ref="voice_handset" />
+  <path value="3" id="device_in_voice_hac_handset_mic" mixer-ref="voice_mic" />
+  <path value="4" id="device_out_voice_hac_handset" mixer-ref="voice_handset" />
+  <path value="5" id="device_in_voice_speaker_handset_mic" mixer-ref="voice_speaker_mic" />
+  <path value="6" id="device_out_voice_speaker" mixer-ref="voice_speaker" />
+  <path value="7" id="device_in_voice_speaker_bt_hac_handset_mic" mixer-ref="bt_mic" />
+  <path value="8" id="device_out_voice_bt_hac_speaker" mixer-ref="bt_speaker" />
+  <path value="9" id="device_in_voice_usb_dongle_handset_mic" mixer-ref="voice_mic" />
+  <path value="10" id="device_out_voice_usb_dongle_headphone" mixer-ref="usb_headphone" />
+  <path value="11" id="device_in_voice_usb_dongle_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="12" id="device_out_voice_usb_dongle_headset" mixer-ref="usb_headset" />
+  <path value="13" id="device_in_voice_usb_dongle_testing_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="14" id="device_out_voice_usb_dongle_testing_headset" mixer-ref="usb_headset" />
+  <path value="15" id="device_in_voice_usb_dongle_electrical_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="16" id="device_out_voice_usb_dongle_electrical_headset" mixer-ref="usb_headset" />
+  <path value="17" id="device_in_voice_usb_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="18" id="device_out_voice_usb_headset" mixer-ref="usb_headset" />
+  <path value="19" id="device_in_voice_bt_mic" mixer-ref="bt_mic" />
+  <path value="20" id="device_out_voice_bt_headset" mixer-ref="bt_headset" />
+  <path value="21" id="device_in_voice_bt_nrec_mic" mixer-ref="bt_mic" />
+  <path value="22" id="device_out_voice_bt_nrec_headset" mixer-ref="bt_headset" />
+  <path value="23" id="device_in_voice_bt_wb_mic" mixer-ref="bt_mic" />
+  <path value="24" id="device_out_voice_bt_wb_headset" mixer-ref="bt_headset" />
+  <path value="25" id="device_in_voice_bt_wb_nrec_mic" mixer-ref="bt_mic" />
+  <path value="26" id="device_out_voice_bt_wb_nrec_headset" mixer-ref="bt_headset" />
+  <path value="27" id="device_in_voice_usb_tty_full_mic" mixer-ref="voice_tty_full_headset_mic" />
+  <path value="28" id="device_out_voice_usb_tty_full" mixer-ref="voice_tty_full_headphone" />
+  <path value="29" id="device_in_voice_usb_tty_hco_mic" mixer-ref="voice_tty_hco_headset_mic" />
+  <path value="30" id="device_out_voice_tty_hco_handset" mixer-ref="voice_tty_hco_handset" />
+  <path value="31" id="device_in_voice_tty_vco_handset_mic" mixer-ref="voice_tty_vco_headset_mic" />
+  <path value="32" id="device_out_voice_usb_tty_vco" mixer-ref="voice_tty_vco_headphone" />
+  <path value="33" id="device_in_voice_receiver_fi_handset_mic" mixer-ref="voice_mic" />
+  <path value="34" id="device_out_voice_fi_handset" mixer-ref="voice_handset" />
+  <path value="35" id="device_in_voice_speaker_fi_handset_mic" mixer-ref="voice_mic" />
+  <path value="36" id="device_out_voice_fi_speaker" mixer-ref="voice_speaker" />
+  <path value="37" id="device_in_voice_fi_handset_mic" mixer-ref="voice_mic" />
+  <path value="38" id="device_out_voice_fi_usb_headphone" mixer-ref="usb_headphone" />
+  <path value="39" id="device_in_voice_fi_with_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="40" id="device_out_voice_fi_usb_headset" mixer-ref="usb_headset" />
+  <path value="41" id="device_in_voice_fi_inbox_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="42" id="device_out_voice_fi_usb_inbox_headset" mixer-ref="usb_headset" />
+  <path value="43" id="device_in_voice_voip_receiver_handset_mic" mixer-ref="voice_mic" />
+  <path value="44" id="device_out_voice_voip_handset" mixer-ref="voice_handset" />
+  <path value="45" id="device_in_voice_voip_speaker_handset_mic" mixer-ref="voice_mic" />
+  <path value="46" id="device_out_voice_voip_speaker" mixer-ref="voice_handset" />
+  <path value="47" id="device_in_voice_voip_handset_mic" mixer-ref="voice_mic" />
+  <path value="48" id="device_out_voice_voip_usb_headphone" mixer-ref="usb_headphone" />
+  <path value="49" id="device_in_voice_voip_usb_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="50" id="device_out_voice_voip_usb_mic_headphone" mixer-ref="usb_headphone" />
+  <path value="51" id="device_in_voice_voip_usb_inbox_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="52" id="device_out_voice_voip_usb_inbox_headphone" mixer-ref="usb_headphone" />
+  <path value="53" id="device_out_handset" mixer-ref="voice_handset" />
+  <path value="54" id="device_out_stereo_speaker" mixer-ref="voice_speaker" />
+  <path value="55" id="device_out_mono_speaker" mixer-ref="voice_speaker" />
+  <path value="56" id="device_out_usb_blackbird_headset" mixer-ref="usb_headset" />
+  <path value="57" id="device_out_usb_others_headset" mixer-ref="usb_headset" />
+  <path value="58" id="device_out_usb_4_pin_headset" mixer-ref="usb_headset" />
+  <path value="59" id="device_out_usb_headphone" mixer-ref="usb_headphone" />
+  <path value="60" id="device_out_usb_others_headset_headphone" mixer-ref="usb_headset" />
+  <path value="61" id="device_out_bt_a2dp" mixer-ref="bt_speaker" />
+  <path value="62" id="device_in_handset_mic" mixer-ref="handset_mic" />
+  <path value="63" id="device_in_handset_dual_mic" mixer-ref="handset_stereo_mic" />
+  <path value="64" id="device_in_handset_tri_mic" mixer-ref="handset_tri_mic" />
+  <path value="65" id="device_in_handset_rear_mic" mixer-ref="camcorder_mic" />
+  <path value="66" id="device_in_handset_rec_mic" mixer-ref="rec_mic" />
+  <path value="67" id="device_in_wakeup_handset_mic" mixer-ref="handset_mic" />
+  <path value="68" id="device_in_wakeup_barge_in_handset_mic" mixer-ref="handset_mic" />
+  <path value="69" id="device_in_usb_headset_dongle_mic" mixer-ref="usb_headset_mic" />
+  <path value="70" id="device_in_back_cam_land_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="71" id="device_in_back_cam_invert_land_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="72" id="device_in_back_cam_port_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="73" id="device_in_selfie_land_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="74" id="device_in_selfie_invert_land_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="75" id="device_in_selfie_port_tri_mic" mixer-ref="camcorder_mic" />
+  <path value="76" id="device_in_usb_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="77" id="device_in_voice_handset_rec_mic" mixer-ref="rec_mic" />
+  <path value="78" id="device_in_usb_headset_voice_mic" mixer-ref="usb_headset_mic" />
+  <path value="79" id="device_in_unprocessed_handset_mic" mixer-ref="unprocessed_handset_mic" />
+  <path value="80" id="device_in_unprocessed_handset_dual_mic" mixer-ref="unprocessed_handset_stereo_mic" />
+  <path value="81" id="device_in_unprocessed_handset_tri_mic" mixer-ref="unprocessed_handset_tri_mic" />
+  <path value="82" id="device_in_unprocessed_handset_quad_mic" mixer-ref="unprocessed_handset_quad_mic" />
+  <path value="83" id="device_in_unprocessed_usb_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="84" id="device_in_unprocessed_usb_4_pin_headset_mic" mixer-ref="usb_headset_mic" />
+  <path value="85" id="device_in_bt_sco_mic" mixer-ref="bt_mic" />
+
+  <!--
+    Mixer
+  -->
+  <mixer id="voice_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="voice_handset">
+    <hardware-ref node="handset" />
+  </mixer>
+
+  <mixer id="voice_speaker_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="voice_speaker">
+    <hardware-ref node="speaker" />
+  </mixer>
+
+  <mixer id="bt_mic">
+    <hardware-ref node="bt_microphone" />
+  </mixer>
+
+  <mixer id="bt_speaker">
+    <hardware-ref node="bt_speaker" />
+  </mixer>
+
+  <mixer id="bt_headset">
+    <hardware-ref node="bt_headset" />
+  </mixer>
+
+  <mixer id="usb_speaker">
+    <hardware-ref node="usb_headphone" />
+  </mixer>
+
+  <mixer id="usb_headset_mic">
+    <hardware-ref node="usb_headset_mic" />
+  </mixer>
+
+  <mixer id="usb_headset">
+    <hardware-ref node="usb_headset" />
+  </mixer>
+
+  <mixer id="usb_headphone">
+    <hardware-ref node="usb_headphone" />
+  </mixer>
+
+  <mixer id="voice_tty_full_headset_mic">
+    <hardware-ref node="usb_headset_mic" />
+  </mixer>
+
+  <mixer id="voice_tty_full_headphone">
+    <hardware-ref node="usb_headphone" />
+  </mixer>
+
+  <mixer id="voice_tty_hco_headset_mic">
+    <hardware-ref node="usb_headset_mic" />
+  </mixer>
+
+  <mixer id="voice_tty_hco_handset">
+    <hardware-ref node="handset" />
+  </mixer>
+
+  <mixer id="voice_tty_vco_headset_mic">
+    <hardware-ref node="usb_headset_mic" />
+  </mixer>
+
+  <mixer id="voice_tty_vco_headphone">
+    <hardware-ref node="usb_headphone" />
+  </mixer>
+
+  <mixer id="handset_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="handset_stereo_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="handset_tri_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="camcorder_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="rec_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="unprocessed_handset_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="unprocessed_handset_stereo_mic">
+    <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="unprocessed_handset_tri_mic">
+   <hardware-ref node="microphone" />
+  </mixer>
+
+  <mixer id="unprocessed_handset_quad_mic">
+   <hardware-ref node="microphone" />
+  </mixer>
+
+  <!--
+    Hardware
+  -->
+  <hardware id="handset" name="Handset" />
+  <hardware id="speaker" name="Speaker" />
+  <hardware id="headphone" name="Headphone" />
+  <hardware id="microphone" name="Microphone" />
+  <hardware id="bt_speaker" name="BT Speaker" />
+  <hardware id="bt_microphone" name="BT Microphone" />
+  <hardware id="bt_headset" name="BT Headset" />
+  <hardware id="usb_headset_mic" name="USB-C Headset Microphone" />
+  <hardware id="usb_headset" name="USB-C Headset" />
+  <hardware id="usb_headphone" name="USB-C Headphone" />
+
+  <!--
+    Carrier (4 bits)
+  -->
+  <carrier value="0" type="telephony" name="None" />
+  <carrier value="1" type="telephony" name="Generic" />
+  <carrier value="2" type="telephony" name="TMOUS" />
+  <carrier value="3" type="telephony" name="SPRINT" />
+  <carrier value="4" type="telephony" name="USCC" />
+  <carrier value="5" type="telephony" name="VZW" />
+
+  <!--
+    Telephony modes.
+  -->
+  <!-- Network Modes (6 bits) -->
+  <mode value="0" type="network" name="None" />
+  <mode value="1" type="network" name="GSM" />
+  <mode value="2" type="network" name="CDMA" />
+  <mode value="3" type="network" name="WCDMA" />
+  <mode value="4" type="network" name="VOLTE" />
+
+  <!-- Codec Modes (8 bits)-->
+  <mode value="0" type="codec" name="None" />
+  <mode value="1" type="codec" name="NB-13K" />
+  <mode value="2" type="codec" name="SO3" />
+  <mode value="3" type="codec" name="SO68" />
+  <mode value="4" type="codec" name="NB-SO73 (COP1~COP7)" />
+  <mode value="5" type="codec" name="WB-SO73 (COP0)" />
+  <mode value="6" type="codec" name="NB-AMR_NB" />
+  <mode value="7" type="codec" name="EFR" />
+  <mode value="8" type="codec" name="FR" />
+  <mode value="9" type="codec" name="HR" />
+  <mode value="10" type="codec" name="WB-AMR_WB" />
+  <mode value="11" type="codec" name="WB-eAMR" />
+  <mode value="12" type="codec" name="NB-eAMR" />
+  <mode value="13" type="codec" name="SO73-WB" />
+  <mode value="14" type="codec" name="SO73-NB" />
+  <mode value="15" type="codec" name="NB-EVS" />
+  <mode value="16" type="codec" name="16kHz-EVS-WB" />
+  <mode value="17" type="codec" name="16kHz-EVS-NB" />
+  <mode value="18" type="codec" name="32kHz-EVS-SWB" />
+  <mode value="19" type="codec" name="32kHz-EVS-WB" />
+  <mode value="20" type="codec" name="32kHz-EVS-NB" />
+  <mode value="21" type="codec" name="48kHz-EVS-FB" />
+  <mode value="22" type="codec" name="48kHz-EVS-SWB" />
+  <mode value="23" type="codec" name="48kHz-EVS-WB" />
+  <mode value="24" type="codec" name="48kHz-EVS-NB" />
+
+  <!--
+    Band Modes (3 bits)
+      NB  (8000)
+      WB  (16000)
+      SWB (32000)
+      FB  (48000)
+  -->
+  <mode value="1" type="band" name="NB" />
+  <mode value="2" type="band" name="WB" />
+  <mode value="3" type="band" name="SWB" />
+  <mode value="4" type="band" name="FB" />
+
+  <!--
+    Playback modes.
+  -->
+  <!-- Sounds Modes (3 bits) -->
+  <mode value="1" type="sound" name="Low Latency" />
+  <mode value="2" type="sound" name="Ultra Low Latency" />
+  <mode value="3" type="sound" name="DeepBuffer" />
+  <mode value="4" type="sound" name="Compress Offload" />
+
+  <!-- Sample Rate Modes (5 bits) -->
+  <mode value="1" type="rate" name="8000" />
+  <mode value="2" type="rate" name="11025" />
+  <mode value="3" type="rate" name="16000" />
+  <mode value="4" type="rate" name="22050" />
+  <mode value="5" type="rate" name="32000" />
+  <mode value="6" type="rate" name="44100" />
+  <mode value="7" type="rate" name="48000" />
+  <mode value="8" type="rate" name="96000" />
+
+  <!-- (2) Tuning Architecture -->
+  <!--
+    Root node.
+  -->
+  <tuning-tree>
+    <feature-ref node="feature_telephony" />
+    <feature-ref node="feature_playback" />
+    <feature-ref node="feature_record" />
+    <feature-ref node="feature_hotword" />
+  </tuning-tree>
+
+  <!--
+    Feature nodes.
+  -->
+  <feature-node id="feature_telephony" type="telephony" name="Telephony">
+    <category-ref node="category_cellular" />
+    <category-ref node="category_tty" />
+    <category-ref node="category_fi" />
+    <category-ref node="category_voip_ec_ns" />
+  </feature-node>
+
+  <feature-node id="feature_playback" type="playback" name="Playback">
+    <category-ref node="category_sound" />
+  </feature-node>
+
+  <feature-node id="feature_record" type="record" name="Recording">
+    <category-ref node="category_record" />
+    <category-ref node="category_cam" />
+    <category-ref node="category_vr" />
+    <category-ref node="category_unprocessed" />
+  </feature-node>
+
+  <feature-node id="feature_hotword" type="hotword" name="SmartFeature">
+    <category-ref node="category_hotword_default" />
+  </feature-node>
+
+  <!--
+    Category nodes.
+  -->
+  <category-node id="category_cellular" type="telephony" name="Cellular">
+    <usecase-ref node="usecase_telephony_receiver_mode" />
+    <usecase-ref node="usecase_telephony_hac_receiver_mode" />
+    <usecase-ref node="usecase_telephony_speaker_mode" />
+    <usecase-ref node="usecase_telephony_bt_hac_speaker_mode" />
+    <usecase-ref node="usecase_telephony_usb_dongle_mode1_without_mic_mode" />
+    <usecase-ref node="usecase_telephony_usb_dongle_mode1_with_mic_mode" />
+    <usecase-ref node="usecase_telephony_sprint_test_usb_dongle_mode2" />
+    <usecase-ref node="usecase_telephony_sprint_ectrical_usb_dongle_mode3" />
+    <usecase-ref node="usecase_telephony_usb_inbox_earphone_headset" />
+    <usecase-ref node="usecase_telephony_bt_nb" />
+    <usecase-ref node="usecase_telephony_bt_nb_nrec" />
+    <usecase-ref node="usecase_telephony_bt_wb" />
+    <usecase-ref node="usecase_telephony_bt_wb_nrec" />
+  </category-node>
+
+  <category-node id="category_tty" type="telephony" name="TTY">
+    <usecase-ref node="usecase_telephony_usb_dongle_full" />
+    <usecase-ref node="usecase_telephony_usb_dongle_hco" />
+    <usecase-ref node="usecase_telephony_usb_dongle_vco" />
+  </category-node>
+
+  <category-node id="category_fi" type="telephony" name="Google-Fi">
+    <usecase-ref node="usecase_telephony_fi" />
+    <usecase-ref node="usecase_telephony_speaker_fi" />
+    <usecase-ref node="usecase_telephony_fi_usb_headset_without_mic" />
+    <usecase-ref node="usecase_telephony_fi_usb_headset_with_mic" />
+    <usecase-ref node="usecase_telephony_fi_usb_inbox_headset" />
+  </category-node>
+
+  <category-node id="category_voip_ec_ns" type="telephony" name="VoIP EC NS">
+    <usecase-ref node="usecase_telephony_voip_receiver" />
+    <usecase-ref node="usecase_telephony_voip_speaker" />
+    <usecase-ref node="usecase_telephony_voip_without_headset_mic" />
+    <usecase-ref node="usecase_telephony_voip_usb_headset_mic" />
+    <usecase-ref node="usecase_telephony_voip_usb_inbox_headset" />
+    <usecase-ref node="usecase_telephony_voip_bt_nb" />
+    <usecase-ref node="usecase_telephony_voip_bt_nb_nrec" />
+    <usecase-ref node="usecase_telephony_voip_bt_wb" />
+    <usecase-ref node="usecase_telephony_voip_bt_wb_nrec" />
+  </category-node>
+
+  <category-node id="category_sound" type="playback" name="Sound">
+    <usecase-ref node="usecase_playback_earpiece_handset" />
+    <usecase-ref node="usecase_playback_stereo_speaker" />
+    <usecase-ref node="usecase_playback_mono_speaker_bottom_speaker" />
+    <usecase-ref node="usecase_playback_usb_blackbird_headset" />
+    <usecase-ref node="usecase_playback_usb_others_headset" />
+    <usecase-ref node="usecase_playback_usb_dongle_4_pin_headset" />
+    <usecase-ref node="usecase_playback_usb_dongle_3_pin_headphone" />
+    <usecase-ref node="usecase_playback_usb_headset_dongle_bottom_speaker" />
+    <usecase-ref node="usecase_playback_a2dp" />
+  </category-node>
+
+  <category-node id="category_record" type="record" name="Record">
+    <usecase-ref node="usecase_record_voice_note_main_mic" />
+    <usecase-ref node="usecase_record_solotester_dual_mic" />
+    <usecase-ref node="usecase_record_solotester_tri_mic" />
+    <usecase-ref node="usecase_record_meetings_lectures_rear_mic" />
+    <usecase-ref node="usecase_record_music_raw_sound" />
+    <usecase-ref node="usecase_record_voice_wakeup_hotword" />
+    <usecase-ref node="usecase_record_voice_wakeup_hotword_barge-in" />
+    <usecase-ref node="usecase_record_usb_headset_dongle_mic" />
+    <usecase-ref node="usecase_record_bt_sco" />
+  </category-node>
+
+  <category-node id="category_cam" type="record" name="Camcorder">
+    <usecase-ref node="usecase_record_back_cam_land_tri_mic" />
+    <usecase-ref node="usecase_record_back_cam_invert_land_tri_mic" />
+    <usecase-ref node="usecase_record_back_cam_port_tri_mic" />
+    <usecase-ref node="usecase_record_selfie_land_tri_mic" />
+    <usecase-ref node="usecase_record_selfie_invert_land_tri_mic" />
+    <usecase-ref node="usecase_record_selfie_port_tri_mic" />
+    <usecase-ref node="usecase_record_usb_headset_mic" />
+  </category-node>
+
+  <category-node id="category_vr" type="record" name="VR">
+    <usecase-ref node="usecase_record_handset_voice_mic" />
+    <usecase-ref node="usecase_record_usb_headset_voice_mic" />
+  </category-node>
+
+  <category-node id="category_unprocessed" type="record" name="Unprocessed">
+    <usecase-ref node="usecase_record_unprocessed_handset_mic" />
+    <usecase-ref node="usecase_record_unprocessed_handset_dual_mic" />
+    <usecase-ref node="usecase_record_unprocessed_handset_tri_mic" />
+    <usecase-ref node="usecase_record_unprocessed_handset_quad_mic" />
+    <usecase-ref node="usecase_record_unprocessed_usb_blackbird_others_headset_mic" />
+    <usecase-ref node="usecase_record_unprocessed_usb_dongle_4_pin_headset" />
+  </category-node>
+
+  <category-node id="category_hotword_default" type="hotword" name="Default">
+    <usecase-ref node="usecase_hotword_default" />
+  </category-node>
+
+  <!--
+    Usecase nodes.
+  -->
+  <usecase-node id="usecase_telephony_receiver_mode" type="telephony" name="Receiver mode">
+    <carrier-ref node="carrier_generic" />
+    <carrier-ref node="carrier_tmous" />
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_hac_receiver_mode" type="telephony"
+                name="Receiver mode + HAC">
+    <carrier-ref node="carrier_generic" />
+    <carrier-ref node="carrier_tmous" />
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_speaker_mode" type="telephony" name="Speaker mode">
+    <carrier-ref node="carrier_generic" />
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_bt_hac_speaker_mode" type="telephony"
+                name="Speaker mode + BT HAC">
+    <carrier-ref node="carrier_generic" />
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_dongle_mode1_without_mic_mode" type="telephony"
+                name="USB-C dongle mode1 without mic">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_dongle_mode1_with_mic_mode" type="telephony"
+                name="USB-C dongle mode1 with mic">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_sprint_test_usb_dongle_mode2" type="telephony"
+                name="USB-C dongle mode2 (Sprint testing only)">
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_sprint_ectrical_usb_dongle_mode3" type="telephony"
+                name="USB-C dongle mode3 (Sprint electrical only)">
+    <carrier-ref node="carrier_sprint" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_inbox_earphone_headset" type="telephony"
+                name="USB-C headset (in-box earphone)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_bt_nb" type="telephony" name="BT_NB (wb=off, nrec=off)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_bt_nb_nrec" type="telephony"
+                name="BT_NB_NREC (wb=off, nrec=on)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_bt_wb" type="telephony" name="BT_WB (wb=on, nrec=off)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_bt_wb_nrec" type="telephony"
+                name="BT_WB_NREC (wb=on, nrec=on)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_dongle_full" type="telephony"
+                name="USB-C dongle (full mode)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_dongle_hco" type="telephony"
+                name="USB-C dongle (hco mode)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_usb_dongle_vco" type="telephony"
+                name="USB-C dongle (vco mode)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_fi" type="telephony"
+                name="Receiver mode (Fi Asti)">
+    <carrier-ref node="carrier_vzw" />
+    <carrier-ref node="carrier_tmous" />
+    <carrier-ref node="carrier_uscc" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_speaker_fi" type="telephony"
+                name="Speaker mode (Fi Asti)">
+    <carrier-ref node="carrier_vzw" />
+    <carrier-ref node="carrier_tmous" />
+    <carrier-ref node="carrier_uscc" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_fi_usb_headset_without_mic" type="telephony"
+                name="USB-C headset/dongle without mic (Fi Asti)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_fi_usb_headset_with_mic" type="telephony"
+                name="USB-C headset/dongle with mic (Fi Asti)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_fi_usb_inbox_headset" type="telephony"
+                name="USB-C headset (in-box) (Fi Asti)">
+    <carrier-ref node="carrier_generic" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_receiver" type="telephony"
+                name="Receiver mode (VoIP)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_speaker" type="telephony"
+                name="Speaker mode (VoIP)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_without_headset_mic" type="telephony"
+                name="USB-C headset/dongle without mic">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_usb_headset_mic" type="telephony"
+                name="USB-C headset/dongle with mic">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_usb_inbox_headset" type="telephony"
+                name="USB-C headset (in-box)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_bt_nb" type="telephony"
+                name="BT_NB (wb=off, nrec=off)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_bt_nb_nrec" type="telephony"
+                name="BT_NB_NREC (wb=off, nrec=on)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_bt_wb" type="telephony"
+                name="BT_WB (wb=on, nrec=off)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_telephony_voip_bt_wb_nrec" type="telephony"
+                name="BT_WB_NREC (wb=on, nrec=on)">
+    <carrier-ref node="carrier_none" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_earpiece_handset" type="playback"
+                name="Earpiece playback (Handset mode)">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_stereo_speaker" type="playback"
+                name="Stereo speaker playback (Speaker mode)">
+    <mode-ref node="sound_mono_stereo_low_latency" />
+    <mode-ref node="sound_mono_stereo_ultra_low_latency" />
+    <mode-ref node="sound_mono_stereo_deep_buffer" />
+    <mode-ref node="sound_mono_stereo_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_mono_speaker_bottom_speaker" type="playback"
+                name="Mono speaker playback (Bottom speaker only)">
+    <mode-ref node="sound_mono_stereo_low_latency" />
+    <mode-ref node="sound_mono_stereo_ultra_low_latency" />
+    <mode-ref node="sound_mono_stereo_deep_buffer" />
+    <mode-ref node="sound_mono_stereo_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_usb_blackbird_headset" type="playback"
+                name="USB-C headset (BlackBird)">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_usb_others_headset" type="playback"
+                name="USB-C headset (Others)">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_usb_dongle_4_pin_headset" type="playback"
+                name="USB-C dongle with 4 pin headset">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_usb_dongle_3_pin_headphone" type="playback"
+                name="USB-C dongle with 3 pin headphone">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_usb_headset_dongle_bottom_speaker" type="playback"
+                name="USB-C headset/dongle (Bottom speaker only)">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_playback_a2dp" type="playback"
+                name="A2DP">
+    <mode-ref node="sound_low_latency" />
+    <mode-ref node="sound_ultra_low_latency" />
+    <mode-ref node="sound_deep_buffer" />
+    <mode-ref node="sound_compress_offload" />
+  </usecase-node>
+
+  <usecase-node id="usecase_record_voice_note_main_mic" type="record"
+                name="Voice note with main mic (Google Keep and 3rd party)" />
+
+  <usecase-node id="usecase_record_solotester_dual_mic" type="record"
+                name="SoloTester with dual mic (3rd party)" />
+
+  <usecase-node id="usecase_record_solotester_tri_mic" type="record"
+                name="SoloTester with tri mic (3rd party)" />
+
+  <usecase-node id="usecase_record_meetings_lectures_rear_mic" type="record"
+                name="Meetings and lectures with rear mic" />
+
+  <usecase-node id="usecase_record_music_raw_sound" type="record"
+                name="Music and raw sound" />
+
+  <usecase-node id="usecase_record_voice_wakeup_hotword" type="record"
+                name="Voice wakeup Hotword (OK Google)" />
+
+  <usecase-node id="usecase_record_voice_wakeup_hotword_barge-in" type="record"
+                name="Voice wakeup Hotword barge-in (OK Google)" />
+
+  <usecase-node id="usecase_record_usb_headset_dongle_mic" type="record"
+                name="USB-C headset/dongle mic" />
+
+  <usecase-node id="usecase_record_bt_sco" type="record"
+                name="BT SCO" />
+
+  <usecase-node id="usecase_record_back_cam_land_tri_mic" type="record"
+                name="Three mic enabled (Back Cam, Landscape)" />
+
+  <usecase-node id="usecase_record_back_cam_invert_land_tri_mic" type="record"
+                name="Three mic enabled (Back Cam, Invert-Landscape)" />
+
+  <usecase-node id="usecase_record_back_cam_port_tri_mic" type="record"
+                name="Three mic enabled (Back Cam, Portrait)" />
+
+  <usecase-node id="usecase_record_selfie_land_tri_mic" type="record"
+                name="Three mic enabled (Selfie, Landscape)" />
+
+  <usecase-node id="usecase_record_selfie_invert_land_tri_mic" type="record"
+                name="Three mic enabled (Selfie, Invert-Landscape)" />
+
+  <usecase-node id="usecase_record_selfie_port_tri_mic" type="record"
+                name="Three mic enabled (Selfie, Portrait)" />
+
+  <usecase-node id="usecase_record_usb_headset_mic" type="record"
+                name="USB-C headset mic" />
+
+  <usecase-node id="usecase_record_handset_voice_mic" type="record"
+                name="Voice recognition" />
+
+  <usecase-node id="usecase_record_usb_headset_voice_mic" type="record"
+                name="USB-C headset/dongle voice recognition" />
+
+  <usecase-node id="usecase_record_unprocessed_handset_mic" type="record"
+                name="Unprocessed record (channel count = 1)" />
+  <usecase-node id="usecase_record_unprocessed_handset_dual_mic" type="record"
+                name="Unprocessed record (channel count = 2)" />
+  <usecase-node id="usecase_record_unprocessed_handset_tri_mic" type="record"
+                name="Unprocessed record (channel count = 3)" />
+  <usecase-node id="usecase_record_unprocessed_handset_quad_mic" type="record"
+                name="Unprocessed record (channel count = 4)" />
+  <usecase-node id="usecase_record_unprocessed_usb_blackbird_others_headset_mic" type="record"
+                name="USB-C headset mic (BlackBird + Others)" />
+  <usecase-node id="usecase_record_unprocessed_usb_dongle_4_pin_headset" type="record"
+                name="USB-C Dongle with 4 pin headset" />
+  <usecase-node id="usecase_hotword_default" type="hotword" name="Default" />
+
+  <!--
+    Carrier Nodes.
+  -->
+  <carrier-node id="carrier_none" type="telephony" name="None">
+    <mode-ref node="network_none" />
+  </carrier-node>
+
+  <carrier-node id="carrier_generic" type="telephony" name="Generic">
+    <mode-ref node="network_cdma" />
+    <mode-ref node="network_gsm" />
+    <mode-ref node="network_wcdma" />
+    <mode-ref node="network_volte" />
+  </carrier-node>
+
+  <carrier-node id="carrier_tmous" type="telephony" name="TMOUS">
+    <mode-ref node="network_cdma" />
+    <mode-ref node="network_gsm" />
+    <mode-ref node="network_wcdma" />
+    <mode-ref node="network_volte" />
+  </carrier-node>
+
+  <carrier-node id="carrier_sprint" type="telephony" name="SPRINT">
+    <mode-ref node="network_cdma" />
+    <mode-ref node="network_gsm" />
+    <mode-ref node="network_wcdma" />
+    <mode-ref node="network_volte" />
+  </carrier-node>
+
+  <carrier-node id="carrier_uscc" type="telephony" name="USCC">
+    <mode-ref node="network_cdma" />
+    <mode-ref node="network_gsm" />
+    <mode-ref node="network_wcdma" />
+    <mode-ref node="network_volte" />
+  </carrier-node>
+
+  <carrier-node id="carrier_vzw" type="telephony" name="VZW">
+    <mode-ref node="network_cdma" />
+    <mode-ref node="network_gsm" />
+    <mode-ref node="network_wcdma" />
+    <mode-ref node="network_volte" />
+  </carrier-node>
+
+  <!--
+    Modes Nodes.
+  -->
+  <!-- Network Modes -->
+  <mode-node id="network_none" type="network" name="None">
+    <mode-ref node="codec_none" />
+  </mode-node>
+
+  <mode-node id="network_cdma" type="network" name="CDMA">
+    <mode-ref node="codec_nb-13k" />
+    <mode-ref node="codec_so3" />
+    <mode-ref node="codec_so68" />
+    <mode-ref node="codec_nb-so73(cop1~cop7)" />
+    <mode-ref node="codec_wb-so73(cop0)" />
+  </mode-node>
+
+  <mode-node id="network_gsm" type="network" name="GSM">
+    <mode-ref node="codec_nb-amr_nb" />
+    <mode-ref node="codec_efr" />
+    <mode-ref node="codec_fr" />
+    <mode-ref node="codec_hr" />
+    <mode-ref node="codec_wb-amr_wb" />
+    <mode-ref node="codec_wb-eamr" />
+    <mode-ref node="codec_nb-eamr" />
+  </mode-node>
+
+  <mode-node id="network_wcdma" type="network" name="WCDMA">
+    <mode-ref node="codec_nb-amr_nb" />
+    <mode-ref node="codec_wb-amr_wb" />
+    <mode-ref node="codec_wb-eamr" />
+    <mode-ref node="codec_nb-eamr" />
+  </mode-node>
+
+  <mode-node id="network_volte" type="network" name="VOLTE">
+    <mode-ref node="codec_so73-wb" />
+    <mode-ref node="codec_so73-nb" />
+    <mode-ref node="codec_nb-amr_nb" />
+    <mode-ref node="codec_wb-amr_wb" />
+    <mode-ref node="codec_wb-eamr" />
+    <mode-ref node="codec_nb-eamr" />
+    <mode-ref node="codec_nb-evs" />
+    <mode-ref node="codec_16khz-evs-wb" />
+    <mode-ref node="codec_16khz-evs-nb" />
+    <mode-ref node="codec_32khz-evs-swb" />
+    <mode-ref node="codec_32khz-evs-wb" />
+    <mode-ref node="codec_32khz-evs-nb" />
+    <mode-ref node="codec_48khz-evs-fb" />
+    <mode-ref node="codec_48khz-evs-swb" />
+    <mode-ref node="codec_48khz-evs-wb" />
+    <mode-ref node="codec_48khz-evs-nb" />
+  </mode-node>
+
+  <!-- Volcodec Modes -->
+  <mode-node id="codec_none" type="codec" name="None">
+    <mode-ref node="band_wb" />
+    <mode-ref node="band_fb" />
+  </mode-node>
+
+  <mode-node id="codec_nb-13k" type="codec" name="NB-13K">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_so3" type="codec" name="SO3">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_so68" type="codec" name="SO68">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_nb-so73(cop1~cop7)" type="codec" name="NB-SO73 (COP1~COP7)">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_wb-so73(cop0)" type="codec" name="WB-SO73 (COP0)">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_nb-amr_nb" type="codec" name="NB-AMR_NB">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_efr" type="codec" name="EFR">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_fr" type="codec" name="FR">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_hr" type="codec" name="HR">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_wb-amr_wb" type="codec" name="WB-AMR_WB">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_wb-eamr" type="codec" name="WB-eAMR">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_nb-eamr" type="codec" name="NB-eAMR">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_so73-wb" type="codec" name="SO73-WB">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_so73-nb" type="codec" name="SO73-NB">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_nb-evs" type="codec" name="NB-EVS">
+    <mode-ref node="band_nb" />
+  </mode-node>
+
+  <mode-node id="codec_16khz-evs-wb" type="codec" name="16kHz-EVS-WB">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_16khz-evs-nb" type="codec" name="16kHz-EVS-NB">
+    <mode-ref node="band_wb" />
+  </mode-node>
+
+  <mode-node id="codec_32khz-evs-swb" type="codec" name="32kHz-EVS-SWB">
+    <mode-ref node="band_swb" />
+  </mode-node>
+
+  <mode-node id="codec_32khz-evs-wb" type="codec" name="32kHz-EVS-WB">
+    <mode-ref node="band_swb" />
+  </mode-node>
+
+  <mode-node id="codec_32khz-evs-nb" type="codec" name="32kHz-EVS-NB">
+    <mode-ref node="band_swb" />
+  </mode-node>
+
+  <mode-node id="codec_48khz-evs-fb" type="codec" name="48kHz-EVS-FB">
+    <mode-ref node="band_fb" />
+  </mode-node>
+
+  <mode-node id="codec_48khz-evs-swb" type="codec" name="48kHz-EVS-SWB">
+    <mode-ref node="band_fb" />
+  </mode-node>
+
+  <mode-node id="codec_48khz-evs-wb" type="codec" name="48kHz-EVS-WB">
+    <mode-ref node="band_fb" />
+  </mode-node>
+
+  <mode-node id="codec_48khz-evs-nb" type="codec" name="48kHz-EVS-NB">
+    <mode-ref node="band_fb" />
+  </mode-node>
+
+  <!-- Band Modes -->
+  <mode-node id="band_swb" type="band" name="SWB" />
+  <mode-node id="band_fb" type="band" name="FB" />
+  <mode-node id="band_nb" type="band" name="NB" />
+  <mode-node id="band_wb" type="band" name="WB" />
+
+  <!-- Sounds Modes -->
+  <mode-node id="sound_low_latency" type="sound" name="Low Latency">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+  </mode-node>
+
+  <mode-node id="sound_ultra_low_latency" type="sound" name="Ultra Low Latency">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+  </mode-node>
+
+  <mode-node id="sound_deep_buffer" type="sound" name="DeepBuffer">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+  </mode-node>
+
+  <mode-node id="sound_compress_offload" type="sound" name="Compress Offload">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+  </mode-node>
+
+  <mode-node id="sound_mono_stereo_low_latency" type="sound" name="Low Latency">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+    <mode-ref node="rate_96000" />
+  </mode-node>
+
+  <mode-node id="sound_mono_stereo_ultra_low_latency" type="sound" name="Ultra Low Latency">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+    <mode-ref node="rate_96000" />
+  </mode-node>
+
+  <mode-node id="sound_mono_stereo_deep_buffer" type="sound" name="DeepBuffer">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+    <mode-ref node="rate_96000" />
+  </mode-node>
+
+  <mode-node id="sound_mono_stereo_compress_offload" type="sound" name="Compress Offload">
+    <mode-ref node="rate_8000" />
+    <mode-ref node="rate_11025" />
+    <mode-ref node="rate_16000" />
+    <mode-ref node="rate_22050" />
+    <mode-ref node="rate_32000" />
+    <mode-ref node="rate_44100" />
+    <mode-ref node="rate_48000" />
+    <mode-ref node="rate_96000" />
+  </mode-node>
+
+  <!-- Sample Rate Modes -->
+  <mode-node id="rate_8000" type="rate" name="8000" />
+  <mode-node id="rate_11025" type="rate" name="11025" />
+  <mode-node id="rate_16000" type="rate" name="16000" />
+  <mode-node id="rate_22050" type="rate" name="22050" />
+  <mode-node id="rate_32000" type="rate" name="32000" />
+  <mode-node id="rate_44100" type="rate" name="44100" />
+  <mode-node id="rate_48000" type="rate" name="48000" />
+  <mode-node id="rate_96000" type="rate" name="96000" />
+
+</constraints>
