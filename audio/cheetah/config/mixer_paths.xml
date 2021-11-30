@@ -525,7 +525,6 @@
     </path>
 
     <path name="voice-callC usb-headset-mic">
-        <ctl name="AoC Modem Downlink ASRC Mode" value="ASP_OFF"/>
         <ctl name="EP4 TX Mixer USB_TX" value="1"/>
     </path>
 

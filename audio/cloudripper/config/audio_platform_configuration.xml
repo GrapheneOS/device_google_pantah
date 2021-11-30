@@ -281,8 +281,8 @@
     </device_handle>
 
     <external_module>
-        <!--module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/-->
-        <!--module libname="audio_fortemedia_aoc.so"/-->
+        <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
+        <module libname="audio_fortemedia_aoc.so"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
         <module libname="audio_bluenote_aoc.so"/>
