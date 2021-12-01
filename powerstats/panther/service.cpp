@@ -66,7 +66,7 @@ int main() {
 
     addGs201CommonDataProviders(p);
     addDisplay(p);
-    // TODO(b/206902456): Add NFC state residency
+    addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-4/i2c-st21nfc/power_stats");
 
     const std::string instance = std::string() + PowerStats::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(p->asBinder().get(), instance.c_str());
