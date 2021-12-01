@@ -17,8 +17,6 @@
     <ctl name="MIC3" value="0" />
     <ctl name="AoC Speaker Mixer ASP Mode" value="ASP_ON" />
 
-    <ctl name="TDM_0_RX Sample Rate" value="SR_48K" />
-    <ctl name="TDM_0_TX Sample Rate" value="SR_48K" />
     <ctl name="TDM_0_RX Mixer US" value="0" />
     <ctl name="US Record Enable" value="0" />
 
