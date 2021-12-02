@@ -33,8 +33,10 @@
     <!-- TDM 0 setting -->
     <ctl name="TDM_0_RX Chan" value="Four"/>
     <ctl name="TDM_0_RX Format" value="S32_LE"/>
+    <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
     <ctl name="TDM_0_TX Chan" value="Four"/>
     <ctl name="TDM_0_TX Format" value="S32_LE"/>
+    <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
 
     <!-- Haptic setting -->
     <ctl name="HAPTIC_RX Format" value="S32_LE"/>
