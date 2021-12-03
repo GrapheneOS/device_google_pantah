@@ -130,15 +130,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/pantah/powerstats/cloudripper
 
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g6_trusty
-include device/google/gs101/fingerprint/udfps_common.mk
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-include device/google/gs101/fingerprint/udfps_shipping.mk
-else
-include device/google/gs101/fingerprint/udfps_factory.mk
-endif
-
 # Vibrator HAL
 PRODUCT_VENDOR_PROPERTIES += \
 	ro.vendor.vibrator.hal.long.frequency.shift=15

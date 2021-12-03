@@ -610,8 +610,8 @@
     </path>
 
     <path name="speaker">
-        <ctl name="Boost Peak Current Limit" value="1.70A"/>
-        <ctl name="R Boost Peak Current Limit" value="1.90A"/>
+        <ctl name="Boost Peak Current Limit" value="2.50A"/>
+        <ctl name="R Boost Peak Current Limit" value="2.50A"/>
         <ctl name="Main AMP Enable Switch" value="1"/>
         <ctl name="R Main AMP Enable Switch" value="1"/>
     </path>
