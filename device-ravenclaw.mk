@@ -148,3 +148,5 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
 	WifiOverlay2022
 
+# Trusty liboemcrypto.so
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
