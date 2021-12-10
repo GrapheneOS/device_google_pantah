@@ -70,6 +70,13 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
+# NFC
+on property:ro.boot.hardware.revision=PROTO1.0
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.hardware.revision=PROTO1.1
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
 # SecureElement eSE2 cts mode
 on property:persist.vendor.se.ese2.mode=ctsmode
     write /sys/class/st33spi/st33spi/st33spi_state 33
