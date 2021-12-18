@@ -29,8 +29,8 @@ include device/google/pantah/audio/panther/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
-SOONG_CONFIG_lyric_tuning_product := panther
-SOONG_CONFIG_google3a_config_target_device := panther
+$(call soong_config_set,lyric,tuning_product,panther)
+$(call soong_config_set,google3a_config,target_device,panther)
 
 # Init files
 PRODUCT_COPY_FILES += \

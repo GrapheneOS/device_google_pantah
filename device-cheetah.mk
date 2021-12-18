@@ -30,8 +30,8 @@ include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 include device/google/gs201/uwb/uwb.mk
 
-SOONG_CONFIG_lyric_tuning_product := cheetah
-SOONG_CONFIG_google3a_config_target_device := cheetah
+$(call soong_config_set,lyric,tuning_product,cheetah)
+$(call soong_config_set,google3a_config,target_device,cheetah)
 
 # Init files
 PRODUCT_COPY_FILES += \
