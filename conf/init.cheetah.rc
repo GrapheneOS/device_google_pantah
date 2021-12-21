@@ -80,6 +80,18 @@ on property:ro.boot.hardware.revision=PROTO1.0
 on property:ro.boot.hardware.revision=PROTO1.1
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
 
+on property:ro.boot.cdt_hwid=0x00030303000100010001000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000000000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000100000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000200000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
 # SecureElement eSE2 cts mode
 on property:persist.vendor.se.ese2.mode=ctsmode
     write /sys/class/st33spi/st33spi/st33spi_state 33
