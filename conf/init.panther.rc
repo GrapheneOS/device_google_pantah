@@ -56,6 +56,9 @@ on post-fs-data
     setprop wifi.direct.interface p2p-dev-wlan0
     setprop wifi.aware.interface aware_nmi0
 
+    # Speaker amp permission
+    chmod 644 /mnt/vendor/persist/audio/speaker.cal
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1p2p_device=1 \
     -m/vendor/etc/wifi/p2p_supplicant.conf \

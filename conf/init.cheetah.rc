@@ -56,6 +56,9 @@ on post-fs-data
     setprop wifi.direct.interface p2p-dev-wlan0
     setprop wifi.aware.interface aware_nmi0
 
+    # Speaker amp permission
+    chmod 644 /mnt/vendor/persist/audio/speaker.cal
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1p2p_device=1 \
     -m/vendor/etc/wifi/p2p_supplicant.conf \
@@ -75,6 +78,18 @@ on property:ro.boot.hardware.revision=PROTO1.0
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
 
 on property:ro.boot.hardware.revision=PROTO1.1
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100010001000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000000000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000100000000000000
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.cdt_hwid=0x00030303000100000200000000000000
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
 
 # SecureElement eSE2 cts mode
