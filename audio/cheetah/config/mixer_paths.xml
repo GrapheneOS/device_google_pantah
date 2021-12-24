@@ -641,6 +641,7 @@
 
     <!-- Tx device -->
     <path name="handset-mic">
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -666,6 +667,7 @@
     </path>
 
     <path name="speaker-mic">
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -691,7 +693,7 @@
     </path>
 
     <path name="camcorder-mic">
-        <!--ctl name="Mic Spatial Module Enable" value="1"/-->
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -700,7 +702,7 @@
     </path>
 
     <path name="camcorder-mic-post">
-        <ctl name="MIC Record Soft Gain (dB)" value="22"/>
+        <ctl name="MIC Record Soft Gain (dB)" value="0"/>
     </path>
 
     <path name="voice-recog-mic">
