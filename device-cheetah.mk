@@ -33,6 +33,8 @@ include device/google/gs201/uwb/uwb.mk
 $(call soong_config_set,lyric,tuning_product,cheetah)
 $(call soong_config_set,google3a_config,target_device,cheetah)
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
+
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/pantah/conf/init.cheetah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cheetah.rc
