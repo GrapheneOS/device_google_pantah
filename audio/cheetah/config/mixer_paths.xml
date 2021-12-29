@@ -46,6 +46,10 @@
     <ctl name="RX Slots" id="0" value="2"/>
     <ctl name="RX Slots" id="1" value="3"/>
 
+    <!-- Cirrus default 96K -->
+    <ctl name="Default 96K" value="1"/>
+    <ctl name="R Default 96K" value="1"/>
+
     <!-- Cirrus Booster Amp TDM slot assignment-->
     <!-- RX slot -->
     <ctl name="ASPRX1 Slot Position" value="0"/>
