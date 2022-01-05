@@ -21,3 +21,10 @@ on property:graphics.display.kernel_idle_timer.enabled=true
 
 on property:graphics.display.kernel_idle_timer.enabled=false
     write /sys/devices/platform/exynos-drm/primary-panel/panel_idle "0"
+
+# Toggle high_sensitivity according to touch_sensitivity_mode
+on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_completed=1
+    write /sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs/high_sensitivity 0
+
+on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
+    write /sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs/high_sensitivity 1
