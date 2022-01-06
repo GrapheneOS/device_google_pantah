@@ -154,6 +154,9 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
 	ro.vendor.vibrator.hal.long.frequency.shift=15
 
+# Display
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
+
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	WifiOverlay2022
