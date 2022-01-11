@@ -154,6 +154,9 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
 	ro.vendor.vibrator.hal.long.frequency.shift=15
 
+# Display
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
+
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	WifiOverlay2022
@@ -169,3 +172,7 @@ else
         PRODUCT_COPY_FILES += \
                 device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
+
+# Set support one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
