@@ -34,7 +34,7 @@
         <!--intf id="BE_HW_RX_INTF_3" name="BT_RX"/-->
         <intf id="BE_VIRTUAL_VOICE_RX_TUNING" block_id="19"/>
         <intf id="BE_VIRTUAL_VOICE_TX_TUNING" block_id="19"/>
-        <intf id="BE_HW_TX_INTF_0" block_id="134,128"/>
+        <intf id="BE_HW_TX_INTF_0" block_id="134,128,137"/>
     </hw_intf>
 
     <product_lists>
@@ -247,6 +247,9 @@
         <cfg id="IN_USB_TTY_VCO_MIC_BE_CFG" be_path="NULL" codec_path="voice-speaker-mic"/>
         <cfg id="IN_USB_TTY_HCO_MIC_BE_CFG" be_path="usb-headset-mic" codec_path="usb-headset-mic" mux="HW_MUX_GP_0"/>
         <cfg id="IN_SPK_VI_BE_CFG" codec_path="NULL" be_path="spk-vi"/>
+        <cfg id="IN_HANDSET_MIC_BE_CFG" tuning_id="62"/>
+        <cfg id="IN_HANDSET_DUAL_MIC_BE_CFG" tuning_id="63"/>
+        <cfg id="IN_HANDSET_TRIPLE_MIC_BE_CFG" tuning_id="64"/>
         <cfg id="IN_CAMCORDER_LANDSCAPE_BE_CFG" tuning_id="70"/>
         <cfg id="IN_CAMCORDER_INVERT_LANDSCAPE_BE_CFG" tuning_id="71"/>
         <cfg id="IN_CAMCORDER_PORTRAIT_BE_CFG" tuning_id="72"/>
