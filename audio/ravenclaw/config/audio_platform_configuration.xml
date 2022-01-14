@@ -34,7 +34,7 @@
         <!--intf id="BE_HW_RX_INTF_3" name="BT_RX"/-->
         <intf id="BE_VIRTUAL_VOICE_RX_TUNING" block_id="19"/>
         <intf id="BE_VIRTUAL_VOICE_TX_TUNING" block_id="19"/>
-        <intf id="BE_HW_TX_INTF_0" block_id="134,128,137"/>
+        <intf id="BE_HW_TX_INTF_0" block_id="134,128"/>
     </hw_intf>
 
     <product_lists>
