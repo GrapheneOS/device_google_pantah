@@ -24,8 +24,8 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheet
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
 
-include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/cheetah/audio-tables.mk
+include device/google/gs201/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 include device/google/gs201/uwb/uwb.mk
