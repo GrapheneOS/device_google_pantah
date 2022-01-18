@@ -526,7 +526,7 @@
             "Type":"BCL_PERCENTAGE",
             "HotThreshold":[
                 "NAN",
-                "NAN",
+                80,
                 "NAN",
                 90,
                 93,
@@ -574,7 +574,34 @@
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
                 }
-	    ]
+            ]
+        },
+        {
+            "Name":"BCL_AUDIO_BAACL",
+            "Type":"BCL_VOLTAGE",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "soc",
+            "Combination":[
+                "battery",
+                "soc"
+            ],
+            "Coefficient":[
+                "-25000",
+                "80"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                2.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true
         },
         {
             "Name":"vdroop1",
@@ -605,7 +632,7 @@
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
                 }
-	    ]
+            ]
         },
         {
             "Name":"vdroop2",
@@ -636,7 +663,7 @@
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
                 }
-	    ]
+            ]
         },
         {
             "Name":"smpl_gm",
@@ -667,7 +694,7 @@
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
                 }
-	    ]
+            ]
         },
         {
             "Name":"ocp_cpu1",
