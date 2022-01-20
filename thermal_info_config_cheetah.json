@@ -448,7 +448,7 @@
             "Coefficient":[
                 "-10000",
                 "400",
-                "1150"
+                "1000"
             ],
             "HotThreshold":[
                 "NAN",
@@ -477,7 +477,7 @@
             "Coefficient":[
                 "-10000",
                 "400",
-                "1150"
+                "1000"
             ],
             "HotThreshold":[
                 "NAN",
@@ -518,6 +518,37 @@
             ]
         },
         {
+            "Name":"batoilo",
+            "Type":"BCL_CURRENT",
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                5000,
+                "NAN",
+                "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-2",
+                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                }
+	    ]
+        },
+        {
             "Name":"vdroop1",
             "Type":"BCL_VOLTAGE",
             "HotThreshold":[
@@ -525,13 +556,28 @@
                 "NAN",
                 "NAN",
                 "NAN",
-                1150,
+                1000,
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "Monitor":true
+            "Monitor":true,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-2",
+                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                }
+	    ]
         },
         {
             "Name":"vdroop2",
@@ -541,13 +587,28 @@
                 "NAN",
                 "NAN",
                 "NAN",
-                1350,
+                1200,
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "Monitor":true
+            "Monitor":true,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-2",
+                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                }
+	    ]
         },
         {
             "Name":"smpl_gm",
@@ -557,13 +618,28 @@
                 "NAN",
                 "NAN",
                 "NAN",
-                1400,
+                1100,
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "Monitor":true
+            "Monitor":true,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-2",
+                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                }
+	    ]
         },
         {
             "Name":"ocp_cpu1",
@@ -576,6 +652,15 @@
                 7000,
                 "NAN",
                 "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
@@ -593,6 +678,15 @@
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true
@@ -608,6 +702,15 @@
                 10500,
                 "NAN",
                 "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
@@ -625,6 +728,15 @@
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true
@@ -640,6 +752,15 @@
                 9000,
                 "NAN",
                 "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
@@ -657,6 +778,15 @@
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true
@@ -673,6 +803,15 @@
                 "NAN",
                 "NAN"
             ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
+            ],
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true
@@ -688,6 +827,15 @@
                 9000,
                 "NAN",
                 "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                100,
+                0.0,
+                0.0
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
