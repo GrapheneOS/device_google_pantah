@@ -16,10 +16,8 @@
 
 TARGET_LINUX_KERNEL_VERSION := 5.10
 
-DEVICE_USES_NO_TRUSTY := true
 USE_SWIFTSHADER := true
 BOARD_USES_SWIFTSHADER := true
-BOARD_WITHOUT_RADIO := true
 
 $(call inherit-product, device/google/gs201/aosp_common.mk)
 $(call inherit-product, device/google/pantah/device-panther.mk)
