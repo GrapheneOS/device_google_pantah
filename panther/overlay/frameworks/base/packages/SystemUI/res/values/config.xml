@@ -30,13 +30,13 @@
 
     <!-- Configure 13px of extra protection around the front-facing camera -->
     <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
-        M 494,66
+        M 494,67
         a 46,46 0 1 0 92,0
         a 46,46 0 1 0 -92,0
         Z
     </string>
 
-    <!-- Camera 1 is the front camera on barbet -->
+    <!-- Camera 1 is the front camera on P10 -->
     <string translatable="false" name="config_protectedCameraId">1</string>
 
     <!-- Comma-separated list of packages to exclude from camera protection. In our case,
