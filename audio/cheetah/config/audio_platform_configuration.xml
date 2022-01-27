@@ -284,7 +284,7 @@
     </device_handle>
 
     <external_module>
-        <module libname="audio_spk_35l41.so"/>
+        <module libname="audio_spk_35l41.so" argu="EnableDualControl"/>
         <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
         <module libname="audio_fortemedia_aoc.so"/>
         <module libname="liboffloadeffect.so"/>
