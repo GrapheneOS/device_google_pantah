@@ -23,6 +23,9 @@
     <dimen name="rounded_corner_radius_top">47px</dimen>
     <dimen name="rounded_corner_radius_bottom">48px</dimen>
 
+   <!-- for 20dp of padding at 3.5px/dp at default density -->
+    <dimen name="rounded_corner_content_padding">47px</dimen>
+
     <!-- Height of the status bar.
          Do not read this dimen directly. Use {@link SystemBarUtils#getStatusBarHeight} instead.
          -->
