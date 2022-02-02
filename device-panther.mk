@@ -21,6 +21,7 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/prebuilts/device-
 $(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/panther/device-vendor-panther.mk)
+$(call inherit-product-if-exists, vendor/google_devices/panther/proprietary/device-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
 
