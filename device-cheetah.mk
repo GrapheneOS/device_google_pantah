@@ -189,3 +189,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
+
+# DCK properties based on target
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.gms.dck.eligible_wcc=2
