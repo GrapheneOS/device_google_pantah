@@ -144,10 +144,6 @@ else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
 
-# Vibrator HAL
-PRODUCT_VENDOR_PROPERTIES += \
-	ro.vendor.vibrator.hal.long.frequency.shift=15
-
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	WifiOverlay2022
