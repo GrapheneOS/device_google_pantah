@@ -142,4 +142,9 @@
          hysteresis threshold. -->
     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">ge2ae</string>
+    <!-- MMS user agent profile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.gstatic.com/android/sms/GE2AE.xml</string>
 </resources>
