@@ -134,10 +134,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SOONG_NAMESPACES += \
     device/google/pantah/powerstats/cloudripper
 
-# Vibrator HAL
-PRODUCT_VENDOR_PROPERTIES += \
-	ro.vendor.vibrator.hal.long.frequency.shift=15
-
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	WifiOverlay2022
