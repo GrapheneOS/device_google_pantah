@@ -26,7 +26,11 @@ include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
-include device/google/gs201/uwb/uwb.mk
+
+ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
+include device/google/gs101/uwb/uwb.mk
+include device/google/pantah/uwb/uwb_calibration.mk
+endif
 
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
