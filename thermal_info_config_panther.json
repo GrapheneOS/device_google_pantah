@@ -410,6 +410,46 @@
             ]
         },
         {
+            "Name":"cellular-emergency",
+            "Type":"POWER_AMPLIFIER",
+            "VirtualSensor":true,
+            "TriggerSensor":"quiet_therm",
+            "Formula":"MAXIMUM",
+            "Combination":[
+                "VIRTUAL-QI-USB",
+                "VIRTUAL-USB-QUIET",
+                "VIRTUAL-GNSS-USB2"
+            ],
+            "Coefficient":[
+                "1.0",
+                "1.0",
+                "1.0"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "54.0",
+                "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.9,
+                0.0
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":0.001,
+            "Monitor":true,
+            "PollingDelay":300000,
+            "PassiveDelay":7000
+        },
+        {
             "Name":"LITTLE",
             "Type":"CPU",
             "HotThreshold":[
