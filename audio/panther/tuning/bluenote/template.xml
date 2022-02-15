@@ -135,6 +135,9 @@
       <param default="1" id="2" name="numCh_" type="uint32"/>
       <param default="1" id="3" name="chMask_" type="uint32"/>
       <param id="16" name="Simple_gain" type="float"/>
+      <param default="0" id="17" name="ch0_assignFrom" type="int32"/>
+      <param default="1" id="18" name="ch1_assignFrom" type="int32"/>
+      <param default="2" id="19" name="ch2_assignFrom" type="int32"/>
     </module>
     <module id="17" name="Wind Noise Reduction">
       <param default="0" id="0" max="3" name="opMode_" type="uint32"/>
@@ -231,6 +234,8 @@
         <param name="attackTime_ms" size="4" type="float"/>
         <param name="releaseTime_ms" size="4" type="float"/>
         <param name="hysteresis" size="4" type="float"/>
+        <param default="0" max="1" min="0" name="rms_manual_enable" type="uint32"/>
+        <param default="0" max="2" min="0" name="rms_channel" type="uint32"/>
       </struct>
       <struct id="17">
         <param max="30" min="-30" name="limiter_gain_dB" type="float"/>
