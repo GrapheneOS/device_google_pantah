@@ -19,4 +19,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_UWB_CAL_DIR)/UWB-calibration.conf:$(TARGET_COPY_OUT_VENDOR)/etc/UWB-calibration.conf \
     $(LOCAL_UWB_CAL_DIR)/UWB-calibration.conf:$(TARGET_COPY_OUT_VENDOR)/etc/UWB-calibration-unknown.conf \
     $(LOCAL_UWB_CAL_DIR)/UWB-calibration.conf:$(TARGET_COPY_OUT_VENDOR)/etc/UWB-calibration-default.conf \
-    vendor/qorvo/uwb/aosp/init.uwb.calib.xtal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.uwb.calib.sh \
