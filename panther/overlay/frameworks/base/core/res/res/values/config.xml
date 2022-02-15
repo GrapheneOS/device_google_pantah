@@ -44,6 +44,28 @@
          Must be in the range specified by minimum and maximum. -->
     <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.17429718</item>
 
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+        black in software (to avoid aliasing or emulate a cutout that is not physically existent).
+    -->
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
+    <!-- Display cutout configuration -->
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">
+        M 506,68
+        a 34,34 0 1 0 68,0 34,34 0 1 0 -68,0
+        Z
+        @left
+    </string>
+
+    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
+        M 480,0
+        h 145
+        v 118
+        h -145
+        Z
+        @left
+    </string>
+
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
       The N entries of this array define N  1 zones as follows:
          Zone 0:        0 <= LUX < array[0]
@@ -111,4 +133,17 @@
       <item>750.0</item>          <!--  10000 -20000 -->
       <item>1100.0</item>          <!--  20000+ -->
     </array>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">gqml3</string>
+    <!-- MMS user agent profile url -->
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.gstatic.com/android/sms/GQML3.xml</string>
 </resources>

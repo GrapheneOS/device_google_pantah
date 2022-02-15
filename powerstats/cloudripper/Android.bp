@@ -15,7 +15,7 @@
 soong_namespace {
     imports: [
         "hardware/google/pixel",
-        "device/google/gs201",
+        "device/google/gs201/powerstats",
     ]
 }
 

@@ -21,5 +21,6 @@ USES_DEVICE_GOOGLE_CLOUDRIPPER := true
 
 include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/gs201/prebuilts/BoardConfigVendor.mk
+-include vendor/google_devices/cheetah/proprietary/BoardConfigVendor.mk
 include device/google/pantah-sepolicy/cheetah-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk

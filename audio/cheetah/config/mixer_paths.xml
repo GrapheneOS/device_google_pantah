@@ -33,10 +33,10 @@
     <!-- TDM 0 setting -->
     <ctl name="TDM_0_RX Chan" value="Four"/>
     <ctl name="TDM_0_RX Format" value="S32_LE"/>
-    <ctl name="TDM_0_RX Sample Rate" value="SR_96K" />
+    <ctl name="TDM_0_RX Sample Rate" value="SR_48K" />
     <ctl name="TDM_0_TX Chan" value="Four"/>
     <ctl name="TDM_0_TX Format" value="S32_LE"/>
-    <ctl name="TDM_0_TX Sample Rate" value="SR_96K" />
+    <ctl name="TDM_0_TX Sample Rate" value="SR_48K" />
 
     <!-- Haptic setting -->
     <ctl name="HAPTIC_RX Format" value="S32_LE"/>
@@ -45,6 +45,10 @@
     <ctl name="HAPTIC_RX nSlot" value="Four"/>
     <ctl name="RX Slots" id="0" value="2"/>
     <ctl name="RX Slots" id="1" value="3"/>
+
+    <!-- Cirrus default 96K -->
+    <ctl name="Default 96K" value="0"/>
+    <ctl name="R Default 96K" value="0"/>
 
     <!-- Cirrus Booster Amp TDM slot assignment-->
     <!-- RX slot -->
@@ -619,10 +623,14 @@
 
     <path name="voice-speaker">
         <ctl name="R Boost Peak Current Limit" value="3.50A"/>
+        <ctl name="Boost Peak Current Limit" value="3.50A"/>
         <ctl name="ASPTX1 Slot Position" value="1"/>
         <ctl name="R ASPTX1 Slot Position" value="0"/>
-        <ctl name="R DSP RX2 Source" value="ASPRX2"/>
+    <!--<ctl name="R DSP RX2 Source" value="ASPRX2"/>-->
         <ctl name="R Main AMP Enable Switch" value="1"/>
+        <ctl name="Main AMP Enable Switch" value="1"/>
+        <ctl name="R AMP PCM Gain" value="17"/>
+        <ctl name="AMP PCM Gain" value="17"/>
     </path>
 
     <path name="speaker-safe">
@@ -641,6 +649,7 @@
 
     <!-- Tx device -->
     <path name="handset-mic">
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -666,6 +675,7 @@
     </path>
 
     <path name="speaker-mic">
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -691,7 +701,7 @@
     </path>
 
     <path name="camcorder-mic">
-        <!--ctl name="Mic Spatial Module Enable" value="1"/-->
+        <ctl name="Mic Spatial Module Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
@@ -700,7 +710,7 @@
     </path>
 
     <path name="camcorder-mic-post">
-        <ctl name="MIC Record Soft Gain (dB)" value="22"/>
+        <ctl name="MIC Record Soft Gain (dB)" value="0"/>
     </path>
 
     <path name="voice-recog-mic">

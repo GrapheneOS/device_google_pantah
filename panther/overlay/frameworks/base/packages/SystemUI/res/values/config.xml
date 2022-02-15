@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2021, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds. -->
+<resources>
+    <!-- Default rounded corner curve (a Bezier). Must match (the curved path in) rounded.xml.
+         Note that while rounded.xml includes the entire path (including the horizontal and vertical
+         corner edges), this pulls out just the curve.
+     -->
+    <string name="config_rounded_mask" translatable="false">M 71,0 C 33,0 22,-1 10,10 -1,22 0,33 0,71</string>
+
+    <bool name="config_roundedCornerMultipleRadius">true</bool>
+
+    <!-- Configure 13px of extra protection around the front-facing camera -->
+    <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
+        M 494,67
+        a 46,46 0 1 0 92,0
+        a 46,46 0 1 0 -92,0
+        Z
+    </string>
+
+    <!-- Camera 1 is the front camera on P10 -->
+    <string translatable="false" name="config_protectedCameraId">1</string>
+
+    <!-- Comma-separated list of packages to exclude from camera protection. In our case,
+    ignore the gaze detection package -->
+    <string translatable="false" name="config_cameraProtectionExcludedPackages">com.google.android.as</string>
+
+    <bool name="config_enableDisplayCutoutProtection">true</bool>
+</resources>
+

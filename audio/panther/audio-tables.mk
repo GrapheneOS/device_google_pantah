@@ -22,7 +22,8 @@ PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
 
 # AudioEffectHAL Configuration
 PRODUCT_COPY_FILES += \
@@ -45,6 +46,7 @@ PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSFREE.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HEADSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/mcps.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/mcps.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/waves_config.ini \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/waves_preset.mps
 

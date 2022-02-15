@@ -21,19 +21,21 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/prebuilts/device-
 $(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/panther/device-vendor-panther.mk)
+$(call inherit-product-if-exists, vendor/google_devices/panther/proprietary/device-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
 
-include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/panther/audio-tables.mk
+include device/google/gs201/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
-SOONG_CONFIG_lyric_tuning_product := panther
-SOONG_CONFIG_google3a_config_target_device := panther
+$(call soong_config_set,lyric,tuning_product,panther)
+$(call soong_config_set,google3a_config,target_device,panther)
 
 # Init files
 PRODUCT_COPY_FILES += \
+	device/google/pantah/conf/init.pantah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.pantah.rc \
 	device/google/pantah/conf/init.panther.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.panther.rc
 
 # Recovery files
@@ -51,6 +53,10 @@ PRODUCT_COPY_FILES += \
 # Display Config
 PRODUCT_COPY_FILES += \
         device/google/pantah/panther/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb
+
+# Display LBE
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
+
 # NFC
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
@@ -97,6 +103,10 @@ PRODUCT_PACKAGES += \
 	bt_vendor.conf
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.a2dp_offload.supported=true \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -145,9 +155,8 @@ else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
 
-# Vibrator HAL
-PRODUCT_VENDOR_PROPERTIES += \
-	ro.vendor.vibrator.hal.long.frequency.shift=15
+# Display
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
@@ -164,3 +173,15 @@ else
         PRODUCT_COPY_FILES += \
                 device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
+
+# Set support one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
+
+# Set zram size
+PRODUCT_VENDOR_PROPERTIES += \
+	vendor.zram.size=3g
+
+# DCK properties based on target
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.gms.dck.eligible_wcc=2

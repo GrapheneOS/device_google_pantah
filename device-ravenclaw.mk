@@ -26,10 +26,14 @@ include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
-include device/google/gs201/uwb/uwb.mk
 
-SOONG_CONFIG_lyric_tuning_product := cloudripper
-SOONG_CONFIG_google3a_config_target_device := cloudripper
+ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
+include device/google/gs101/uwb/uwb.mk
+include device/google/pantah/uwb/uwb_calibration.mk
+endif
+
+$(call soong_config_set,lyric,tuning_product,cloudripper)
+$(call soong_config_set,google3a_config,target_device,cloudripper)
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -92,6 +96,10 @@ PRODUCT_PACKAGES += \
 	bt_vendor.conf
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.a2dp_offload.supported=true \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -139,10 +147,6 @@ include device/google/gs101/fingerprint/udfps_shipping.mk
 else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
-
-# Vibrator HAL
-PRODUCT_VENDOR_PROPERTIES += \
-	ro.vendor.vibrator.hal.long.frequency.shift=15
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \

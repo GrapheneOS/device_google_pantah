@@ -21,21 +21,21 @@
                 <item>Earpiece</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
-                <!--item>Telephony Tx</item-->
-                <!--item>Voice Call And Telephony Rx</item-->
-                <!--item>Echo Ref In</item-->
+                <item>Telephony Tx</item>
+                <item>Voice Call And Telephony Rx</item>
+                <item>Echo Ref In</item>
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY AUDIO_OUTPUT_FLAG_FAST">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="deep buffer" role="source" flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
                     <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-                <!--mixPort name="compressed_offload" role="source"
+                <mixPort name="compressed_offload" role="source"
                          flags="AUDIO_OUTPUT_FLAG_DIRECT AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD AUDIO_OUTPUT_FLAG_NON_BLOCKING">
                     <profile name="" format="AUDIO_FORMAT_MP3"
                              samplingRates="8000 16000 24000 32000 44100 48000"
@@ -49,7 +49,7 @@
                     <profile name="" format="AUDIO_FORMAT_AAC_HE_V2"
                              samplingRates="8000 16000 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                </mixPort-->
+                </mixPort>
                 <mixPort name="haptic" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
@@ -63,17 +63,17 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-                <!--mixPort name="incall playback" role="source"
+                <mixPort name="incall playback" role="source"
                          flags="AUDIO_OUTPUT_FLAG_INCALL_MUSIC">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO" />
-                </mixPort-->
-                <!--mixPort name="voice call tx" role="source">
+                </mixPort>
+                <mixPort name="voice call tx" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO" />
-                </mixPort-->
+                </mixPort>
                 <mixPort name="voip_rx" role="source"
                          flags="AUDIO_OUTPUT_FLAG_VOIP_RX">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -89,16 +89,16 @@
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
-                <!--mixPort name="incall capture" role="sink">
+                <mixPort name="incall capture" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </mixPort-->
-                <!--mixPort name="voice call rx" role="sink">
+                </mixPort>
+                <mixPort name="voice call rx" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </mixPort-->
+                </mixPort>
                 <mixPort name="voip_tx" role="sink"
                          flags="AUDIO_INPUT_FLAG_VOIP_TX">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -114,13 +114,13 @@
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
-                <!--mixPort name="hifi_playback" role="source" /-->
-                <!--mixPort name="hifi_input" role="sink" /-->
-                <!--mixPort name="echo_ref_input" role="sink">
+                <mixPort name="hifi_playback" role="source" />
+                <mixPort name="hifi_input" role="sink" />
+                <mixPort name="echo_ref_input" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
-                </mixPort-->
+                </mixPort>
             </mixPorts>
             <devicePorts>
                 <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
@@ -185,42 +185,42 @@
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Speaker Safe"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Earpiece"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="USB Device Out"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload"/>
                 <route type="mix" sink="USB Headset Out"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload"/>
                 <route type="mix" sink="BT SCO"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="BT SCO Headset"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="BT SCO Car Kit"
-                       sources="primary output,deep buffer,haptic,voip_rx"/>
-                <!--route type="mix" sink="Telephony Tx" sources="incall playback,voice call tx" /-->
+                       sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
+                <route type="mix" sink="Telephony Tx" sources="incall playback,voice call tx" />
                 <route type="mix" sink="primary input"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
                 <route type="mix" sink="hotword input"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
-                <!--route type="mix" sink="incall capture" sources="Voice Call And Telephony Rx" /-->
-                <!--route type="mix" sink="voice call rx" sources="Voice Call And Telephony Rx" /-->
+                <route type="mix" sink="incall capture" sources="Voice Call And Telephony Rx" />
+                <route type="mix" sink="voice call rx" sources="Voice Call And Telephony Rx" />
                 <route type="mix" sink="voip_tx"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
                 <route type="mix" sink="fast input"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="mmap_no_irq_in"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
-                <!--route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" /-->
-                <!--route type="mix" sink="echo_ref_input" sources="Echo Ref In"/-->
+                <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
+                <route type="mix" sink="echo_ref_input" sources="Echo Ref In"/>
             </routes>
         </module>
         <!-- Bluetooth Audio HAL -->
