@@ -302,7 +302,7 @@
                 "45.0",
                 "46.5",
                 "52.0",
-                "150.0"
+                "55.0"
             ],
             "HotHysteresis":[
                 0.0,
@@ -363,7 +363,7 @@
                 "43.0",
                 "45.0",
                 "47.0",
-                "150.0"
+                "55.0"
             ],
             "HotHysteresis":[
                 0.0,
@@ -382,9 +382,72 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "fcc",
-                    "LimitInfo": [0, 0, 0, 0, 0, 0, 0]
+                    "LimitInfo": [0, 2, 3, 3, 4, 4, 4],
+                    "BindedPowerRail": "POWER_FOR_CHARGING_THROTTLING",
+                    "PowerThreshold": [500, 500, 500, 500, 0, 0, 0],
+                    "CdevFloorWithPowerLink": [0, 0, 2, 2, 4 ,4 ,4],
+                    "ReleaseLogic": "RELEASE_TO_FLOOR",
+                    "ThrottlingWithPowerLink":true
+                },
+                {
+                    "CdevRequest": "dc_icl",
+                    "LimitInfo": [0, 1, 2, 3, 4, 4, 4],
+                    "BindedPowerRail": "POWER_FOR_CHARGING_THROTTLING",
+                    "PowerThreshold": [500, 500, 500, 500, 0, 0, 0],
+                    "CdevFloorWithPowerLink": [0, 1, 2, 3, 4, 4, 4],
+                    "ReleaseLogic": "RELEASE_TO_FLOOR",
+                    "ThrottlingWithPowerLink":true
+                },
+                {
+                    "CdevRequest": "wlc_fcc",
+                    "LimitInfo": [0, 2, 2, 4, 5, 5, 5],
+                    "BindedPowerRail": "POWER_FOR_CHARGING_THROTTLING",
+                    "PowerThreshold": [500, 500, 500, 500, 0, 0, 0],
+                    "CdevFloorWithPowerLink": [0, 1, 1, 2, 5, 5, 5],
+                    "ReleaseLogic": "RELEASE_TO_FLOOR",
+                    "ThrottlingWithPowerLink":true
                 }
             ]
+        },
+        {
+            "Name":"cellular-emergency",
+            "Type":"POWER_AMPLIFIER",
+            "VirtualSensor":true,
+            "TriggerSensor":"quiet_therm",
+            "Formula":"MAXIMUM",
+            "Combination":[
+                "VIRTUAL-QI-USB",
+                "VIRTUAL-USB-QUIET",
+                "VIRTUAL-GNSS-USB2"
+            ],
+            "Coefficient":[
+                "1.0",
+                "1.0",
+                "1.0"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "54.0",
+                "NAN"
+            ],
+            "HotHysteresis":[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.9,
+                0.0
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":0.001,
+            "Monitor":true,
+            "PollingDelay":300000,
+            "PassiveDelay":7000
         },
         {
             "Name":"LITTLE",
@@ -974,6 +1037,14 @@
             "Type":"BATTERY"
         },
         {
+            "Name":"dc_icl",
+            "Type":"BATTERY"
+        },
+        {
+            "Name":"wlc_fcc",
+            "Type":"BATTERY"
+        },
+        {
             "Name":"tpu_cooling",
             "Type":"NPU",
             "WritePath":"/dev/thermal/cdev-by-name/tpu_cooling/user_vote"
@@ -1010,6 +1081,31 @@
         },
         {
             "Name":"S2S_VDD_G3D",
+            "PowerSampleDelay":14000,
+            "PowerSampleCount":5
+        },
+        {
+            "Name":"POWER_FOR_CHARGING_THROTTLING",
+            "VirtualRails":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":[
+                "VSYS_PWR_MODEM",
+                "S2M_VDD_CPUCL2",
+                "S3M_VDD_CPUCL1",
+                "S4M_VDD_CPUCL0",
+                "S5M_VDD_INT",
+                "S1M_VDD_MIF",
+                "S2S_VDD_G3D"
+            ],
+            "Coefficient":[
+                "1.0",
+                "1.0",
+                "1.0",
+                "1.0",
+                "1.0",
+                "1.0",
+                "1.0"
+            ],
             "PowerSampleDelay":14000,
             "PowerSampleCount":5
         }
