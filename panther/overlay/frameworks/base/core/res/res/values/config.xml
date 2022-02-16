@@ -159,4 +159,72 @@
 
     <!-- the number of the max cached processes in the system. -->
     <integer name="config_customizedMaxCachedProcesses">64</integer>
+
+    <integer-array name="config_ambientThresholdLevels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </integer-array>
+
+    <integer-array name="config_ambientBrighteningThresholds">
+        <item>11373</item>
+        <item>5000</item>
+        <item>4333</item>
+        <item>3666</item>
+        <item>3000</item>
+        <item>2760</item>
+        <item>2520</item>
+        <item>2280</item>
+        <item>2040</item>
+        <item>1800</item>
+        <item>800</item>
+        <item>527</item>
+        <item>500</item>
+        <item>470</item>
+        <item>396</item>
+        <item>322</item>
+        <item>248</item>
+        <item>174</item>
+        <item>99</item>
+        <item>99</item>
+    </integer-array>
+
+    <integer-array name="config_ambientDarkeningThresholds">
+        <item>853</item>
+        <item>700</item>
+        <item>683</item>
+        <item>666</item>
+        <item>650</item>
+        <item>640</item>
+        <item>630</item>
+        <item>620</item>
+        <item>610</item>
+        <item>600</item>
+        <item>500</item>
+        <item>500</item>
+        <item>440</item>
+        <item>385</item>
+        <item>348</item>
+        <item>311</item>
+        <item>274</item>
+        <item>237</item>
+        <item>200</item>
+        <item>200</item>
+    </integer-array>
 </resources>
