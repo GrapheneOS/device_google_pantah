@@ -150,4 +150,7 @@
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
+
+    <!-- the number of the max cached processes in the system. -->
+    <integer name="config_customizedMaxCachedProcesses">64</integer>
 </resources>
