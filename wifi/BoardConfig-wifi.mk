@@ -14,19 +14,22 @@
 # limitations under the License.
 #
 
+# WiFi
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
-# Wifi interface combination - {1 STA + 1 AP (bridged or single)} or {2 STA + 1 of (P2P or NAN)}
-WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{AP}, 1}}, {{{STA}, 2}, {{P2P, NAN}, 1}}
+# Wifi interface combination - {1 STA + 1 AP} or {1 STA + 1 AP_BRIDGED} or {1 STA + 1 P2P}
+# or {1 STA + 1 NAN} or {2 STA}
+WIFI_HAL_INTERFACE_COMBINATIONS := {{{STA}, 1}, {{P2P, NAN, AP, AP_BRIDGED}, 1}}, {{{STA}, 2}}
 WIFI_FEATURE_WIFI_EXT_HAL := true
 WIFI_FEATURE_IMU_DETECTION := true
 # Avoid Wifi reset on MAC Address change
 WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 WIFI_FEATURE_HOSTAPD_11AX := true
+BOARD_HOSTAPD_CONFIG_80211W_MFP_OPTIONAL := true
 
 PRODUCT_COPY_FILES += \
     device/google/pantah/wifi/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf \
