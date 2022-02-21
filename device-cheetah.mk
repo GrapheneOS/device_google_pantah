@@ -105,6 +105,10 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_COPY_FILES += \
 	device/google/pantah/thermal_info_config_cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
+# Power HAL config
+PRODUCT_COPY_FILES += \
+	device/google/pantah/powerhint-cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Bluetooth HAL
 DEVICE_MANIFEST_FILE += \
 	device/google/pantah/bluetooth/manifest_bluetooth.xml
