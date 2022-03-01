@@ -176,8 +176,8 @@
         <usecase id="UC_RAW_PLAYBACK" dev1="23" dyn_path="true" dsp_vol="false" mmap="true" period="64" period_num="32"/>
         <!-- for output with AUDIO_OUTPUT_FLAG_PRIMARY|AUDIO_OUTPUT_FLAG_FAST, 4 * 10ms buffer -->
         <usecase id="UC_LOW_LATENCY_PLAYBACK" dev1="1" dyn_path="true" dsp_vol="false" mmap="false" period="10" period_num="4"/>
-        <!-- for output with AUDIO_OUTPUT_FLAG_MMAP_NOIRQ, 80 periods * 48 frames/period(=1ms w/ 48k sample rate) * 4 bytes/frame = 15360 bytes -->
-        <usecase id="UC_MMAP_PLAYBACK" dev1="0" dyn_path="true" dsp_vol="false" mmap="true" period="1" period_num="80"/>
+        <!-- for output with AUDIO_OUTPUT_FLAG_MMAP_NOIRQ, 40 periods * 48 frames/period(=1ms w/ 48k sample rate) * 2ch *4(float) = 15360 bytes -->
+        <usecase id="UC_MMAP_PLAYBACK" dev1="0" dyn_path="true" dsp_vol="false" mmap="true" period="1" period_num="40"/>
         <!-- for output with AUDIO_OUTPUT_FLAG_DEEP_BUFFER, 4 * 20ms buffer -->
         <usecase id="UC_DEEP_BUFFER_PLAYBACK" dev1="5" dyn_path="true" dsp_vol="false" mmap="false" period="20" period_num="4"/>
         <!-- dev1: voice-call downlink dev2: voice-clal uplink -->
