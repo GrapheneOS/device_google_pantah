@@ -150,19 +150,19 @@
             "Multiplier":0.001
         },
         {
-            "Name":"VIRTUAL-QI-USB",
+            "Name":"VIRTUAL-GNSS-DISP",
             "Type":"UNKNOWN",
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":[
-                "qi_therm",
-                "usb_pwr_therm"
+                "gnss_tcxo_therm",
+                "disp_therm"
             ],
             "Coefficient":[
-                "0.650",
-                "0.350"
+                "0.5",
+                "0.5"
             ],
-            "Offset":-1300,
+            "Offset":-200,
             "HotThreshold":[
                 "NAN",
                 "NAN",
@@ -237,10 +237,36 @@
                 "quiet_therm"
             ],
             "Coefficient":[
-                "0.760",
-                "0.240"
+                "0.650",
+                "0.350"
             ],
-            "Offset":-2100,
+            "Offset":-1700,
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-NEUTRAL-USB",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":[
+                "neutral_therm",
+                "usb_pwr_therm"
+            ],
+            "Coefficient":[
+                "0.460",
+                "0.540"
+            ],
+            "Offset":-3200,
             "HotThreshold":[
                 "NAN",
                 "NAN",
@@ -260,7 +286,7 @@
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
             "Combination":[
-                "VIRTUAL-QI-USB",
+                "VIRTUAL-GNSS-DISP",
                 "VIRTUAL-USB2-QUIET",
                 "VIRTUAL-QUIET-USB2"
             ],
@@ -327,9 +353,11 @@
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
             "Combination":[
-                "VIRTUAL-NEUTRAL-QUIET"
+                "VIRTUAL-NEUTRAL-QUIET",
+                "VIRTUAL-NEUTRAL-USB"
             ],
             "Coefficient":[
+                "1.0",
                 "1.0"
             ],
             "HotThreshold":[
@@ -392,7 +420,7 @@
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
             "Combination":[
-                "VIRTUAL-QI-USB",
+                "VIRTUAL-GNSS-DISP",
                 "VIRTUAL-USB2-QUIET",
                 "VIRTUAL-QUIET-USB2"
             ],
