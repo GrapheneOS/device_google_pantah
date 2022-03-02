@@ -64,7 +64,6 @@
        MultiCarrLnaMask="L1_EXT_ON|L5_EXT_ON"
        RfType="GL_RF_4776_BRCM"
        ExtL5Bias="13.0"
-       EnableFilteringForLTEB13="true"
 
        WarmStandbyTimeout1Seconds="10"
        WarmStandbyTimeout2Seconds="15"
