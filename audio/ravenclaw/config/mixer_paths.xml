@@ -623,10 +623,6 @@
         <ctl name="R Main AMP Enable Switch" value="1"/>
     </path>
 
-    <path name="voice-dual-speaker">
-        <path name="speaker" />
-    </path>
-
     <path name="speaker-safe">
         <ctl name="R Boost Peak Current Limit" value="3.50A"/>
         <ctl name="R Main AMP Enable Switch" value="1"/>
