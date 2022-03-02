@@ -46,13 +46,14 @@
        GnssYearOfHardware="2020"
        CpGuardTimeSec="1"
        CpLppGuardTimeSec="1"
-       CpLppeCancelDbhOnAgnssProvideLoc="true"
-       CpLppeUseAgnssLocForEmptyDbh="true"
        IgnoreInjectedSystemTime="true"
 
        AttributionAppPkgName="com.google.android.carrierlocation"
 
        AssertEnabled="false"
+       CpLppeCancelDbhOnAgnssProvideLoc="true"
+       CpLppeUseAgnssLocForEmptyDbh="true"
+       RuntimeSwLteFilterEnable="true"
   />
 
   <gll
