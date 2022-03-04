@@ -604,7 +604,7 @@
     <path name="voice-handset">
         <ctl name="Boost Peak Current Limit" value="3.50A"/>
         <ctl name="PCM Source" value="ASP"/>
-        <ctl name="AMP PCM Gain" value="6"/>
+        <ctl name="AMP PCM Gain" value="7"/>
         <ctl name="Main AMP Enable Switch" value="1"/>
     </path>
 
@@ -632,6 +632,10 @@
         <ctl name="Main AMP Enable Switch" value="1"/>
         <ctl name="R AMP PCM Gain" value="17"/>
         <ctl name="AMP PCM Gain" value="17"/>
+    </path>
+
+    <path name="voice-dual-speaker">
+        <path name="speaker" />
     </path>
 
     <path name="speaker-safe">
