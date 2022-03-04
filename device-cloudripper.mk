@@ -153,3 +153,7 @@ else
         PRODUCT_COPY_FILES += \
                 device/google/pantah/location/gps_user.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
+
+# Set zram size
+PRODUCT_VENDOR_PROPERTIES += \
+	vendor.zram.size=3g
