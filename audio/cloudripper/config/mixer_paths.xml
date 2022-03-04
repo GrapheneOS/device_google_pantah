@@ -640,6 +640,10 @@
         <ctl name="R AMP Enable Switch" value="1"/>
     </path>
 
+    <path name="voice-dual-speaker">
+        <path name="speaker" />
+    </path>
+
     <path name="speaker-safe">
         <ctl name="R AMP Enable Switch" value="1"/>
     </path>
