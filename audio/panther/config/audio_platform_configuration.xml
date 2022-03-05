@@ -187,7 +187,7 @@
         <!-- dev1: audio dev2: haptic -->
         <usecase id="UC_HAPTIC_AUDIO" dev1="2" dev2="7" period="10" period_num="4"/>
         <!-- for VOIP output, 4 * 10ms buffer -->
-        <usecase id="UC_VOIP_PLAYBACK" dev1="16" dyn_path="true" dsp_vol="true" mmap="false" period="10" period_num="4"/>
+        <usecase id="UC_VOIP_PLAYBACK" dev1="16" dyn_path="true" dsp_vol="true" mmap="false" period="10" period_num="4" pcm_ch="2"/>
         <!-- for input -->
         <usecase id="UC_AUDIO_RECORD" dev1="8" dyn_path="true" dsp_vol="false" mmap="false" period="20" period_num="4"/>
         <usecase id="UC_HOSTLESS_UL" dev1="15"/>
@@ -286,7 +286,7 @@
     <external_module>
         <module libname="audio_spk_35l41.so" argu="EnableDualControl"/>
         <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
-        <module libname="audio_fortemedia_aoc.so"/>
+        <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:1,USB:1 VoIP_Rate=32000"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
         <module libname="audio_bluenote_aoc.so"/>
