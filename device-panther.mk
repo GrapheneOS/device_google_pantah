@@ -46,6 +46,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/google/pantah/init.insmod.panther.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.panther.cfg
 
+# MIPI Coex Configs
+PRODUCT_COPY_FILES += \
+    device/google/pantah/panther/radio/panther_display_primary_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/display_primary_mipi_coex_table.csv \
+    device/google/pantah/panther/radio/panther_camera_front_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_mipi_coex_table.csv \
+    device/google/pantah/panther/radio/panther_camera_rear_wide_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_rear_wide_mipi_coex_table.csv \
+    device/google/pantah/panther/radio/panther_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv
+
 # Camera
 PRODUCT_COPY_FILES += \
 	device/google/pantah/media_profiles_panther.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
