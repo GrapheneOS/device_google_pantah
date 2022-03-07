@@ -2,6 +2,10 @@
 import /vendor/etc/init/hw/init.gs201.rc
 import /vendor/etc/init/hw/init.pantah.rc
 
+on property:vendor.device.modules.ready=1
+    # Start the twoshay touch service
+    start twoshay
+
 on property:ro.boot.cdt_hwid=0x00030303000100010001000000000000
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
 
