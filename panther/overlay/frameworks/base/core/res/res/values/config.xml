@@ -157,6 +157,11 @@
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
 
+    <!-- How long it takes for the HW to start illuminating after the illumination is requested.
+      It takes 3 frames to enable the Local High-Brightness Mode (LHBM), which at 90 Hz screen
+      refresh rate equates to a 34 ms delay. -->
+    <integer name="config_udfps_illumination_transition_ms">34</integer>
+
     <!-- the number of the max cached processes in the system. -->
     <integer name="config_customizedMaxCachedProcesses">64</integer>
 
