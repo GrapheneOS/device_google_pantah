@@ -2,6 +2,10 @@
 import /vendor/etc/init/hw/init.gs201.rc
 import /vendor/etc/init/hw/init.pantah.rc
 
+on property:vendor.device.modules.ready=1
+    # Start the twoshay touch service
+    start twoshay
+
 # Toggle glove_mode according to touch_sensitivity_mode
 on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_completed=1
     write /proc/focaltech_touch/high_sensitivity 0
