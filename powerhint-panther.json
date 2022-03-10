@@ -386,6 +386,33 @@
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
+    },
+    {
+      "Name": "CPU_LITTLE_TSKIN_BYPASS",
+      "Path": "/dev/thermal/cdev-by-name/thermal-cpufreq-0/user_vote_bypass",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0
+    },
+    {
+      "Name": "CPU_MID_TSKIN_BYPASS",
+      "Path": "/dev/thermal/cdev-by-name/thermal-cpufreq-1/user_vote_bypass",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0
+    },
+    {
+      "Name": "CPU_BIG_TSKIN_BYPASS",
+      "Path": "/dev/thermal/cdev-by-name/thermal-cpufreq-2/user_vote_bypass",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0
     }
   ],
   "Actions": [
@@ -1301,6 +1328,24 @@
       "Value": "9999999"
     },
     {
+      "PowerHint": "FACE_UNLOCK_BOOST",
+      "Node": "CPU_LITTLE_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FACE_UNLOCK_BOOST",
+      "Node": "CPU_MID_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FACE_UNLOCK_BOOST",
+      "Node": "CPU_BIG_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
       "PowerHint": "FP_BOOST",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 1000,
@@ -1311,6 +1356,90 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 1000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "CPU_LITTLE_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "CPU_MID_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "CPU_BIG_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "CPU_LITTLE_TSKIN_BYPASS",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "CPU_MID_TSKIN_BYPASS",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "CPU_BIG_TSKIN_BYPASS",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "BigControlTempSet",
+      "Duration": 0,
+      "Value": "80000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "MidControlTempSet",
+      "Duration": 0,
+      "Value": "80000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "LittleControlTempSet",
+      "Duration": 0,
+      "Value": "80000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "G3dControlTempSet",
+      "Duration": 0,
+      "Value": "80000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "BigSwitchOnTempSet",
+      "Duration": 0,
+      "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "MidSwitchOnTempSet",
+      "Duration": 0,
+      "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "LittleSwitchOnTempSet",
+      "Duration": 0,
+      "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN_EMERGENCY",
+      "Node": "G3dSwitchOnTempSet",
+      "Duration": 0,
+      "Value": "60000"
     },
     {
       "PowerHint": "ML_ACC",
