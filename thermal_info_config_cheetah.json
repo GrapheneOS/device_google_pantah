@@ -593,24 +593,16 @@
             "Type":"BCL_PERCENTAGE",
             "HotThreshold":[
                 "NAN",
+                20,
                 80,
                 "NAN",
-                90,
-                93,
-                96,
+                "NAN",
+                "NAN",
                 "NAN"
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "Monitor":true,
-            "PollingDelay":300000,
-            "PassiveDelay":5000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 7, 7, 10, 10]
-                }
-            ]
+            "Monitor":true
         },
         {
             "Name":"batoilo",
@@ -639,15 +631,15 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 10, 11, 11]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
@@ -705,15 +697,15 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
                     "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
                 },
                 {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [0, 0, 0, 0, 2, 2, 2]
+                },
+                {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
@@ -744,15 +736,15 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 15, 15, 15]
+                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
@@ -783,15 +775,15 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
+                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 13, 13, 13]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
