@@ -299,15 +299,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUPowerPolicy",
-      "Path": "/sys/devices/platform/28000000.mali/power_policy",
-      "Values": [
-        "always_on",
-        "adaptive"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "BigControlTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_2_temp",
       "Values": [
@@ -463,12 +454,6 @@
       "Node": "MemFreq",
       "Duration": 5000,
       "Value": "3172000"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GPUPowerPolicy",
-      "Duration": 5000,
-      "Value": "always_on"
     },
     {
       "PowerHint": "DISPLAY_INACTIVE",
