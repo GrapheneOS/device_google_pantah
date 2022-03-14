@@ -150,19 +150,19 @@
             "PassiveDelay":7000
         },
         {
-            "Name":"VIRTUAL-QI-USB",
+            "Name":"VIRTUAL-QUIET-USB",
             "Type":"UNKNOWN",
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":[
-                "qi_therm",
+                "quiet_therm",
                 "usb_pwr_therm"
             ],
             "Coefficient":[
-                "0.680",
-                "0.320"
+                "0.973",
+                "0.027"
             ],
-            "Offset":-2800,
+            "Offset":-2200,
             "HotThreshold":[
                 "NAN",
                 "NAN",
@@ -185,8 +185,8 @@
                 "quiet_therm"
             ],
             "Coefficient":[
-                "0.52",
-                "0.48"
+                "0.580",
+                "0.420"
             ],
             "Offset":-500,
             "HotThreshold":[
@@ -211,10 +211,10 @@
                 "disp_therm"
             ],
             "Coefficient":[
-                "0.7",
-                "0.3"
+                "0.550",
+                "0.450"
             ],
-            "Offset":-500,
+            "Offset":3000,
             "HotThreshold":[
                 "NAN",
                 "NAN",
@@ -237,10 +237,10 @@
                 "quiet_therm"
             ],
             "Coefficient":[
-                "0.4",
-                "0.6"
+                "0.6",
+                "0.4"
             ],
-            "Offset":-1500,
+            "Offset":-400,
             "HotThreshold":[
                 "NAN",
                 "NAN",
@@ -286,7 +286,7 @@
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
             "Combination":[
-                "VIRTUAL-QI-USB",
+                "VIRTUAL-QUIET-USB",
                 "VIRTUAL-USB-QUIET",
                 "VIRTUAL-GNSS-DISP"
             ],
@@ -420,7 +420,7 @@
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
             "Combination":[
-                "VIRTUAL-QI-USB",
+                "VIRTUAL-QUIET-USB",
                 "VIRTUAL-USB-QUIET",
                 "VIRTUAL-GNSS-DISP"
             ],
