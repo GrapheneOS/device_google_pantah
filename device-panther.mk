@@ -154,7 +154,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/panther
+    device/google/pantah/powerstats/panther \
+    device/google/pantah
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
@@ -203,3 +204,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
+
+# SKU specific RROs
+PRODUCT_PACKAGES += \
+    SettingsOverlayG03Z5
