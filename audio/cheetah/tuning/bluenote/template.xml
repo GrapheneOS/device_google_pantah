@@ -275,7 +275,7 @@
       <block id="137">
         <moduleRef id="14"/>
         <moduleRef id="7"/>
-        <moduleRef id="32"/>
+        <moduleRef id="8"/>
       </block>
     </signalflow>
     <signalflow id="1000" name="Smart Feature">
