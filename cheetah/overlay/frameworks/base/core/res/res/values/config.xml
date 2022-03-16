@@ -233,4 +233,7 @@
         <item>200</item>
         <item>200</item>
     </integer-array>
+
+    <!-- UDFPS does not support gestures -->
+    <bool name="config_fingerprintSupportsGestures">false</bool>
 </resources>
