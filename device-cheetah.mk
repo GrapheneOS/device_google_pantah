@@ -216,3 +216,9 @@ PRODUCT_PACKAGES += \
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J
+
+# userdebug specific
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    PRODUCT_COPY_FILES += \
+        device/google/gs201/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
+endif
