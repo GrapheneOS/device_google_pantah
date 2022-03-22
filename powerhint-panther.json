@@ -138,7 +138,7 @@
         "108",
         "1",
         "107",
-        "42"
+        "53"
       ],
       "ResetOnInit": true
     },
@@ -147,7 +147,7 @@
       "Path": "/sys/kernel/vendor_sched/sf_uclamp_min",
       "Values": [
         "125",
-        "65",
+        "78",
         "30"
       ],
       "ResetOnInit": true
@@ -401,13 +401,13 @@
       "PowerHint": "INTERACTION",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "65"
+      "Value": "78"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "65"
+      "Value": "78"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1109,7 +1109,7 @@
       "PowerHint": "REFRESH_60FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "42"
+      "Value": "53"
     },
     {
       "PowerHint": "ADPF_DISABLE_TA_BOOST",
