@@ -239,4 +239,7 @@
     <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true -->
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
+
+    <!-- If face auth sends the user directly to home/last open app, or stays on keyguard by default-->
+    <bool name="config_faceAuthDismissesKeyguard">false</bool>
 </resources>
