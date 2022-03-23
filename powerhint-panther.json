@@ -126,7 +126,8 @@
       "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
       "Values": [
         "20 5 80",
-        "20 10 80"
+        "20 10 80",
+        "80 10 80"
       ],
       "ResetOnInit": true
     },
@@ -725,7 +726,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "MIFTargetLoad",
       "Duration": 0,
-      "Value": "20 10 80"
+      "Value": "80 10 80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -803,7 +804,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MIFTargetLoad",
       "Duration": 0,
-      "Value": "20 10 80"
+      "Value": "80 10 80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
