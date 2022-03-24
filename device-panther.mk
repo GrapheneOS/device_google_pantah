@@ -223,3 +223,7 @@ endif
 # Fingerprint als feed forward
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true
+
+# Vibrator HAL
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.vibrator.hal.chirp.enabled=1
