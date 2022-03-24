@@ -126,7 +126,8 @@
       "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
       "Values": [
         "20 5 80",
-        "20 10 80"
+        "20 10 80",
+        "80 10 80"
       ],
       "ResetOnInit": true
     },
@@ -136,10 +137,9 @@
       "Values": [
         "553",
         "108",
-        "43",
         "1",
         "107",
-        "42"
+        "53"
       ],
       "ResetOnInit": true
     },
@@ -148,7 +148,7 @@
       "Path": "/sys/kernel/vendor_sched/sf_uclamp_min",
       "Values": [
         "125",
-        "65",
+        "78",
         "30"
       ],
       "ResetOnInit": true
@@ -402,13 +402,13 @@
       "PowerHint": "INTERACTION",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "65"
+      "Value": "78"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "65"
+      "Value": "78"
     },
     {
       "PowerHint": "LAUNCH",
@@ -726,7 +726,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "MIFTargetLoad",
       "Duration": 0,
-      "Value": "20 10 80"
+      "Value": "80 10 80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -804,7 +804,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MIFTargetLoad",
       "Duration": 0,
-      "Value": "20 10 80"
+      "Value": "80 10 80"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1110,7 +1110,7 @@
       "PowerHint": "REFRESH_60FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "42"
+      "Value": "53"
     },
     {
       "PowerHint": "ADPF_DISABLE_TA_BOOST",
