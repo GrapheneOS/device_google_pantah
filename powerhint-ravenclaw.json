@@ -100,7 +100,7 @@
     },
     {
       "Name": "CPUUtilThreshold",
-      "Path": "/sys/kernel/vendor_sched/util_threshold",
+      "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
         "1280",
         "1100"
@@ -119,7 +119,7 @@
     },
     {
       "Name": "TAUClampBoost",
-      "Path": "/sys/kernel/vendor_sched/ta_uclamp_min",
+      "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "0",
 	"553",
@@ -133,7 +133,7 @@
     },
     {
       "Name": "CDPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_idle",
+      "Path": "/proc/vendor_sched/cam_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -178,7 +178,7 @@
     },
     {
       "Name": "TAPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_high_cap",
+      "Path": "/proc/vendor_sched/ta_prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -187,7 +187,7 @@
     },
     {
       "Name": "TAPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_idle",
+      "Path": "/proc/vendor_sched/ta_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -196,7 +196,7 @@
     },
     {
       "Name": "CDPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_high_cap",
+      "Path": "/proc/vendor_sched/cam_prefer_high_cap",
       "Values": [
         "1",
         "0"
