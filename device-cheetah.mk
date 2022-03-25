@@ -129,6 +129,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 
+# Spatial Audio
+PRODUCT_PACKAGES += \
+	libspatialaudio \
+	librondo
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
@@ -231,3 +236,7 @@ endif
 # Fingerprint als feed forward
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true
+
+# Vibrator HAL
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.vibrator.hal.chirp.enabled=1
