@@ -5,6 +5,7 @@
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
         "3172000",
+        "2028000",
         "1014000",
         "421000"
       ],
@@ -113,7 +114,7 @@
     },
     {
       "Name": "CPUUtilThreshold",
-      "Path": "/sys/kernel/vendor_sched/util_threshold",
+      "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
         "1280",
         "1100"
@@ -133,7 +134,7 @@
     },
     {
       "Name": "TAUClampBoost",
-      "Path": "/sys/kernel/vendor_sched/ta_uclamp_min",
+      "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "553",
         "158",
@@ -146,7 +147,7 @@
     },
     {
       "Name": "SFUClampBoost",
-      "Path": "/sys/kernel/vendor_sched/sf_uclamp_min",
+      "Path": "/proc/vendor_sched/sf_uclamp_min",
       "Values": [
         "125",
         "78",
@@ -156,7 +157,7 @@
     },
     {
       "Name": "MLUclampBoost",
-      "Path": "/sys/kernel/vendor_sched/nnapi_uclamp_min",
+      "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
           "154",
           "512"
@@ -166,7 +167,7 @@
     },
     {
       "Name": "CDPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_idle",
+      "Path": "/proc/vendor_sched/cam_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -220,7 +221,7 @@
     },
     {
       "Name": "TAPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_high_cap",
+      "Path": "/proc/vendor_sched/ta_prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -229,7 +230,7 @@
     },
     {
       "Name": "TAPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_idle",
+      "Path": "/proc/vendor_sched/ta_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -238,7 +239,7 @@
     },
     {
       "Name": "CDPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_high_cap",
+      "Path": "/proc/vendor_sched/cam_prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -553,6 +554,12 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 1000,
       "Value": "1401000"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "MemFreq",
+      "Duration": 1000,
+      "Value": "2028000"
     },
     {
       "PowerHint": "CAMERA_SHOT",
