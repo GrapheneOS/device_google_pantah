@@ -18,6 +18,7 @@ TARGET_BOOTLOADER_BOARD_NAME := cheetah
 TARGET_SCREEN_DENSITY := 560
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_CLOUDRIPPER := true
+BOARD_KERNEL_CMDLINE += swiotlb=noforce
 
 include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/gs201/prebuilts/BoardConfigVendor.mk
