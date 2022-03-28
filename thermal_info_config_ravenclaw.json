@@ -149,7 +149,217 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "PollingDelay":60000,
+            "PassiveDelay":7000,
             "Monitor":true
+        },
+        {
+            "Name":"BCL_TPU_LOW_TEMP",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "TriggerSensor": "ocp_tpu",
+            "Combination":[
+                "ocp_tpu",
+                "battery"
+            ],
+            "Coefficient":[
+                "1",
+                "-10"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                11500,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "tpu_cooling",
+                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
+                }
+            ]
+        },
+        {
+            "Name":"BCL_GPU_LOW_TEMP",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "TriggerSensor": "ocp_gpu",
+            "Combination":[
+                "ocp_gpu",
+                "battery"
+            ],
+            "Coefficient":[
+                "1",
+                "-10"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                13000,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [0, 0, 0, 0, 9, 9, 9]
+                }
+            ]
+        },
+        {
+            "Name":"BCL_BATOILO_GPU_LOW_TEMP",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "batoilo",
+            "Combination":[
+                "batoilo",
+                "ocp_gpu",
+                "battery"
+            ],
+            "Coefficient":[
+                "5000",
+                "12000",
+                "-1000"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                3.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [0, 0, 0, 0, 9, 9, 9]
+                }
+            ]
+        },
+        {
+            "Name":"BCL_BATOILO_TPU_LOW_TEMP",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "batoilo",
+            "Combination":[
+                "batoilo",
+                "ocp_tpu",
+                "battery"
+            ],
+            "Coefficient":[
+                "5000",
+                "10500",
+                "-1000"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                3.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "tpu_cooling",
+                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
+                }
+            ]
+        },
+        {
+            "Name":"BCL_BATOILO_GPU",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "batoilo",
+            "Combination":[
+                "batoilo",
+                "ocp_gpu"
+            ],
+            "Coefficient":[
+                "5000",
+                "12000"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                2.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                }
+            ]
+        },
+        {
+            "Name":"BCL_BATOILO_TPU",
+            "Type":"BCL_CURRENT",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "batoilo",
+            "Combination":[
+                "batoilo",
+                "ocp_tpu"
+            ],
+            "Coefficient":[
+                "5000",
+                "10500"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                2.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true,
+            "PassiveDelay":500,
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "tpu_cooling",
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
+                }
+            ]
         },
         {
             "Name":"batoilo",
@@ -175,20 +385,40 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
+            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                },
-                {
-                    "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
-	    ]
+            ]
+        },
+        {
+            "Name":"BCL_AUDIO_BAACL",
+            "Type":"BCL_VOLTAGE",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "soc",
+            "Combination":[
+                "battery",
+                "soc"
+            ],
+            "Coefficient":[
+                "-25000",
+                "80"
+            ],
+            "HotThreshold":[
+                "NAN",
+                "NAN",
+                "NAN",
+                "NAN",
+                2.0,
+                "NAN",
+                "NAN"
+            ],
+            "VrThreshold":"NAN",
+            "Multiplier":1,
+            "Monitor":true
         },
         {
             "Name":"vdroop1",
@@ -214,6 +444,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
+            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -227,7 +458,7 @@
                     "CdevRequest": "tpu_cooling",
                     "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
-	    ]
+            ]
         },
         {
             "Name":"vdroop2",
@@ -253,6 +484,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
+            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -266,7 +498,7 @@
                     "CdevRequest": "tpu_cooling",
                     "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
-	    ]
+            ]
         },
         {
             "Name":"smpl_gm",
@@ -292,6 +524,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
+            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -305,7 +538,7 @@
                     "CdevRequest": "tpu_cooling",
                     "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
-	    ]
+            ]
         },
         {
             "Name":"ocp_cpu1",
@@ -415,7 +648,7 @@
                 "NAN",
                 "NAN",
                 "NAN",
-                9000,
+                12000,
                 "NAN",
                 "NAN"
             ],
