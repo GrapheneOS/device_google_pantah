@@ -70,3 +70,6 @@ on property:ro.boot.hardware.revision=PROTO1.1
 # SecureElement eSE2 cts mode
 on property:persist.vendor.se.ese2.mode=ctsmode
     write /sys/class/st33spi/st33spi/st33spi_state 33
+
+on init && property:ro.boot.hw.soc.rev=0
+    setprop vendor.powerhal.config powerhint-a0.json
