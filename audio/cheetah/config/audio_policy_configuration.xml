@@ -182,6 +182,8 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
+                <devicePort tagName="BLE Headset Mic" type="AUDIO_DEVICE_IN_BLE_HEADSET" role="source">
+                </devicePort>
                 <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source">
                 </devicePort>
                 <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source">
@@ -222,13 +224,13 @@
                        sources="primary output,deep buffer,haptic,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Telephony Tx" sources="incall playback,voice call tx" />
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
+                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic,BLE Headset Mic"/>
                 <route type="mix" sink="hotword input"
-                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
+                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic,BLE Headset Mic"/>
                 <route type="mix" sink="incall capture" sources="Voice Call And Telephony Rx" />
                 <route type="mix" sink="voice call rx" sources="Voice Call And Telephony Rx" />
                 <route type="mix" sink="voip_tx"
-                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic"/>
+                       sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In,BT SCO Headset Mic,BLE Headset Mic"/>
                 <route type="mix" sink="fast input"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="mmap_no_irq_in"
