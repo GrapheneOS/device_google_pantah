@@ -113,6 +113,8 @@ PRODUCT_COPY_FILES += \
 # Power HAL config
 PRODUCT_COPY_FILES += \
 	device/google/pantah/powerhint-cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+PRODUCT_COPY_FILES += \
+	device/google/pantah/powerhint-cheetah-a0.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint-a0.json
 
 # Bluetooth HAL
 DEVICE_MANIFEST_FILE += \
