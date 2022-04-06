@@ -105,6 +105,12 @@
     <ctl name="ASP TX4 Source" value="Zero" />
     <ctl name="R ASP TX4 Source" value="Zero" />
 
+    <!-- Cirrus fast switch init -->
+    <ctl name="Fast Use Case Switch Enable" value="0" />
+    <ctl name="Fast Use Case Delta File" value="fast_switch5.txt" />
+    <ctl name="R Fast Use Case Switch Enable" value="0" />
+    <ctl name="R Fast Use Case Delta File" value="fast_switch5.txt" />
+
     <!-- default EP volume -->
     <ctl name="PCM Playback Switch" value="1"/>
     <ctl name="PCM Playback Volume" value="10"/>
@@ -635,6 +641,14 @@
         <ctl name="R Main AMP Enable Switch" value="1"/>
     </path>
 
+    <path name="speaker-post">
+        <!-- load Bypass FIR -->
+        <ctl name="Fast Use Case Delta File" value="fast_switch3.txt" />
+        <ctl name="Fast Use Case Switch Enable" value="1" />
+        <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
+        <ctl name="R Fast Use Case Switch Enable" value="1" />
+    </path>
+
     <path name="voice-speaker">
         <ctl name="R Boost Peak Current Limit" value="3.50A"/>
         <ctl name="Boost Peak Current Limit" value="3.50A"/>
@@ -643,17 +657,32 @@
     <!--<ctl name="R DSP RX2 Source" value="ASPRX2"/>-->
         <ctl name="R Main AMP Enable Switch" value="1"/>
         <ctl name="Main AMP Enable Switch" value="1"/>
-        <ctl name="R AMP PCM Gain" value="17"/>
-        <ctl name="AMP PCM Gain" value="17"/>
+    </path>
+
+    <path name="voice-speaker-post">
+        <!-- load Enable FIR -->
+        <ctl name="Fast Use Case Delta File" value="fast_switch1.txt" />
+        <ctl name="Fast Use Case Switch Enable" value="1" />
+        <ctl name="R Fast Use Case Delta File" value="fast_switch2.txt" />
+        <ctl name="R Fast Use Case Switch Enable" value="1" />
+        <ctl name="Digital PCM Volume" value="800"/>
     </path>
 
     <path name="voice-dual-speaker">
-        <path name="speaker" />
+        <!-- Speaker Separation -->
+        <path name="voice-speaker" />
+        <path name="voice-speaker-post" />
     </path>
 
     <path name="speaker-safe">
         <ctl name="R Boost Peak Current Limit" value="3.50A"/>
         <ctl name="R Main AMP Enable Switch" value="1"/>
+    </path>
+
+    <path name="speaker-safe-post">
+        <!-- load Bypass FIR -->
+        <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
+        <ctl name="R Fast Use Case Switch Enable" value="1" />
     </path>
 
     <path name="usb-tty-full">
