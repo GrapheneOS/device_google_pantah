@@ -247,6 +247,12 @@
         <item>200</item>
     </integer-array>
 
+     <!-- The stable device width and height in pixels. If these aren't set to a positive number
+          then the device will use the width and height of the default display the first time it's
+          booted.  -->
+    <integer name="config_stableDeviceDisplayWidth">1440</integer>
+    <integer name="config_stableDeviceDisplayHeight">3120</integer>
+
     <!-- UDFPS does not support gestures -->
     <bool name="config_fingerprintSupportsGestures">false</bool>
 
