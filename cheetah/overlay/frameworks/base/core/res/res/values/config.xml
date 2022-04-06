@@ -67,6 +67,19 @@
         @left
     </string>
 
+    <!-- Not allow to switch to higher refresh rate when display brightness setting is
+         equal or less than this value -->
+    <integer-array name="config_brightnessThresholdsOfPeakRefreshRate">
+        <!-- System brightness for 5 nits: round((5-2)/(1000-2)*(255-1)+1) = 2 -->
+        <item>2</item> <!-- 15% UI brightness -->
+    </integer-array>
+    <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
+        <item>5</item>
+    </integer-array>
+
+    <!-- default refresh rate in the zone defined by birghtness and ambient thresholds -->
+    <integer name="config_defaultRefreshRateInZone">120</integer>
+
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
       The N entries of this array define N  1 zones as follows:
          Zone 0:        0 <= LUX < array[0]
@@ -92,9 +105,11 @@
         <item>665</item>
         <item>1097</item>
         <item>1808</item>
-        <item>2981</item>
-        <item>5000</item>
+        <item>3000</item>
+        <item>6000</item>
+        <item>9000</item>
         <item>10000</item>
+        <item>14000</item>
         <item>20000</item>
     </integer-array>
 
@@ -128,11 +143,13 @@
       <item>125.1221991</item>    <!--  403 - 665 -->
       <item>161.6875093</item>    <!--  665 - 1097 -->
       <item>208.4885553</item>    <!--  1097 - 1808 -->
-      <item>264.8221315</item>    <!--  1808 - 2981 -->
-      <item>327.8974352</item>    <!--  2981 - 5000 -->
-      <item>401.1676739</item>    <!--  5000 - 10000 -->
-      <item>750.0</item>          <!--  10000 -20000 -->
-      <item>1100.0</item>          <!--  20000+ -->
+      <item>264.8221315</item>    <!--  1808 - 3000 -->
+      <item>328.5869521</item>    <!--  3000 - 6000 -->
+      <item>627.4315413</item>    <!--  6000 - 9000 -->
+      <item>826.8584866</item>    <!--  9000 - 10000 -->
+      <item>867.0494638</item>    <!--  10000 -14000 -->
+      <item>901.4496943</item>    <!--  14000 -20000 -->
+      <item>1100.0</item>         <!--  20000+ -->
     </array>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
@@ -233,4 +250,20 @@
         <item>200</item>
         <item>200</item>
     </integer-array>
+
+     <!-- The stable device width and height in pixels. If these aren't set to a positive number
+          then the device will use the width and height of the default display the first time it's
+          booted.  -->
+    <integer name="config_stableDeviceDisplayWidth">1440</integer>
+    <integer name="config_stableDeviceDisplayHeight">3120</integer>
+
+    <!-- UDFPS does not support gestures -->
+    <bool name="config_fingerprintSupportsGestures">false</bool>
+
+    <!-- Boolean indicating if restoring network selection should be skipped -->
+    <!-- The restoring is handled by modem if it is true -->
+    <bool translatable="false" name="skip_restoring_network_selection">true</bool>
+
+    <!-- If face auth sends the user directly to home/last open app, or stays on keyguard by default-->
+    <bool name="config_faceAuthDismissesKeyguard">false</bool>
 </resources>

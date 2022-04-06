@@ -100,7 +100,7 @@
     },
     {
       "Name": "CPUUtilThreshold",
-      "Path": "/sys/kernel/vendor_sched/util_threshold",
+      "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
         "1280",
         "1100"
@@ -119,7 +119,7 @@
     },
     {
       "Name": "TAUClampBoost",
-      "Path": "/sys/kernel/vendor_sched/ta_uclamp_min",
+      "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "0",
 	"553",
@@ -133,7 +133,7 @@
     },
     {
       "Name": "CDPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_idle",
+      "Path": "/proc/vendor_sched/cam_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -177,17 +177,8 @@
       "ResetOnInit": true
     },
     {
-      "Name": "F2fsRecessModeEnable",
-      "Path": "/dev/sys/fs/by-name/userdata/gc_urgent",
-      "Values": [
-        "2",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "TAPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_high_cap",
+      "Path": "/proc/vendor_sched/ta_prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -196,7 +187,7 @@
     },
     {
       "Name": "TAPreferIdle",
-      "Path": "/sys/kernel/vendor_sched/ta_prefer_idle",
+      "Path": "/proc/vendor_sched/ta_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -205,7 +196,7 @@
     },
     {
       "Name": "CDPreferHighCap",
-      "Path": "/sys/kernel/vendor_sched/cam_prefer_high_cap",
+      "Path": "/proc/vendor_sched/cam_prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -361,12 +352,6 @@
       "Value": "INTERACTION_60"
     },
     {
-      "PowerHint": "DEVICE_IDLE",
-      "Node": "F2fsRecessModeEnable",
-      "Duration": 0,
-      "Value": "2"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 5000,
@@ -394,12 +379,6 @@
       "Node": "MemFreq",
       "Duration": 5000,
       "Value": "3172000"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "F2fsRecessModeEnable",
-      "Duration": 0,
-      "Value": "2"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",

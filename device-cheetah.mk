@@ -113,6 +113,8 @@ PRODUCT_COPY_FILES += \
 # Power HAL config
 PRODUCT_COPY_FILES += \
 	device/google/pantah/powerhint-cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+PRODUCT_COPY_FILES += \
+	device/google/pantah/powerhint-cheetah-a0.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint-a0.json
 
 # Bluetooth HAL
 DEVICE_MANIFEST_FILE += \
@@ -128,6 +130,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+
+# Spatial Audio
+PRODUCT_PACKAGES += \
+	libspatialaudio \
+	librondo
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -165,8 +172,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/cheetah
-
+    device/google/pantah/powerstats/cheetah \
+    device/google/pantah
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
@@ -212,3 +219,26 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
+
+# SKU specific RROs
+PRODUCT_PACKAGES += \
+    SettingsOverlayGFE4J
+
+# Bluetooth LE Audio Hardware offload
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.leaudio_offload.supported=true \
+    persist.bluetooth.leaudio_offload.disabled=false
+
+# userdebug specific
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    PRODUCT_COPY_FILES += \
+        device/google/gs201/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
+endif
+
+# Fingerprint als feed forward
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.udfps.als_feed_forward_supported=true
+
+# Vibrator HAL
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.vibrator.hal.chirp.enabled=1
