@@ -73,3 +73,24 @@ on property:persist.vendor.se.ese2.mode=ctsmode
 
 on init && property:ro.boot.hw.soc.rev=0
     setprop vendor.powerhal.config powerhint-a0.json
+
+# Touch
+on property:vendor.device.modules.ready=1
+    chown system system /proc/focaltech_touch/Channel_Num
+    chown system system /proc/focaltech_touch/FW_Version
+    chown system system /proc/focaltech_touch/INT_PIN
+    chown system system /proc/focaltech_touch/force_active
+    chown system system /proc/focaltech_touch/Reset_Pin
+    chown system system /proc/focaltech_touch/fw_grip
+    chown system system /proc/focaltech_touch/fw_palm
+    chown system system /proc/focaltech_touch/heatmap_onoff
+    chown system system /proc/focaltech_touch/mf_mode
+    chown system system /proc/focaltech_touch/selftest/Baseline
+    chown system system /proc/focaltech_touch/selftest/Noise
+    chown system system /proc/focaltech_touch/selftest/Panel_Differ
+    chown system system /proc/focaltech_touch/selftest/Rawdata
+    chown system system /proc/focaltech_touch/selftest/Rawdata_Uniformity
+    chown system system /proc/focaltech_touch/selftest/Scap_CB
+    chown system system /proc/focaltech_touch/selftest/Scap_Rawdata
+    chown system system /proc/focaltech_touch/selftest/Short
+    chown system system /proc/focaltech_touch/selftest/Strength
