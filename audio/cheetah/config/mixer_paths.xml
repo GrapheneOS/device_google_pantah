@@ -431,6 +431,18 @@
         <path name="compress-offload-playback" />
     </path>
 
+    <path name="immersive-playbackP">
+        <ctl name="TDM_0_RX Mixer EP4" value="1"/>
+    </path>
+
+    <path name="immersive-playbackP bt">
+        <ctl name="BT_RX Mixer EP4" value="1"/>
+    </path>
+
+    <path name="immersive-playbackP usb-headphone">
+        <ctl name="USB_RX Mixer EP4" value="1"/>
+    </path>
+
     <path name="voip-playbackP">
         <ctl name="TDM_0_RX Mixer VOIP" value="1"/>
     </path>
