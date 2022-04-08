@@ -244,6 +244,7 @@
     <ctl name="AoC Modem Downlink ASRC Mode" value="ASP_ON"/>
     <ctl name="Voice Call Mic Source" value="Builtin_MIC"/>
     <ctl name="Mic Spatial Module Enable" value="0"/>
+    <ctl name="Audio Capture Eraser Enable" value="0"/>
 
     <!-- audio PDM mic default state -->
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="-1"/>
@@ -430,6 +431,18 @@
 
     <path name="compress-offload-playbackP hearing-aid">
         <path name="compress-offload-playback" />
+    </path>
+
+    <path name="immersive-playbackP">
+        <ctl name="TDM_0_RX Mixer EP4" value="1"/>
+    </path>
+
+    <path name="immersive-playbackP bt">
+        <ctl name="BT_RX Mixer EP4" value="1"/>
+    </path>
+
+    <path name="immersive-playbackP usb-headphone">
+        <ctl name="USB_RX Mixer EP4" value="1"/>
     </path>
 
     <path name="voip-playbackP">
@@ -735,9 +748,23 @@
         <ctl name="MIC Record Soft Gain (dB)" value="22"/>
     </path>
 
-    <path name="unprocessed-mic">
+    <path name="voice-recog-aec-mic">
+        <ctl name="Audio Capture Eraser Enable" value="1"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="1"/>
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1"/>
+        <ctl name="MIC DC Blocker" value="1"/>
+        <ctl name="Audio Capture Mic Source" value="ERASER"/>
+    </path>
+
+    <path name="voice-recog-aec-mic-post">
+        <ctl name="MIC Record Soft Gain (dB)" value="0"/>
+    </path>
+
+    <path name="unprocessed-mic">
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
+        <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
         <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1"/>
         <ctl name="MIC DC Blocker" value="1"/>
