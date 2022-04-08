@@ -188,7 +188,10 @@ endif
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
-	WifiOverlay2022
+	WifiOverlay2022_C10 \
+	PixelWifiOverlay2022_C10
+
+PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts

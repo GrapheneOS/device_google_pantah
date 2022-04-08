@@ -10,8 +10,8 @@ package {
 }
 
 runtime_resource_overlay {
-    name: "WifiOverlay2022",
-    theme: "WifiOverlay2022",
+    name: "WifiOverlay2022_P10",
+    theme: "WifiOverlay2022_P10",
     certificate: "platform",
     sdk_version: "current",
     product_specific: true
