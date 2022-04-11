@@ -142,22 +142,14 @@
                 "NAN",
                 80,
                 "NAN",
-                90,
-                93,
-                96,
+                "NAN",
+                "NAN",
+                "NAN",
                 "NAN"
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "Monitor":true,
-            "PollingDelay":300000,
-            "PassiveDelay":5000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 7, 7, 10, 10]
-                }
-            ]
+            "Monitor":true
         },
         {
             "Name":"batoilo",
