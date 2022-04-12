@@ -68,7 +68,7 @@
        MultiCarrRFMode="GL_MULTI_CARR_RF_MODE_L1_L5"
        MultiCarrLnaMask="L1_EXT_ON|L5_EXT_ON"
        RfType="GL_RF_4776_BRCM"
-       ExtL5Bias="13.0"
+       ExtL5Bias="21.2"
 
        WarmStandbyTimeout1Seconds="10"
        WarmStandbyTimeout2Seconds="15"
