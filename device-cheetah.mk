@@ -209,6 +209,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
 
+# Increment the SVN for any official public releases
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.build.svn=1
+
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gms.dck.eligible_wcc=2

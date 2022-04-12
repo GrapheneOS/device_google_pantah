@@ -598,7 +598,7 @@
             "Type":"BCL_PERCENTAGE",
             "HotThreshold":[
                 "NAN",
-                20,
+                "NAN",
                 80,
                 "NAN",
                 "NAN",
@@ -607,8 +607,6 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "PollingDelay":60000,
-            "PassiveDelay":7000,
             "Monitor":true
         },
         {
