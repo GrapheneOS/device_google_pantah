@@ -5,7 +5,6 @@
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
         "3172000",
-        "2028000",
         "1014000",
         "421000"
       ],
@@ -602,12 +601,6 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 1000,
       "Value": "1401000"
-    },
-    {
-      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
-      "Node": "MemFreq",
-      "Duration": 1000,
-      "Value": "2028000"
     },
     {
       "PowerHint": "CAMERA_SHOT",
