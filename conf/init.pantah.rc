@@ -50,6 +50,10 @@ on post-fs-data
     # Speaker amp permission
     chmod 644 /mnt/vendor/persist/audio/speaker.cal
 
+    # Allow secure_element group to read / write ST33 SPI state
+    chown secure_element secure_element  /sys/class/st33spi/st33spi/st33spi_state
+    chmod 0660  /sys/class/st33spi/st33spi/st33spi_state
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1p2p_device=1 \
     -m/vendor/etc/wifi/p2p_supplicant.conf \
