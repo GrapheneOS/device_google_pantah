@@ -234,6 +234,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false
 
+# Bluetooth EWP test tool
+PRODUCT_PACKAGES_DEBUG += \
+    ewp_tool
+
 # userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
