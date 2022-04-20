@@ -84,7 +84,8 @@ DEVICE_MANIFEST_FILE += \
 
 # Thermal Config
 PRODUCT_COPY_FILES += \
-	device/google/pantah/thermal_info_config_ravenclaw.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+	device/google/pantah/thermal_info_config_ravenclaw.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
+	device/google/pantah/thermal_info_config_A0.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_A0.json
 
 # Power HAL config
 PRODUCT_COPY_FILES += \
