@@ -70,7 +70,9 @@ int main() {
     addGs201CommonDataProviders(p);
     addDisplay(p);
 
-    if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-3/i2c-st21nfc/power_stats", &buffer)) {
+    if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-2/i2c-st21nfc/power_stats", &buffer)) {
+        addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-2/i2c-st21nfc/power_stats");
+    } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-3/i2c-st21nfc/power_stats", &buffer)) {
         addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-3/i2c-st21nfc/power_stats");
     } else if (!stat("/sys/devices/platform/10970000.hsi2c/i2c-4/i2c-st21nfc/power_stats", &buffer)) {
         addNFC(p, "/sys/devices/platform/10970000.hsi2c/i2c-4/i2c-st21nfc/power_stats");
