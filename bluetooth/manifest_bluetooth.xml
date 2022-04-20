@@ -35,4 +35,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>hardware.google.bluetooth.ewp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothEwp</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
