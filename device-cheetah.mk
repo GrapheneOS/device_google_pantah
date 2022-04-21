@@ -109,7 +109,8 @@ DEVICE_MANIFEST_FILE += \
 
 # Thermal Config
 PRODUCT_COPY_FILES += \
-	device/google/pantah/thermal_info_config_cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+	device/google/pantah/thermal_info_config_cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
+	device/google/pantah/thermal_info_config_A0.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_A0.json
 
 # Power HAL config
 PRODUCT_COPY_FILES += \
@@ -187,7 +188,10 @@ endif
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
-	WifiOverlay2022
+	WifiOverlay2022_C10 \
+	PixelWifiOverlay2022_C10
+
+PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
