@@ -195,6 +195,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "FGPreferIdle",
+      "Path": "/proc/vendor_sched/fg_prefer_idle",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CDPreferHighCap",
       "Path": "/proc/vendor_sched/cam_prefer_high_cap",
       "Values": [
@@ -335,6 +344,12 @@
       "PowerHint": "REFRESH_60FPS",
       "Type": "MaskHint",
       "Value": "INTERACTION_120"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "FGPreferIdle",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "DISPLAY_IDLE",
