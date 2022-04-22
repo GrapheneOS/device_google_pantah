@@ -137,6 +137,7 @@
       "Values": [
         "553",
         "108",
+        "43",
         "1",
         "107",
         "53"
@@ -229,6 +230,15 @@
     {
       "Name": "TAPreferIdle",
       "Path": "/proc/vendor_sched/ta_prefer_idle",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "FGPreferIdle",
+      "Path": "/proc/vendor_sched/fg_prefer_idle",
       "Values": [
         "0",
         "1"
@@ -1229,6 +1239,12 @@
       "PowerHint": "REFRESH_60FPS",
       "Type": "MaskHint",
       "Value": "BOOST_90HZ"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "FGPreferIdle",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "DISPLAY_IDLE",

@@ -56,14 +56,14 @@
             "PassiveDelay":7000
         },
         {
-            "Name":"VIRTUAL-QUIET-USB",
+            "Name":"VIRTUAL-GNSS-QUIET",
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":["quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.973, 0.027],
-            "Offset":-2200,
+            "Combination":["gnss_tcxo_therm", "quiet_therm"],
+            "Coefficient":[1.3, -0.3],
+            "Offset":-1800,
             "Multiplier":0.001
         },
         {
@@ -84,8 +84,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["gnss_tcxo_therm", "disp_therm"],
-            "Coefficient":[0.550, 0.450],
-            "Offset":3000,
+            "Coefficient":[0.9, 0.1],
+            "Offset":-700,
             "Multiplier":0.001
         },
         {
@@ -95,29 +95,40 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["neutral_therm", "quiet_therm"],
-            "Coefficient":[0.6, 0.4],
-            "Offset":-400,
+            "Coefficient":[0.3, 0.7],
+            "Offset":-500,
             "Multiplier":0.001
         },
         {
-            "Name":"VIRTUAL-NEUTRAL-USB",
+            "Name":"VIRTUAL-QI-QUIET",
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":["neutral_therm", "usb_pwr_therm"],
-            "Coefficient":[0.6, 0.4],
-            "Offset":-4000,
+            "Combination":["qi_therm", "quiet_therm"],
+            "Coefficient":[0.3, 0.7],
+            "Offset":-1400,
+        },
+        {
+            "Name":"VIRTUAL-QI-DISP",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["qi_therm","disp_therm"],
+            "Coefficient":[0.2, 0.8],
+            "Offset":-900,
             "Multiplier":0.001
         },
         {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
+            "Version":"0.5",
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-QUIET-USB", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP"],
-            "Coefficient":[1.0, 1.0, 1.0],
+            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 43.0, 45.0, 46.5, 52.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
             "Multiplier":0.001,
@@ -142,8 +153,8 @@
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-QUIET-USB", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP"],
-            "Coefficient":[1.0, 1.0, 1.0],
+            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 42.0, 44.0, 46.5, 52.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.9, 1.9, 1.9],
             "Multiplier":0.001,
@@ -202,7 +213,7 @@
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-NEUTRAL-QUIET", "VIRTUAL-NEUTRAL-USB"],
+            "Combination":["VIRTUAL-QI-QUIET", "VIRTUAL-QI-DISP"],
             "Coefficient":[1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 41.0, 43.0, 45.0, 47.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.9, 1.9, 1.9],
@@ -246,8 +257,8 @@
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-QUIET-USB", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP"],
-            "Coefficient":[1.0, 1.0, 1.0],
+            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", 54.0, "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 0.0, 1.9, 0.0],
             "Multiplier":0.001,
@@ -260,24 +271,8 @@
             "Type":"UNKNOWN",
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":[
-                "usb_pwr_therm",
-                "usb_pwr_therm2"
-            ],
-            "Coefficient":[
-                "1.0",
-                "-1.0"
-            ],
-            "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN"
-            ],
-            "VrThreshold":"NAN",
+            "Combination":["usb_pwr_therm", "usb_pwr_therm2"],
+            "Coefficient":[1.0, -1.0],
             "Multiplier":0.001
         },
         {
@@ -285,24 +280,8 @@
             "Type":"UNKNOWN",
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":[
-                "usb_pwr_therm",
-                "neutral_therm"
-            ],
-            "Coefficient":[
-                "1.0",
-                "-1.0"
-            ],
-            "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN"
-            ],
-            "VrThreshold":"NAN",
+            "Combination":["usb_pwr_therm", "neutral_therm"],
+            "Coefficient":[1.0, -1.0],
             "Multiplier":0.001
         },
         {
@@ -311,25 +290,9 @@
             "VirtualSensor":true,
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
-            "Combination":[
-                "usb_pwr_therm",
-                "USB-MINUS-USB2",
-                "USB-MINUS-NEUTRAL"
-            ],
-            "Coefficient":[
-                "40000",
-                "1500",
-                "3000"
-            ],
-            "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "3.0",
-                "NAN",
-                "NAN"
-            ],
+            "Combination":["usb_pwr_therm", "USB-MINUS-USB2", "USB-MINUS-NEUTRAL"],
+            "Coefficient":[40000, 1500, 3000],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "3.0", "NAN", "NAN"],
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "usbc-port",
@@ -347,25 +310,9 @@
             "VirtualSensor":true,
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
-            "Combination":[
-                "usb_pwr_therm",
-                "USB-MINUS-USB2",
-                "USB-MINUS-NEUTRAL"
-            ],
-            "Coefficient":[
-                "42000",
-                "2000",
-                "4000"
-            ],
-            "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "3.0",
-                "NAN"
-            ],
+            "Combination":["usb_pwr_therm", "USB-MINUS-USB2", "USB-MINUS-NEUTRAL"],
+            "Coefficient":[42000, 2000, 4000],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "3.0", "NAN"],
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
