@@ -47,8 +47,6 @@
         <item>0</item> <!-- 4: SUN -->
     </integer-array>
 
-    <bool name="config_roundedCornerMultipleRadius">true</bool>
-
     <!-- Configure 13px of extra protection around the front-facing camera -->
     <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
         M 662,72
