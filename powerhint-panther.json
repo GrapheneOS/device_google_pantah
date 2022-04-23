@@ -136,11 +136,10 @@
       "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "553",
-        "108",
-        "43",
+        "127",
         "1",
-        "107",
-        "53"
+        "125",
+        "63"
       ],
       "ResetOnInit": true
     },
@@ -148,9 +147,9 @@
       "Name": "SFUClampBoost",
       "Path": "/proc/vendor_sched/sf_uclamp_min",
       "Values": [
-        "125",
-        "78",
-        "30"
+        "159",
+        "85",
+        "39"
       ],
       "ResetOnInit": true
     },
@@ -158,7 +157,7 @@
       "Name": "MLUclampBoost",
       "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
-          "154",
+          "180",
           "512"
       ],
       "DefaultIndex": 0,
@@ -472,13 +471,13 @@
       "PowerHint": "INTERACTION",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "78"
+      "Value": "85"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "SFUClampBoost",
       "Duration": 5000,
-      "Value": "78"
+      "Value": "85"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1174,13 +1173,13 @@
       "PowerHint": "REFRESH_90FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "107"
+      "Value": "125"
     },
     {
       "PowerHint": "REFRESH_60FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "53"
+      "Value": "63"
     },
     {
       "PowerHint": "ADPF_DISABLE_TA_BOOST",
@@ -1222,13 +1221,13 @@
       "PowerHint": "BOOST_90HZ",
       "Node": "TAUClampBoost",
       "Duration": 200,
-      "Value": "108"
+      "Value": "127"
     },
     {
       "PowerHint": "BOOST_60HZ",
       "Node": "TAUClampBoost",
       "Duration": 200,
-      "Value": "108"
+      "Value": "127"
     },
     {
       "PowerHint": "REFRESH_90FPS",
