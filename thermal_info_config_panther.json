@@ -107,7 +107,7 @@
             "Formula":"WEIGHTED_AVG",
             "Combination":["qi_therm", "quiet_therm"],
             "Coefficient":[0.3, 0.7],
-            "Offset":-1400,
+            "Offset":-1400
         },
         {
             "Name":"VIRTUAL-QI-DISP",

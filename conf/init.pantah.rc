@@ -82,6 +82,12 @@ on property:persist.vendor.se.ese2.mode=ctsmode
 on init && property:ro.boot.hw.soc.rev=0
     setprop vendor.powerhal.config powerhint-a0.json
 
+on property:ro.boot.hardware.revision=PROTO1.0
+    setprop vendor.thermal.config "thermal_info_config_proto.json"
+
+on property:ro.boot.hardware.revision=PROTO1.1
+    setprop vendor.thermal.config "thermal_info_config_proto.json"
+
 # Touch
 on property:vendor.device.modules.ready=1
     chown system system /proc/focaltech_touch/Channel_Num
