@@ -464,6 +464,22 @@
         "1"
       ],
       "DefaultIndex": 0
+    },
+    {
+      "Name": "TRUSTY_VIRTIO_HIGH",
+      "Path": "/sys/module/trusty_virtio/parameters/use_high_wq",
+      "Values": [
+        "1",
+        "0"
+      ]
+    },
+    {
+      "Name": "TRUSTY_HIGH",
+      "Path": "/sys/module/trusty_core/parameters/use_high_wq",
+      "Values": [
+        "1",
+        "0"
+      ]
     }
   ],
   "Actions": [
@@ -1447,6 +1463,18 @@
     {
       "PowerHint": "FP_BOOST",
       "Node": "CPU_BIG_TSKIN_BYPASS",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "TRUSTY_VIRTIO_HIGH",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "FP_BOOST",
+      "Node": "TRUSTY_HIGH",
       "Duration": 1000,
       "Value": "1"
     },
