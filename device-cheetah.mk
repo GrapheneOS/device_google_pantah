@@ -57,6 +57,7 @@ PRODUCT_COPY_FILES += \
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
     device/google/pantah/cheetah/radio/cheetah_display_primary_osc_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/display_primary_osc_coex_table.csv \
+    device/google/pantah/cheetah/radio/cheetah_camera_rear_tele_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_rear_tele_mipi_coex_table.csv \
     device/google/pantah/cheetah/radio/cheetah_camera_front_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_mipi_coex_table.csv \
     device/google/pantah/cheetah/radio/cheetah_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv
 
