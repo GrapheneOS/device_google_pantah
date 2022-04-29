@@ -112,8 +112,8 @@
       "Name": "MIFTargetLoad",
       "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
       "Values": [
-        "20 5 80",
-        "20 10 80"
+        "20 10 80",
+        "60 10 40"
       ],
       "ResetOnInit": true
     },
