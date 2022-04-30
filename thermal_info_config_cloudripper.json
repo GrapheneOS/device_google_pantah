@@ -579,40 +579,5 @@
             "Type":"NPU",
             "WritePath":"/dev/thermal/cdev-by-name/tpu_cooling/user_vote"
         }
-    ],
-    "PowerRails":[
-        {
-            "Name":"PPVAR_VSYS_PWR_DISP"
-        },
-        {
-            "Name":"VSYS_PWR_MODEM"
-        },
-        {
-            "Name":"S2M_VDD_CPUCL2",
-            "PowerSampleDelay":14000,
-            "PowerSampleCount":5
-
-        },
-        {
-            "Name":"S3M_VDD_CPUCL1",
-            "PowerSampleDelay":14000,
-            "PowerSampleCount":5
-        },
-        {
-            "Name":"S4M_VDD_CPUCL0",
-            "PowerSampleDelay":14000,
-            "PowerSampleCount":5
-        },
-        {
-            "Name":"S5M_VDD_INT"
-        },
-        {
-            "Name":"S1M_VDD_MIF"
-        },
-        {
-            "Name":"S2S_VDD_G3D",
-            "PowerSampleDelay":14000,
-            "PowerSampleCount":5
-        }
     ]
 }
