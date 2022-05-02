@@ -31,8 +31,10 @@ include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
 ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
-include device/google/gs101/uwb/uwb.mk
+# The ordering of the two uwb makefiles ensures device specific calibration files
+# are used instead of platform (gs101) specific calibration files - b/230787474.
 include device/google/pantah/uwb/uwb_calibration.mk
+include device/google/gs101/uwb/uwb.mk
 endif
 
 $(call soong_config_set,lyric,tuning_product,cheetah)
