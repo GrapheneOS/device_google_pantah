@@ -147,4 +147,7 @@
          1: verbose logging on by default for userdebug
          2: verbose logging on by default for all builds -->
     <integer translatable="false" name="config_wifiVerboseLoggingAlwaysOnLevel">1</integer>
+
+    <!-- Enable aggregation of Wifi link layer radio stats from all radios -->
+    <bool translatable="false" name="config_wifiLinkLayerAllRadiosStatsAggregationEnabled">true</bool>
 </resources>
