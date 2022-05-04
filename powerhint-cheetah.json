@@ -103,6 +103,7 @@
       "Name": "GPUMinFreq",
       "Path": "/sys/devices/platform/28000000.mali/hint_min_freq",
       "Values": [
+        "848000",
         "762000",
         "471000",
         "400000",
@@ -782,6 +783,12 @@
       "Node": "CPULittleClusterMinFreq",
       "Duration": 3000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "GCA_CAMERA_SHOT_GPU_EXTREME",
+      "Node": "GPUMinFreq",
+      "Duration": 3000,
+      "Value": "848000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
