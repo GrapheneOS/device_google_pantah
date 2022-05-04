@@ -100,9 +100,6 @@
            be checked via NL80211 interface -->
     <bool translatable="false" name="config_wifi11axSupportOverride">true</bool>
 
-    <!-- Wifi driver supports 6GHz band for softap -->
-    <bool translatable="false" name="config_wifiSoftap6ghzSupported">true</bool>
-
     <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
     <bool translatable="false" name="config_wifi_softap_sae_supported">true</bool>
 
