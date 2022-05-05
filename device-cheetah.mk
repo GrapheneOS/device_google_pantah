@@ -254,9 +254,10 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
         device/google/gs201/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
 endif
 
-# Fingerprint als feed forward
+# Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.udfps.als_feed_forward_supported=true
+    persist.vendor.udfps.als_feed_forward_supported=true \
+    persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 
 # Vibrator HAL
 PRODUCT_VENDOR_PROPERTIES += \
