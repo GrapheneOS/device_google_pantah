@@ -183,8 +183,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layer
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
-	WifiOverlay2022_P10 \
-	PixelWifiOverlay2022_P10
+    WifiOverlay2022_P10
 
 PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
 
