@@ -232,7 +232,6 @@
     </dsp_latency>
 
     <soundcard_name name="google,aoc-snd-card" />
-    <features lists="ThermalThrottle=Type:SKIN,Name:VIRTUAL-SKIN" />
 
     <cfg_attr>
         <cfg id="OUT_SPEAKER_BE_CFG" intf_name="TDM_RX_0" mux="HW_MUX_GP_0" tuning_id="2"/>
