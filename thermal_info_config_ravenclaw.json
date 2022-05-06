@@ -355,7 +355,7 @@
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
+                    "LimitInfo": [0, 0, 0, 0, 6, 6, 6]
                 }
             ]
         },
@@ -388,6 +388,14 @@
                 {
                     "CdevRequest": "thermal-cpufreq-2",
                     "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
+                },
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
+                },
+                {
+                    "CdevRequest": "tpu_cooling",
+                    "LimitInfo": [0, 0, 0, 0, 5, 5, 5]
                 }
             ]
         },
