@@ -10,6 +10,7 @@
         <library name="proxy" path="libeffectproxy.so"/>
         <library name="offload_effect" path="liboffloadeffect.so"/>
         <library name="haptic_generator" path="libhapticgenerator.so"/>
+        <library name="spatializer" path="libspatialaudio.so"/>
     </libraries>
     <effects>
         <effectProxy name="bassboost" library="proxy" uuid="2f0871a2-c93c-4824-9664-42eb2909f2ef">
@@ -54,6 +55,7 @@
         <effect name="aec" library="offload_effect" uuid="28c28780-ec8b-48b6-8590-8c84557d797d"/>
         <effect name="ns" library="offload_effect" uuid="62ff2836-d050-43c3-9c2d-94a73dad2c64"/>
         <effect name="haptic_generator" library="haptic_generator" uuid="97c4acd1-8b82-4f2f-832e-c2fe5d7a9931"/>
+        <effect name="spatializer" library="spatializer" uuid="cc4677de-ff72-11eb-9a03-0242ac130003"/>
     </effects>
     <postprocess>
     </postprocess>
