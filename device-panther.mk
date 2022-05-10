@@ -251,3 +251,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Vibrator HAL
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.chirp.enabled=1
+
+# Bluetooth AAC VBR
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.a2dp_aac.vbr_supported=true
