@@ -5,7 +5,7 @@
         <library name="reverb" path="libreverbwrapper.so"/>
         <library name="visualizer_sw" path="libvisualizer.so"/>
         <library name="downmix" path="libdownmix.so"/>
-        <library name="dynamics_processing" path="libdynproc.so"/>
+        <library name="dynamics_processing_sw" path="libdynproc.so"/>
         <library name="loudness_enhancer" path="libldnhncr.so"/>
         <library name="proxy" path="libeffectproxy.so"/>
         <library name="offload_effect" path="liboffloadeffect.so"/>
@@ -45,12 +45,15 @@
             <libsw library="visualizer_sw" uuid="d069d9e0-8329-11df-9168-0002a5d5c51b"/>
             <libhw library="offload_effect" uuid="99fb2ecb-3426-4a0e-8082-1a1da5604b7d"/>
         </effectProxy>
+        <effectProxy name="dynamics_processing" library="proxy" uuid="dcf01474-8982-11ec-a8a3-0242ac120002">
+            <libsw library="dynamics_processing_sw" uuid="e0e6539b-1781-7261-676f-6d7573696340"/>
+            <libhw library="offload_effect" uuid="1bf15eb7-8f49-4fd8-8380-0767fd5680f3"/>
+        </effectProxy>
         <effect name="downmix" library="downmix" uuid="93f04452-e4fe-41cc-91f9-e475b6d1d69f"/>
         <effect name="loudness_enhancer" library="loudness_enhancer" uuid="fa415329-2034-4bea-b5dc-5b381c8d1e2c"/>
         <effect name="aec" library="offload_effect" uuid="28c28780-ec8b-48b6-8590-8c84557d797d"/>
         <effect name="ns" library="offload_effect" uuid="62ff2836-d050-43c3-9c2d-94a73dad2c64"/>
         <effect name="haptic_generator" library="haptic_generator" uuid="97c4acd1-8b82-4f2f-832e-c2fe5d7a9931"/>
-        <effect name="dynamics_processing" library="dynamics_processing" uuid="e0e6539b-1781-7261-676f-6d7573696340"/>
     </effects>
     <postprocess>
     </postprocess>
