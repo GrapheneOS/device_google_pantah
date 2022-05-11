@@ -105,8 +105,8 @@
       "Values": [
         "848000",
         "762000",
+        "572000",
         "471000",
-        "400000",
         "302000",
         "151000"
       ],
@@ -1344,7 +1344,7 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "400000"
+      "Value": "572000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN_LIGHT",
