@@ -731,7 +731,7 @@
     </path>
 
     <path name="speaker-mic-post">
-        <ctl name="MIC Record Soft Gain (dB)" value="0"/>
+        <ctl name="MIC Record Soft Gain (dB)" value="22"/>
     </path>
 
     <path name="voice-speaker-mic">
