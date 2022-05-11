@@ -286,7 +286,7 @@
 
     <external_module>
         <module libname="audio_spk_35l41.so" argu="AcousticShockProtection"/>
-        <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
+        <module libname="audio_waves_aoc.so" argu="Sink=SPK:1 BatteryThrottle=Type:BCL_VOLTAGE,Name:BCL_AUDIO_BAACL"/>
         <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:1,USB:1 VoIP_Rate=32000"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
