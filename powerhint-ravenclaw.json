@@ -397,6 +397,12 @@
       "Value": "3172000"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "NPITaskPacking",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
@@ -443,6 +449,12 @@
       "Node": "CDCpuset",
       "Duration": 1000,
       "Value": "4-7"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "NPITaskPacking",
+      "Duration": 1000,
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
@@ -653,6 +665,15 @@
       "Node": "CDPreferHighCap",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "Name": "NPITaskPacking",
+      "Path": "/proc/vendor_sched/npi_packing",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "ResetOnInit": true
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
