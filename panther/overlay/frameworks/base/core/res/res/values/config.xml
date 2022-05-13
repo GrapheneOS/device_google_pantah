@@ -278,4 +278,12 @@
 
     <!-- If face auth sends the user directly to home/last open app, or stays on keyguard by default-->
     <bool name="config_faceAuthDismissesKeyguard">false</bool>
+
+    <!-- The behavior when the system detects it has abusive current drains, whether or not to
+         move the app to the restricted standby bucket level.
+         True - we'll move the app to restricted standby bucket as long as its bg battery usage
+         goes beyond the threshold, False - we'll not move it.
+         Note: This should be only enabled on devices with high confidence on power measurement.
+    -->
+    <bool name="config_bg_current_drain_auto_restrict_abusive_apps">true</bool>
 </resources>
