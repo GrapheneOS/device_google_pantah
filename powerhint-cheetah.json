@@ -1294,7 +1294,7 @@
       "PowerHint": "BOOST_60HZ",
       "Node": "TAUClampBoost",
       "Duration": 200,
-      "Value": "127"
+      "Value": "185"
     },
     {
       "PowerHint": "REFRESH_120FPS",
@@ -1343,11 +1343,6 @@
       "Node": "DisplayWakeup",
       "Duration": 50,
       "Value": "1"
-    },
-    {
-      "PowerHint": "DISPLAY_UPDATE_IMMINENT",
-      "Type": "DoHint",
-      "Value": "BOOST_DISPLAY"
     },
     {
       "PowerHint": "THERMAL_FLASH_LED_REDUCE_CRITICAL",
