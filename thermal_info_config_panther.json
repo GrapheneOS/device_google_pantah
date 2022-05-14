@@ -29,15 +29,15 @@
             "Type":"UNKNOWN",
             "HotThreshold":["NAN", 35.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm/tz_temp",
-            "Multiplier":0.001
+            "Multiplier":0.001,
+            "PollingDelay":60000,
+            "PassiveDelay":7000
         },
         {
             "Name":"usb_pwr_therm2",
             "Type":"UNKNOWN",
             "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm2/tz_temp",
-            "Multiplier":0.001,
-            "PollingDelay":60000,
-            "PassiveDelay":7000
+            "Multiplier":0.001
         },
         {
             "Name":"disp_therm",
@@ -107,7 +107,8 @@
             "Formula":"WEIGHTED_AVG",
             "Combination":["qi_therm", "quiet_therm"],
             "Coefficient":[0.3, 0.7],
-            "Offset":-1400
+            "Offset":-1400,
+            "Multiplier":0.001
         },
         {
             "Name":"VIRTUAL-QI-DISP",
