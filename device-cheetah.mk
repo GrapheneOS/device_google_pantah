@@ -79,11 +79,14 @@ PRODUCT_COPY_FILES += \
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
-#config of display brightness dimming
+#   config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.brightness.dimming.usage=1
 
-#config of primary display frames to reach LHBM peak brightness
+#   config of primary display frames to reach LHBM peak brightness
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=2
+
+# Display RRS default Config
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.primary.default_boot_config=1080x2340@120
 
 # NFC
 PRODUCT_COPY_FILES += \
