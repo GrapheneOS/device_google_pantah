@@ -39,15 +39,15 @@
             "Type":"UNKNOWN",
             "HotThreshold":["NAN", 35.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm/tz_temp",
-            "Multiplier":0.001
+            "Multiplier":0.001,
+            "PollingDelay":60000,
+            "PassiveDelay":7000
         },
         {
             "Name":"usb_pwr_therm2",
             "Type":"UNKNOWN",
             "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm2/tz_temp",
-            "Multiplier":0.001,
-            "PollingDelay":60000,
-            "PassiveDelay":7000
+            "Multiplier":0.001
         },
         {
             "Name":"disp_therm",
@@ -292,7 +292,7 @@
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
             "Combination":["usb_pwr_therm", "USB-MINUS-USB2", "USB-MINUS-NEUTRAL"],
-            "Coefficient":[42000, 4000,7000],
+            "Coefficient":[42000, 2500, 5000],
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "3.0", "NAN", "NAN"],
             "BindedCdevInfo": [
                 {
@@ -312,7 +312,7 @@
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
             "Combination":["usb_pwr_therm", "USB-MINUS-USB2", "USB-MINUS-NEUTRAL"],
-            "Coefficient":[47000, 4500, 8000],
+            "Coefficient":[43500, 2800, 6000],
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "3.0", "NAN"],
             "VrThreshold":"NAN",
             "Multiplier":1,
