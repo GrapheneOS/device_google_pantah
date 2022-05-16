@@ -241,9 +241,10 @@
       "Name": "FGPreferIdle",
       "Path": "/proc/vendor_sched/fg_prefer_idle",
       "Values": [
-        "0",
-        "1"
+        "1",
+        "0"
       ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -508,6 +509,12 @@
       "Node": "SFUClampBoost",
       "Duration": 5000,
       "Value": "85"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "FGPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
