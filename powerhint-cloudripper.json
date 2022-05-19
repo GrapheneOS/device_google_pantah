@@ -677,12 +677,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "302000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1014000"
@@ -761,12 +755,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "302000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1014000"
@@ -845,12 +833,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "302000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1014000"
@@ -923,12 +905,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "302000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1014000"
@@ -962,6 +938,18 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_GPU_HIGH",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "572000"
+    },
+    {
+      "PowerHint": "CAMERA_GPU_STANDARD",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "302000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
