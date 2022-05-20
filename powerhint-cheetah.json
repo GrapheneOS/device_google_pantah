@@ -144,6 +144,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "FGUClampBoost",
+      "Path": "/proc/vendor_sched/fg_uclamp_min",
+      "Values": [
+        "159",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "SFUClampBoost",
       "Path": "/proc/vendor_sched/sf_uclamp_min",
       "Values": [
@@ -554,6 +563,12 @@
       "Node": "TAUClampBoost",
       "Duration": 5000,
       "Value": "553"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "FGUClampBoost",
+      "Duration": 5000,
+      "Value": "159"
     },
     {
       "PowerHint": "LAUNCH",
