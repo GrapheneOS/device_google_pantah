@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
 	libspatialaudio \
 	librondo
 
+# Bluetooth hci_inject test tool
+PRODUCT_PACKAGES_DEBUG += \
+    hci_inject
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
