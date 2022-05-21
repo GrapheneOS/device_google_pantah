@@ -62,8 +62,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["gnss_tcxo_therm", "disp_therm"],
-            "Coefficient":[0.6, 0.4],
-            "Offset":-200,
+            "Coefficient":[0.550, 0.450],
+            "Offset":-1000,
             "Multiplier":0.001
         },
         {
@@ -84,8 +84,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["quiet_therm","usb_pwr_therm2"],
-            "Coefficient":[1.1, -0.1],
-            "Offset":-900,
+            "Coefficient":[0.9, 0.1],
+            "Offset":-1200,
             "Multiplier":0.001
         },
         {
@@ -124,7 +124,7 @@
         {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
-            "Version":"0.5",
+            "Version":"0.6",
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",

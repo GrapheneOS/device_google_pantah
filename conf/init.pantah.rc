@@ -4,6 +4,7 @@ on init
     # NFC streset tool name
     setprop persist.vendor.nfc.streset libstreset21
     setprop persist.vendor.se.streset libstreset21
+    setprop persist.vendor.se.reset needed
 
 on init && property:ro.vendor.factory=1
     import /vendor/etc/init/hw/init.factory.rc
