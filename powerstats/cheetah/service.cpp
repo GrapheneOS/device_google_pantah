@@ -38,15 +38,18 @@ void addDisplay(std::shared_ptr<PowerStats> p) {
     // Add display residency stats
     std::vector<std::string> states = {
         "Off",
-        "LP: 1440x3120@1",
-        "LP: 1440x3120@10",
         "LP: 1440x3120@30",
+        "On: 1440x3120@10",
         "On: 1440x3120@60",
-        "On: 1440x3120@90",
         "On: 1440x3120@120",
         "HBM: 1440x3120@60",
-        "HBM: 1440x3120@90",
-        "HBM: 1440x3120@120"};
+        "HBM: 1440x3120@120",
+        "LP: 1080x2340@30",
+        "On: 1080x2340@10",
+        "On: 1080x2340@60",
+        "On: 1080x2340@120",
+        "HBM: 1080x2340@60",
+        "HBM: 1080x2340@120"};
 
     p->addStateResidencyDataProvider(std::make_unique<DisplayStateResidencyDataProvider>(
             "Display",
@@ -55,16 +58,19 @@ void addDisplay(std::shared_ptr<PowerStats> p) {
 
     // Add display energy consumer
     p->addEnergyConsumer(PowerStatsEnergyConsumer::createMeterAndEntityConsumer(
-            p, EnergyConsumerType::DISPLAY, "display", {"PPVAR_VSYS_PWR_DISP"}, "Display",
-            {{"LP: 1440x3120@1", 1},
-             {"LP: 1440x3120@10", 2},
-             {"LP: 1440x3120@30", 3},
-             {"On: 1440x3120@60", 4},
-             {"On: 1440x3120@90", 5},
-             {"On: 1440x3120@120", 6},
-             {"HBM: 1440x3120@60", 7},
-             {"HBM: 1440x3120@90", 8},
-             {"HBM: 1440x3120@120", 9}}));
+            p, EnergyConsumerType::DISPLAY, "display", {"VSYS_PWR_DISPLAY"}, "Display",
+            {{"LP: 1440x3120@30", 1},
+             {"On: 1440x3120@10", 2},
+             {"On: 1440x3120@60", 3},
+             {"On: 1440x3120@120", 4},
+             {"HBM: 1440x3120@60", 5},
+             {"HBM: 1440x3120@120", 6},
+             {"LP: 1080x2340@30", 7},
+             {"On: 1080x2340@10", 8},
+             {"On: 1080x2340@60", 9},
+             {"On: 1080x2340@120", 10},
+             {"HBM: 1080x2340@60", 11},
+             {"HBM: 1080x2340@120", 12}}));
 }
 
 void addUwb(std::shared_ptr<PowerStats> p) {
