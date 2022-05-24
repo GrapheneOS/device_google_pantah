@@ -49,7 +49,7 @@ void addDisplay(std::shared_ptr<PowerStats> p) {
 
     // Add display energy consumer
     p->addEnergyConsumer(PowerStatsEnergyConsumer::createMeterAndEntityConsumer(
-            p, EnergyConsumerType::DISPLAY, "display", {"PPVAR_VSYS_PWR_DISP"}, "Display",
+            p, EnergyConsumerType::DISPLAY, "display", {"VSYS_PWR_DISPLAY"}, "Display",
             {{"LP: 1080x2400@30", 1},
              {"On: 1080x2400@60", 2},
              {"On: 1080x2400@90", 3},
