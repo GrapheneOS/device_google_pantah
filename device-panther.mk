@@ -234,11 +234,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SettingsOverlayG03Z5
 
-# Bluetooth LE Audio Hardware offload
+# Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
-    persist.bluetooth.leaudio_offload.disabled=false
-
+    persist.bluetooth.leaudio_offload.disabled=false \
+    ro.bluetooth.leaudio_switcher.supported=true
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
