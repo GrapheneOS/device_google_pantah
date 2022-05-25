@@ -4,7 +4,6 @@ on init
     # NFC streset tool name
     setprop persist.vendor.nfc.streset libstreset21
     setprop persist.vendor.se.streset libstreset21
-    setprop persist.vendor.se.reset needed
 
 on init && property:ro.vendor.factory=1
     import /vendor/etc/init/hw/init.factory.rc
@@ -71,6 +70,9 @@ on property:ro.boot.hardware.revision=PROTO1.0
 
 on property:ro.boot.hardware.revision=PROTO1.1
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on post-fs-data
+    setprop persist.vendor.se.reset reset
 
 # Bluetooth
 on post-fs-data
