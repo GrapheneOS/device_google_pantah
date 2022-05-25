@@ -86,7 +86,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.brightness.dimming.usage=1
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=2
 
 # Display RRS default Config
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.primary.default_boot_config=1080x2340@120
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.vendor.display.primary.boot_config=1080x2340@120
 
 # NFC
 PRODUCT_COPY_FILES += \
