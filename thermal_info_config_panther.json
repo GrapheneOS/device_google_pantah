@@ -56,14 +56,14 @@
             "PassiveDelay":7000
         },
         {
-            "Name":"VIRTUAL-GNSS-QUIET",
+            "Name":"VIRTUAL-QUIET-QI",
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":["gnss_tcxo_therm", "quiet_therm"],
-            "Coefficient":[1.3, -0.3],
-            "Offset":-1800,
+            "Combination":["quiet_therm", "qi_therm"],
+            "Coefficient":[0.7, 0.3],
+            "Offset":-500,
             "Multiplier":0.001
         },
         {
@@ -78,14 +78,14 @@
             "Multiplier":0.001
         },
         {
-            "Name":"VIRTUAL-GNSS-DISP",
+            "Name":"VIRTUAL-QUIET-DISP",
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":["gnss_tcxo_therm", "disp_therm"],
-            "Coefficient":[0.9, 0.1],
-            "Offset":-700,
+            "Combination":["quiet_therm", "disp_therm"],
+            "Coefficient":[1.1, -0.1],
+            "Offset":-1500,
             "Multiplier":0.001
         },
         {
@@ -124,11 +124,11 @@
         {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
-            "Version":"0.6",
+            "Version":"0.7",
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Combination":["VIRTUAL-QUIET-QI", "VIRTUAL-USB-QUIET", "VIRTUAL-QUIET-DISP", "VIRTUAL-NEUTRAL-QUIET"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 43.0, 45.0, 46.5, 52.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
@@ -154,7 +154,7 @@
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Combination":["VIRTUAL-QUIET-QI", "VIRTUAL-USB-QUIET", "VIRTUAL-QUIET-DISP", "VIRTUAL-NEUTRAL-QUIET"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 42.0, 44.0, 46.5, 52.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.9, 1.9, 1.9],
@@ -258,7 +258,7 @@
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-GNSS-QUIET", "VIRTUAL-USB-QUIET", "VIRTUAL-GNSS-DISP", "VIRTUAL-NEUTRAL-QUIET"],
+            "Combination":["VIRTUAL-QUIET-QI", "VIRTUAL-USB-QUIET", "VIRTUAL-QUIET-DISP", "VIRTUAL-NEUTRAL-QUIET"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", 54.0, "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 0.0, 1.9, 0.0],
