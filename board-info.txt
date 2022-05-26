@@ -1,1 +1,2 @@
 require board=cloudripper|ravenclaw|cheetah|panther
+require partition-exists=vendor_kernel_boot
