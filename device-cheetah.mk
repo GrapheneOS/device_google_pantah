@@ -22,6 +22,7 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-v
 $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheetah/device-vendor-cheetah.mk)
 $(call inherit-product-if-exists, vendor/google_devices/cheetah/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersCheetah.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
 
