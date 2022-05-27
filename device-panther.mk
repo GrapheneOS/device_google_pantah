@@ -22,6 +22,7 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-v
 $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/panther/device-vendor-panther.mk)
 $(call inherit-product-if-exists, vendor/google_devices/panther/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersPanther.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
 
@@ -261,3 +262,12 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
+
+# Override BQR mask to enable LE Audio Choppy report
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.bqr.event_mask=262238
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.bqr.event_mask=94
+endif
