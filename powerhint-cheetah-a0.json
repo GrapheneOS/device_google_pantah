@@ -167,7 +167,7 @@
       "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
           "180",
-          "512"
+          "650"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -1662,7 +1662,7 @@
       "PowerHint": "ML_ACC",
       "Node": "MLUclampBoost",
       "Duration": 2000,
-      "Value": "512"
+      "Value": "650"
     },
     {
       "PowerHint": "ML_ACC",
