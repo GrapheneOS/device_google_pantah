@@ -191,6 +191,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "PMQoSCpuDmaLatency",
+      "Path": "/dev/cpu_dma_latency",
+      "Values": [
+        "44",
+        "1000"
+      ],
+      "HoldFd": true
+    },
+    {
       "Name": "CDPreferIdle",
       "Path": "/proc/vendor_sched/cam_prefer_idle",
       "Values": [
@@ -1660,6 +1669,12 @@
       "Node": "MLUclampBoost",
       "Duration": 2000,
       "Value": "512"
+    },
+    {
+      "PowerHint": "ML_ACC",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 2000,
+      "Value": "44"
     },
     {
       "PowerHint": "DEVICE_IDLE",
