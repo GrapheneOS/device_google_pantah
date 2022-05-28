@@ -185,10 +185,19 @@
       "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
           "180",
-          "512"
+          "650"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
+    },
+    {
+      "Name": "PMQoSCpuDmaLatency",
+      "Path": "/dev/cpu_dma_latency",
+      "Values": [
+        "44",
+        "1000"
+      ],
+      "HoldFd": true
     },
     {
       "Name": "CDPreferIdle",
@@ -1675,7 +1684,13 @@
       "PowerHint": "ML_ACC",
       "Node": "MLUclampBoost",
       "Duration": 2000,
-      "Value": "512"
+      "Value": "650"
+    },
+    {
+      "PowerHint": "ML_ACC",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 2000,
+      "Value": "44"
     },
     {
       "PowerHint": "DEVICE_IDLE",
@@ -1696,13 +1711,14 @@
       "PID_On": true,
       "PID_Po": 2.0,
       "PID_Pu": 1.0,
-      "PID_I": 0.001,
+      "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
       "PID_I_Low": -30,
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
+      "UclampMin_Init": 185,
       "UclampMin_High": 384,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
@@ -1719,13 +1735,14 @@
       "PID_On": true,
       "PID_Po": 2.0,
       "PID_Pu": 1.0,
-      "PID_I": 0.001,
+      "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
       "PID_I_Low": -30,
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
+      "UclampMin_Init": 129,
       "UclampMin_High": 384,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
@@ -1742,13 +1759,14 @@
       "PID_On": true,
       "PID_Po": 2.0,
       "PID_Pu": 1.0,
-      "PID_I": 0.001,
+      "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
       "PID_I_Low": -30,
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
+      "UclampMin_Init": 129,
       "UclampMin_High": 384,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
@@ -1775,6 +1793,7 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
+      "UclampMin_Init": 200,
       "UclampMin_High": 157,
       "UclampMin_Low": 157,
       "ReportingRateLimitNs": 1,
@@ -1798,6 +1817,7 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
+      "UclampMin_Init": 200,
       "UclampMin_High": 42,
       "UclampMin_Low": 42,
       "ReportingRateLimitNs": 1,
@@ -1821,6 +1841,7 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
+      "UclampMin_Init": 200,
       "UclampMin_High": 0,
       "UclampMin_Low": 0,
       "ReportingRateLimitNs": 1,
@@ -1829,5 +1850,5 @@
       "TargetTimeFactor": 1.0,
       "StaleTimeFactor": 5.0
     }
-   ]
+  ]
 }
