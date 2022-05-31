@@ -164,14 +164,15 @@
             "PIDInfo": {
                 "K_Po":["NAN", "NAN", 1800, 500, "NAN", "NAN", "NAN"],
                 "K_Pu":["NAN", "NAN", 1800, 500, "NAN", "NAN", "NAN"],
-                "K_I":["NAN", "NAN", 20, 0, "NAN", "NAN", "NAN"],
+                "K_I":["NAN", "NAN", 20, 5, "NAN", "NAN", "NAN"],
                 "K_D":["NAN", "NAN", 0, 0, "NAN", "NAN", "NAN"],
-                "I_Max":["NAN", "NAN", 1500, 0, "NAN", "NAN", "NAN"],
+                "I_Max":["NAN", "NAN", 1500, 100, "NAN", "NAN", "NAN"],
                 "S_Power":["NAN", "NAN", 2500, 1300, "NAN", "NAN", "NAN"],
                 "MinAllocPower":["NAN", "NAN", 2000, 800, "NAN", "NAN", "NAN"],
                 "MaxAllocPower":["NAN", "NAN", 10000, 4000, "NAN", "NAN", "NAN"],
-                "I_Cutoff":["NAN", "NAN", 2, 0, "NAN", "NAN", "NAN"],
-                "E_Integral_Default": 50
+                "I_Cutoff":["NAN", "NAN", 2, 2, "NAN", "NAN", "NAN"],
+                "I_Default": 1000,
+                "TranCycle": 5
             },
             "BindedCdevInfo": [
                 {
