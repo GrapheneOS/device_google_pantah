@@ -271,3 +271,8 @@ else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
 endif
+
+# Keyboard bottom padding in dp for portrait mode and height ratio
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.ime.kb_pad_port_b=8 \
+    ro.com.google.ime.height_ratio=1.075
