@@ -263,10 +263,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
-# Override BQR mask to enable LE Audio Choppy report
+# Override BQR mask to enable LE Audio Choppy report, BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
+    persist.bluetooth.bqr.event_mask=295006
 else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
