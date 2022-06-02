@@ -154,7 +154,7 @@
       "Name": "TAUClampBoost",
       "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
-        "553",
+        "612",
         "185",
         "1",
         "63"
@@ -570,7 +570,7 @@
       "PowerHint": "LAUNCH",
       "Node": "TAUClampBoost",
       "Duration": 5000,
-      "Value": "553"
+      "Value": "612"
     },
     {
       "PowerHint": "LAUNCH",
