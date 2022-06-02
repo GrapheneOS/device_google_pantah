@@ -248,10 +248,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J
 
-# Bluetooth LE Audio Hardware offload
+# Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
-    persist.bluetooth.leaudio_offload.disabled=false
+    persist.bluetooth.leaudio_offload.disabled=false \
+    ro.bluetooth.leaudio_switcher.supported=true
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -276,10 +277,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
-# Override BQR mask to enable LE Audio Choppy report
+# Override BQR mask to enable LE Audio Choppy report, BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
+    persist.bluetooth.bqr.event_mask=295006
 else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
