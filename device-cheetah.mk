@@ -103,7 +103,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	NfcNci \
 	Tag \
-	android.hardware.nfc@1.2-service.st
+	android.hardware.nfc-service.st
 
 # SecureElement
 PRODUCT_PACKAGES += \
@@ -117,7 +117,6 @@ PRODUCT_COPY_FILES += \
 	device/google/pantah/nfc/libse-gto-hal2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal2.conf
 
 DEVICE_MANIFEST_FILE += \
-	device/google/pantah/nfc/manifest_nfc.xml \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Thermal Config
@@ -249,10 +248,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J
 
-# Bluetooth LE Audio Hardware offload
+# Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
-    persist.bluetooth.leaudio_offload.disabled=false
+    persist.bluetooth.leaudio_offload.disabled=false \
+    ro.bluetooth.leaudio_switcher.supported=true
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -277,10 +277,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
-# Override BQR mask to enable LE Audio Choppy report
+# Override BQR mask to enable LE Audio Choppy report, BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
+    persist.bluetooth.bqr.event_mask=295006
 else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
