@@ -62,8 +62,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["gnss_tcxo_therm", "disp_therm"],
-            "Coefficient":[0.550, 0.450],
-            "Offset":-1000,
+            "Coefficient":[0.580, 0.420],
+            "Offset":-450,
             "Multiplier":0.001
         },
         {
@@ -113,7 +113,7 @@
         {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
-            "Version":"0.7",
+            "Version":"1.1",
             "VirtualSensor":true,
             "TriggerSensor":"quiet_therm",
             "Formula":"MAXIMUM",
