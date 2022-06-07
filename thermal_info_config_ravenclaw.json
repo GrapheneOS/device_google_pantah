@@ -176,7 +176,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -210,7 +209,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -246,7 +244,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -282,7 +279,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -316,7 +312,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -350,7 +345,6 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -381,7 +375,6 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -447,7 +440,6 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -486,7 +478,6 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -525,7 +516,6 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",

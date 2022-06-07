@@ -387,7 +387,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 13000, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -406,7 +405,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 13000, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -425,7 +423,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN",  3.0, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -444,7 +441,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 3.0, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -463,7 +459,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 2.0, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -485,7 +480,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 2.0, "NAN", "NAN"],
             "Multiplier":1,
             "Monitor":true,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "tpu_cooling",
@@ -499,7 +493,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 5000, "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 100, 0.0, 0.0],
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -533,7 +526,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 1000, "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 100, 0.0, 0.0],
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -555,7 +547,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 1200, "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 100, 0.0, 0.0],
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -577,7 +568,6 @@
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", 1100, "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.0, 0.0, 0.0, 100, 0.0, 0.0],
             "Multiplier":1,
-            "PassiveDelay":500,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
