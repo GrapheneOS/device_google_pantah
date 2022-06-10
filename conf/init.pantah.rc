@@ -71,9 +71,6 @@ on property:ro.boot.hardware.revision=PROTO1.0
 on property:ro.boot.hardware.revision=PROTO1.1
     setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
 
-on post-fs-data
-    setprop persist.vendor.se.reset reset
-
 # Bluetooth
 on post-fs-data
     chown bluetooth system /proc/bluetooth/timesync
