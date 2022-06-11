@@ -538,6 +538,12 @@
     },
     {
       "PowerHint": "LAUNCH_120FPS",
+      "Node": "GPUMinFreq",
+      "Duration": 1000,
+      "Value": "848000"
+    },
+    {
+      "PowerHint": "LAUNCH_120FPS",
       "Node": "SFUClampBoost",
       "Duration": 1000,
       "Value": "159"
