@@ -69,14 +69,14 @@
     <!-- Not allow to switch to higher refresh rate when display brightness setting is
          equal or less than this value -->
     <integer-array name="config_brightnessThresholdsOfPeakRefreshRate">
-        <!-- System brightness for 20 nits: round((20-2)/(1000-2)*(255-1)+1) = 6 -->
-        <item>6</item> <!-- 34% UI brightness -->
-        <!-- System brightness for 25 nits: round((25-2)/(1000-2)*(255-1)+1) = 7 -->
-        <item>7</item> <!-- 38% UI brightness -->
+        <!-- System brightness for 10 nits: round((10-2)/(1000-2)*(255-1)+1) = 3 -->
+        <item>3</item> <!-- 20% UI brightness -->
+        <!-- System brightness for 15 nits: round((15-2)/(1000-2)*(255-1)+1) = 4 -->
+        <item>4</item> <!-- 24% UI brightness -->
     </integer-array>
     <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
         <item>-1</item>
-        <item>20</item>
+        <item>10</item>
     </integer-array>
     <!-- default refresh rate in the zone defined by birghtness and ambient thresholds -->
     <integer name="config_defaultRefreshRateInZone">90</integer>
@@ -94,6 +94,10 @@
 
     <!-- default refresh rate in the high zone defined by birghtness and ambient thresholds -->
     <integer name="config_fixedRefreshRateInHighZone">60</integer>
+
+    <!-- Default refresh rate while the device has high brightness mode enabled for Sunlight.
+         This value overrides values from DisplayDeviceConfig -->
+    <integer name="config_defaultRefreshRateInHbmSunlight">90</integer>
 
     <!-- Default refresh rate while the device has high brightness mode enabled for HDR. -->
     <integer name="config_defaultRefreshRateInHbmHdr">60</integer>
