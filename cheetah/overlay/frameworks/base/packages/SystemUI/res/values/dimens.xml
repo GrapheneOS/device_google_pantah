@@ -43,7 +43,7 @@
     <dimen name="physical_volume_down_button_center_screen_location_y">1520px</dimen>
 
     <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
-    <dimen name="lock_icon_padding">68px</dimen>
+    <dimen name="lock_icon_padding">60px</dimen>
 
     <!-- Alpha in duration in ms for the auth ripple to become fully vislble. If set to 0, it is immediately visible. -->
     <integer name="auth_ripple_alpha_in_duration">0</integer>
