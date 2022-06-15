@@ -219,7 +219,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.gms.dck.eligible_wcc=2
+    ro.gms.dck.eligible_wcc=3
 
 # Set support hide display cutout feature
 PRODUCT_PRODUCT_PROPERTIES += \
