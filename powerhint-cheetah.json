@@ -122,7 +122,7 @@
       "ResetOnInit": true
     },
     {
-      "Name": "ReduceRreferIdle",
+      "Name": "ReducePreferIdle",
       "Path": "/proc/vendor_sched/reduce_prefer_idle",
       "Values": [
         "0",
@@ -532,7 +532,7 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "ReduceRreferIdle",
+      "Node": "ReducePreferIdle",
       "Duration": 5000,
       "Value": "0"
     },
