@@ -75,7 +75,9 @@ PRODUCT_PROPERTY_OVERRIDES += ro.odm.build.media_performance_class=33
 PRODUCT_COPY_FILES += \
         device/google/pantah/cheetah/display_colordata_boe-nt37290_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_boe-nt37290_cal0.pb \
         device/google/pantah/cheetah/display_colordata_sdc-s6e3hc3-c10_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_sdc-s6e3hc3-c10_cal0.pb \
-        device/google/pantah/cheetah/display_colordata_sdc-s6e3hc4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_sdc-s6e3hc4_cal0.pb
+        device/google/pantah/cheetah/display_colordata_sdc-s6e3hc4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_sdc-s6e3hc4_cal0.pb \
+        device/google/pantah/cheetah/display_golden_boe-nt37290_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_boe-nt37290_cal0.pb \
+        device/google/pantah/cheetah/display_golden_sdc-s6e3hc4_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_sdc-s6e3hc4_cal0.pb
 
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
