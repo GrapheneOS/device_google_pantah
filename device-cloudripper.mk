@@ -165,3 +165,6 @@ endif
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd

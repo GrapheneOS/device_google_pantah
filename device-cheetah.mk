@@ -287,6 +287,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.chirp.enabled=1
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd
+
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
