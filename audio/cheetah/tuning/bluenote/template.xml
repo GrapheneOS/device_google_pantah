@@ -43,6 +43,7 @@
       <param default="0" id="27" name="ch0_assignFrom" type="int32"/>
       <param default="1" id="28" name="ch1_assignFrom" type="int32"/>
       <param default="2" id="29" name="ch2_assignFrom" type="int32"/>
+      <param default="0.333" id="30" max="1" min="0.01" name="alphaEnhancedRate" type="float"/>
     </module>
     <module id="7" name="Multi Channel IIR 2">
       <param default="0" id="0" max="3" name="opMode_" type="uint32"/>
