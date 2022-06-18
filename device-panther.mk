@@ -63,7 +63,8 @@ PRODUCT_PROPERTY_OVERRIDES += ro.odm.build.media_performance_class=33
 
 # Display Config
 PRODUCT_COPY_FILES += \
-        device/google/pantah/panther/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb
+        device/google/pantah/panther/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb \
+        device/google/pantah/panther/display_golden_sdc-s6e3fc3-p10_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_sdc-s6e3fc3-p10_cal0.pb
 
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
@@ -272,6 +273,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Vibrator HAL
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.chirp.enabled=1
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd
 
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
