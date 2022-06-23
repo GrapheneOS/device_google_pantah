@@ -296,8 +296,11 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 
 # Vibrator HAL
+ACTUATOR_MODEL := luxshare_ict_081545
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=1
+    ro.vendor.vibrator.hal.chirp.enabled=1 \
+    ro.vendor.vibrator.hal.device.mass=0.214 \
+    ro.vendor.vibrator.hal.loc.coeff=2.7
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.firmware.selection=BCM.hcd
