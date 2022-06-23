@@ -35,6 +35,7 @@
         <intf id="BE_VIRTUAL_VOICE_RX_TUNING" block_id="19"/>
         <intf id="BE_VIRTUAL_VOICE_TX_TUNING" block_id="19"/>
         <intf id="BE_HW_TX_INTF_0" block_id="134,128,137"/>
+        <intf id="BE_VIRTUAL_CRYSTAL_CLEAR_AUDIO_TUNING" block_id="138"/>
     </hw_intf>
 
     <product_lists>
@@ -286,5 +287,6 @@
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
         <module libname="audio_bluenote_aoc.so"/>
+        <module libname="audio_cca_aoc.so"/>
     </external_module>
 </audio_platform_configuration>
