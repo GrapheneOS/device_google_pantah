@@ -35,6 +35,7 @@
         <intf id="BE_VIRTUAL_VOICE_RX_TUNING" block_id="19"/>
         <intf id="BE_VIRTUAL_VOICE_TX_TUNING" block_id="19"/>
         <intf id="BE_HW_TX_INTF_0" block_id="134,128,137"/>
+        <intf id="BE_VIRTUAL_CRYSTAL_CLEAR_AUDIO_TUNING" block_id="138"/>
     </hw_intf>
 
     <product_lists>
@@ -294,6 +295,7 @@
     <external_module>
         <module libname="audio_spk_35l41.so" argu="AcousticShockProtection"/>
         <module libname="audio_waves_aoc.so" argu="Sink=SPK:1 BatteryThrottle=Type:BCL_VOLTAGE,Name:BCL_AUDIO_BAACL"/>
+        <module libname="audio_cca_aoc.so"/>
         <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:1,USB:1 VoIP_Rate=32000"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
