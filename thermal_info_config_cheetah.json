@@ -166,6 +166,7 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S4M_VDD_CPUCL0",
+                    "CdevCeiling": [0, 8, 8, 8, 8, 10, 10],
                     "LimitInfo": [0, 0, 0, 0, 8, 10, 10]
                 },
                 {
@@ -174,6 +175,7 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S3M_VDD_CPUCL1",
+                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
                     "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
                 },
                 {
@@ -182,6 +184,7 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S2M_VDD_CPUCL2",
+                    "CdevCeiling": [0, 15, 15, 15, 15, 17, 17],
                     "LimitInfo": [0, 0, 0, 0, 15, 17, 17]
                 },
                 {
@@ -190,7 +193,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S2S_VDD_G3D",
-                    "LimitInfo": [0, 0, 0, 0, 10, 11, 11]
+                    "CdevCeiling": [0, 6, 6, 6, 8, 11, 11],
+                    "LimitInfo": [0, 0, 0, 0, 8, 11, 11]
                 }
             ]
         },
