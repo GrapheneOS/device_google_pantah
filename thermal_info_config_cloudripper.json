@@ -173,6 +173,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -238,6 +241,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -245,11 +251,11 @@
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
+                    "LimitInfo": [0, 0, 0, 0, 2, 2, 2]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
@@ -276,6 +282,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -283,11 +292,11 @@
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 15, 15, 15]
+                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
@@ -314,6 +323,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -321,11 +333,11 @@
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 13, 13, 13]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 },
                 {
                     "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
+                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
                 }
             ]
         },
