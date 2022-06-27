@@ -375,6 +375,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -440,6 +443,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -478,6 +484,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -516,6 +525,9 @@
             ],
             "VrThreshold":"NAN",
             "Multiplier":1,
+            "Monitor":true,
+            "PollingDelay":0,
+            "PassiveDelay":60000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
