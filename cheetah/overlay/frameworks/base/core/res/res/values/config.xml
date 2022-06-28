@@ -185,6 +185,9 @@
       refresh rate equates to a 25 ms delay. -->
     <integer name="config_udfps_illumination_transition_ms">25</integer>
 
+    <!-- The max vibration strength allowed in audio haptic channels. -->
+    <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
+
     <!-- the number of the max cached processes in the system. -->
     <integer name="config_customizedMaxCachedProcesses">64</integer>
 
