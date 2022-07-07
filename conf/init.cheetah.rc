@@ -33,6 +33,10 @@ on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_complet
 on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
     write /sys/class/spi_master/spi0/spi0.0/synaptics_tcm.0/sysfs/high_sensitivity 1
 
+# Persist
+on post-fs-data
+    chmod 770 /mnt/vendor/persist/uwb
+
 # For Japan sku, always enforce camera shutter sound
 # Since this property is read by the audio server in system service,
 # it should be written by the system init.
