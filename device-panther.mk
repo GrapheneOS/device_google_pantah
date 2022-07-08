@@ -247,7 +247,10 @@ PRODUCT_PACKAGES += \
 
 # SKU specific RROs
 PRODUCT_PACKAGES += \
-    SettingsOverlayG03Z5
+    SettingsOverlayG03Z5 \
+    SettingsOverlayGQML3 \
+    SettingsOverlayGVU6C \
+    SettingsOverlayGVU6C_VN
 
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \

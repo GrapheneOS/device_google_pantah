@@ -259,7 +259,9 @@ PRODUCT_PACKAGES += \
 
 # SKU specific RROs
 PRODUCT_PACKAGES += \
-    SettingsOverlayGFE4J
+    SettingsOverlayGFE4J \
+    SettingsOverlayGE2AE \
+    SettingsOverlayGP4BC
 
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
