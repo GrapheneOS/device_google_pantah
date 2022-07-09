@@ -175,7 +175,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":60000,
+            "PassiveDelay":1000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -243,7 +243,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":60000,
+            "PassiveDelay":1000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -284,7 +284,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":60000,
+            "PassiveDelay":1000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -325,7 +325,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":60000,
+            "PassiveDelay":1000,
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "thermal-cpufreq-2",
