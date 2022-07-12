@@ -146,8 +146,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
-	libspatialaudio \
-	librondo
+	libspatialaudio
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -166,6 +165,10 @@ PRODUCT_COPY_FILES += \
 # Bluetooth SAR test tool
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.audio.spatializer_enabled=true
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
