@@ -13,6 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Enable load module in parallel
+BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
+
+# The modules which need to be loaded in sequential
+BOARD_KERNEL_CMDLINE += vh_sched.load_sequential=1
+BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
+
 TARGET_BOARD_INFO_FILE := device/google/pantah/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := cheetah
 TARGET_SCREEN_DENSITY := 560
