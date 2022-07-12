@@ -5,6 +5,7 @@
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
         "3172000",
+        "1539000",
         "1014000",
         "421000"
       ],
@@ -961,7 +962,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MemFreq",
       "Duration": 0,
-      "Value": "1014000"
+      "Value": "1539000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
