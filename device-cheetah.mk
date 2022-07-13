@@ -146,8 +146,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
-	libspatialaudio \
-	librondo
+	libspatialaudio
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -166,6 +165,10 @@ PRODUCT_COPY_FILES += \
 # Bluetooth SAR test tool
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.audio.spatializer_enabled=true
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -295,10 +298,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
-# Override BQR mask to enable LE Audio Choppy report, BTRT logging
+# Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295006
+    persist.bluetooth.bqr.event_mask=262238
 else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
