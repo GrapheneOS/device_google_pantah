@@ -174,22 +174,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                },
-                {
-                    "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 5, 5, 5]
-                }
-            ]
+            "PassiveDelay":7000
         },
         {
             "Name":"BCL_AUDIO_BAACL",
@@ -242,22 +227,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 2, 2, 2]
-                },
-                {
-                    "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                }
-            ]
+            "PassiveDelay":7000
         },
         {
             "Name":"vdroop2",
@@ -283,22 +253,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
-                },
-                {
-                    "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                }
-            ]
+            "PassiveDelay":7000
         },
         {
             "Name":"smpl_gm",
@@ -324,22 +279,7 @@
             "VrThreshold":"NAN",
             "Multiplier":1,
             "Monitor":true,
-            "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                },
-                {
-                    "CdevRequest": "tpu_cooling",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                }
-            ]
+            "PassiveDelay":7000
         },
         {
             "Name":"ocp_cpu1",
