@@ -184,7 +184,7 @@
         <!-- dev1: voice-call downlink dev2: voice-clal uplink -->
         <usecase id="UC_VOICE_CALL" dev1="4" dev2="11"/>
         <!-- for output with flag AUDIO_OUTPUT_SPATIALIZER -->
-        <usecase id="UC_IMMERSIVE_PLAYBACK" dev1="3"/>
+        <usecase id="UC_IMMERSIVE_PLAYBACK" dev1="30" dyn_path="true" dsp_vol="false" mmap="false" period="10" period_num="3"/>
         <!-- for output with AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD, 4 * 128KB buffer -->
         <usecase id="UC_COMPRESSED_OFFLOAD_PLAYBACK" dev1="6" dyn_path="true" dsp_vol="true" mmap="false" period="131072" period_num="4" pre_proc_id="14"/>
         <!-- dev1: audio dev2: haptic -->
