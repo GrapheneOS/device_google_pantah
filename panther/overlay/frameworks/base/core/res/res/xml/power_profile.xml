@@ -173,15 +173,15 @@
     <item name="audio">75</item>
 
     <!-- Cellular modem related values.-->
-    <item name="modem.controller.sleep">0</item>
-    <item name="modem.controller.idle">156</item>
-    <item name="modem.controller.rx">145</item>
+    <item name="modem.controller.sleep">2.5</item>
+    <item name="modem.controller.idle">4.5</item>
+    <item name="modem.controller.rx">169</item>
     <array name="modem.controller.tx"> <!-- Strength 0 to 4 -->
-        <value>153</value>
-        <value>212</value>
-        <value>292</value>
-        <value>359</value>
-        <value>471</value>
+        <value>223</value>
+        <value>243</value>
+        <value>298</value>
+        <value>573</value>
+        <value>668</value>
     </array>
     <item name="modem.controller.voltage">3700</item>
 
