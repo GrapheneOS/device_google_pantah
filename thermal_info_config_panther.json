@@ -319,7 +319,7 @@
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
             "Combination":["usb_pwr_therm", "USB-MINUS-USB2", "USB-MINUS-NEUTRAL"],
-            "Coefficient":[42000, 2000, 4000],
+            "Coefficient":[42000, 2500, 7000],
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "3.0", "NAN"],
             "Multiplier":1,
             "Monitor":true,
