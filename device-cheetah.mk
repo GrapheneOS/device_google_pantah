@@ -313,5 +313,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.height_ratio=1.025
 
 # Enable camera exif model/make reporting
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
