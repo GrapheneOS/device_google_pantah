@@ -48,5 +48,12 @@
 
     <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
     <dimen name="lock_icon_padding">48px</dimen>
-  </resources>
+
+    <!-- Alpha in duration in ms for the auth ripple to become fully vislble.
+         If set to 0, it is immediately visible, which is desired for devices supporting UDFPS. -->
+    <integer name="auth_ripple_alpha_in_duration">0</integer>
+
+    <!-- Movement should not be more than 1mm -->
+    <dimen name="udfps_burn_in_offset_y">16px</dimen>
+</resources>
 
