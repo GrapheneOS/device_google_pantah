@@ -1,0 +1,10 @@
+<compatibility-matrix version="1.0" type="framework" level="7">
+    <hal format="hidl">
+        <name>hardware.google.bluetooth.ccc</name>
+        <version>1.1</version>
+        <interface>
+            <name>IBluetoothCcc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
