@@ -27,6 +27,7 @@ include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
 include device/google/gs101/uwb/uwb.mk
 include device/google/pantah/uwb/uwb_calibration.mk
