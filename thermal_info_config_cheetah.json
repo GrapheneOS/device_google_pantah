@@ -193,8 +193,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S2S_VDD_G3D",
-                    "CdevCeiling": [0, 6, 6, 6, 8, 11, 11],
-                    "LimitInfo": [0, 0, 0, 0, 8, 11, 11]
+                    "CdevCeiling": [0, 6, 6, 6, 8, 10, 10],
+                    "LimitInfo": [0, 0, 0, 0, 8, 10, 10]
                 }
             ]
         },
