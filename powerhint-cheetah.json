@@ -124,6 +124,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUDvfsPeriod",
+      "Path": "/sys/devices/platform/28000000.mali/dvfs_period",
+      "Values": [
+        "10",
+        "20"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "UClampThreshold",
       "Path": "/proc/vendor_sched/uclamp_threshold",
       "Values": [
@@ -547,9 +556,9 @@
     },
     {
       "PowerHint": "LAUNCH_GPU",
-      "Node": "GPUMinFreq",
+      "Node": "GPUDvfsPeriod",
       "Duration": 1000,
-      "Value": "848000"
+      "Value": "10"
     },
     {
       "PowerHint": "LAUNCH_120FPS",
