@@ -124,6 +124,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUDvfsPeriod",
+      "Path": "/sys/devices/platform/28000000.mali/dvfs_period",
+      "Values": [
+        "10",
+        "20"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "UClampThreshold",
       "Path": "/proc/vendor_sched/uclamp_threshold",
       "Values": [
@@ -176,16 +185,6 @@
       "Values": [
         "159",
         "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SFUClampBoost",
-      "Path": "/proc/vendor_sched/sf_uclamp_min",
-      "Values": [
-        "159",
-        "85",
-        "39"
       ],
       "ResetOnInit": true
     },
@@ -528,12 +527,6 @@
   ],
   "Actions": [
     {
-      "PowerHint": "INTERACTION",
-      "Node": "SFUClampBoost",
-      "Duration": 5000,
-      "Value": "85"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "UClampThreshold",
       "Duration": 5000,
@@ -547,15 +540,9 @@
     },
     {
       "PowerHint": "LAUNCH_GPU",
-      "Node": "GPUMinFreq",
+      "Node": "GPUDvfsPeriod",
       "Duration": 1000,
-      "Value": "848000"
-    },
-    {
-      "PowerHint": "LAUNCH_120FPS",
-      "Node": "SFUClampBoost",
-      "Duration": 1000,
-      "Value": "159"
+      "Value": "10"
     },
     {
       "PowerHint": "LAUNCH",
@@ -572,12 +559,6 @@
       "PowerHint": "LAUNCH",
       "Type": "DoHint",
       "Value": "LAUNCH_GPU"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "SFUClampBoost",
-      "Duration": 5000,
-      "Value": "85"
     },
     {
       "PowerHint": "LAUNCH",
