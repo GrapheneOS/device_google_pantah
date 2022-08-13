@@ -206,9 +206,10 @@
     <dsp_latency>
         <usecase id="UC_LOW_LATENCY_PLAYBACK" type="playback">
             <be_cfg be_id="OUT_SPEAKER_BE_CFG" latency="20000"/>
-            <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="10000"/>
-            <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="10000"/>
-            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="10000"/>
+            <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="60000"/>
         </usecase>
 
         <usecase id="UC_DEEP_BUFFER_PLAYBACK" type="playback">
@@ -216,6 +217,15 @@
             <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="70000"/>
             <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="70000"/>
             <be_cfg be_id="OUT_A2DP_BE_CFG" latency="180000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="80000"/>
+        </usecase>
+
+        <usecase id="UC_COMPRESSED_OFFLOAD_PLAYBACK" type="playback">
+            <be_cfg be_id="OUT_SPEAKER_BE_CFG" latency="40000"/>
+            <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="40000"/>
+            <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="40000"/>
+            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="70000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="20000"/>
         </usecase>
 
         <usecase id="UC_AUDIO_RECORD" type="capture">
