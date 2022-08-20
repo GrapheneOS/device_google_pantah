@@ -175,8 +175,7 @@
       "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "612",
-        "1",
-        "63"
+        "1"
       ],
       "ResetOnInit": true
     },
@@ -1433,13 +1432,13 @@
       "PowerHint": "REFRESH_120FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "63"
+      "Value": "1"
     },
     {
       "PowerHint": "REFRESH_60FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "63"
+      "Value": "1"
     },
     {
       "PowerHint": "REFRESH_60FPS",
