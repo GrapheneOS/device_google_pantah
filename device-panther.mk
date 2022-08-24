@@ -243,7 +243,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=1
+    ro.vendor.build.svn=2
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -317,3 +317,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+# Enable adpf cpu hint session for SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_adpf_cpu_hint=true

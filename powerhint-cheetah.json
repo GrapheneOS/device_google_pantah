@@ -189,16 +189,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "SFUClampBoost",
-      "Path": "/proc/vendor_sched/sf_uclamp_min",
-      "Values": [
-        "159",
-        "85",
-        "39"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "MLUclampBoost",
       "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
@@ -537,12 +527,6 @@
   ],
   "Actions": [
     {
-      "PowerHint": "INTERACTION",
-      "Node": "SFUClampBoost",
-      "Duration": 5000,
-      "Value": "85"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "UClampThreshold",
       "Duration": 5000,
@@ -561,12 +545,6 @@
       "Value": "10"
     },
     {
-      "PowerHint": "LAUNCH_120FPS",
-      "Node": "SFUClampBoost",
-      "Duration": 1000,
-      "Value": "159"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "FGPreferIdle",
       "Duration": 5000,
@@ -581,12 +559,6 @@
       "PowerHint": "LAUNCH",
       "Type": "DoHint",
       "Value": "LAUNCH_GPU"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "SFUClampBoost",
-      "Duration": 5000,
-      "Value": "85"
     },
     {
       "PowerHint": "LAUNCH",

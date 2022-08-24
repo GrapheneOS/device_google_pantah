@@ -107,3 +107,11 @@ on property:vendor.device.modules.ready=1
     chown system system /proc/focaltech_touch/selftest/Scap_Rawdata
     chown system system /proc/focaltech_touch/selftest/Short
     chown system system /proc/focaltech_touch/selftest/Strength
+
+# Override SF and RE uclamps to 0 on boot after being set elsewhere, for adpf cpu hints
+on property:sys.boot_completed=1
+    trigger override-sf-uclamp
+
+on override-sf-uclamp
+    write /proc/vendor_sched/rt_uclamp_min 0
+    write /proc/vendor_sched/sf_uclamp_min 0
