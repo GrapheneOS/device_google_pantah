@@ -25,7 +25,7 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cloud
 include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/cloudripper/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
-include device/google/gs101/bluetooth/bluetooth.mk
+include device/google/gs-common/bcmbt/bluetooth.mk
 
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 $(call soong_config_set,lyric,tuning_product,cloudripper)
@@ -99,7 +99,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_SOONG_NAMESPACES += \
         vendor/broadcom/bluetooth
 PRODUCT_PACKAGES += \
-	android.hardware.bluetooth@1.1-service.bcmbtlinux \
 	bt_vendor.conf
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
