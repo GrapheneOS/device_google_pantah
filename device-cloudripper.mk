@@ -27,7 +27,6 @@ include device/google/pantah/audio/cloudripper/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
 
@@ -94,18 +93,19 @@ PRODUCT_COPY_FILES += \
 	device/google/pantah/powerhint-cloudripper.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Bluetooth HAL
-DEVICE_MANIFEST_FILE += \
-	device/google/pantah/bluetooth/manifest_bluetooth.xml
-PRODUCT_SOONG_NAMESPACES += \
-        vendor/broadcom/bluetooth
-PRODUCT_PACKAGES += \
-	bt_vendor.conf
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd
+
+# default BDADDR for EVB only
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
@@ -142,10 +142,6 @@ PRODUCT_PACKAGES += \
 # 	ro.hardware.keystore=software \
 # 	ro.hardware.gatekeeper=software
 
-# default BDADDR for EVB only
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
-
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
     device/google/pantah/powerstats/cloudripper
@@ -177,9 +173,6 @@ endif
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.firmware.selection=BCM.hcd
 
 # Device features
 PRODUCT_COPY_FILES += \
