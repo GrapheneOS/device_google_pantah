@@ -230,6 +230,11 @@
             <be_cfg be_id="OUT_BLE_BE_CFG" latency="20000"/>
         </usecase>
 
+        <usecase id="UC_IMMERSIVE_PLAYBACK" type="playback">
+            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="100000"/>
+        </usecase>
+
+
         <usecase id="UC_AUDIO_RECORD" type="capture">
             <be_cfg be_id="IN_CAMCORDER_LANDSCAPE_BE_CFG" latency="160000"/>
             <be_cfg be_id="IN_CAMCORDER_INVERT_LANDSCAPE_BE_CFG" latency="160000"/>
