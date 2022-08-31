@@ -15,13 +15,16 @@ while read line ; do
         #line=$(echo ${line/,} | tr -d "\"")
         country[count]=$(echo $line | cut -d ':' -f1 | tr -d "\"")
         code[count]=$(echo $line | cut -d ':' -f2 | tr -d "\"" | tr -d " ")
-
             if [ "$header" = "FCC" ]; then
-                cp $1/UWB-calibration_fcc.conf $2/UWB-calibration-${code[$count]}.conf
+                cp $1/UWB-calibration-fcc.conf $2/UWB-calibration-${code[$count]}.conf
             elif [ "$header" = "CE" ]; then
-                cp $1/UWB-calibration_ce.conf $2/UWB-calibration-${code[$count]}.conf
+                cp $1/UWB-calibration-ce.conf $2/UWB-calibration-${code[$count]}.conf
             elif [ "$header" = "JP" ]; then
-                cp $1/UWB-calibration_jp.conf $2/UWB-calibration-${code[$count]}.conf
+                cp $1/UWB-calibration-jp.conf $2/UWB-calibration-${code[$count]}.conf
+            elif [ "$header" = "TW" ]; then
+                cp $1/UWB-calibration-tw.conf $2/UWB-calibration-${code[$count]}.conf
+            elif [ "$header" = "Restricted" ]; then
+                cp $1/UWB-calibration-restricted.conf $2/UWB-calibration-${code[$count]}.conf
             fi
     fi
 ((count++))
