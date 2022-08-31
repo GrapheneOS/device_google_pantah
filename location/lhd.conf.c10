@@ -1,0 +1,33 @@
+LheName=bbd
+
+LheRsmResetTimeoutMS=10000
+GpioNStdbyPath=/sys/devices/platform/10940000.spi/spi_master/spi5/spi5.0/nstandby
+
+LhePatch=/vendor/firmware/SensorHub.patch
+Lhe477xDebugFlags=RPC:FACILITY=65535-dKP+CUST+LHE:STDOUT_PUTS:STDOUT_LOG
+LheConsole=/data/vendor/gps/LheConsole
+
+LogEnabled=true
+Log=JAVA
+LogDirectory=/sdcard/gps/broadcom/storage
+
+LheBbdPacket=/dev/ttyBCM
+
+LheBbdControl=/dev/bbd_control
+
+# LheBbdSensor=/dev/bbd_sensor
+
+LheFailSafe=/data/vendor/gps/logs/esw-crash-dump.txt
+LogLevel=*:I
+
+NvStorageDir=/data/vendor/gps/
+
+# Enable BBD debugging at these stages:
+# LheDriverDebugFlags=PATCH_BBD:LHE_BBD:FSC_BBD
+
+LheAutoBaudDelayMS=10
+TrafficLogEnabled=false
+SecondaryConfigPath=/data/vendor/gps/overlay/lhd_overlay.conf
+
+SkipSensorWakeLock=true
+LoggerWakeLockEnable=false
