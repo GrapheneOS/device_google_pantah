@@ -31,3 +31,4 @@ SecondaryConfigPath=/data/vendor/gps/overlay/lhd_overlay.conf
 
 SkipSensorWakeLock=true
 LoggerWakeLockEnable=false
+PpsEnable=true
