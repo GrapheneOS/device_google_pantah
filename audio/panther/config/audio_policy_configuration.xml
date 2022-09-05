@@ -202,7 +202,7 @@
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload,immersive_out"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Speaker Safe"
                        sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Earpiece"
