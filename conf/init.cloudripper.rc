@@ -15,7 +15,7 @@ on early-boot
     wait_for_prop vendor.common.modules.ready 1
     start insmod_sh_cloudripper
 
-service insmod_sh_cloudripper /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.cloudripper.cfg
+service insmod_sh_cloudripper /vendor/bin/insmod.sh /vendor/etc/init.insmod.cloudripper.cfg
     class main
     user root
     group root system
