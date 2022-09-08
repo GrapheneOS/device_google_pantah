@@ -13,7 +13,7 @@ on early-boot
     wait_for_prop vendor.common.modules.ready 1
     start insmod_sh_pantah
 
-service insmod_sh_pantah /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
+service insmod_sh_pantah /vendor/bin/insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
     class main
     user root
     group root system
