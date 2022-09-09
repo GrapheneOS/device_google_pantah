@@ -31,7 +31,6 @@ include device/google/gs201/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 $(call soong_config_set,lyric,tuning_product,panther)
 $(call soong_config_set,google3a_config,target_device,panther)
 
@@ -122,23 +121,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/google/pantah/powerhint-panther-a0.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint-a0.json
 
-# Bluetooth HAL
-DEVICE_MANIFEST_FILE += \
-	device/google/pantah/bluetooth/manifest_bluetooth.xml
-PRODUCT_SOONG_NAMESPACES += \
-        vendor/broadcom/bluetooth
+# Spatial Audio
 PRODUCT_PACKAGES += \
-	bt_vendor.conf
+	libspatialaudio
+
+# Bluetooth HAL
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
-
-# Spatial Audio
-PRODUCT_PACKAGES += \
-	libspatialaudio
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -157,6 +150,35 @@ PRODUCT_COPY_FILES += \
 # Bluetooth SAR test tool
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
+# default BDADDR for EVB only
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
+
+# Bluetooth LE Audio
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.leaudio_offload.supported=true \
+    persist.bluetooth.leaudio_offload.disabled=false \
+    ro.bluetooth.leaudio_switcher.supported=true
+
+# Bluetooth EWP test tool
+PRODUCT_PACKAGES_DEBUG += \
+    ewp_tool
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd
+
+# Bluetooth AAC VBR
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.a2dp_aac.vbr_supported=true
+
+# Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.bqr.event_mask=262238
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.bqr.event_mask=94
+endif
 
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -191,10 +213,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 	ro.hardware.keystore_desede=true \
 # 	ro.hardware.keystore=software \
 # 	ro.hardware.gatekeeper=software
-
-# default BDADDR for EVB only
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
@@ -267,16 +285,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGVU6C \
     SettingsOverlayGVU6C_VN
 
-# Bluetooth LE Audio
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.bluetooth.leaudio_offload.supported=true \
-    persist.bluetooth.leaudio_offload.disabled=false \
-    ro.bluetooth.leaudio_switcher.supported=true
-
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_DEBUG += \
-    ewp_tool
-
 # userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
@@ -294,23 +302,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.chirp.enabled=1 \
     ro.vendor.vibrator.hal.device.mass=0.195 \
     ro.vendor.vibrator.hal.loc.coeff=2.65
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.firmware.selection=BCM.hcd
-
-# Bluetooth AAC VBR
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.a2dp_aac.vbr_supported=true
-
-# Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
-else
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=94
-endif
-
 # Keyboard bottom padding in dp for portrait mode and height ratio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=8 \
