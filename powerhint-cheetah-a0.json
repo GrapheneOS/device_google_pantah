@@ -1544,12 +1544,6 @@
     },
     {
       "PowerHint": "FACE_UNLOCK_BOOST",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 1000,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "FACE_UNLOCK_BOOST",
       "Node": "CPU_LITTLE_TSKIN_BYPASS",
       "Duration": 1000,
       "Value": "1"
