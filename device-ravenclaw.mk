@@ -32,6 +32,8 @@ include device/google/gs101/uwb/uwb.mk
 include device/google/pantah/uwb/uwb_calibration.mk
 endif
 
+# go/lyric-soong-variables
+$(call soong_config_set,lyric,camera_hardware,ravenclaw)
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
 
