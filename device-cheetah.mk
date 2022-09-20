@@ -181,11 +181,16 @@ else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
 endif
+
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
     ro.bluetooth.leaudio_switcher.supported=true
+
+# LE Auido Offload Capabilities setting
+PRODUCT_COPY_FILES += \
+    device/google/pantah/bluetooth/cheetah/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
