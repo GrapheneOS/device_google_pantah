@@ -190,7 +190,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # LE Auido Offload Capabilities setting
 PRODUCT_COPY_FILES += \
-    device/google/pantah/bluetooth/cheetah/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
+    device/google/pantah/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
