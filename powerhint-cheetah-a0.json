@@ -627,11 +627,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "Value": "LAUNCH_120FPS"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
@@ -1519,11 +1514,6 @@
       "Value": "63"
     },
     {
-      "PowerHint": "REFRESH_60FPS",
-      "Type": "MaskHint",
-      "Value": "LAUNCH_120FPS"
-    },
-    {
       "PowerHint": "ADPF_DISABLE_TA_BOOST",
       "Node": "TAUClampBoost",
       "Duration": 0,
@@ -1540,11 +1530,6 @@
       "Node": "TAUClampBoost",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "DISPLAY_IDLE",
-      "Type": "EndHint",
-      "Value": "INTERACTION"
     },
     {
       "PowerHint": "DISPLAY_IDLE",
