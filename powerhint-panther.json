@@ -1443,11 +1443,6 @@
     {
       "PowerHint": "DISPLAY_IDLE",
       "Type": "EndHint",
-      "Value": "INTERACTION"
-    },
-    {
-      "PowerHint": "DISPLAY_IDLE",
-      "Type": "EndHint",
       "Value": "DISPLAY_UPDATE_IMMINENT"
     },
     {
