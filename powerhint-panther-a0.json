@@ -525,17 +525,7 @@
       "Path": "/sys/kernel/pixel_em/active_profile",
       "Values": [
         "default",
-        "cam1",
-        "cam2",
-        "front_cam"
-      ],
-      "DefaultIndex": 0
-    },
-    {
-      "Name": "PMU_LIT_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/limit_frequency",
-      "Values": [
-        "1401000"
+        "cam1"
       ],
       "DefaultIndex": 0
     },
@@ -544,8 +534,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "2",
-        "1",
-	"0"
+        "0"
       ],
       "DefaultIndex": 0
     },
@@ -554,9 +543,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "70",
-        "50",
-	"30",
-	"0"
+        "0"
       ],
       "DefaultIndex": 0
     },
@@ -564,8 +551,7 @@
       "Name": "PMU_MID_LIMIT_FREQ",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/limit_frequency",
       "Values": [
-        "1836000",
-        "1491000"
+        "1836000"
       ],
       "DefaultIndex": 0
     },
@@ -574,8 +560,7 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "6",
-        "3",
-	"0"
+        "3"
       ],
       "DefaultIndex": 0
     },
@@ -584,8 +569,7 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "65",
-        "50",
-	"0"
+        "50"
       ],
       "DefaultIndex": 0
     },
@@ -594,7 +578,6 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/limit_frequency",
       "Values": [
         "2507000",
-	"2048000",
         "1826000"
       ],
       "DefaultIndex": 0
@@ -604,8 +587,7 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "5",
-        "3",
-	"0"
+        "3"
       ],
       "DefaultIndex": 0
     },
@@ -614,8 +596,7 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "69",
-        "50",
-	"0"
+        "50"
       ],
       "DefaultIndex": 0
     }
@@ -1046,6 +1027,12 @@
       "Node": "PMU_MID_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1826000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
