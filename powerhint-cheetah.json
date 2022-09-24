@@ -42,6 +42,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq",
       "Values": [
         "9999999",
+        "1401000",
         "1197000",
         "0"
       ],
@@ -73,6 +74,7 @@
         "9999999",
         "2253000",
         "2130000",
+        "1836000",
         "1197000",
         "0"
       ],
@@ -106,6 +108,7 @@
         "2704000",
         "2507000",
         "2252000",
+        "1826000",
         "1106000",
         "0"
       ],
@@ -168,6 +171,15 @@
         "20 10 80",
         "80 10 80",
         "60 10 40"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CAMUClampBoost",
+      "Path": "/proc/vendor_sched/cam_uclamp_min",
+      "Values": [
+        "612",
+        "0"
       ],
       "ResetOnInit": true
     },
@@ -521,17 +533,7 @@
       "Path": "/sys/kernel/pixel_em/active_profile",
       "Values": [
         "default",
-        "cam1",
-        "cam2",
-        "front_cam"
-      ],
-      "DefaultIndex": 0
-    },
-    {
-      "Name": "PMU_LIT_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/limit_frequency",
-      "Values": [
-        "1401000"
+        "cam1"
       ],
       "DefaultIndex": 0
     },
@@ -540,8 +542,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "2",
-        "1",
-	"0"
+        "0"
       ],
       "DefaultIndex": 0
     },
@@ -550,18 +551,7 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "70",
-        "50",
-	"30",
-	"0"
-      ],
-      "DefaultIndex": 0
-    },
-    {
-      "Name": "PMU_MID_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/limit_frequency",
-      "Values": [
-        "1836000",
-        "1491000"
+        "0"
       ],
       "DefaultIndex": 0
     },
@@ -570,8 +560,7 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "6",
-        "3",
-	"0"
+        "3"
       ],
       "DefaultIndex": 0
     },
@@ -580,8 +569,7 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "65",
-        "50",
-	"0"
+        "50"
       ],
       "DefaultIndex": 0
     },
@@ -590,7 +578,6 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/limit_frequency",
       "Values": [
         "2507000",
-	"2048000",
         "1826000"
       ],
       "DefaultIndex": 0
@@ -600,8 +587,7 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
         "5",
-        "3",
-	"0"
+        "3"
       ],
       "DefaultIndex": 0
     },
@@ -610,8 +596,7 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/spc_threshold",
       "Values": [
         "69",
-        "50",
-	"0"
+        "50"
       ],
       "DefaultIndex": 0
     },
@@ -726,7 +711,7 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 1000,
-      "Value": "9999999"
+      "Value": "1826000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -738,7 +723,7 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPUMidClusterMinFreq",
       "Duration": 1000,
-      "Value": "9999999"
+      "Value": "1836000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -750,7 +735,13 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 1000,
-      "Value": "9999999"
+      "Value": "1401000"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CAMUClampBoost",
+      "Duration": 1000,
+      "Value": "612"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -1168,12 +1159,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "PMU_MID_LIMIT_FREQ",
-      "Duration": 0,
-      "Value": "1836000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PMU_MID_LCPI_THRESHOLD",
       "Duration": 0,
       "Value": "3"
@@ -1183,6 +1168,12 @@
       "Node": "PMU_MID_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1826000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1264,6 +1255,60 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_MID_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1826000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CDPreferHighCap",
       "Duration": 0,
       "Value": "1"
@@ -1273,24 +1318,6 @@
       "Node": "TAPreferHighCap",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPUBigClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1826000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPUMidClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1491000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPULittleClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1401000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
