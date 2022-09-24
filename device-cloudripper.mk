@@ -172,6 +172,10 @@ else
 
 endif
 
+##Audio Vendor property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.enabled=false
+
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
