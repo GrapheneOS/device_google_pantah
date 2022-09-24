@@ -36,6 +36,8 @@ ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
 include device/google/pantah/uwb/uwb_calibration.mk
 endif
 
+# go/lyric-soong-variables
+$(call soong_config_set,lyric,camera_hardware,cheetah)
 $(call soong_config_set,lyric,tuning_product,cheetah)
 $(call soong_config_set,google3a_config,target_device,cheetah)
 
@@ -335,6 +337,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
+
+##Audio Vendor property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.enabled=false
 
 # Device features
 PRODUCT_COPY_FILES += \
