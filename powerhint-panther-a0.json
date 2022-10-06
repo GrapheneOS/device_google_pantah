@@ -770,20 +770,32 @@
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1426000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUMidClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1197000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPULittleClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1401000"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "PMU_POLL",
+      "Duration": 2500,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "EM_Profile",
+      "Duration": 2500,
+      "Value": "default"
     },
     {
       "PowerHint": "CAMERA_SHOT",
