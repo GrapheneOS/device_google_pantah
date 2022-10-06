@@ -233,7 +233,6 @@
       "Name": "CDCpuset",
       "Path": "/dev/cpuset/camera-daemon/cpus",
       "Values": [
-        "0-3",
         "4-7",
         "0-7"
       ],
@@ -243,7 +242,6 @@
       "Name": "CDHighCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-high-group/cpus",
       "Values": [
-        "0-3",
         "6-7",
         "0-7"
       ],
@@ -253,7 +251,6 @@
       "Name": "CDMidCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-mid-group/cpus",
       "Values": [
-        "0-3",
         "4-5",
         "0-7"
       ],
@@ -263,7 +260,6 @@
       "Name": "CDMidHighCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-mid-high-group/cpus",
       "Values": [
-        "0-3",
         "4-7",
         "0-7"
       ],
@@ -629,30 +625,6 @@
   ],
   "Actions": [
     {
-      "PowerHint": "CDCPUSET_RESTRICTED",
-      "Node": "CDCpuset",
-      "Duration": 1000,
-      "Value": "0-3"
-    },
-    {
-      "PowerHint": "CDHIGHCPUSETCPUS_RESTRICTED",
-      "Node": "CDHighCpusetCpus",
-      "Duration": 1000,
-      "Value": "0-3"
-    },
-    {
-      "PowerHint": "CDMIDCPUSETCPUS_RESTRICTED",
-      "Node": "CDMidCpusetCpus",
-      "Duration": 1000,
-      "Value": "0-3"
-    },
-    {
-      "PowerHint": "CDMIDHIGHCPUSETCPUS_RESTRICTED",
-      "Node": "CDMidHighCpusetCpus",
-      "Duration": 1000,
-      "Value": "0-3"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "UClampThreshold",
       "Duration": 5000,
@@ -675,26 +647,6 @@
       "Node": "FGPreferIdle",
       "Duration": 5000,
       "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "Value": "CDCPUSET_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
     },
     {
       "PowerHint": "LAUNCH",
@@ -742,26 +694,6 @@
       "Node": "NPITaskPacking",
       "Duration": 5000,
       "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
-      "Type": "EndHint",
-      "Value": "CDCPUSET_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
-      "Type": "EndHint",
-      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
-      "Type": "EndHint",
-      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
-      "Type": "EndHint",
-      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -1494,26 +1426,6 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_VIDEO_RECORDING",
-      "Type": "MaskHint",
-      "Value": "CDCPUSET_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_VIDEO_RECORDING",
-      "Type": "MaskHint",
-      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_VIDEO_RECORDING",
-      "Type": "MaskHint",
-      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "CAMERA_VIDEO_RECORDING",
-      "Type": "MaskHint",
-      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
     },
     {
       "PowerHint": "CAMERA_GPU_HIGH",
