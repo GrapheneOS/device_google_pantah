@@ -665,6 +665,17 @@
       "Value": "0"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "Value": "LAUNCH_PMU"
+    },
+    {
+      "PowerHint": "LAUNCH_PMU",
+      "Node": "PMU_POLL",
+      "Duration": 3000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
@@ -725,6 +736,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "PMU_POLL",
+      "Duration": 1000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
@@ -749,6 +766,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_LAUNCH_EXTENDED",
+      "Node": "PMU_POLL",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 1000,
@@ -769,20 +792,32 @@
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1426000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUMidClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1197000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPULittleClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1401000"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "PMU_POLL",
+      "Duration": 2500,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "EM_Profile",
+      "Duration": 2500,
+      "Value": "default"
     },
     {
       "PowerHint": "CAMERA_SHOT",
@@ -1008,12 +1043,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "PMU_POLL",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PMU_LIT_LCPI_THRESHOLD",
       "Duration": 0,
       "Value": "0"
@@ -1053,6 +1082,12 @@
       "Node": "PMU_BIG_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1122,12 +1157,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_POLL",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "PMU_LIT_LCPI_THRESHOLD",
       "Duration": 0,
       "Value": "0"
@@ -1167,6 +1196,12 @@
       "Node": "PMU_BIG_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
