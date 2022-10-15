@@ -34,6 +34,11 @@ include device/google/gs101/bluetooth/bluetooth.mk
 $(call soong_config_set,lyric,tuning_product,panther)
 $(call soong_config_set,google3a_config,target_device,panther)
 
+# sysconfig and permissions XML from stock
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/product-sysconfig-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/product-sysconfig-stock.xml \
+    $(LOCAL_PATH)/product-permissions-stock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/product-permissions-stock.xml
+
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/pantah/conf/init.pantah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.pantah.rc \
