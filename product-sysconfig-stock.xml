@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+
+    <!-- panther is the same as cheetah -->
+
+    <component-override package="com.android.settings" >
+        <!-- Display regulatory info in settings. -->
+        <component class=".RegulatoryInfoDisplayActivity" enabled="true" />
+    </component-override>
+    <!-- panther/proprietary/product/etc/sysconfig/google_build.xml -->
+    <feature name="com.google.android.feature.GOOGLE_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/nexus.xml -->
+    <feature name="com.google.android.feature.PIXEL_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2017.xml -->
+    <feature name="com.google.android.feature.PIXEL_2017_EXPERIENCE" />
+    <feature name="com.google.android.feature.AER_OPTIMIZED" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2018.xml -->
+    <feature name="com.google.android.feature.PIXEL_2018_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2019_midyear.xml -->
+    <feature name="com.google.android.feature.PIXEL_2019_MIDYEAR_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2019.xml -->
+    <feature name="com.google.android.feature.PIXEL_2019_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2020_midyear.xml -->
+    <feature name="com.google.android.feature.PIXEL_2020_MIDYEAR_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2020.xml -->
+    <feature name="com.google.android.feature.PIXEL_2020_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2021_midyear.xml -->
+    <feature name="com.google.android.feature.PIXEL_2021_MIDYEAR_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2021.xml -->
+    <feature name="com.google.android.feature.PIXEL_2021_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2022.xml -->
+    <feature name="com.google.android.feature.PIXEL_2022_EXPERIENCE" />
+    <!-- panther/proprietary/product/etc/sysconfig/pixel_experience_2022_midyear.xml -->
+    <feature name="com.google.android.feature.PIXEL_2022_MIDYEAR_EXPERIENCE" />
+</config>
