@@ -5,9 +5,3 @@ import /vendor/etc/init/hw/init.pantah.rc
 on property:vendor.device.modules.ready=1
     # Start the twoshay touch service
     start twoshay
-
-# For Japan sku, always enforce camera shutter sound
-# Since this property is read by the audio server in system service,
-# it should be written by the system init.
-on property:ro.boot.hardware.sku=G03Z5
-    setprop audio.camerasound.force true
