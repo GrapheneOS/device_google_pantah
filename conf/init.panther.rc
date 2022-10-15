@@ -12,9 +12,3 @@ on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_complet
 
 on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
     write /proc/focaltech_touch/high_sensitivity 1
-
-# For Japan sku, always enforce camera shutter sound
-# Since this property is read by the audio server in system service,
-# it should be written by the system init.
-on property:ro.boot.hardware.sku=G03Z5
-    setprop audio.camerasound.force true
