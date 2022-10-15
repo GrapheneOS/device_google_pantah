@@ -36,9 +36,3 @@ on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_complet
 # Persist
 on post-fs-data
     chmod 770 /mnt/vendor/persist/uwb
-
-# For Japan sku, always enforce camera shutter sound
-# Since this property is read by the audio server in system service,
-# it should be written by the system init.
-on property:ro.boot.hardware.sku=GFE4J
-    setprop audio.camerasound.force true
