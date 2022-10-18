@@ -148,4 +148,7 @@
 
     <!-- Enable aggregation of Wifi link layer radio stats from all radios -->
     <bool translatable="false" name="config_wifiLinkLayerAllRadiosStatsAggregationEnabled">true</bool>
+
+    <!-- Enable WPA2 to WPA3 auto-upgrade offload to capable Driver/Firmware -->
+    <bool translatable="false" name="config_wifiSaeUpgradeOffloadEnabled">true</bool>
 </resources>
