@@ -165,9 +165,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
 
-# declare use of spatial audio
+# declare use of spatial audio: disabled
 PRODUCT_PROPERTY_OVERRIDES += \
-       ro.audio.spatializer_enabled=true
+       ro.audio.spatializer_enabled=false
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
