@@ -139,6 +139,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES_DEBUG += \
     hci_inject
 
+# Bluetooth OPUS codec
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.opus.enabled=true
+
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_panther.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
