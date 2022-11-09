@@ -341,3 +341,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Virtual fingerprint HAL
 PRODUCT_PACKAGES_DEBUG += android.hardware.biometrics.fingerprint-service.example
+
+# Setup Wizard device-specific settings
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.feature.enable_quick_start_flow_for_debug=true \
