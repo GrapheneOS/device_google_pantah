@@ -125,7 +125,7 @@
     <hal format="hidl">
        <name>vendor.google.whitechapel.audio.audioext</name>
        <transport>hwbinder</transport>
-       <version>3.0</version>
+       <version>4.0</version>
        <interface>
            <name>IAudioExt</name>
            <instance>default</instance>
