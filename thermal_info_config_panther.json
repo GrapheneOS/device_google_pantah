@@ -377,31 +377,31 @@
         {
             "Name":"LITTLE",
             "Type":"CPU",
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 115.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
             "Multiplier":0.001
         },
         {
             "Name":"MID",
             "Type":"CPU",
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 115.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
             "Multiplier":0.001
         },
         {
             "Name":"BIG",
             "Type":"CPU",
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 115.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
             "Multiplier":0.001
         },
         {
             "Name":"G3D",
             "Type":"GPU",
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 115.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
             "Multiplier":0.001
         },
         {
             "Name":"TPU",
             "Type":"NPU",
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 115.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
             "Multiplier":0.001
         },
         {
