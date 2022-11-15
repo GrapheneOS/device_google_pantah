@@ -21,7 +21,7 @@ LOCAL_UWB_CAL_DIR=device/google/pantah/uwb
 PRODUCT_COPY_FILES += \
     $(LOCAL_UWB_CAL_DIR)/UWB-calibration-restricted.conf:$(TARGET_COPY_OUT_VENDOR)/etc/uwb/UWB-calibration-unknown.conf \
     $(LOCAL_UWB_CAL_DIR)/UWB-calibration-default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/uwb/UWB-calibration-default.conf \
-    $(LOCAL_UWB_CAL_DIR)/UWB-calibration-default.conf:$(TARGET_COPY_OUT_VENDOR)/etc/uwb/UWB-calibration.conf \
+    $(LOCAL_UWB_CAL_DIR)/UWB-calibration.conf:$(TARGET_COPY_OUT_VENDOR)/etc/uwb/UWB-calibration.conf \
     $(LOCAL_UWB_CAL_DIR)/init.uwb.calib.xtal.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.uwb.calib.sh \
 
 PRODUCT_COPY_FILES += \
