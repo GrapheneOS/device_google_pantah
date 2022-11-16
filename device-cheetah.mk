@@ -30,6 +30,7 @@ include device/google/pantah/audio/cheetah/audio-tables.mk
 include device/google/gs201/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
+include device/google/gs-common/touch/syna/syna.mk
 
 ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
 include device/google/pantah/uwb/uwb_calibration.mk
