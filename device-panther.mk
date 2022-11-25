@@ -332,6 +332,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
 
+# The default value of this variable is false and should only be set to true when
+# the device allows users to enable the seamless transfer feature.
+PRODUCT_PRODUCT_PROPERTIES += \
+   euicc.seamless_transfer_enabled_in_non_qs=true
+
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
