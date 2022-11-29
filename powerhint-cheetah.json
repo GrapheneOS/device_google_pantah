@@ -1786,6 +1786,12 @@
       "Value": "572000"
     },
     {
+      "PowerHint": "ADPF_FIRST_FRAME",
+      "Node": "GPUMinFreq",
+      "Duration": 50,
+      "Value": "302000"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "PMU_POLL",
       "Duration": 0,
