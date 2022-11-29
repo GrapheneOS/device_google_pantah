@@ -556,6 +556,14 @@
       "DefaultIndex": 0
     },
     {
+      "Name": "PMU_MID_LIMIT_FREQ",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/limit_frequency",
+      "Values": [
+        "1836000"
+      ],
+      "DefaultIndex": 0
+    },
+    {
       "Name": "PMU_MID_LCPI_THRESHOLD",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
@@ -1159,6 +1167,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PMU_MID_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1836000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PMU_MID_LCPI_THRESHOLD",
       "Duration": 0,
       "Value": "3"
@@ -1255,60 +1269,6 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_POLL",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_LIT_LCPI_THRESHOLD",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_LIT_SPC_THRESHOLD",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_MID_LCPI_THRESHOLD",
-      "Duration": 0,
-      "Value": "3"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_MID_SPC_THRESHOLD",
-      "Duration": 0,
-      "Value": "50"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_BIG_LIMIT_FREQ",
-      "Duration": 0,
-      "Value": "1826000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_BIG_LCPI_THRESHOLD",
-      "Duration": 0,
-      "Value": "3"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "PMU_BIG_SPC_THRESHOLD",
-      "Duration": 0,
-      "Value": "50"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "EM_Profile",
-      "Duration": 0,
-      "Value": "cam1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CDPreferHighCap",
       "Duration": 0,
       "Value": "1"
@@ -1318,6 +1278,24 @@
       "Node": "TAPreferHighCap",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1826000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1491000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1401000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
