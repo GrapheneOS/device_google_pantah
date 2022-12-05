@@ -240,6 +240,8 @@
             <be_cfg be_id="IN_CAMCORDER_SELFIE_LANDSCAPE_BE_CFG" latency="160000"/>
             <be_cfg be_id="IN_CAMCORDER_SELFIE_INVERT_LANDSCAPE_BE_CFG" latency="160000"/>
             <be_cfg be_id="IN_CAMCORDER_SELFIE_PORTRAIT_BE_CFG" latency="160000"/>
+            <be_cfg be_id="IN_CAMCORDER_MIC_BE_CFG" latency="160000"/>
+            <be_cfg be_id="IN_CAMCORDER_TRIPLE_MIC_BE_CFG" latency="160000"/>
             <be_cfg be_id="IN_BTSCO_MIC_BE_CFG" latency="40000"/>
             <be_cfg be_id="IN_BTSCO_MIC_NREC_BE_CFG" latency="40000"/>
             <be_cfg be_id="IN_BTSCO_MIC_WB_BE_CFG" latency="40000"/>
