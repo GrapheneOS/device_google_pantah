@@ -137,15 +137,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "UClampThreshold",
-      "Path": "/proc/vendor_sched/uclamp_threshold",
-      "Values": [
-        "0",
-        "8"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "ReducePreferIdle",
       "Path": "/proc/vendor_sched/reduce_prefer_idle",
       "Values": [
@@ -661,12 +652,6 @@
       "Node": "CDMidHighCpusetCpus",
       "Duration": 1000,
       "Value": "0-3"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "UClampThreshold",
-      "Duration": 5000,
-      "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
