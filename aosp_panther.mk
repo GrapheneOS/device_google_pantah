@@ -30,3 +30,5 @@ PRODUCT_MANUFACTURER := Google
 
 DEVICE_MANIFEST_FILE := \
 	device/google/pantah/manifest.xml
+
+PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
