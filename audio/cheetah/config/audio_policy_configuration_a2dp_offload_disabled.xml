@@ -64,6 +64,10 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
+                <mixPort name="immersive_out" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
                 <mixPort name="incall playback" role="source"
                          flags="AUDIO_OUTPUT_FLAG_INCALL_MUSIC">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -171,15 +175,15 @@
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload,immersive_out"/>
                 <route type="mix" sink="Speaker Safe"
                        sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="Earpiece"
                        sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,compressed_offload"/>
                 <route type="mix" sink="USB Device Out"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload,immersive_out"/>
                 <route type="mix" sink="USB Headset Out"
-                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload"/>
+                       sources="primary output,deep buffer,haptic,raw,mmap_no_irq_out,voip_rx,hifi_playback,compressed_offload,immersive_out"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,deep buffer,haptic,voip_rx,compressed_offload,raw,mmap_no_irq_out"/>
                 <route type="mix" sink="BT SCO Headset"

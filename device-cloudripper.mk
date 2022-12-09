@@ -27,6 +27,9 @@ include device/google/pantah/audio/cloudripper/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
+# go/lyric-soong-variables
+$(call soong_config_set,lyric,camera_hardware,cloudripper)
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
 
@@ -54,8 +57,15 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
 	frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
 	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-    device/google/pantah/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
     device/google/pantah/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
+
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+        device/google/pantah/nfc/libnfc-hal-st-debug.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf
+else
+PRODUCT_COPY_FILES += \
+        device/google/pantah/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf
+endif
 
 PRODUCT_PACKAGES += \
 	NfcNci \
@@ -98,7 +108,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
@@ -156,11 +166,20 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 # Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 else
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps_user.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps_user.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+
 endif
+
+##Audio Vendor property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.enabled=false
 
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
@@ -168,3 +187,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.firmware.selection=BCM.hcd
+
+# Device features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml

@@ -27,11 +27,14 @@ include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs101/bluetooth/bluetooth.mk
 
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
 include device/google/gs101/uwb/uwb.mk
 include device/google/pantah/uwb/uwb_calibration.mk
 endif
 
+# go/lyric-soong-variables
+$(call soong_config_set,lyric,camera_hardware,ravenclaw)
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
 
@@ -103,7 +106,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -165,10 +168,14 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 # Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 else
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps_user.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps_user.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 endif
 
 # Set zram size
@@ -177,3 +184,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.firmware.selection=BCM.hcd
+
+# Device features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml

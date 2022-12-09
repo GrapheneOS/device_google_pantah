@@ -35,6 +35,7 @@
         <intf id="BE_VIRTUAL_VOICE_RX_TUNING" block_id="19"/>
         <intf id="BE_VIRTUAL_VOICE_TX_TUNING" block_id="19"/>
         <intf id="BE_HW_TX_INTF_0" block_id="134,128,137"/>
+        <intf id="BE_VIRTUAL_CRYSTAL_CLEAR_AUDIO_TUNING" block_id="138"/>
     </hw_intf>
 
     <product_lists>
@@ -182,6 +183,8 @@
         <usecase id="UC_DEEP_BUFFER_PLAYBACK" dev1="5" dyn_path="true" dsp_vol="false" mmap="false" period="20" period_num="4"/>
         <!-- dev1: voice-call downlink dev2: voice-clal uplink -->
         <usecase id="UC_VOICE_CALL" dev1="4" dev2="11"/>
+        <!-- for output with flag AUDIO_OUTPUT_SPATIALIZER -->
+        <usecase id="UC_IMMERSIVE_PLAYBACK" dev1="30" dyn_path="true" dsp_vol="false" mmap="false" period="10" period_num="3"/>
         <!-- for output with AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD, 4 * 128KB buffer -->
         <usecase id="UC_COMPRESSED_OFFLOAD_PLAYBACK" dev1="6" dyn_path="true" dsp_vol="true" mmap="false" period="131072" period_num="4" pre_proc_id="14"/>
         <!-- dev1: audio dev2: haptic -->
@@ -198,16 +201,17 @@
         <!-- for input wit AUDIO_INPUT_FLAG_MMAP_NOIRQ 240 periods * 1ms buffer, 32-bit,2 ch, buffer size 92160 bytes -->
         <usecase id="UC_MMAP_RECORD" dev1="9" dyn_path="true" mmap="true" period="1" period_num="240"/>
         <!-- for hifi -->
-        <usecase id="UC_HIFI_PLAYBACK" dev1="25"/>
-        <usecase id="UC_HIFI_RECORD" dev1="26"/>
+        <usecase id="UC_HIFI_PLAYBACK" dev1="25" period="20" period_num="4"/>
+        <usecase id="UC_HIFI_RECORD" dev1="26" period="20" period_num="4"/>
     </usecase_attr>
 
     <dsp_latency>
         <usecase id="UC_LOW_LATENCY_PLAYBACK" type="playback">
             <be_cfg be_id="OUT_SPEAKER_BE_CFG" latency="20000"/>
-            <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="10000"/>
-            <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="10000"/>
-            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="10000"/>
+            <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="60000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="60000"/>
         </usecase>
 
         <usecase id="UC_DEEP_BUFFER_PLAYBACK" type="playback">
@@ -215,6 +219,7 @@
             <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="70000"/>
             <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="70000"/>
             <be_cfg be_id="OUT_A2DP_BE_CFG" latency="180000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="80000"/>
         </usecase>
 
         <usecase id="UC_COMPRESSED_OFFLOAD_PLAYBACK" type="playback">
@@ -222,7 +227,13 @@
             <be_cfg be_id="OUT_USB_HEADSET_BE_CFG" latency="40000"/>
             <be_cfg be_id="OUT_USB_HEADPHONE_BE_CFG" latency="40000"/>
             <be_cfg be_id="OUT_A2DP_BE_CFG" latency="70000"/>
+            <be_cfg be_id="OUT_BLE_BE_CFG" latency="20000"/>
         </usecase>
+
+        <usecase id="UC_IMMERSIVE_PLAYBACK" type="playback">
+            <be_cfg be_id="OUT_A2DP_BE_CFG" latency="100000"/>
+        </usecase>
+
 
         <usecase id="UC_AUDIO_RECORD" type="capture">
             <be_cfg be_id="IN_CAMCORDER_LANDSCAPE_BE_CFG" latency="160000"/>
@@ -239,7 +250,10 @@
     </dsp_latency>
 
     <soundcard_name name="google,aoc-snd-card" />
-    <features lists="ThermalThrottle=Type:SKIN,Name:VIRTUAL-SKIN" />
+    <features>
+        <feature name="ThermalThrottle=Type:SKIN,Name:VIRTUAL-SKIN"/>
+        <feature name="BatteryThrottle=Type:BCL_VOLTAGE,Name:BCL_AUDIO_BAACL,Strategy:MediaSpeakerAndScreenOn"/>
+    </features>
 
     <cfg_attr>
         <cfg id="OUT_SPEAKER_BE_CFG" intf_name="TDM_RX_0" mux="HW_MUX_GP_0" tuning_id="2"/>
@@ -293,8 +307,9 @@
 
     <external_module>
         <module libname="audio_spk_35l41.so" argu="AcousticShockProtection"/>
-        <module libname="audio_waves_aoc.so" argu="Sink=SPK:1 BatteryThrottle=Type:BCL_VOLTAGE,Name:BCL_AUDIO_BAACL"/>
-        <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:1,USB:1 VoIP_Rate=32000"/>
+        <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
+        <module libname="audio_cca_aoc.so"/>
+        <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:2,USB:2 VoIP_Rate=32000 BOOST_USB_SWB_CLK=y SHARED_MODULE=1130578253"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
         <module libname="audio_bluenote_aoc.so"/>

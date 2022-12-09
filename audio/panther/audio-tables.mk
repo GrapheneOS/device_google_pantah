@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 # AudioEffectHAL Configuration
@@ -44,21 +44,21 @@ PRODUCT_COPY_FILES += $(call copy-files,$(wildcard  $(SPK_FIRMWARE_FULL_PATH)/*)
 # Audio tuning
 PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/recording.gatf:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/recording.gatf \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/BLUETOOTH.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.dat \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSFREE.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.dat \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.dat \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HEADSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.dat \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/mcps.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/mcps.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/BLUETOOTH.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSFREE.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HEADSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.dat \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/mcps.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/mcps.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/waves_config.ini \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/waves_preset.mps
 
 # userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/BLUETOOTH.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.mods \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSFREE.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.mods \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.mods \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HEADSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.mods
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/BLUETOOTH.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.mods \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSFREE.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.mods \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.mods \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HEADSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.mods
 
 #Bluenote files
 PRODUCT_COPY_FILES += \

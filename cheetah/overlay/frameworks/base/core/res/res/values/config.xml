@@ -51,7 +51,7 @@
 
     <!-- Display cutout configuration -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M 676,72
+        M 677,72
         a 43,43 0 1 0 86,0
         a 43,43 0 1 0 -86,0
         Z
@@ -179,11 +179,6 @@
 
     <!-- Type of the quick pickup sensor. Empty if quick pickup is not supported. -->
     <string name="config_quickPickupSensorType" translatable="false">com.google.sensor.quick_pickup</string>
-
-    <!-- How long it takes for the HW to start illuminating after the illumination is requested.
-      It takes 3 frames to enable the Local High-Brightness Mode (LHBM), which at 120 Hz screen
-      refresh rate equates to a 25 ms delay. -->
-    <integer name="config_udfps_illumination_transition_ms">25</integer>
 
     <!-- The max vibration strength allowed in audio haptic channels. -->
     <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
