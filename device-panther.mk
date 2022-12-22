@@ -31,6 +31,7 @@ include device/google/gs201/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/focaltech/focaltech.mk
+include device/google/gs-common/wireless_charger/wireless_charger.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,panther)
@@ -338,10 +339,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# Enable adpf cpu hint session for SurfaceFlinger
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_adpf_cpu_hint=true
 
 # Virtual fingerprint HAL
 PRODUCT_PACKAGES_DEBUG += android.hardware.biometrics.fingerprint-service.example
