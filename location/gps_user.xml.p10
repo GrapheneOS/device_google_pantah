@@ -34,6 +34,7 @@
        SuplVersion="2"
        SuplMinorVersion="0"
        SuplOtdoaCapable="true"
+       SuplOtdoaCapable2="true"
        SuplGlonassCapable = "true"
        SuplGalileoCapable = "true"
        SuplBdsCapable = "true"
