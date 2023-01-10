@@ -61,9 +61,11 @@
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
+       PpsDevice="/sys/class/pps/pps0/assert_elapsed"
   />
 
   <gll
+       PpsEnable="true"
        LogPriMask="LOG_INFO"
        LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI"
        FrqPlan="FRQ_PLAN_26MHZ_2PPM_49_152MHZ_300PPB"

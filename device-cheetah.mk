@@ -36,6 +36,8 @@ ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
 include device/google/pantah/uwb/uwb_calibration.mk
 endif
 
+# go/lyric-soong-variables
+$(call soong_config_set,lyric,camera_hardware,cheetah)
 $(call soong_config_set,lyric,tuning_product,cheetah)
 $(call soong_config_set,google3a_config,target_device,cheetah)
 
@@ -82,13 +84,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
 #   config of display brightness dimming
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.brightness.dimming.usage=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage=1
 
 #   config of primary display frames to reach LHBM peak brightness
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=2
 
 # Display RRS default Config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.vendor.display.primary.boot_config=1080x2340@120
+# TODO: b/250788756 - the property will be phased out after HWC loads user-preferred mode
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.preferred_mode=1080x2340@120
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -130,6 +134,7 @@ DEVICE_MANIFEST_FILE += \
 # Thermal Config
 PRODUCT_COPY_FILES += \
 	device/google/pantah/thermal_info_config_cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
+	device/google/pantah/thermal_info_config_charge_cheetah.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json \
 	device/google/pantah/thermal_info_config_proto.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_proto.json
 
 # Power HAL config
@@ -161,6 +166,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     hci_inject
 
+# Bluetooth OPUS codec
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.opus.enabled=true
+
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_cheetah.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
@@ -178,6 +187,10 @@ PRODUCT_PACKAGES_DEBUG += \
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
+
+# optimize spatializer effect
+PRODUCT_PROPERTY_OVERRIDES += \
+       audio.spatializer.effect.util_clamp_min=300
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -239,10 +252,14 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 # Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 else
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps_user.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+                device/google/pantah/location/gps_user.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+                device/google/pantah/location/lhd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+                device/google/pantah/location/scd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 endif
 
 # Set support one-handed mode
@@ -255,7 +272,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=1
+    ro.vendor.build.svn=14
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -280,6 +297,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
     persist.bluetooth.leaudio_offload.disabled=false \
     ro.bluetooth.leaudio_switcher.supported=true
+
+# LE Auido Offload Capabilities setting
+PRODUCT_COPY_FILES += \
+    device/google/pantah/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -326,3 +347,20 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
+
+##Audio Vendor property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.enabled=false
+
+# The default value of this variable is false and should only be set to true when
+# the device allows users to enable the seamless transfer feature.
+PRODUCT_PRODUCT_PROPERTIES += \
+   euicc.seamless_transfer_enabled_in_non_qs=true
+
+# Device features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+# Enable adpf cpu hint session for SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_adpf_cpu_hint=true

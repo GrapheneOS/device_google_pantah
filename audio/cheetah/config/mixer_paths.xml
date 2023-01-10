@@ -31,7 +31,7 @@
     <ctl name="Voice PCM Stream Wait Time in MSec" value="500"/>
 
     <!-- Enable it when AOC is ready to trim delay and padding -->
-    <!--ctl name="Gapless Offload Enable" value="1"/-->
+    <ctl name="Gapless Offload Enable" value="1"/>
 
     <!-- TDM 0 setting -->
     <ctl name="TDM_0_RX Chan" value="Four"/>
