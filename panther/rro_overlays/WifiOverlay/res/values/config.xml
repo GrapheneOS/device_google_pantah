@@ -151,4 +151,7 @@
 
     <!-- Enable WPA2 to WPA3 auto-upgrade offload to capable Driver/Firmware -->
     <bool translatable="false" name="config_wifiSaeUpgradeOffloadEnabled">true</bool>
+    <!-- Boolean indicating whether DTIM multiplier configuration is enabled. DTIM multiplier value
+        is when the system is in the suspended mode -->
+    <bool translatable="false" name="config_wifiDtimMultiplierConfigEnabled">true</bool>
 </resources>
