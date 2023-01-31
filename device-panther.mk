@@ -167,6 +167,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.leaudio_offload.disabled=false \
     ro.bluetooth.leaudio_switcher.supported=true
 
+# Bluetooth LE Audio CIS handover to SCO
+# Set the property only if the controller doesn't support CIS and SCO
+# simultaneously. More details in b/242908683.
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.leaudio.notify.idle.during.call=true
+
 # LE Auido Offload Capabilities setting
 PRODUCT_COPY_FILES += \
     device/google/pantah/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
