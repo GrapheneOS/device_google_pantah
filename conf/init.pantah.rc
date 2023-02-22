@@ -24,10 +24,6 @@ on property:vendor.mfgapi.touchpanel.permission=1
     chmod 0600 /sys/devices/virtual/sec/tsp/cmd
     chown system system /sys/devices/virtual/sec/tsp/cmd
 
-# Fingerprint
-on post-fs-data
-    exec_background - system shell -- /vendor/bin/trusty_apploader /vendor/firmware/g7.app
-
 # Overrides fingerprint antispoof if following persist sysprops are set
 on boot && property:ro.build.type=userdebug && \
            property:persist.vendor.fingerprint.disable.fake.override=0
