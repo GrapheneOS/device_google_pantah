@@ -330,7 +330,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.exif_reveal_make_model=true
+    persist.vendor.camera.exif_reveal_make_model=true \
+    persist.vendor.camera.front_720P_always_binning=true
 
 ##Audio Vendor property
 PRODUCT_PROPERTY_OVERRIDES += \
