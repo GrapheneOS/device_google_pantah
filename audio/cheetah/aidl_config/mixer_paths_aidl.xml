@@ -587,6 +587,9 @@
     <ctl name="EP3 TX Mixer INTERNAL_MIC_TX" value="1" />
   </path>
 
+  <path name="microphones -> sound-trigger-capture-0">
+  </path>
+
   <path name="audio-recordC usb-headset-mic">
     <ctl name="EP1 TX Mixer USB_TX" value="1" />
   </path>
