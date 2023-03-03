@@ -18,7 +18,7 @@
        SuplLogFullName="/data/vendor/gps/suplflow.txt"
        tlsEnable="true"
 
-       SuplSslMethod="SSLv23_NO_TLSv1_2"
+       SuplSslMethod="TLSv1_2"
        SuplEnable="true"
        SuplUseApn="false"
        SuplUseApnNI="true"
