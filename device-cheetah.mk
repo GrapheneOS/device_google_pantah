@@ -374,9 +374,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Virtual fingerprint HAL
-PRODUCT_PACKAGES_DEBUG += android.hardware.biometrics.fingerprint-service.example
-
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.enable_quick_start_flow_for_debug=true \
