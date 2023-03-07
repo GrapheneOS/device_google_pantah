@@ -310,7 +310,7 @@
   <ctl name="Incall Sink Mute" value="0" />
   <ctl name="Incall Mic Mute" value="0" />
 
-  <!-- Decoder Reference Enable is controlled in aoc_control -->
+  <ctl name="Compress Offload Volume" value="1000" />
   <ctl name="Decoder Reference Enable" value="0" />
   <ctl name="LVM Enable" value="0" />
 
