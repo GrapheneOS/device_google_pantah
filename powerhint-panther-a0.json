@@ -196,24 +196,17 @@
       "Name": "CDCpuset",
       "Path": "/dev/cpuset/camera-daemon/cpus",
       "Values": [
+        "0-3",
         "4-7",
         "0-7"
       ],
       "ResetOnInit": true
     },
     {
-      "Name": "RestrictedCpuset",
-      "Path": "/dev/cpuset/restricted/cpus",
-      "Values": [
-        "0-3",
-        "0-7"
-      ],
-      "ResetOnInit": false
-    },
-    {
       "Name": "CDHighCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-high-group/cpus",
       "Values": [
+        "0-3",
         "6-7",
         "0-7"
       ],
@@ -223,6 +216,7 @@
       "Name": "CDMidCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-mid-group/cpus",
       "Values": [
+        "0-3",
         "4-5",
         "0-7"
       ],
@@ -232,6 +226,7 @@
       "Name": "CDMidHighCpusetCpus",
       "Path": "/dev/cpuset/camera-daemon-mid-high-group/cpus",
       "Values": [
+        "0-3",
         "4-7",
         "0-7"
       ],
@@ -309,6 +304,16 @@
         ""
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "PowerHALCameraRunning",
+      "Path": "vendor.powerhal.camerarunning",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "Type": "Property",
+      "ResetOnInit": true
     },
     {
       "Name": "INTCAMFreq",
@@ -548,14 +553,6 @@
       "DefaultIndex": 0
     },
     {
-      "Name": "PMU_MID_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/limit_frequency",
-      "Values": [
-        "1836000"
-      ],
-      "DefaultIndex": 0
-    },
-    {
       "Name": "PMU_MID_LCPI_THRESHOLD",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
       "Values": [
@@ -603,6 +600,30 @@
   ],
   "Actions": [
     {
+      "PowerHint": "CDCPUSET_RESTRICTED",
+      "Node": "CDCpuset",
+      "Duration": 1000,
+      "Value": "0-3"
+    },
+    {
+      "PowerHint": "CDHIGHCPUSETCPUS_RESTRICTED",
+      "Node": "CDHighCpusetCpus",
+      "Duration": 1000,
+      "Value": "0-3"
+    },
+    {
+      "PowerHint": "CDMIDCPUSETCPUS_RESTRICTED",
+      "Node": "CDMidCpusetCpus",
+      "Duration": 1000,
+      "Value": "0-3"
+    },
+    {
+      "PowerHint": "CDMIDHIGHCPUSETCPUS_RESTRICTED",
+      "Node": "CDMidHighCpusetCpus",
+      "Duration": 1000,
+      "Value": "0-3"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "FGPreferIdle",
       "Duration": 5000,
@@ -648,6 +669,41 @@
       "PowerHint": "LAUNCH",
       "Node": "NPITaskPacking",
       "Duration": 5000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "Value": "LAUNCH_PMU"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "EnableProperty": "vendor.powerhal.camerarunning",
+      "Value": "CDCPUSET_RESTRICTED"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "EnableProperty": "vendor.powerhal.camerarunning",
+      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "EnableProperty": "vendor.powerhal.camerarunning",
+      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "EnableProperty": "vendor.powerhal.camerarunning",
+      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "LAUNCH_PMU",
+      "Node": "PMU_POLL",
+      "Duration": 3000,
       "Value": "0"
     },
     {
@@ -711,6 +767,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "PMU_POLL",
+      "Duration": 1000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
@@ -735,6 +797,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_LAUNCH_EXTENDED",
+      "Node": "PMU_POLL",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 1000,
@@ -755,20 +823,32 @@
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1426000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUMidClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1197000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPULittleClusterMaxFreq",
-      "Duration": 1000,
+      "Duration": 2500,
       "Value": "1401000"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "PMU_POLL",
+      "Duration": 2500,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
+      "Node": "EM_Profile",
+      "Duration": 2500,
+      "Value": "default"
     },
     {
       "PowerHint": "CAMERA_SHOT",
@@ -922,6 +1002,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PowerHALCameraRunning",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
       "Value": "1401000"
@@ -994,7 +1080,7 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "PMU_POLL",
+      "Node": "PowerHALCameraRunning",
       "Duration": 0,
       "Value": "1"
     },
@@ -1009,12 +1095,6 @@
       "Node": "PMU_LIT_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "PMU_MID_LIMIT_FREQ",
-      "Duration": 0,
-      "Value": "1836000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1045,6 +1125,12 @@
       "Node": "PMU_BIG_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1114,6 +1200,66 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PowerHALCameraRunning",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_MID_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1826000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CDPreferHighCap",
       "Duration": 0,
       "Value": "1"
@@ -1123,24 +1269,6 @@
       "Node": "TAPreferHighCap",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPUBigClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1826000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPUMidClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1491000"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "CPULittleClusterMaxFreq",
-      "Duration": 0,
-      "Value": "1401000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
@@ -1177,6 +1305,12 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "PowerHALCameraRunning",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
@@ -1249,6 +1383,26 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_VIDEO_RECORDING",
+      "Type": "MaskHint",
+      "Value": "CDCPUSET_RESTRICTED"
+    },
+    {
+      "PowerHint": "CAMERA_VIDEO_RECORDING",
+      "Type": "MaskHint",
+      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "CAMERA_VIDEO_RECORDING",
+      "Type": "MaskHint",
+      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "CAMERA_VIDEO_RECORDING",
+      "Type": "MaskHint",
+      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
     },
     {
       "PowerHint": "CAMERA_GPU_HIGH",
@@ -1698,18 +1852,6 @@
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "44"
-    },
-    {
-      "PowerHint": "DEVICE_IDLE",
-      "Node": "RestrictedCpuset",
-      "Duration": 0,
-      "Value": "0-3"
-    },
-    {
-      "PowerHint": "DISPLAY_INACTIVE",
-      "Node": "RestrictedCpuset",
-      "Duration": 0,
-      "Value": "0-3"
     }
   ],
   "AdpfConfig": [
