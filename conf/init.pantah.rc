@@ -24,19 +24,6 @@ on property:vendor.mfgapi.touchpanel.permission=1
     chmod 0600 /sys/devices/virtual/sec/tsp/cmd
     chown system system /sys/devices/virtual/sec/tsp/cmd
 
-# Overrides fingerprint antispoof if following persist sysprops are set
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=0
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
-
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=1
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
-
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=100
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
-
 # WiFi
 on post-fs-data
     setprop wifi.direct.interface p2p-dev-wlan0
