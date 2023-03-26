@@ -20,32 +20,33 @@ AUDIO_TABLE_FOLDER := panther
 # BUILD_AUDIO_AIDL_VERSION := true
 
 ifeq ($(BUILD_AUDIO_AIDL_VERSION),true)
-CONFIG_FOLDER := aidl_config
+# AIDL HAL configs are in the *aidl_config* folder
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/mixer_paths_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_aidl.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_platform_configuration_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration_aidl.xml
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration_aidl.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/mixer_paths_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_aidl.xml
 else
-CONFIG_FOLDER := config
-endif
-
+# HIDL HAL configs are in the *config* folder
 # Platform Configuration for AudioHAL / SoundTriggerHAL
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_policy_configuration_le_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_le_offload_disabled.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_le_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_le_offload_disabled.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 # AudioEffectHAL Configuration
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Mixer Path Configuration for AudioHAL
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/$(CONFIG_FOLDER)/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+endif
 
 # Speaker firmware files
 SPK_FIRMWARE_PATH := $(AUDIO_TABLE_FOLDER)/cs35l41/fw
