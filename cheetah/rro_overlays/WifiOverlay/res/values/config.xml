@@ -160,4 +160,8 @@
          no telephony country code and driver country code is 00.
          This is applied only during the setup wizard -->
     <bool translatable="false" name ="config_wifiUpdateCountryCodeFromScanResultSetupWizard">true</bool>
+
+    <!-- Enable the feature of adjusting link layer stats polling interval based on
+    device mobility state and client mode RSSI monitoring. -->
+    <bool translatable="false" name="config_wifiAdjustPollRssiIntervalEnabled">true</bool>
 </resources>
