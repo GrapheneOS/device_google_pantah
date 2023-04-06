@@ -123,11 +123,11 @@
       "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
         "0",
-	"553",
-	"246",
-        "185",
-        "123",
-        "62"
+	"692",
+	"308",
+        "232",
+        "154",
+        "78"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -320,19 +320,19 @@
       "PowerHint": "INTERACTION_120",
       "Node": "TAUClampBoost",
       "Duration": 6000,
-      "Value": "246"
+      "Value": "308"
     },
     {
       "PowerHint": "INTERACTION_90",
       "Node": "TAUClampBoost",
       "Duration": 6000,
-      "Value": "185"
+      "Value": "232"
     },
     {
       "PowerHint": "INTERACTION_60",
       "Node": "TAUClampBoost",
       "Duration": 6000,
-      "Value": "123"
+      "Value": "154"
     },
     {
       "PowerHint": "REFRESH_120FPS",
@@ -406,7 +406,7 @@
       "PowerHint": "LAUNCH",
       "Node": "TAUClampBoost",
       "Duration": 5000,
-      "Value": "553"
+      "Value": "692"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1006,19 +1006,19 @@
       "PowerHint": "REFRESH_120FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "185"
+      "Value": "232"
     },
     {
       "PowerHint": "REFRESH_90FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "123"
+      "Value": "154"
     },
     {
       "PowerHint": "REFRESH_60FPS",
       "Node": "TAUClampBoost",
       "Duration": 0,
-      "Value": "62"
+      "Value": "78"
     },
     {
       "PowerHint": "DISABLE_TA_BOOST",
@@ -1102,8 +1102,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 185,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 232,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -1126,8 +1126,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 129,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 162,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -1150,8 +1150,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 129,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 162,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -1177,9 +1177,9 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
-      "UclampMin_High": 157,
-      "UclampMin_Low": 157,
+      "UclampMin_Init": 250,
+      "UclampMin_High": 197,
+      "UclampMin_Low": 197,
       "ReportingRateLimitNs": 1,
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
@@ -1201,9 +1201,9 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
-      "UclampMin_High": 42,
-      "UclampMin_Low": 42,
+      "UclampMin_Init": 250,
+      "UclampMin_High": 53,
+      "UclampMin_Low": 53,
       "ReportingRateLimitNs": 1,
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
@@ -1225,7 +1225,7 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
+      "UclampMin_Init": 250,
       "UclampMin_High": 0,
       "UclampMin_Low": 0,
       "ReportingRateLimitNs": 1,
