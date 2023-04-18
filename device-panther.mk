@@ -257,7 +257,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=17
+    ro.vendor.build.svn=21
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -330,7 +330,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.exif_reveal_make_model=true
+    persist.vendor.camera.exif_reveal_make_model=true \
+    persist.vendor.camera.front_720P_always_binning=true
 
 # RKPD
 PRODUCT_PRODUCT_PROPERTIES += \
