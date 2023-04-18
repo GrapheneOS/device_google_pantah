@@ -254,7 +254,6 @@
 
   <ctl name="AoC Modem Downlink ASRC Mode" value="ASP_ON" />
   <ctl name="Voice Call Mic Source" value="Builtin_MIC" />
-  <ctl name="Mic Spatial Module Enable" value="0" />
   <ctl name="Audio Capture Eraser Enable" value="0" />
 
   <!-- audio PDM mic default state -->
@@ -738,7 +737,6 @@
   </path>
 
   <path name="back-microphones">
-    <ctl name="Mic Spatial Module Enable" value="1" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
@@ -757,8 +755,20 @@
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
   </path>
 
+  <path name="microphones (CAMCORDER)">
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1"/>
+    <ctl name="MIC DC Blocker" value="1"/>
+    <ctl name="MIC Record Soft Gain (dB)" value="0"/>
+  </path>
+
+  <path name="back-microphones (CAMCORDER)">
+    <path name="microphones (CAMCORDER)" />
+  </path>
+
   <path name="camcorder-mic">
-    <ctl name="Mic Spatial Module Enable" value="1" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
