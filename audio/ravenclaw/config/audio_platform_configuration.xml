@@ -295,7 +295,7 @@
 
     <device_handle>
         <handler libname="audio_bt_aoc.so"/>
-        <handler libname="audio_usb_aoc.so" argu="MaxSamplingRate=96000,UnsupportedFormat=S24_LE"/>
+        <handler libname="audio_usb_aoc.so" argu="MaxSamplingRate=192000,UnsupportedFormat=S24_LE,MaxCapPacketInterval=125,MaxCapSampleRate=192000,MaxCapBitWidth=32,MaxCapChannel=2,EnableHifi192kMultichannel=0"/>
     </device_handle>
 
     <external_module>
