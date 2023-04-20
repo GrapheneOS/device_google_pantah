@@ -1,6 +1,19 @@
 {
   "Nodes": [
     {
+      "Name": "GPUMinFreq",
+      "Path": "/sys/devices/platform/28000000.mali/hint_min_freq",
+      "Values": [
+        "848000",
+        "762000",
+        "572000",
+        "471000",
+        "302000",
+        "202000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
@@ -111,19 +124,6 @@
         "1826000",
         "1106000",
         "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUMinFreq",
-      "Path": "/sys/devices/platform/28000000.mali/hint_min_freq",
-      "Values": [
-        "848000",
-        "762000",
-        "572000",
-        "471000",
-        "302000",
-        "202000"
       ],
       "ResetOnInit": true
     },
@@ -775,6 +775,12 @@
       "Node": "PMU_POLL",
       "Duration": 3000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "GPUMinFreq",
+      "Duration": 50,
+      "Value": "302000"
     },
     {
       "PowerHint": "CPU_LOAD_RESET",
@@ -1862,12 +1868,6 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "572000"
-    },
-    {
-      "PowerHint": "ADPF_FIRST_FRAME",
-      "Node": "GPUMinFreq",
-      "Duration": 50,
-      "Value": "302000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
