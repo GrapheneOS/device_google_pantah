@@ -254,7 +254,9 @@
 
   <ctl name="AoC Modem Downlink ASRC Mode" value="ASP_ON" />
   <ctl name="Voice Call Mic Source" value="Builtin_MIC" />
+  <ctl name="Mic Spatial Module Enable" value="0" />
   <ctl name="Audio Capture Eraser Enable" value="0" />
+  <ctl name="Hotword Tap Enable" value="0" />
 
   <!-- audio PDM mic default state -->
   <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="-1" />
@@ -604,6 +606,12 @@
   <path name="microphones -> sound-trigger-capture-0">
   </path>
 
+  <path name="microphones -> sound-trigger-tap-capture-0">
+  </path>
+
+  <path name="microphones -> hotword-lookback-capture-0">
+  </path>
+
   <!-- voice-call dynamic route -->
   <path name="voice-call-downlink-0 -> speaker">
     <ctl name="TDM_0_RX Mixer EP5" value="1" />
@@ -696,8 +704,7 @@
     <ctl name="Boost Peak Current Limit" value="3.50A" />
     <ctl name="ASPTX1 Slot Position" value="1" />
     <ctl name="R ASPTX1 Slot Position" value="0" />
-    <!--<ctl
-    name="R DSP RX2 Source" value="ASPRX2"/>-->
+    <!--<ctl name="R DSP RX2 Source" value="ASPRX2" />-->
     <ctl name="R Main AMP Enable Switch" value="1" />
     <ctl name="Main AMP Enable Switch" value="1" />
     <!-- load Enable FIR -->
@@ -736,7 +743,23 @@
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
   </path>
 
+  <path name="microphones (VOICE_RECOGNITION)">
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+    <ctl name="MIC DC Blocker" value="1" />
+    <ctl name="MIC Record Soft Gain (dB)" value="22" />
+  </path>
+
+  <path name="microphones (VOICE_RECOGNITION,SOUND_TRIGGER_TAP)">
+    <ctl name="Audio Capture Eraser Enable" value="1" />
+    <ctl name="Hotword Tap Enable" value="1" />
+    <ctl name="MIC Record Soft Gain (dB)" value="0" />
+  </path>
+
   <path name="back-microphones">
+    <ctl name="Mic Spatial Module Enable" value="1" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
@@ -769,21 +792,13 @@
   </path>
 
   <path name="camcorder-mic">
+    <ctl name="Mic Spatial Module Enable" value="1" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
     <ctl name="MIC DC Blocker" value="1" />
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
-  </path>
-
-  <path name="voice-recog-mic">
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
-    <ctl name="MIC DC Blocker" value="1" />
-    <ctl name="MIC Record Soft Gain (dB)" value="22" />
   </path>
 
   <path name="voice-recog-aec-mic">

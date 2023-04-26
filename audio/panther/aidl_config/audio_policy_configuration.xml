@@ -77,8 +77,7 @@
           <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO" />
         </mixPort>
-        <mixPort name="raw" role="source"
-          flags="AUDIO_OUTPUT_FLAG_RAW AUDIO_OUTPUT_FLAG_FAST">
+        <mixPort name="raw" role="source" flags="AUDIO_OUTPUT_FLAG_RAW AUDIO_OUTPUT_FLAG_FAST">
           <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO" />
         </mixPort> -->
@@ -104,12 +103,21 @@
             samplingRates="16000"
             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
         </mixPort>
+        <mixPort name="hotword tap" role="sink" flags="AUDIO_INPUT_FLAG_HOTWORD_TAP">
+          <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+            samplingRates="16000"
+            channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
+        </mixPort>
+        <mixPort name="hotword lookback" role="sink" flags="AUDIO_INPUT_FLAG_HOTWORD_TAP AUDIO_INPUT_FLAG_HW_LOOKBACK">
+          <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+            samplingRates="16000"
+            channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
+        </mixPort>
         <!-- <mixPort name="mmap capture" role="sink" flags="AUDIO_INPUT_FLAG_MMAP_NOIRQ">
           <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
             samplingRates="48000"
             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
         </mixPort> -->
-
       </mixPorts>
       <devicePorts>
         <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
@@ -192,6 +200,8 @@
         <route type="mix" sink="fast input"
           sources="Built-In Mic,Built-In Back Mic" />
         <route type="mix" sink="hotword input" sources="Built-In Mic" />
+        <route type="mix" sink="hotword tap" sources="Built-In Mic" />
+        <route type="mix" sink="hotword lookback" sources="Built-In Mic" />
       </routes>
     </module>
   </modules>

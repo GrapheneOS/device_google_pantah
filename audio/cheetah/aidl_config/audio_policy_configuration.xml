@@ -103,6 +103,16 @@
             samplingRates="16000"
             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
         </mixPort>
+        <mixPort name="hotword tap" role="sink" flags="AUDIO_INPUT_FLAG_HOTWORD_TAP">
+          <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+            samplingRates="16000"
+            channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
+        </mixPort>
+        <mixPort name="hotword lookback" role="sink" flags="AUDIO_INPUT_FLAG_HOTWORD_TAP AUDIO_INPUT_FLAG_HW_LOOKBACK">
+          <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+            samplingRates="16000"
+            channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO" />
+        </mixPort>
         <!-- <mixPort name="mmap capture" role="sink" flags="AUDIO_INPUT_FLAG_MMAP_NOIRQ">
           <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
             samplingRates="48000"
@@ -190,6 +200,8 @@
         <route type="mix" sink="fast input"
           sources="Built-In Mic,Built-In Back Mic" />
         <route type="mix" sink="hotword input" sources="Built-In Mic" />
+        <route type="mix" sink="hotword tap" sources="Built-In Mic" />
+        <route type="mix" sink="hotword lookback" sources="Built-In Mic" />
       </routes>
     </module>
   </modules>
