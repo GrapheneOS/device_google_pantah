@@ -61,11 +61,16 @@
     <device type="speaker" codec_name="cs35l41" argu="SpeakerNum=4,Rotation,AcousticShockProtection" />
   </device_builder>
 
+  <!-- The spatial_capture_conditions: format is "use_case="x" audio_source="y" -->
+  <!-- use_case defines in aidl/audio/usecase/use_case.h, audio_source is definied in aidl interfaces. -->
+  <spatial_capture_conditions>
+    <conditions use_case="primary-capture" audio_source="MIC,CAMCORDER,VOICE_RECOGNITION" />
+  </spatial_capture_conditions>
+
   <!-- The tuner_builder: format is "type="x" codec_name="y" argu="z". argu is optional. -->
   <tuner_builder>
-    <tuner type="playback" name="waves" argu="Sink=SPK:1 ThermistorsName=VIRTUAL-SKIN" />
-    <tuner type="telephony" name="fortemedia"
-      argu="VoIP_DLCHs=SPK:2,USB:2 VoIP_Rate=32000 BOOST_USB_SWB_CLK=y" />
+    <tuner type="playback" name="waves" argu="Sink=SPK ThermistorsName=VIRTUAL-SKIN" />
+    <tuner type="telephony" name="fortemedia" argu="VoIP_DLCHs=SPK:2,USB:2 VoIP_Rate=32000 BOOST_USB_SWB_CLK=y CCA=y" />
     <tuner type="capture" name="gs_capture" />
   </tuner_builder>
 </audio_platform_configuration>

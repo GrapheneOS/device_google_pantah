@@ -1,6 +1,19 @@
 {
   "Nodes": [
     {
+      "Name": "GPUMinFreq",
+      "Path": "/sys/devices/platform/28000000.mali/hint_min_freq",
+      "Values": [
+        "848000",
+        "762000",
+        "572000",
+        "471000",
+        "302000",
+        "202000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
@@ -104,19 +117,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUMinFreq",
-      "Path": "/sys/devices/platform/28000000.mali/hint_min_freq",
-      "Values": [
-        "848000",
-        "762000",
-        "572000",
-        "471000",
-        "302000",
-        "202000"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "ReducePreferIdle",
       "Path": "/proc/vendor_sched/reduce_prefer_idle",
       "Values": [
@@ -149,7 +149,7 @@
       "Name": "CAMUClampBoost",
       "Path": "/proc/vendor_sched/cam_uclamp_min",
       "Values": [
-        "612",
+        "765",
         "0"
       ],
       "ResetOnInit": true
@@ -158,7 +158,7 @@
       "Name": "TAUClampBoost",
       "Path": "/proc/vendor_sched/ta_uclamp_min",
       "Values": [
-        "612",
+        "765",
         "1"
       ],
       "ResetOnInit": true
@@ -176,8 +176,8 @@
       "Name": "MLUclampBoost",
       "Path": "/proc/vendor_sched/nnapi_uclamp_min",
       "Values": [
-          "180",
-          "650"
+          "225",
+          "813"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -667,7 +667,7 @@
       "PowerHint": "LAUNCH",
       "Node": "TAUClampBoost",
       "Duration": 5000,
-      "Value": "612"
+      "Value": "765"
     },
     {
       "PowerHint": "LAUNCH",
@@ -747,6 +747,12 @@
     },
     {
       "PowerHint": "CPU_LOAD_RESET",
+      "Node": "GPUMinFreq",
+      "Duration": 50,
+      "Value": "302000"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
       "Node": "MemFreq",
       "Duration": 33,
       "Value": "1014000"
@@ -797,7 +803,7 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "CAMUClampBoost",
       "Duration": 1000,
-      "Value": "612"
+      "Value": "765"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -1731,12 +1737,6 @@
       "Value": "572000"
     },
     {
-      "PowerHint": "ADPF_FIRST_FRAME",
-      "Node": "GPUMinFreq",
-      "Duration": 50,
-      "Value": "302000"
-    },
-    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "PMU_POLL",
       "Duration": 0,
@@ -2274,7 +2274,7 @@
       "PowerHint": "ML_ACC",
       "Node": "MLUclampBoost",
       "Duration": 2000,
-      "Value": "650"
+      "Value": "813"
     },
     {
       "PowerHint": "ML_ACC",
@@ -2296,8 +2296,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 185,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 232,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -2320,8 +2320,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 129,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 162,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -2344,8 +2344,8 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 129,
-      "UclampMin_High": 384,
+      "UclampMin_Init": 162,
+      "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
       "SamplingWindow_I": 0,
@@ -2371,9 +2371,9 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
-      "UclampMin_High": 157,
-      "UclampMin_Low": 157,
+      "UclampMin_Init": 250,
+      "UclampMin_High": 197,
+      "UclampMin_Low": 197,
       "ReportingRateLimitNs": 1,
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
@@ -2395,9 +2395,9 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
-      "UclampMin_High": 42,
-      "UclampMin_Low": 42,
+      "UclampMin_Init": 250,
+      "UclampMin_High": 53,
+      "UclampMin_Low": 53,
       "ReportingRateLimitNs": 1,
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
@@ -2419,7 +2419,7 @@
       "SamplingWindow_I": 1,
       "SamplingWindow_D": 1,
       "UclampMin_On": true,
-      "UclampMin_Init": 200,
+      "UclampMin_Init": 250,
       "UclampMin_High": 0,
       "UclampMin_Low": 0,
       "ReportingRateLimitNs": 1,
