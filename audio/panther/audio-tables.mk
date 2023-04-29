@@ -57,6 +57,7 @@ PRODUCT_COPY_FILES += $(call copy-files,$(wildcard  $(SPK_FIRMWARE_FULL_PATH)/*)
 # Audio tuning
 PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/recording.gatf:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/recording.gatf \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/smartfeature.gstf:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/smartfeature.gstf \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/BLUETOOTH.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSFREE.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.dat \
