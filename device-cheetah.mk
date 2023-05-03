@@ -384,3 +384,7 @@ PRODUCT_COPY_FILES += \
 
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+# Disable Settings large-screen optimization enabled by Window Extensions
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.settings.large_screen_opt.enabled=false
