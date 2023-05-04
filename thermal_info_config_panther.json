@@ -834,5 +834,45 @@
             "PowerSampleDelay":7000,
             "PowerSampleCount":5
         }
-    ]
+    ],
+    "Stats": {
+        "Sensors": {
+            "RecordWithDefaultThreshold": ["VIRTUAL-SKIN"],
+            "RecordWithThreshold": [
+                {
+                    "Name": "VIRTUAL-QUIET-QI",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-USB-QUIET",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-QUIET-DISP",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-NEUTRAL-QUIET",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-QI-DISP",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-SKIN",
+                    "Thresholds": [31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51]
+                },
+                {
+                    "Name": "VIRTUAL-USB-THROTTLING",
+                    "Thresholds": [3.0]
+                }
+            ]
+        },
+        "CoolingDevices": {
+            "RecordVotePerSensor": {
+                "DefaultThresholdEnableAll": true
+            }
+        }
+    }
 }
