@@ -23,5 +23,11 @@
     <device name="dhdpcie_host_wake">
         <subsystem>Wifi</subsystem>
     </device>
+    <device name="cp2ap_wakeup">
+        <subsystem>Cellular_data</subsystem>
+    </device>
+    <device name="MAILBOX_AOCA322APx100">
+        <subsystem>Sensor</subsystem>
+    </device>
 </irq-device-map>
 
