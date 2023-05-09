@@ -339,10 +339,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true \
     persist.vendor.camera.front_720P_always_binning=true
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-	vendor.camera.multicam.enable_p23_multicam=true
-
 # RKPD
 PRODUCT_PRODUCT_PROPERTIES += \
     remote_provisioning.enable_rkpd=true \
@@ -360,10 +356,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# Window Extensions
-$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-# Disable Settings large-screen optimization enabled by Window Extensions
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.settings.large_screen_opt.enabled=false
