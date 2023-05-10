@@ -17,4 +17,15 @@
  */
 -->
 <resources>
+  <!-- When true, the filter engine will alter UWB values to improve accuracy. -->
+  <bool name="enable_filters">true</bool>
+
+  <!-- Enables elevation estimation. Strongly recommended for hardware that doesn't support
+  elevation. This helps produce better predictions from pose changes, and improves the quality
+  of the AoA primer. -->
+  <bool name="enable_primer_est_elevation">false</bool>
+
+  <!-- Enables the AoA conversion primer. This is needed on hardware that does not convert AoA
+  to spherical coordinates, including hardware that does not support elevation.-->
+  <bool name="enable_primer_aoa">true</bool>
 </resources>
