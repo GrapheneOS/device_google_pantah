@@ -205,9 +205,6 @@
     <!-- The max vibration strength allowed in audio haptic channels. -->
     <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
 
-    <!-- the number of the max cached processes in the system. -->
-    <integer name="config_customizedMaxCachedProcesses">64</integer>
-
 <integer-array name="config_ambientThresholdLevels">
     <item>2</item>
     <item>3</item>
