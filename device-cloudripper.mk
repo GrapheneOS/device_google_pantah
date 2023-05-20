@@ -26,6 +26,7 @@ include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/cloudripper/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
+include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/syna/syna.mk
 
 # go/lyric-soong-variables
