@@ -26,7 +26,7 @@
     <device name="cp2ap_wakeup">
         <subsystem>Cellular_data</subsystem>
     </device>
-    <device name="MAILBOX_AOCF12APxE00">
+    <device name="MAILBOX_AOCF12APx1100">
         <subsystem>Sound_trigger</subsystem>
     </device>
     <device name="MAILBOX_AOCA322APx100">
