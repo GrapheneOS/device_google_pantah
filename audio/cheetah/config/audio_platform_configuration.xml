@@ -311,7 +311,7 @@
         <module libname="audio_spk_35l41.so" argu="AcousticShockProtection"/>
         <module libname="audio_waves_aoc.so" argu="Sink=SPK:1"/>
         <module libname="audio_cca_aoc.so"/>
-        <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:2,USB:2 VoIP_Rate=32000 BOOST_USB_SWB_CLK=y SHARED_MODULE=1130578253"/>
+        <module libname="audio_fortemedia_aoc.so" argu="DL_CH=y VoIP_DLCHs=SPK:2,USB:2,BT:2 VoIP_Rate=32000 BOOST_USB_SWB_CLK=y SHARED_MODULE=1130578253"/>
         <module libname="liboffloadeffect.so"/>
         <module libname="audio_amcs_ext.so"/>
         <module libname="audio_bluenote_aoc.so"/>
