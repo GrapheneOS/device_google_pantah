@@ -42,7 +42,7 @@
     <ctl name="TDM_0_TX Sample Rate" value="SR_48K" />
 
     <!-- Haptic setting -->
-    <ctl name="Haptics Streaming Source" value="ASP Rx"/>
+    <ctl name="Haptics Source" value="PCM"/>
     <ctl name="HAPTIC_RX Format" value="S32_LE"/>
     <ctl name="HAPTIC_RX SlotFmt" value="S32_LE"/>
     <ctl name="HAPTIC_RX Chan" value="Four"/>
