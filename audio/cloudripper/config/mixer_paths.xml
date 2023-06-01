@@ -37,8 +37,8 @@
     <ctl name="TDM_0_TX Format" value="S32_LE"/>
 
     <!-- Haptic setting -->
-    <ctl name="Haptics Streaming Source" value="ASP Rx"/>
-    <ctl name="HR Haptics Streaming Source" value="ASP Rx"/>
+    <ctl name="Haptics Source" value="PCM"/>
+    <ctl name="HR Haptics Source" value="PCM"/>
     <ctl name="HAPTIC_RX Format" value="S32_LE"/>
     <ctl name="HAPTIC_RX SlotFmt" value="S32_LE"/>
     <ctl name="HAPTIC_RX Chan" value="Four"/>
