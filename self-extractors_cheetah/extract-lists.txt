@@ -11,7 +11,7 @@
             system_ext/lib64/libmediaadaptor.so \
             system_ext/priv-app/ShannonRcs/ShannonRcs.apk \
             system_ext/priv-app/ShannonIms/ShannonIms.apk \
-            system_ext/priv-app/QualifiedNetworksService/QualifiedNetworksService.apk \
+            system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk \
             system_ext/priv-app/UwbVendorService/UwbVendorService.apk \
             "
     ;;
