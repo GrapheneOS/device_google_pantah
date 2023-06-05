@@ -636,6 +636,26 @@
         "0,1,2,3,4,5,6,7"
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "Dex2oatGroup",
+      "Path": "/proc/vendor_sched/dex2oat_ug",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "UgBgGroupThrottle",
+      "Path": "/proc/vendor_sched/ug_bg_group_throttle",
+      "Values": [
+        "512",
+        "308"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -1976,6 +1996,12 @@
       "Value": "0,1,2,3,4,5"
     },
     {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "PMU_POLL",
       "Duration": 0,
@@ -2066,6 +2092,12 @@
       "Value": "0,1,2,3"
     },
     {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "PMU_POLL",
       "Duration": 0,
@@ -2154,6 +2186,12 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "0,1,2,3"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2244,6 +2282,12 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "0,1,2,3"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2352,6 +2396,12 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "0,1,2,3"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "FACE_UNLOCK_BOOST",
