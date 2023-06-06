@@ -79,8 +79,8 @@
   <!-- Cirrus Booster Amp Output Gain -->
   <ctl name="AMP PCM Gain" value="17" />
   <ctl name="R AMP PCM Gain" value="17" />
-  <ctl name="Digital PCM Volume" value="817" />
-  <ctl name="R Digital PCM Volume" value="817" />
+  <ctl name="Digital PCM Volume" value="0" />
+  <ctl name="R Digital PCM Volume" value="0" />
 
   <!-- Cirrus Booster Amp Power -->
   <ctl name="Main AMP Enable Switch" value="0" />
@@ -97,6 +97,8 @@
   <ctl name="R DSP RX2 Source" value="ASPRX1" />
   <ctl name="Boost Peak Current Limit" value="3.50A" />
   <ctl name="R Boost Peak Current Limit" value="3.50A" />
+  <ctl name="PCM Soft Ramp" value=".5ms" />
+  <ctl name="R PCM Soft Ramp" value=".5ms" />
 
   <!-- Cirrus ASP TX source -->
   <ctl name="ASP TX1 Source" value="VMON" />
@@ -657,9 +659,41 @@
     <ctl name="NoHost1 TX Mixer TDM_0_TX" value="1" />
   </path>
 
-  <path name="telephony-rx -> in-call-capture-0" />
-  <path name="telephony-rx -> in-call-capture-1" />
-  <path name="telephony-rx -> in-call-capture-2" />
+  <path name="telephony-rx (VOICE_DOWNLINK) -> in-call-capture-0">
+    <ctl name="Incall Capture Stream0" value="DL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_UPLINK) -> in-call-capture-0">
+    <ctl name="Incall Capture Stream0" value="UL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_CALL) -> in-call-capture-0">
+    <ctl name="Incall Capture Stream0" value="UL_DL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_DOWNLINK) -> in-call-capture-1">
+    <ctl name="Incall Capture Stream1" value="DL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_UPLINK) -> in-call-capture-1">
+    <ctl name="Incall Capture Stream1" value="UL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_CALL) -> in-call-capture-1">
+    <ctl name="Incall Capture Stream1" value="UL_DL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_DOWNLINK) -> in-call-capture-2">
+    <ctl name="Incall Capture Stream2" value="DL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_UPLINK) -> in-call-capture-2">
+    <ctl name="Incall Capture Stream2" value="UL" />
+  </path>
+
+  <path name="telephony-rx (VOICE_CALL) -> in-call-capture-2">
+    <ctl name="Incall Capture Stream2" value="UL_DL" />
+  </path>
 
   <path name="microphones -> mmap-capture-0">
     <ctl name="EP2 TX Mixer INTERNAL_MIC_TX" value="1" />
@@ -679,6 +713,7 @@
     <ctl name="PCM Source" value="ASP" />
     <ctl name="AMP PCM Gain" value="6" />
     <ctl name="Main AMP Enable Switch" value="1" />
+    <ctl name="Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker-earpiece (VOICE)">
@@ -686,6 +721,7 @@
     <ctl name="PCM Source" value="ASP" />
     <ctl name="AMP PCM Gain" value="7" />
     <ctl name="Main AMP Enable Switch" value="1" />
+    <ctl name="Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker">
@@ -697,6 +733,8 @@
     <ctl name="Fast Use Case Switch Enable" value="1" />
     <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
+    <ctl name="Digital PCM Volume" value="817" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker (VOICE)">
@@ -713,6 +751,7 @@
     <ctl name="R Fast Use Case Delta File" value="fast_switch2.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
     <ctl name="Digital PCM Volume" value="800" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker-safe">
@@ -721,6 +760,7 @@
     <!-- load Bypass FIR -->
     <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <!-- Tx device -->
@@ -779,12 +819,12 @@
   </path>
 
   <path name="microphones (CAMCORDER)">
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0"/>
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3"/>
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2"/>
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1"/>
-    <ctl name="MIC DC Blocker" value="1"/>
-    <ctl name="MIC Record Soft Gain (dB)" value="0"/>
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+    <ctl name="MIC DC Blocker" value="1" />
+    <ctl name="MIC Record Soft Gain (dB)" value="0" />
   </path>
 
   <path name="back-microphones (CAMCORDER)">
