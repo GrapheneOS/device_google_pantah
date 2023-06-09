@@ -310,6 +310,10 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
+# Android DeviceAsWebcam specific overlay
+PRODUCT_PACKAGES += \
+    DeviceAsWebcamPanther
+
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayG03Z5 \
