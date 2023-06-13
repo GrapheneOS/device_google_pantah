@@ -251,11 +251,11 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-include vendor/goodix/udfps/configuration/udfps_common.mk
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-include vendor/goodix/udfps/configuration/udfps_shipping.mk
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
 else
-include vendor/goodix/udfps/configuration/udfps_factory.mk
+$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
 endif
 
 # Display
