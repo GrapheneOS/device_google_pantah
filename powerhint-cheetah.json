@@ -646,16 +646,6 @@
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
-    },
-    {
-      "Name": "UgBgGroupThrottle",
-      "Path": "/proc/vendor_sched/ug_bg_group_throttle",
-      "Values": [
-        "512",
-        "308"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
     }
   ],
   "Actions": [
