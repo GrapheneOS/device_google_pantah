@@ -717,7 +717,6 @@
   </path>
 
   <path name="speaker-earpiece (VOICE)">
-    <ctl name="Boost Peak Current Limit" value="3.50A" />
     <ctl name="PCM Source" value="ASP" />
     <ctl name="AMP PCM Gain" value="7" />
     <ctl name="Main AMP Enable Switch" value="1" />
@@ -725,8 +724,6 @@
   </path>
 
   <path name="speaker">
-    <ctl name="Boost Peak Current Limit" value="2.50A" />
-    <ctl name="R Boost Peak Current Limit" value="2.50A" />
     <ctl name="Main AMP Enable Switch" value="1" />
     <ctl name="R Main AMP Enable Switch" value="1" />
     <ctl name="Fast Use Case Delta File" value="fast_switch3.txt" />
@@ -738,8 +735,6 @@
   </path>
 
   <path name="speaker (VOICE)">
-    <ctl name="R Boost Peak Current Limit" value="3.50A" />
-    <ctl name="Boost Peak Current Limit" value="3.50A" />
     <ctl name="ASPTX1 Slot Position" value="1" />
     <ctl name="R ASPTX1 Slot Position" value="0" />
     <!--<ctl name="R DSP RX2 Source" value="ASPRX2" />-->
@@ -755,7 +750,6 @@
   </path>
 
   <path name="speaker-safe">
-    <ctl name="R Boost Peak Current Limit" value="3.50A" />
     <ctl name="R Main AMP Enable Switch" value="1" />
     <!-- load Bypass FIR -->
     <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
@@ -914,4 +908,39 @@
     <ctl name="R DSP1 Preload Switch" value="1" />
   </path>
   <!-- cs35l41 specific path to load firmware in cs35l41.c end-->
+
+  <!-- cs35l41 specific path to set current limit in cs35l41 -->
+  <path name="speaker-boost-peak-current-limit">
+    <ctl name="Boost Peak Current Limit" value="2.50A" />
+    <ctl name="R Boost Peak Current Limit" value="2.50A" />
+  </path>
+  <path name="speaker-boost-peak-current-limit-battery-throttled">
+    <ctl name="Boost Peak Current Limit" value="1.80A" />
+    <ctl name="R Boost Peak Current Limit" value="1.80A" />
+  </path>
+
+  <path name="speaker-safe-boost-peak-current-limit">
+    <ctl name="R Boost Peak Current Limit" value="3.50A" />
+  </path>
+  <path name="speaker-safe-boost-peak-current-limit-battery-throttled">
+  </path>
+
+  <path name="earpiece-boost-peak-current-limit">
+  </path>
+  <path name="earpiece-boost-peak-current-limit-battery-throttled">
+  </path>
+
+  <path name="voice-speaker-boost-peak-current-limit">
+    <ctl name="R Boost Peak Current Limit" value="3.50A" />
+    <ctl name="Boost Peak Current Limit" value="3.50A" />
+  </path>
+  <path name="voice-speaker-boost-peak-current-limit-battery-throttled">
+  </path>
+
+  <path name="voice-earpiece-boost-peak-current-limit">
+      <ctl name="Boost Peak Current Limit" value="3.50A" />
+  </path>
+  <path name="voice-earpiece-boost-peak-current-limit-battery-throttled">
+  </path>
+  <!-- cs35l41 specific path to set current limit in cs35l41 end -->
 </mixer>
