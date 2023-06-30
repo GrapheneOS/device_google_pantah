@@ -713,14 +713,12 @@
     <ctl name="PCM Source" value="ASP" />
     <ctl name="AMP PCM Gain" value="6" />
     <ctl name="Main AMP Enable Switch" value="1" />
-    <ctl name="Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker-earpiece (VOICE)">
     <ctl name="PCM Source" value="ASP" />
     <ctl name="AMP PCM Gain" value="7" />
     <ctl name="Main AMP Enable Switch" value="1" />
-    <ctl name="Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker">
@@ -730,8 +728,6 @@
     <ctl name="Fast Use Case Switch Enable" value="1" />
     <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
-    <ctl name="Digital PCM Volume" value="817" />
-    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker (VOICE)">
@@ -745,8 +741,6 @@
     <ctl name="Fast Use Case Switch Enable" value="1" />
     <ctl name="R Fast Use Case Delta File" value="fast_switch2.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
-    <ctl name="Digital PCM Volume" value="800" />
-    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <path name="speaker-safe">
@@ -754,7 +748,6 @@
     <!-- load Bypass FIR -->
     <ctl name="R Fast Use Case Delta File" value="fast_switch4.txt" />
     <ctl name="R Fast Use Case Switch Enable" value="1" />
-    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
   <!-- Tx device -->
@@ -908,38 +901,69 @@
     <ctl name="R DSP1 Preload Switch" value="1" />
   </path>
   <!-- cs35l41 specific path to load firmware in cs35l41.c end-->
-  <!-- cs35l41 specific path to set current limit in cs35l41 -->
-  <path name="speaker-boost-peak-current-limit">
+
+  <!-- cs35l41 specific path for adated feature in cs35l41_route_control.cc  -->
+  <!-- Which is controlled by speaker module and path name format is fixed.  -->
+  <!-- Path name format: adapted-{type}{-battery-throttled}{-acoustic-shock} -->
+  <!-- Battery throttle and acoustic shock are disabled: "adapted-speaker"   -->
+  <!-- Battery throttle enabled: "adapted-speaker-battery-throttled"         -->
+  <!-- Acoustic shock enabled: "adapted-speaker-acoustic-shock"              -->
+  <!-- Both are enabled: "adapted-speaker-battery-throttled-acoustic-shock"  -->
+  <path name="adapted-speaker">
     <ctl name="Boost Peak Current Limit" value="2.50A" />
     <ctl name="R Boost Peak Current Limit" value="2.50A" />
+    <ctl name="Digital PCM Volume" value="817" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
-  <path name="speaker-boost-peak-current-limit-battery-throttled">
+  <path name="adapted-speaker-battery-throttled">
     <ctl name="Boost Peak Current Limit" value="1.80A" />
     <ctl name="R Boost Peak Current Limit" value="1.80A" />
+    <ctl name="Digital PCM Volume" value="817" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
-  <path name="speaker-safe-boost-peak-current-limit">
+  <path name="adapted-speaker-safe">
     <ctl name="R Boost Peak Current Limit" value="3.50A" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
-  <path name="speaker-safe-boost-peak-current-limit-battery-throttled">
-  </path>
-
-  <path name="earpiece-boost-peak-current-limit">
-  </path>
-  <path name="earpiece-boost-peak-current-limit-battery-throttled">
+  <path name="adapted-speaker-safe-battery-throttled">
+    <path name="adapted-speaker-safe" />
   </path>
 
-  <path name="voice-speaker-boost-peak-current-limit">
+  <path name="adapted-earpiece">
+    <ctl name="Digital PCM Volume" value="817" />
+  </path>
+  <path name="adapted-earpiece-battery-throttled">
+    <path name="adapted-earpiece" />
+  </path>
+
+  <path name="adapted-voice-speaker">
     <ctl name="R Boost Peak Current Limit" value="3.50A" />
     <ctl name="Boost Peak Current Limit" value="3.50A" />
+    <ctl name="Digital PCM Volume" value="800" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
-  <path name="voice-speaker-boost-peak-current-limit-battery-throttled">
+  <path name="adapted-voice-speaker-battery-throttled">
+    <path name="adapted-voice-speaker" />
+  </path>
+  <path name="adapted-voice-speaker-acoustic-shock">
+    <ctl name="R Boost Peak Current Limit" value="3.50A" />
+    <ctl name="Boost Peak Current Limit" value="3.50A" />
+    <ctl name="PCM Soft Ramp" value="2ms" />
+    <ctl name="Digital PCM Volume" value="0" />
+    <ctl name="R Digital PCM Volume" value="817" />
   </path>
 
-  <path name="voice-earpiece-boost-peak-current-limit">
+  <path name="adapted-voice-speaker-battery-throttled-acoustic-shock">
+    <path name="adapted-voice-speaker-acoustic-shock" />
+  </path>
+
+  <path name="adapted-voice-earpiece">
       <ctl name="Boost Peak Current Limit" value="3.50A" />
+      <ctl name="Digital PCM Volume" value="817" />
   </path>
-  <path name="voice-earpiece-boost-peak-current-limit-battery-throttled">
+  <path name="adapted-voice-earpiece-battery-throttled">
+    <path name="adapted-voice-earpiece" />
   </path>
-  <!-- cs35l41 specific path to set current limit in cs35l41 end -->
+  <!-- cs35l41 specific path for adated feature in cs35l41_route_control.cc end -->
 </mixer>
