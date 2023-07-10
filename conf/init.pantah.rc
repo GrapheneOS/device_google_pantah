@@ -55,6 +55,7 @@ on property:ro.boot.hardware.revision=PROTO1.1
 # Bluetooth
 on post-fs-data
     chown bluetooth system /proc/bluetooth/timesync
+    mkdir /data/vendor/bluetooth 0770 bluetooth system
 
 # SecureElement eSE2 cts mode
 on property:persist.vendor.se.ese2.mode=ctsmode
