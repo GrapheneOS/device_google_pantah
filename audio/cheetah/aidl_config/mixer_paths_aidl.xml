@@ -785,6 +785,17 @@
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
   </path>
 
+  <path name="microphones (SOUND_TRIGGER_AEC)">
+    <ctl name="Audio Capture Eraser Enable" value="1" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
+    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
+    <ctl name="MIC DC Blocker" value="1" />
+    <ctl name="Audio Capture Mic Source" value="ERASER" />
+    <ctl name="MIC Record Soft Gain (dB)" value="0" />
+  </path>
+
   <path name="back-microphones">
     <ctl name="Mic Spatial Module Enable" value="1" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
@@ -825,17 +836,6 @@
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
     <ctl name="MIC DC Blocker" value="1" />
-    <ctl name="MIC Record Soft Gain (dB)" value="0" />
-  </path>
-
-  <path name="voice-recog-aec-mic">
-    <ctl name="Audio Capture Eraser Enable" value="1" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
-    <ctl name="BUILDIN MIC ID CAPTURE LIST" id="3" value="-1" />
-    <ctl name="MIC DC Blocker" value="1" />
-    <ctl name="Audio Capture Mic Source" value="ERASER" />
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
   </path>
 
