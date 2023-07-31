@@ -27,7 +27,7 @@ include device/google/pantah/audio/cloudripper/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
-include device/google/gs-common/touch/syna/syna.mk
+include device/google/gs-common/touch/syna/syna0.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,cloudripper)
