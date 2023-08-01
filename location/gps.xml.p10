@@ -62,6 +62,7 @@
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
        PpsDevice="/sys/class/pps/pps0/assert_elapsed"
+       SensorsMask="0x244"
   />
 
   <gll
