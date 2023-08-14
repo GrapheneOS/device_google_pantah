@@ -15,7 +15,7 @@ on early-boot
     wait_for_prop vendor.common.modules.ready 1
     start insmod_sh_cloudripper
 
-service insmod_sh_cloudripper /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.cloudripper.cfg
+service insmod_sh_cloudripper /vendor/bin/insmod.sh /vendor/etc/init.insmod.cloudripper.cfg
     class main
     user root
     group root system
@@ -51,3 +51,37 @@ on post-fs-data
     setprop wifi.direct.interface p2p-dev-wlan0
     setprop wifi.aware.interface aware_nmi0
 
+# Haptics
+on property:vendor.all.modules.ready=1
+    mkdir /mnt/vendor/persist/haptics 0770 system system
+    chmod 770 /mnt/vendor/persist/haptics
+    chmod 440 /mnt/vendor/persist/haptics/cs40l26.cal
+    chmod 440 /mnt/vendor/persist/haptics/cs40l26_dual.cal
+    chown system system /mnt/vendor/persist/haptics
+    chown system system /mnt/vendor/persist/haptics/cs40l26.cal
+    chown system system /mnt/vendor/persist/haptics/cs40l26_dual.cal
+
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/f0_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/q_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/redc_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/vibe_state
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/num_waves
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/f0_offset
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/owt_free_space
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/f0_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/redc_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/delay_before_stop_playback_us
+
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/calibration/f0_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/calibration/q_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/calibration/redc_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/vibe_state
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/num_waves
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/f0_offset
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/owt_free_space
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/f0_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/redc_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a-dual/default/delay_before_stop_playback_us
+
+    enable vendor.vibrator.cs40l26
+    enable vendor.vibrator.cs40l26-dual

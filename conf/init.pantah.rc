@@ -13,7 +13,7 @@ on early-boot
     wait_for_prop vendor.common.modules.ready 1
     start insmod_sh_pantah
 
-service insmod_sh_pantah /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
+service insmod_sh_pantah /vendor/bin/insmod.sh /vendor/etc/init.insmod.${ro.hardware}.cfg
     class main
     user root
     group root system
@@ -23,24 +23,6 @@ service insmod_sh_pantah /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.${ro
 on property:vendor.mfgapi.touchpanel.permission=1
     chmod 0600 /sys/devices/virtual/sec/tsp/cmd
     chown system system /sys/devices/virtual/sec/tsp/cmd
-
-# Fingerprint
-on post-fs-data
-    chown system system /dev/goodix_fp
-    exec_background - system shell -- /vendor/bin/trusty_apploader /vendor/firmware/g7.app
-
-# Overrides fingerprint antispoof if following persist sysprops are set
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=0
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
-
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=1
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
-
-on boot && property:ro.build.type=userdebug && \
-           property:persist.vendor.fingerprint.disable.fake.override=100
-    setprop vendor.fingerprint.disable.fake ${persist.vendor.fingerprint.disable.fake.override}
 
 # WiFi
 on post-fs-data
@@ -87,31 +69,23 @@ on property:ro.boot.hardware.revision=PROTO1.0
 on property:ro.boot.hardware.revision=PROTO1.1
     setprop vendor.thermal.config "thermal_info_config_proto.json"
 
-# Touch
-on property:vendor.device.modules.ready=1
-    chown system system /proc/focaltech_touch/Channel_Num
-    chown system system /proc/focaltech_touch/FW_Version
-    chown system system /proc/focaltech_touch/INT_PIN
-    chown system system /proc/focaltech_touch/force_active
-    chown system system /proc/focaltech_touch/Reset_Pin
-    chown system system /proc/focaltech_touch/fw_grip
-    chown system system /proc/focaltech_touch/fw_palm
-    chown system system /proc/focaltech_touch/heatmap_onoff
-    chown system system /proc/focaltech_touch/mf_mode
-    chown system system /proc/focaltech_touch/selftest/Baseline
-    chown system system /proc/focaltech_touch/selftest/Noise
-    chown system system /proc/focaltech_touch/selftest/Panel_Differ
-    chown system system /proc/focaltech_touch/selftest/Rawdata
-    chown system system /proc/focaltech_touch/selftest/Rawdata_Uniformity
-    chown system system /proc/focaltech_touch/selftest/Scap_CB
-    chown system system /proc/focaltech_touch/selftest/Scap_Rawdata
-    chown system system /proc/focaltech_touch/selftest/Short
-    chown system system /proc/focaltech_touch/selftest/Strength
+# Haptics
+on property:vendor.all.modules.ready=1
+    mkdir /mnt/vendor/persist/haptics 0770 system system
+    chmod 770 /mnt/vendor/persist/haptics
+    chmod 440 /mnt/vendor/persist/haptics/cs40l26.cal
+    chown system system /mnt/vendor/persist/haptics
+    chown system system /mnt/vendor/persist/haptics/cs40l26.cal
 
-# Override SF and RE uclamps to 0 on boot after being set elsewhere, for adpf cpu hints
-on property:sys.boot_completed=1
-    trigger override-sf-uclamp
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/f0_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/q_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/calibration/redc_stored
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/vibe_state
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/num_waves
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/f0_offset
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/owt_free_space
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/f0_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/redc_comp_enable
+    chown system system /sys/bus/i2c/devices/i2c-cs40l26a/default/delay_before_stop_playback_us
 
-on override-sf-uclamp
-    write /proc/vendor_sched/rt_uclamp_min 0
-    write /proc/vendor_sched/sf_uclamp_min 0
+    enable vendor.vibrator.cs40l26

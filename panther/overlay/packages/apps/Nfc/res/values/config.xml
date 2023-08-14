@@ -21,4 +21,15 @@
     <item>GVU6C</item>
     <item>G03Z5</item>
   </string-array>
+  <bool name="tag_intent_app_pref_supported">true</bool>
+  <!-- NFC Antenna Location API -->
+  <integer name="device_width">70</integer>
+  <integer name="device_height">150</integer>
+  <bool name="device_foldable">false</bool>
+  <integer-array name="antenna_x">
+    <item>38</item>
+  </integer-array>
+  <integer-array name="antenna_y">
+    <item>97</item>
+  </integer-array>
 </resources>

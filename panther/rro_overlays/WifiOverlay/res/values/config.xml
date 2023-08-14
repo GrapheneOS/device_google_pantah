@@ -59,6 +59,7 @@
 
     <!-- True if the firmware supports p2p MAC randomization -->
     <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+    <bool name="config_wifiAllowNonPersistentMacRandomizationOnOpenSsids">true</bool>
 
     <!-- True if the firmware supports ap MAC randomization -->
     <bool name="config_wifi_ap_mac_randomization_supported">true</bool>
@@ -151,4 +152,17 @@
 
     <!-- Enable WPA2 to WPA3 auto-upgrade offload to capable Driver/Firmware -->
     <bool translatable="false" name="config_wifiSaeUpgradeOffloadEnabled">true</bool>
+    <!-- Boolean indicating whether DTIM multiplier configuration is enabled. DTIM multiplier value
+        is when the system is in the suspended mode -->
+    <bool translatable="false" name="config_wifiDtimMultiplierConfigEnabled">true</bool>
+
+    <!-- Enable the feature of adjusting link layer stats polling interval based on
+    device mobility state and client mode RSSI monitoring. -->
+    <bool translatable="false" name="config_wifiAdjustPollRssiIntervalEnabled">true</bool>
+
+    <!-- Boolean indicating whether the framework updates country from scan results when there is
+         no telephony country code. This is applied to all generic cases and might require the
+         regulatory approval (for example, FCC pre-approval is required according to "594280 D01
+         Software Configuration Control v02r01").-->
+    <bool translatable="false" name ="config_wifiUpdateCountryCodeFromScanResultGeneric">true</bool>
 </resources>

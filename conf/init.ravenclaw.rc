@@ -15,7 +15,7 @@ on early-boot
     wait_for_prop vendor.common.modules.ready 1
     start insmod_sh_ravenclaw
 
-service insmod_sh_ravenclaw /vendor/bin/init.insmod.sh /vendor/etc/init.insmod.ravenclaw.cfg
+service insmod_sh_ravenclaw /vendor/bin/insmod.sh /vendor/etc/init.insmod.ravenclaw.cfg
     class main
     user root
     group root system

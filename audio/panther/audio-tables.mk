@@ -16,6 +16,18 @@
 
 AUDIO_TABLE_FOLDER := panther
 
+# Enable this to build AIDL
+# BUILD_AUDIO_AIDL_VERSION := true
+
+ifeq ($(BUILD_AUDIO_AIDL_VERSION),true)
+# AIDL HAL configs are in the *aidl_config* folder
+PRODUCT_COPY_FILES += \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration_aidl.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/mixer_paths_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_aidl.xml
+else
+# HIDL HAL configs are in the *config* folder
 # Platform Configuration for AudioHAL / SoundTriggerHAL
 PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
@@ -34,6 +46,7 @@ PRODUCT_COPY_FILES += \
 # Mixer Path Configuration for AudioHAL
 PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/config/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+endif
 
 # Speaker firmware files
 SPK_FIRMWARE_PATH := $(AUDIO_TABLE_FOLDER)/cs35l41/fw
@@ -44,6 +57,7 @@ PRODUCT_COPY_FILES += $(call copy-files,$(wildcard  $(SPK_FIRMWARE_FULL_PATH)/*)
 # Audio tuning
 PRODUCT_COPY_FILES += \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/recording.gatf:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/recording.gatf \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/smartfeature.gstf:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/smartfeature.gstf \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/BLUETOOTH.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSFREE.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.dat \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia_stereo/HANDSET.dat:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.dat \
