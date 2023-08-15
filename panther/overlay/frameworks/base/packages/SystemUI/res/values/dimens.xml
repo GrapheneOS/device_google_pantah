@@ -40,11 +40,11 @@
     <dimen name="config_rounded_mask_size_bottom">46px</dimen>
 
     <!-- Location on the screen of the center of the physical power button. -->
-    <dimen name="physical_power_button_center_screen_location_y">650px</dimen>
+    <dimen name="physical_power_button_center_screen_location_y">776px</dimen>
 
     <!-- Location on the screen of the center of the physical volume up/down buttons. -->
-    <dimen name="physical_volume_up_button_center_screen_location_y">950px</dimen>
-    <dimen name="physical_volume_down_button_center_screen_location_y">1110px</dimen>
+    <dimen name="physical_volume_up_button_center_screen_location_y">1100px</dimen>
+    <dimen name="physical_volume_down_button_center_screen_location_y">1262px</dimen>
 
     <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
     <dimen name="lock_icon_padding">48px</dimen>

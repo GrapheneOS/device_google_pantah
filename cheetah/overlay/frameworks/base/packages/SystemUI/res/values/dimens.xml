@@ -36,11 +36,11 @@
     <bool name="config_enableDisplayCutoutProtection">true</bool>
 
     <!-- Location on the screen of the center of the physical power button. -->
-    <dimen name="physical_power_button_center_screen_location_y">940px</dimen>
+    <dimen name="physical_power_button_center_screen_location_y">828px</dimen>
 
     <!-- Location on the screen of the center of the physical volume up/down buttons. -->
-    <dimen name="physical_volume_up_button_center_screen_location_y">1320px</dimen>
-    <dimen name="physical_volume_down_button_center_screen_location_y">1520px</dimen>
+    <dimen name="physical_volume_up_button_center_screen_location_y">1130px</dimen>
+    <dimen name="physical_volume_down_button_center_screen_location_y">1274px</dimen>
 
     <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
     <dimen name="lock_icon_padding">60px</dimen>
