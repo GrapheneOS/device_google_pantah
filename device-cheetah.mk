@@ -306,7 +306,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=30
+    ro.vendor.build.svn=31
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -378,13 +378,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
-# Window Extensions
-$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-# Disable Settings large-screen optimization enabled by Window Extensions
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.settings.large_screen_opt.enabled=false
 
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
