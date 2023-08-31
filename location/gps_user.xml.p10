@@ -57,6 +57,7 @@
        AssertEnabled="false"
        CpLppeCancelDbhOnAgnssProvideLoc="true"
        CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"

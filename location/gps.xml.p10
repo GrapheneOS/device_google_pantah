@@ -58,6 +58,7 @@
        AssertEnabled="true"
        CpLppeCancelDbhOnAgnssProvideLoc="true"
        CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
@@ -69,7 +70,7 @@
   <gll
        PpsEnable="true"
        LogPriMask="LOG_INFO"
-       LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI"
+       LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI | LOG_MEASAPI"
        FrqPlan="FRQ_PLAN_26MHZ_2PPM_49_152MHZ_300PPB"
        MultiCarrRFMode="GL_MULTI_CARR_RF_MODE_L1_L5"
        MultiCarrLnaMask="L1_EXT_ON|L5_EXT_ON"
