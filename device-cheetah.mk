@@ -318,10 +318,6 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
-# Android DeviceAsWebcam specific overlay
-PRODUCT_PACKAGES += \
-    DeviceAsWebcamCheetah
-
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J \
