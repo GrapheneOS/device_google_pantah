@@ -935,6 +935,18 @@
     <ctl name="BT_RX Mixer EP5" value="1" />
   </path>
 
+  <path name="voice-call-downlink-0 -> bluetooth-sco-default">
+    <path name="voice-call-downlink-0 -> bt" />
+  </path>
+
+  <path name="voice-call-downlink-0 -> bluetooth-sco-headset">
+    <path name="voice-call-downlink-0 -> bt" />
+  </path>
+
+  <path name="voice-call-downlink-0 -> bluetooth-sco-car-kit">
+    <path name="voice-call-downlink-0 -> bt" />
+  </path>
+
   <path name="voice-call-downlink-0 -> usb">
     <ctl name="USB_RX Mixer EP5" value="1" />
   </path>
