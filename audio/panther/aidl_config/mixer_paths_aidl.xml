@@ -858,7 +858,7 @@
   </path>
 
   <path name="usb-headset-microphones -> primary-capture-0">
-    <path name="usb-microphones-> primary-capture-0" />
+    <path name="usb-microphones -> primary-capture-0" />
   </path>
 
   <path name="usb-device-microphones -> primary-capture-0">
