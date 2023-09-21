@@ -86,15 +86,8 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
 	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
 	device/google/pantah/nfc/libnfc-hal-st-proto1.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st-proto1.conf \
+	device/google/pantah/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
     device/google/pantah/nfc/libnfc-nci-panther.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
-
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_COPY_FILES += \
-        device/google/pantah/nfc/libnfc-hal-st-debug.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf
-else
-PRODUCT_COPY_FILES += \
-        device/google/pantah/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf
-endif
 
 PRODUCT_PACKAGES += \
 	NfcNci \
@@ -181,6 +174,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # simultaneously. More details in b/242908683.
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.leaudio.notify.idle.during.call=true
+
+# BT controller not able to support LE Audio dual mic SWB call
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.leaudio.dual_bidirection_swb.supported=false
 
 # LE Auido Offload Capabilities setting
 PRODUCT_COPY_FILES += \
@@ -294,7 +291,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=31
+    ro.vendor.build.svn=34
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -309,10 +306,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
-
-# Android DeviceAsWebcam specific overlay
-PRODUCT_PACKAGES += \
-    DeviceAsWebcamPanther
 
 # SKU specific RROs
 PRODUCT_PACKAGES += \
@@ -334,10 +327,17 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545
+ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=1 \
+    persist.vendor.vibrator.hal.chirp.enabled=0 \
     ro.vendor.vibrator.hal.device.mass=0.195 \
-    ro.vendor.vibrator.hal.loc.coeff=2.65
+    ro.vendor.vibrator.hal.loc.coeff=2.65 \
+    persist.vendor.vibrator.hal.context.enable=false \
+    persist.vendor.vibrator.hal.context.scale=60 \
+    persist.vendor.vibrator.hal.context.fade=true \
+    persist.vendor.vibrator.hal.context.cooldowntime=1600 \
+    persist.vendor.vibrator.hal.context.settlingtime=5000
+
 # Keyboard bottom padding in dp for portrait mode and height ratio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b=8 \
@@ -364,6 +364,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+# Disable Settings large-screen optimization enabled by Window Extensions
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.settings.large_screen_opt.enabled=false
 
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \

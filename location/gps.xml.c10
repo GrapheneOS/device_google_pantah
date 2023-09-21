@@ -35,7 +35,7 @@
        SuplVersion="2"
        SuplMinorVersion="0"
        SuplOtdoaCapable="true"
-       SuplOtdoaCapable2="true"
+       SuplOtdoaCapable2="false"
        SuplGlonassCapable = "true"
        SuplGalileoCapable = "true"
        SuplBdsCapable = "true"
@@ -58,17 +58,19 @@
        AssertEnabled="true"
        CpLppeCancelDbhOnAgnssProvideLoc="true"
        CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
        PpsDevice="/sys/class/pps/pps0/assert_elapsed"
        SensorsMask="0x244"
+       MaxThreadNum="13"
   />
 
   <gll
        PpsEnable="true"
        LogPriMask="LOG_INFO"
-       LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI"
+       LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI | LOG_MEASAPI"
        FrqPlan="FRQ_PLAN_26MHZ_2PPM_49_152MHZ_300PPB"
        MultiCarrRFMode="GL_MULTI_CARR_RF_MODE_L1_L5"
        MultiCarrLnaMask="L1_EXT_ON|L5_EXT_ON"
@@ -90,6 +92,7 @@
        PowerMode="3"
        MinGpsWeekNumber="2216"
        OnChipAccMask="50"
+       EnableB1C="false"
   />
 
   <gll_features

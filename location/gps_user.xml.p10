@@ -34,7 +34,7 @@
        SuplVersion="2"
        SuplMinorVersion="0"
        SuplOtdoaCapable="true"
-       SuplOtdoaCapable2="true"
+       SuplOtdoaCapable2="false"
        SuplGlonassCapable = "true"
        SuplGalileoCapable = "true"
        SuplBdsCapable = "true"
@@ -57,11 +57,13 @@
        AssertEnabled="false"
        CpLppeCancelDbhOnAgnssProvideLoc="true"
        CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
        PpsDevice="/sys/class/pps/pps0/assert_elapsed"
        SensorsMask="0x244"
+       MaxThreadNum="13"
   />
 
   <gll
@@ -89,6 +91,7 @@
        PowerMode="3"
        MinGpsWeekNumber="2216"
        OnChipAccMask="50"
+       EnableB1C="false"
   />
 
   <gll_features
