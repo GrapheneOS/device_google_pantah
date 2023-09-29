@@ -46,26 +46,27 @@
             "Combination":["qi_therm", "quiet_therm"],
             "Coefficient":[0.282, 0.718],
             "Offset":-448,
-            "HotThreshold":["NAN", 39.0, 41.0, 43.0, 45.0, 47.0, 55.0],
-            "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.9, 1.9, 1.9],
+            "HotThreshold":["NAN", 35.0, 41.0, 45.0, 47.0, 51.0, 55.0],
+            "HotHysteresis":[0.0, 1.9, 4.9, 1.9, 1.9, 1.9, 1.9],
             "Multiplier":0.001,
             "PollingDelay":300000,
             "PassiveDelay":7000,
             "PIDInfo": {
-                "K_Po":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
-                "K_Pu":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
-                "K_I":["NAN", "NAN", 5, "NAN", "NAN", "NAN", "NAN"],
+                "K_Po":["NAN", "NAN", 200, "NAN", "NAN", "NAN", "NAN"],
+                "K_Pu":["NAN", "NAN", 200, "NAN", "NAN", "NAN", "NAN"],
+                "K_I":["NAN", "NAN", 25, "NAN", "NAN", "NAN", "NAN"],
                 "K_D":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
-                "I_Max":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
-                "S_Power":["NAN", "NAN", 3600, "NAN", "NAN", "NAN", "NAN"],
-                "MinAllocPower":["NAN", "NAN", 300, "NAN", "NAN", "NAN", "NAN"],
-                "MaxAllocPower":["NAN", "NAN", 6000, "NAN", "NAN", "NAN", "NAN"],
-                "I_Cutoff":["NAN", "NAN", 2, "NAN", "NAN", "NAN", "NAN"]
+                "I_Max":["NAN", "NAN", 1300, "NAN", "NAN", "NAN", "NAN"],
+                "S_Power":["NAN", "NAN", 2300, "NAN", "NAN", "NAN", "NAN"],
+                "MinAllocPower":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
+                "MaxAllocPower":["NAN", "NAN", 7600, "NAN", "NAN", "NAN", "NAN"],
+                "I_Cutoff":["NAN", "NAN", 8, "NAN", "NAN", "NAN", "NAN"],
+                "I_Default":1300
             },
             "ExcludedPowerInfo": [
                 {
-                    "PowerRail": "POWER_FOR_CHARGING_THROTTLING",
-                    "PowerWeight": [0.5, 0.5, 0.8, 1.0, 1.0, 1.0, 1.0]
+                    "PowerRail": "PARTIAL_SYSTEM_POWER",
+                    "PowerWeight": [0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4]
                 }
             ],
             "BindedCdevInfo": [
@@ -74,8 +75,8 @@
                     "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
-                    "CdevCeiling": [0, 4, 7, 8, 9, 9, 9],
-                    "LimitInfo": [0, 0, 0, 0, 0, 9, 9]
+                    "CdevCeiling": [0, 25, 25, 26, 26, 26, 26],
+                    "LimitInfo": [0, 0, 1, 1, 26, 26, 26]
                 }
             ]
         },
@@ -182,7 +183,7 @@
             "PowerSampleCount":1
         },
         {
-            "Name":"POWER_FOR_CHARGING_THROTTLING",
+            "Name":"PARTIAL_SYSTEM_POWER",
             "VirtualRails":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["VSYS_PWR_MODEM", "S2M_VDD_CPUCL2", "S3M_VDD_CPUCL1", "S4M_VDD_CPUCL0", "S5M_VDD_INT", "S1M_VDD_MIF", "S2S_VDD_G3D"],
