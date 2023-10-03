@@ -20,6 +20,9 @@ BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 # The modules which need to be loaded in sequential
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
 
+RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_PANTHER_RADIO_DIR)
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := $(RELEASE_GOOGLE_PANTHER_BOOTLOADER_DIR)
+
 ifdef PHONE_CAR_BOARD_PRODUCT
     include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
 else
