@@ -32,6 +32,9 @@
     <scenario encode="OneChanMono_24_2" decode="invalid"/>
     <scenario encode="TwoChanStereo_24_2" decode="invalid"/>
     <scenario encode="OneChanStereo_24_2" decode="invalid"/>
+    <scenario encode="OneChanMono_48_2" decode="invalid"/>
+    <scenario encode="TwoChanStereo_48_2" decode="invalid"/>
+    <scenario encode="OneChanStereo_48_2" decode="invalid"/>
     <scenario encode="OneChanMono_48_4" decode="invalid"/>
     <scenario encode="TwoChanStereo_48_4" decode="invalid"/>
     <scenario encode="OneChanStereo_48_4" decode="invalid"/>
@@ -57,6 +60,9 @@
     <configuration name="OneChanMono_24_2" codecConfiguration="LC3_24k_2" strategyConfiguration="MONO_ONE_CIS_PER_DEVICE"/>
     <configuration name="TwoChanStereo_24_2" codecConfiguration="LC3_24k_2" strategyConfiguration="STEREO_TWO_CISES_PER_DEVICE"/>
     <configuration name="OneChanStereo_24_2" codecConfiguration="LC3_24k_2" strategyConfiguration="STEREO_ONE_CIS_PER_DEVICE"/>
+    <configuration name="OneChanMono_48_2" codecConfiguration="LC3_48k_2" strategyConfiguration="MONO_ONE_CIS_PER_DEVICE"/>
+    <configuration name="TwoChanStereo_48_2" codecConfiguration="LC3_48k_2" strategyConfiguration="STEREO_TWO_CISES_PER_DEVICE"/>
+    <configuration name="OneChanStereo_48_2" codecConfiguration="LC3_48k_2" strategyConfiguration="STEREO_ONE_CIS_PER_DEVICE"/>
     <configuration name="OneChanMono_48_4" codecConfiguration="LC3_48k_4" strategyConfiguration="MONO_ONE_CIS_PER_DEVICE"/>
     <configuration name="TwoChanStereo_32_2" codecConfiguration="LC3_32k_2" strategyConfiguration="STEREO_TWO_CISES_PER_DEVICE"/>
     <configuration name="OneChanMono_32_2" codecConfiguration="LC3_32k_2" strategyConfiguration="MONO_ONE_CIS_PER_DEVICE"/>
@@ -68,6 +74,7 @@
     <codecConfiguration name="LC3_16k_2" codec="LC3" samplingFrequency="16000" frameDurationUs="10000" octetsPerCodecFrame="40"/>
     <codecConfiguration name="LC3_24k_2" codec="LC3" samplingFrequency="24000" frameDurationUs="10000" octetsPerCodecFrame="60"/>
     <codecConfiguration name="LC3_32k_2" codec="LC3" samplingFrequency="32000" frameDurationUs="10000" octetsPerCodecFrame="80"/>
+    <codecConfiguration name="LC3_48k_2" codec="LC3" samplingFrequency="48000" frameDurationUs="10000" octetsPerCodecFrame="100"/>
     <codecConfiguration name="LC3_48k_4" codec="LC3" samplingFrequency="48000" frameDurationUs="10000" octetsPerCodecFrame="120"/>
   </codecConfigurationList>
   <strategyConfigurationList>
