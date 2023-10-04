@@ -750,6 +750,60 @@
       "Value": "0"
     },
     {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "ReducePreferIdle",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "FGPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 5000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 5000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 5000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "TAUClampBoost",
+      "Duration": 5000,
+      "Value": "765"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "FGUClampBoost",
+      "Duration": 5000,
+      "Value": "159"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "MemFreq",
+      "Duration": 5000,
+      "Value": "3172000"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "NPITaskPacking",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CPU_LOAD_RESET",
       "Node": "GPUMinFreq",
       "Duration": 50,
