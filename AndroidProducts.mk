@@ -29,3 +29,5 @@ COMMON_LUNCH_CHOICES := \
     aosp_ravenclaw-userdebug \
     aosp_cheetah-userdebug \
     aosp_panther-userdebug
+
+include device/google/gs-common/wireless_charger/wireless_charger.mk
