@@ -34,7 +34,7 @@
        SuplVersion="2"
        SuplMinorVersion="0"
        SuplOtdoaCapable="true"
-       SuplOtdoaCapable2="true"
+       SuplOtdoaCapable2="false"
        SuplGlonassCapable = "true"
        SuplGalileoCapable = "true"
        SuplBdsCapable = "true"
@@ -87,6 +87,7 @@
        EnableOnChipStopNotification="0"
        PowerMode="3"
        MinGpsWeekNumber="2216"
+       OnChipAccMask="50"
   />
 
   <gll_features

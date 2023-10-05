@@ -25,9 +25,9 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/raven
 include device/google/gs201/device-shipping-common.mk
 include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
-include device/google/gs101/bluetooth/bluetooth.mk
+include device/google/gs-common/bcmbt/bluetooth.mk
+include device/google/gs-common/touch/lsi/lsi.mk
 
-DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/pantah/device_framework_matrix_product.xml
 ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
 include device/google/gs101/uwb/uwb.mk
 include device/google/pantah/uwb/uwb_calibration.mk
@@ -94,19 +94,17 @@ PRODUCT_COPY_FILES += \
 	device/google/pantah/powerhint-ravenclaw.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Bluetooth HAL
-DEVICE_MANIFEST_FILE += \
-	device/google/pantah/bluetooth/manifest_bluetooth.xml
-PRODUCT_SOONG_NAMESPACES += \
-        vendor/broadcom/bluetooth
-PRODUCT_PACKAGES += \
-	android.hardware.bluetooth@1.1-service.bcmbtlinux \
-	bt_vendor.conf
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.firmware.selection=BCM.hcd
+# default BDADDR for EVB only
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -137,10 +135,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 	ro.hardware.keystore_desede=true \
 # 	ro.hardware.keystore=software \
 # 	ro.hardware.gatekeeper=software
-
-# default BDADDR for EVB only
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
@@ -181,9 +175,6 @@ endif
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.firmware.selection=BCM.hcd
 
 # Device features
 PRODUCT_COPY_FILES += \

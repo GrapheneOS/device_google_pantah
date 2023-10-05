@@ -13,9 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Enable load module in parallel
+BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
+
+# The modules which need to be loaded in sequential
+BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
+
+ifdef PHONE_CAR_BOARD_PRODUCT
+    include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
+else
+    TARGET_SCREEN_DENSITY := 420
+endif
+
 TARGET_BOARD_INFO_FILE := device/google/pantah/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := panther
-TARGET_SCREEN_DENSITY := 420
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_CLOUDRIPPER := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
