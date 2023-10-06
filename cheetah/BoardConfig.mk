@@ -17,6 +17,9 @@
 # Enable load module in parallel
 BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 
+RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_CHEETAH_RADIO_DIR)
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := $(RELEASE_GOOGLE_CHEETAH_BOOTLOADER_DIR)
+
 # The modules which need to be loaded in sequential
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
 
