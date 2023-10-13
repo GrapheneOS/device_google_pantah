@@ -27,6 +27,8 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheet
 $(call inherit-product-if-exists, vendor/google_devices/cheetah/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersCheetah.mk)
 
+$(call inherit-product, device/google/pantah/uwb/uwb_calibration_country.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
 
 include device/google/pantah/audio/cheetah/audio-tables.mk
