@@ -145,6 +145,11 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g6_trusty
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q1
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/trunk
+endif
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
@@ -161,6 +166,11 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/24Q1
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/trunk
+endif
 
 # Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))

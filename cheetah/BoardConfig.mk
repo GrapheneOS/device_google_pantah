@@ -18,7 +18,11 @@
 BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_CHEETAH_RADIO_DIR)
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := $(RELEASE_GOOGLE_CHEETAH_BOOTLOADER_DIR)
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q1
+else
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/trunk
+endif
 
 # The modules which need to be loaded in sequential
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
