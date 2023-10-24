@@ -46,15 +46,7 @@
 
   <devices>
     <device name="bluetooth" />
-    <device name="usb">
-      <argument name="MaxSamplingRate" value="192000" />
-      <argument name="UnsupportedFormat" value="S24_LE" />
-      <argument name="MaxCapPacketInterval" value="125" />
-      <argument name="MaxCapSampleRate" value="192000" />
-      <argument name="MaxCapBitWidth" value="32" />
-      <argument name="MaxCapChannel" value="2" />
-      <argument name="EnableHifi192kMultichannel" value="0" />
-    </device>
+    <device name="usb" />
     <device name="speaker" codec="cs35l41">
       <argument name="SpeakerNum" value="2" />
       <argument name="Rotation" />
