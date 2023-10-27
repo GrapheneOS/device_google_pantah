@@ -303,7 +303,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=35
+    ro.vendor.build.svn=37
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -385,3 +385,8 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
+
+# Quick Start device-specific settings
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.quick_start.oem_id=00e0 \
+    ro.quick_start.device_id=cheetah
