@@ -96,8 +96,7 @@ endif
 PRODUCT_PACKAGES += \
 	com.android.nfcservices \
 	Tag \
-	android.hardware.nfc-service.st \
-	NfcOverlayPanther
+	android.hardware.nfc-service.st
 
 # SecureElement
 PRODUCT_PACKAGES += \
