@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 PRODUCT_PACKAGES += \
-	com.android.nfcservices \
+	NfcNci \
 	Tag \
 	android.hardware.nfc-service.st \
 	NfcOverlayCheetah
