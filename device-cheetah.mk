@@ -113,7 +113,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
-	android.hardware.nfc-service.st
+	android.hardware.nfc-service.st \
+	NfcOverlayCheetah
 
 # SecureElement
 PRODUCT_PACKAGES += \
