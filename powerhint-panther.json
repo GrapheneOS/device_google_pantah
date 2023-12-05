@@ -342,7 +342,7 @@
       "Values": [
         "0",
         "1"
-      ],
+      ]
     },
     {
       "Name": "DisplayWakeup",
@@ -1088,6 +1088,18 @@
       "Node": "TNRFreq",
       "Duration": 1000,
       "Value": "664000"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "CDPreferIdle",
+      "Duration": 100,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "PMU_POLL",
+      "Duration": 100,
+      "Value": "0"
     },
     {
       "PowerHint": "GCA_CAMERA_SHOT_BIGCPU",
