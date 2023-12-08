@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Copyright (C) 2023 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<audioPlatformConfiguration xmlns:xi="http://www.w3.org/2001/XInclude">
+  <features>
+    <feature name="ThermalThrottle">
+      <argument name="Type" value="SKIN" />
+      <argument name="Name" value="VIRTUAL-SKIN" />
+    </feature>
+    <feature name="BatteryThrottle">
+      <argument name="Type" value="BCL_VOLTAGE" />
+      <argument name="Name" value="BCL_AUDIO_BAACL" />
+      <argument name="Strategy" value="MediaSpeakerAndScreenOn" />
+    </feature>
+    <feature name="PlaybackThermalThrottle">
+      <argument name="PollWaitMs" value="20000" />
+      <argument name="ThermistorName" value="VIRTUAL-SKIN" />
+      <argument name="ThermistorType" value="SKIN" />
+      <argument name="ThrottlingSeverity" value="MODERATE" />
+    </feature>
+  </features>
+
+  <voipVolume>
+    <path voipDevice="VoipDevice::kUsb">
+      <gain>0.01</gain>
+      <gain>0.02</gain>
+      <gain>0.04</gain>
+      <gain>0.10</gain>
+      <gain>0.21</gain>
+      <gain>0.47</gain>
+      <gain>1.00</gain>
+    </path>
+  </voipVolume>
+
+  <devices>
+    <device name="bluetooth" />
+    <device name="usb">
+      <argument name="MaxSamplingRate" value="192000" />
+      <argument name="UnsupportedFormat" value="S24_LE" />
+      <argument name="MaxCapPacketInterval" value="125" />
+      <argument name="MaxCapSampleRate" value="192000" />
+      <argument name="MaxCapBitWidth" value="32" />
+      <argument name="MaxCapChannel" value="2" />
+      <argument name="EnableHifi192kMultichannel" value="0" />
+    </device>
+    <device name="speaker" codec="cs35l41">
+      <argument name="SpeakerNum" value="2" />
+      <argument name="Rotation" />
+      <argument name="AcousticShockProtection" />
+    </device>
+  </devices>
+
+  <tuners>
+    <tuner type="playback" name="waves">
+      <argument name="Sink" value="SPK" />
+      <argument name="ThermistorsName" value="VIRTUAL-SKIN" />
+    </tuner>
+    <tuner type="telephony" name="fortemedia">
+      <argument name="VoIP_DLCHs" value="SPK:2,USB:2" />
+      <argument name="VoIP_Rate" value="32000" />
+      <argument name="BOOST_USB_SWB_CLK" value="y" />
+      <argument name="CCA" value="y" />
+    </tuner>
+    <tuner type="capture" name="gs_capture" />
+  </tuners>
+
+  <latencies>
+    <latency source="primary-playback" sink="speaker" milliseconds="20" />
+    <latency source="primary-playback" sink="usb-device" milliseconds="60" />
+    <latency source="primary-playback" sink="usb-headset" milliseconds="60" />
+    <latency source="primary-playback" sink="bluetooth-a2dp-device" milliseconds="60" />
+    <latency source="primary-playback" sink="bluetooth-low-energy-speaker" milliseconds="60" />
+
+    <latency source="deep-buffer-playback" sink="speaker" milliseconds="70" />
+    <latency source="deep-buffer-playback" sink="usb-device" milliseconds="70" />
+    <latency source="deep-buffer-playback" sink="usb-headset" milliseconds="70" />
+    <latency source="deep-buffer-playback" sink="bluetooth-a2dp-device" milliseconds="180" />
+    <latency source="deep-buffer-playback" sink="bluetooth-low-energy-speaker" milliseconds="80" />
+
+    <latency source="compress-offload-playback" sink="speaker" milliseconds="40" />
+    <latency source="compress-offload-playback" sink="usb-device" milliseconds="40" />
+    <latency source="compress-offload-playback" sink="usb-headset" milliseconds="40" />
+    <latency source="compress-offload-playback" sink="bluetooth-a2dp-device" milliseconds="70" />
+    <latency source="compress-offload-playback" sink="bluetooth-low-energy-speaker"
+      milliseconds="20" />
+
+    <latency source="immersive-playback" sink="bluetooth-a2dp-device" milliseconds="100" />
+
+    <latency source="microphones" sink="primary-capture" milliseconds="160" />
+    <latency source="back-microphones" sink="primary-capture" milliseconds="160" />
+    <latency source="bluetooth-sco-headset" sink="primary-capture" milliseconds="40" />
+  </latencies>
+
+  <spatialCapture>
+    <enablement useCase="primary-capture" deviceInterface="microphones">
+      <source>MIC</source>
+      <source>CAMCORDER</source>
+      <source>VOICE_RECOGNITION</source>
+    </enablement>
+    <enablement useCase="primary-capture" deviceInterface="back-microphones">
+      <source>MIC</source>
+      <source>CAMCORDER</source>
+      <source>VOICE_RECOGNITION</source>
+    </enablement>
+  </spatialCapture>
+
+  <xi:include href="audio_policy_volumes.xml" />
+  <xi:include href="default_volume_tables.xml" />
+</audioPlatformConfiguration>

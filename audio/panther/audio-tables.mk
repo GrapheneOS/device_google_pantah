@@ -22,8 +22,7 @@ AUDIO_TABLE_FOLDER := panther
 ifeq ($(BUILD_AUDIO_AIDL_VERSION),true)
 # AIDL HAL configs are in the *aidl_config* folder
 PRODUCT_COPY_FILES += \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration_aidl.xml \
+    device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     device/google/pantah/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/mixer_paths_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_aidl.xml
 else
