@@ -42,6 +42,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPULittleClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "5000",
+        "500"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUMidClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
@@ -65,6 +75,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUMidClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "20000",
+        "3000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq",
       "Values": [
@@ -84,6 +104,16 @@
         "1106000",
         "0"
       ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu6/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "20000",
+        "3000"
+      ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -115,6 +145,16 @@
       "Values": [
         "1280",
         "1100"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUTaperedDVFSHeadroomEnable",
+      "Path": "/proc/vendor_sched/tapered_dvfs_headroom_enable",
+      "Values": [
+        "0",
+        "1"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -411,6 +451,48 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 5000,
+      "Value": "1280"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 5000,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "TAPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "FGPreferIdle",
+      "Duration": 5000,
+      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1091,6 +1173,36 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "572000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 0,
+      "Value": "1100"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "500"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "3000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "3000"
     },
     {
       "PowerHint": "FP_BOOST",
