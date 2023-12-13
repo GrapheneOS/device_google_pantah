@@ -254,6 +254,11 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q1
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/trunk
+endif
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
@@ -302,7 +307,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=43
+    ro.vendor.build.svn=44
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
