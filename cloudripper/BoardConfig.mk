@@ -17,7 +17,7 @@ TARGET_BOARD_INFO_FILE := device/google/pantah/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := cloudripper
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
 RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q2
 else
 RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/trunk

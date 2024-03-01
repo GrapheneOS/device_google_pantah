@@ -225,7 +225,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
+    persist.bluetooth.leaudio.allow_list=SM-R510
 
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -285,7 +285,7 @@ PRODUCT_SOONG_NAMESPACES += \
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/firmware/fingerprint/trunk
@@ -307,7 +307,7 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts/trusty/trunk
