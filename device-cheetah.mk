@@ -17,16 +17,17 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
-TARGET_KERNEL_DIR ?= device/google/pantah-kernel
-TARGET_BOARD_KERNEL_HEADERS := device/google/pantah-kernel/kernel-headers
-
 ifdef RELEASE_GOOGLE_CHEETAH_KERNEL_VERSION
 TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_CHEETAH_KERNEL_VERSION)
 endif
 
 ifdef RELEASE_GOOGLE_CHEETAH_KERNEL_DIR
-TARGET_KERNEL_DIR := $(RELEASE_GOOGLE_CHEETAH_KERNEL_DIR)
-TARGET_BOARD_KERNEL_HEADERS := $(RELEASE_GOOGLE_CHEETAH_KERNEL_DIR)/kernel-headers
+# Keeps flexibility for kasan and ufs builds
+TARGET_KERNEL_DIR ?= $(RELEASE_GOOGLE_CHEETAH_KERNEL_DIR)
+TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_GOOGLE_CHEETAH_KERNEL_DIR)/kernel-headers
+else
+TARGET_KERNEL_DIR ?= device/google/pantah-kernel
+TARGET_BOARD_KERNEL_HEADERS ?= device/google/pantah-kernel/kernel-headers
 endif
 
 $(call inherit-product-if-exists, vendor/google_devices/pantah/prebuilts/device-vendor-cheetah.mk)
