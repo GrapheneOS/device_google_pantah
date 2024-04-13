@@ -162,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.server.automatic_turn_on=true
+    bluetooth.server.automatic_turn_on=false
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
