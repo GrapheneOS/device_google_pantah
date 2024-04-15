@@ -173,4 +173,10 @@
          If equals to 0, it means there's no limit on the max number of channels to include per network.-->
     <integer translatable="false" name="config_wifiInitialPartialScanMaxNewChannelsPerNetwork">3</integer>
 
+    <!-- Boolean indicating whether to disable firmware roaming when the device goes into idle mode.
+         true: firmware roaming will be disabled when the device goes into idle mode, and then
+               re-activated when the device exits idle mode.
+         false: firmware roaming will not be affected. -->
+    <bool translatable="false" name ="config_wifiDisableFirmwareRoamingInIdleMode">true</bool>
+
 </resources>
