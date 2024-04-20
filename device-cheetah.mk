@@ -480,3 +480,5 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
 endif
 endif
+
+PRODUCT_VENDOR_PROPERTIES := $(filter-out ro.vendor.build.svn=% , $(PRODUCT_VENDOR_PROPERTIES))
