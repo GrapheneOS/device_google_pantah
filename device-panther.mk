@@ -137,7 +137,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.server.automatic_turn_on=false
+    bluetooth.server.automatic_turn_on=true
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -303,7 +303,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=56
+    ro.vendor.build.svn=58
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
