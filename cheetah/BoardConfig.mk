@@ -23,6 +23,7 @@ RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_
 $(call soong_config_set,bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_CHEETAH_DIR))
 
 # The modules which need to be loaded in sequential
+BOARD_KERNEL_CMDLINE += fips140.load_sequential=1
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
 
 TARGET_BOARD_INFO_FILE := device/google/pantah/board-info.txt
