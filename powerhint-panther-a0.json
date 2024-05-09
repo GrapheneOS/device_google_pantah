@@ -922,7 +922,7 @@
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 2500,
-      "Value": "1197000"
+      "Value": "1663000"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
