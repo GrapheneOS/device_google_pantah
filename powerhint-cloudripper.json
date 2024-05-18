@@ -1242,7 +1242,16 @@
       "SamplingWindow_D": 1,
       "ReportingRateLimitNs": 83333330,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "REFRESH_90FPS",
@@ -1268,7 +1277,16 @@
       "SamplingWindow_D": 1,
       "ReportingRateLimitNs": 111111110,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "REFRESH_60FPS",
@@ -1294,7 +1312,16 @@
       "SamplingWindow_D": 1,
       "ReportingRateLimitNs": 166666660,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "UiHighBoostWithoutPid",

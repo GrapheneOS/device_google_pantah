@@ -2126,7 +2126,16 @@
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "REFRESH_90FPS",
@@ -2152,7 +2161,16 @@
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "REFRESH_60FPS",
@@ -2178,7 +2196,16 @@
       "EarlyBoost_On": false,
       "EarlyBoost_TimeFactor": 0.0,
       "TargetTimeFactor": 1.0,
-      "StaleTimeFactor": 20.0
+      "StaleTimeFactor": 20.0,
+      "HeuristicBoost_On": true,
+      "HBoostOnMissedCycles": 8,
+      "HBoostOffMaxAvgRatio": 4.0,
+      "HBoostOffMissedCycles": 5,
+      "HBoostPidPuFactor": 0.5,
+      "HBoostUclampMin": 722,
+      "JankCheckTimeFactor": 1.2,
+      "LowFrameRateThreshold": 25,
+      "MaxRecordsNum": 300
     },
     {
       "Name": "UiHighBoostWithoutPid",
