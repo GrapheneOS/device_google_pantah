@@ -145,8 +145,6 @@
                 </devicePort>
                 <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink">
                 </devicePort>
-                <devicePort tagName="Aux Digital" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
-                </devicePort>
                 <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
                 </devicePort>
                 <!-- Input devices declaration, i.e. Source DEVICE PORT -->

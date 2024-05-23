@@ -131,10 +131,6 @@
                 </devicePort>
                 <devicePort tagName="Speaker Safe" type="AUDIO_DEVICE_OUT_SPEAKER_SAFE" role="sink">
                 </devicePort>
-                <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink">
-                </devicePort>
-                <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink">
-                </devicePort>
                 <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO" role="sink">
                 </devicePort>
                 <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
@@ -145,16 +141,12 @@
                 </devicePort>
                 <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink">
                 </devicePort>
-                <devicePort tagName="Aux Digital" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
-                </devicePort>
                 <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
                 </devicePort>
                 <!-- Input devices declaration, i.e. Source DEVICE PORT -->
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
                 </devicePort>
                 <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source">
-                </devicePort>
-                <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
                 </devicePort>
                 <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source">
                 </devicePort>
