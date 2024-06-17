@@ -323,7 +323,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=58
+    ro.vendor.build.svn=59
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
