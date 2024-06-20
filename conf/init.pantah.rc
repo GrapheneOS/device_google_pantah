@@ -83,6 +83,9 @@ on property:vendor.all.modules.ready=1
     chown system system /sys/bus/i2c/devices/8-0043/calibration/redc_stored
     chown system system /sys/bus/i2c/devices/8-0043/default/vibe_state
     chown system system /sys/bus/i2c/devices/8-0043/default/num_waves
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_bank
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_index
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_ms
     chown system system /sys/bus/i2c/devices/8-0043/default/f0_offset
     chown system system /sys/bus/i2c/devices/8-0043/default/owt_free_space
     chown system system /sys/bus/i2c/devices/8-0043/default/f0_comp_enable
