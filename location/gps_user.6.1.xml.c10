@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/ glconfig.xsd" >
+  <hal
+       PortName="/dev/ttyBCM"
+       BaudRate="921600"
+       GpioNStdbyPath="/sys/devices/platform/10940000.spi/spi_master/spi5/spi5.0/nstandby"
+       CustGpioDelayMs="250"
+       LogEnabled="false"
+       Log="JAVA"
+       LogDirectory="/sdcard/gps/broadcom/storage/"
+       CtrlPipe="/data/vendor/gps/glgpsctrl"
+       NmeaOutName="/data/vendor/gps/nmea_out"
+
+       acSuplServer="supl.google.com"
+       SuplPort="7275"
+       SuplLogEnable="false"
+       SuplLogFullName="/data/vendor/gps/suplflow.txt"
+       tlsEnable="true"
+
+       SuplSslMethod="SSLv23_NO_TLSv1_2"
+       SuplEnable="true"
+       SuplUseApn="false"
+       SuplUseApnNI="true"
+       SuplUseFwCellInfo="false"
+       SuplDummyCellInfo ="true"
+       SuplTlsCertDirPath="/etc/security/cacerts"
+       SuplTlsCertPath="/vendor/etc/gnss/gps.cer"
+       SuplUT1Seconds="20"
+       SuplUT2Seconds="20"
+       SuplUT3Seconds="20"
+       TcpConnectionTimeout="20"
+       SuplLppCapable="true"
+       SuplEcidCapable="true"
+       SuplVersion="2"
+       SuplMinorVersion="0"
+       SuplOtdoaCapable="true"
+       SuplOtdoaCapable2="true"
+       SuplGlonassCapable = "true"
+       SuplGalileoCapable = "true"
+       SuplBdsCapable = "true"
+       SuplMgpsCapable = "true"
+
+       RtoEnable="true"
+       RtiEnable="true"
+       HttpSyncLto="true"
+       LtoFileName="lto2.dat"
+       LtoDir="/data/vendor/gps/"
+       LtoSyncThresholdDays="1"
+
+       GnssYearOfHardware="2020"
+       CpGuardTimeSec="1"
+       CpLppGuardTimeSec="1"
+       IgnoreInjectedSystemTime="true"
+
+       AttributionAppPkgName="com.google.android.carrierlocation"
+
+       AssertEnabled="false"
+       CpLppeCancelDbhOnAgnssProvideLoc="true"
+       CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
+       ReAidingOnHotStart="false"
+       ReAidingIntervalSec="3600"
+       RuntimeSwLteFilterEnable="true"
+       PpsDevice="/sys/devices/platform/bbd_pps/pps_assert"
+       SensorsMask="0x244"
+       MaxThreadNum="13"
+  />
+
+  <gll
+       PpsEnable="true"
+       LogPriMask="LOG_INFO"
+       LogFacMask="LOG_NMEA | LOG_GLLIOS | LOG_GLLAPI"
+       FrqPlan="FRQ_PLAN_26MHZ_2PPM_49_152MHZ_300PPB"
+       MultiCarrRFMode="GL_MULTI_CARR_RF_MODE_L1_L5"
+       MultiCarrLnaMask="L1_EXT_ON|L5_EXT_ON"
+       RfType="GL_RF_4776_BRCM"
+       ExtL5Bias="20.1"
+
+       WarmStandbyTimeout1Seconds="10"
+       WarmStandbyTimeout2Seconds="15"
+
+       EnableGnssPropagateInStandby="true"
+
+       RfPathLossDb_Ap="3.91"
+       RfPathLossDb_Cp="3.91"
+       RfPathLossDb_Ap_L5="3.76"
+       RfPathLossDb_Cp_L5="3.76"
+       OnChipGpsCarrierType="3,2,3,3,2,3,2,3,3,3,1,2,1,3,2,1,2,3,1,1,1,1,3,3,3,3,3,1,2,3,2,3"
+
+       EnableOnChipStopNotification="0"
+       PowerMode="3"
+       MinGpsWeekNumber="2216"
+       OnChipAccMask="50"
+       EnableB1C="false"
+
+       RTICacheTimeoutSec="3600"
+  />
+
+  <gll_features
+       EnableNicAutoSwitch="true"
+       EnableNavic="true"
+  />
+
+</glgps>
+

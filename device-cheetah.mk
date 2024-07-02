@@ -302,15 +302,27 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    PRODUCT_COPY_FILES += \
+        device/google/pantah/location/lhd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+        device/google/pantah/location/scd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
-                device/google/pantah/location/lhd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-                device/google/pantah/location/scd.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+            device/google/pantah/location/gps.6.1.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    else
+        PRODUCT_COPY_FILES += \
+            device/google/pantah/location/gps.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    endif
 else
+    PRODUCT_COPY_FILES += \
+        device/google/pantah/location/lhd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+        device/google/pantah/location/scd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
         PRODUCT_COPY_FILES += \
-                device/google/pantah/location/gps_user.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
-                device/google/pantah/location/lhd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-                device/google/pantah/location/scd_user.conf.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+            device/google/pantah/location/gps_user.6.1.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    else
+        PRODUCT_COPY_FILES += \
+            device/google/pantah/location/gps_user.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    endif
 endif
 
 # Set support one-handed mode
