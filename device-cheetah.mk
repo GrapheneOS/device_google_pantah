@@ -334,8 +334,15 @@ PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
 
 # Increment the SVN for any official public releases
+ifdef RELEASE_SVN_CHEETAH
+TARGET_SVN ?= $(RELEASE_SVN_CHEETAH)
+else
+# Set this for older releases that don't use build flag
+TARGET_SVN ?= 59
+endif
+
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=59
+    ro.vendor.build.svn=$(TARGET_SVN)
 
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
