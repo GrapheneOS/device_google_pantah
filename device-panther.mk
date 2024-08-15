@@ -321,7 +321,7 @@ ifdef RELEASE_SVN_PANTHER
 TARGET_SVN ?= $(RELEASE_SVN_PANTHER)
 else
 # Set this for older releases that don't use build flag
-TARGET_SVN ?= 60
+TARGET_SVN ?= 61
 endif
 
 PRODUCT_VENDOR_PROPERTIES += \

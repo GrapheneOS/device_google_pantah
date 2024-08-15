@@ -338,7 +338,7 @@ ifdef RELEASE_SVN_CHEETAH
 TARGET_SVN ?= $(RELEASE_SVN_CHEETAH)
 else
 # Set this for older releases that don't use build flag
-TARGET_SVN ?= 60
+TARGET_SVN ?= 61
 endif
 
 PRODUCT_VENDOR_PROPERTIES += \
