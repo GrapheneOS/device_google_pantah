@@ -9,26 +9,22 @@
         {
             "Name":"neutral_therm",
             "Type":"UNKNOWN",
-            "TempPath":"/dev/thermal/tz-by-name/neutral_therm/tz_temp",
             "Multiplier":0.001
         },
         {
             "Name":"gnss_tcxo_therm",
             "Type":"UNKNOWN",
-            "TempPath":"/dev/thermal/tz-by-name/gnss_tcxo_therm/tz_temp",
             "Multiplier":0.001
         },
         {
             "Name":"qi_therm",
             "Type":"UNKNOWN",
-            "TempPath":"/dev/thermal/tz-by-name/qi_therm/tz_temp",
             "Multiplier":0.001
         },
         {
             "Name":"usb_pwr_therm",
             "Type":"UNKNOWN",
             "HotThreshold":["NAN", 35.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
-            "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm/tz_temp",
             "Multiplier":0.001,
             "PollingDelay":60000,
             "PassiveDelay":7000
@@ -36,13 +32,11 @@
         {
             "Name":"usb_pwr_therm2",
             "Type":"UNKNOWN",
-            "TempPath":"/dev/thermal/tz-by-name/usb_pwr_therm2/tz_temp",
             "Multiplier":0.001
         },
         {
             "Name":"disp_therm",
             "Type":"UNKNOWN",
-            "TempPath":"/dev/thermal/tz-by-name/disp_therm/tz_temp",
             "Multiplier":0.001
         },
         {
@@ -50,7 +44,6 @@
             "Type":"UNKNOWN",
             "HotThreshold":["NAN", 32.9, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
-            "TempPath":"/dev/thermal/tz-by-name/quiet_therm/tz_temp",
             "Multiplier":0.001,
             "PollingDelay":60000,
             "PassiveDelay":7000
