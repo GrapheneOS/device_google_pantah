@@ -48,6 +48,7 @@
        LtoSyncThresholdDays="1"
 
        GnssYearOfHardware="2020"
+       CpEarlyFixGuardTimeSec="1"
        CpGuardTimeSec="1"
        CpLppGuardTimeSec="1"
        IgnoreInjectedSystemTime="true"
