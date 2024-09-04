@@ -763,30 +763,6 @@
       "Value": "LAUNCH_PMU"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "EnableProperty": "vendor.powerhal.camerarunning",
-      "Value": "CDCPUSET_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "EnableProperty": "vendor.powerhal.camerarunning",
-      "Value": "CDHIGHCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "EnableProperty": "vendor.powerhal.camerarunning",
-      "Value": "CDMIDCPUSETCPUS_RESTRICTED"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Type": "DoHint",
-      "EnableProperty": "vendor.powerhal.camerarunning",
-      "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
-    },
-    {
       "PowerHint": "LAUNCH_PMU",
       "Node": "PMU_POLL",
       "Duration": 3000,
