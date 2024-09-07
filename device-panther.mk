@@ -449,5 +449,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.quick_start.device_id=panther
 
 # Bluetooth device id
+# Panther: 0x4109
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=20489
+    bluetooth.device_id.product_id=16649
+
+# ETM
+ifneq (,$(RELEASE_ETM_IN_USERDEBUG_ENG))
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+$(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
+endif
+endif

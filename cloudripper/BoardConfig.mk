@@ -21,5 +21,6 @@ USES_DEVICE_GOOGLE_CLOUDRIPPER := true
 
 include device/google/gs201/BoardConfig-common.mk
 -include vendor/google_devices/gs201/prebuilts/BoardConfigVendor.mk
+include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
 include device/google/pantah-sepolicy/cloudripper-sepolicy.mk
 include device/google/pantah/wifi/BoardConfig-wifi.mk
