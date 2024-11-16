@@ -312,4 +312,6 @@
     <!-- Boolean indicating whether allow sending null to modem to clear the previous initial attach
          data profile -->
     <bool name="allow_clear_initial_attach_data_profile">true</bool>
+
+    <integer name="config_multiuserMaxRunningUsers">10</integer>
 </resources>
