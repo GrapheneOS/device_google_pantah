@@ -79,10 +79,6 @@ PRODUCT_COPY_FILES += \
 DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/ravenclaw
-
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g6_trusty
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)

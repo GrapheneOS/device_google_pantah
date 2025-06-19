@@ -91,10 +91,6 @@ PRODUCT_PACKAGES += \
 	libspatialaudio \
 	librondo
 
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/cloudripper
-
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	WifiOverlay2022_C10 \
