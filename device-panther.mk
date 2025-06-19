@@ -102,10 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
-# BT controller not able to support LE Audio dual mic SWB call
-PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.leaudio.dual_bidirection_swb.supported=false
-
 # LE Auido Offload Capabilities setting
 PRODUCT_COPY_FILES += \
     device/google/pantah/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
