@@ -102,15 +102,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-# Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
-else
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=94
-endif
-
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.leaudio_offload.supported=true \
