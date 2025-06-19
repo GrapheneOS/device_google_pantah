@@ -98,10 +98,6 @@ PRODUCT_PACKAGES += \
 	libspatialaudio
 
 # Bluetooth HAL
-# Bluetooth hci_inject test tool
-PRODUCT_PACKAGES_DEBUG += \
-    hci_inject
-
 # Bluetooth OPUS codec
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.opus.enabled=true
