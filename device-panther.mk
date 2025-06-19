@@ -102,18 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
-# Bluetooth LE Audio
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.bluetooth.leaudio_offload.supported=true \
-    persist.bluetooth.leaudio_offload.disabled=false \
-    ro.bluetooth.leaudio_switcher.supported=true \
-    bluetooth.profile.bap.unicast.client.enabled?=true \
-    bluetooth.profile.csip.set_coordinator.enabled?=true \
-    bluetooth.profile.hap.client.enabled?=true \
-    bluetooth.profile.mcp.server.enabled?=true \
-    bluetooth.profile.ccp.server.enabled?=true \
-    bluetooth.profile.vcp.controller.enabled?=true \
-
 # Bluetooth LE Audio CIS handover to SCO
 # Set the property only if the controller doesn't support CIS and SCO
 # simultaneously. More details in b/242908683.
