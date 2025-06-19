@@ -98,16 +98,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-# Bluetooth Tx power caps
-PRODUCT_COPY_FILES += \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GFE4J_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GFE4J_JP.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GP4BC_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GP4BC_CA.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GE2AE_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GE2AE_EU.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GP4BC_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GP4BC_EU.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GE2AE_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GE2AE_US.csv \
-    device/google/pantah/bluetooth/bluetooth_power_limits_cheetah_GP4BC_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GP4BC_US.csv
-
 # Bluetooth SAR test tool
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
