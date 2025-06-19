@@ -101,10 +101,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_PACKAGES += \
 	libspatialaudio
 
-# WiFi Overlay
-PRODUCT_PACKAGES += \
-    WifiOverlay2022_P10
-
 PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
 
 # Trusty liboemcrypto.so

@@ -101,10 +101,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_PACKAGES += \
 	libspatialaudio
 
-PRODUCT_PACKAGES += \
-    UwbOverlayC10 \
-    WifiOverlay2022_C10
-
 PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 
 # Trusty liboemcrypto.so
