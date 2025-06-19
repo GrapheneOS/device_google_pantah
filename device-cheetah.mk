@@ -94,11 +94,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bluetooth.a2dp_offload.supported=true \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
-
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.server.automatic_turn_on=true
