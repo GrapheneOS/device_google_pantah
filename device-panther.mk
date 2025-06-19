@@ -97,15 +97,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_PACKAGES += \
 	libspatialaudio
 
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
-else
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
-endif
-
 # WiFi Overlay
 PRODUCT_PACKAGES += \
     WifiOverlay2022_P10
