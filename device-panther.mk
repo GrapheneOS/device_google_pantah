@@ -98,10 +98,6 @@ PRODUCT_PACKAGES += \
 	libspatialaudio
 
 # Bluetooth HAL
-# default BDADDR for EVB only
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
-
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.ble.allow_enc_with_bredr=true
