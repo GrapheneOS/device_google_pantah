@@ -42,17 +42,11 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheet
 $(call inherit-product-if-exists, vendor/google_devices/cheetah/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersCheetah.mk)
 
-$(call inherit-product, device/google/pantah/uwb/uwb_calibration_country.mk)
-
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/cheetah/overlay
 
 include device/google/gs201/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/syna/syna0.mk
-
-ifeq ($(filter factory_cheetah, $(TARGET_PRODUCT)),)
-include device/google/pantah/uwb/uwb_calibration.mk
-endif
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,cheetah)
