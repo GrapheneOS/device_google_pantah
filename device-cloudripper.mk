@@ -86,10 +86,6 @@ PRODUCT_COPY_FILES += \
 DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
-# Power HAL config
-PRODUCT_COPY_FILES += \
-	device/google/pantah/powerhint-cloudripper.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 # Bluetooth HAL
 PRODUCT_COPY_FILES += \
 	device/google/pantah/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
