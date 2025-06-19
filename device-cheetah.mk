@@ -53,9 +53,6 @@ $(call soong_config_set,lyric,camera_hardware,cheetah)
 $(call soong_config_set,lyric,tuning_product,cheetah)
 $(call soong_config_set,google3a_config,target_device,cheetah)
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
-
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/pantah/conf/init.pantah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.pantah.rc \
