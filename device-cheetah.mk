@@ -102,10 +102,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-# Bluetooth OPUS codec
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.opus.enabled=true
-
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
     device/google/pantah/bluetooth/bluetooth_power_limits_cheetah.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
