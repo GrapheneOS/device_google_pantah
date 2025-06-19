@@ -44,7 +44,6 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/Wallp
 
 DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
 
-include device/google/pantah/audio/panther/audio-tables.mk
 include device/google/gs201/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/focaltech/focaltech.mk
