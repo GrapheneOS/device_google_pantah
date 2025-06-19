@@ -102,9 +102,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.firmware.selection=BCM.hcd
-
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
