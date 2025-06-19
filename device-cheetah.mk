@@ -101,11 +101,6 @@ PRODUCT_COPY_FILES += \
 DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
-# Bluetooth HAL
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_DEBUG += \
-    ewp_tool
-
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio

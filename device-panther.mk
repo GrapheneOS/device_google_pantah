@@ -101,11 +101,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_PACKAGES += \
 	libspatialaudio
 
-# Bluetooth HAL
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_DEBUG += \
-    ewp_tool
-
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
