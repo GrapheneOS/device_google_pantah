@@ -80,8 +80,6 @@ DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
 # Bluetooth HAL
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.firmware.selection=BCM.hcd
 # default BDADDR for EVB only
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
