@@ -105,9 +105,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Bluetooth EWP test tool
 PRODUCT_PACKAGES_DEBUG += \
     ewp_tool
-# default BDADDR for EVB only
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
