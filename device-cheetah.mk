@@ -97,11 +97,6 @@ DEVICE_MANIFEST_FILE += \
 PRODUCT_PACKAGES += \
 	libspatialaudio
 
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/pantah/powerstats/cheetah \
-    device/google/pantah
-
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
