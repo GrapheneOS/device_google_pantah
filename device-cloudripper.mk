@@ -37,7 +37,6 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cloudripper/device-vendor-cloudripper.mk)
 
 include device/google/gs201/device-shipping-common.mk
-include device/google/pantah/audio/cloudripper/audio-tables.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/syna/syna0.mk

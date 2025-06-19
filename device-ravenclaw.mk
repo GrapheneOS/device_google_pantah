@@ -37,7 +37,6 @@ $(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/ravenclaw/device-vendor-ravenclaw.mk)
 
 include device/google/gs201/device-shipping-common.mk
-include device/google/pantah/audio/ravenclaw/audio-tables.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/lsi/lsi.mk
 
