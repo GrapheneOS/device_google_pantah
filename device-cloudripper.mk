@@ -46,10 +46,6 @@ $(call soong_config_set,lyric,camera_hardware,cloudripper)
 $(call soong_config_set,lyric,tuning_product,cloudripper)
 $(call soong_config_set,google3a_config,target_device,cloudripper)
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/google/pantah/conf/init.cloudripper.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cloudripper.rc
-
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/pantah/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.cloudripper.rc
