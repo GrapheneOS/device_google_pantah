@@ -102,12 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
-# Bluetooth LE Audio CIS handover to SCO
-# Set the property only if the controller doesn't support CIS and SCO
-# simultaneously. More details in b/242908683.
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.notify.idle.during.call=true
-
 # BT controller not able to support LE Audio dual mic SWB call
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=false
