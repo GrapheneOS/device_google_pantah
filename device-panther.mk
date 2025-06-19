@@ -93,12 +93,6 @@ PRODUCT_COPY_FILES += \
 DEVICE_MANIFEST_FILE += \
 	device/google/pantah/nfc/manifest_se.xml
 
-# Power HAL config
-PRODUCT_COPY_FILES += \
-	device/google/pantah/powerhint-panther.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-PRODUCT_COPY_FILES += \
-	device/google/pantah/powerhint-panther-a0.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint-a0.json
-
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
