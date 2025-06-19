@@ -40,11 +40,6 @@ include device/google/gs201/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/lsi/lsi.mk
 
-ifeq ($(filter factory_ravenclaw, $(TARGET_PRODUCT)),)
-include device/google/gs101/uwb/uwb.mk
-include device/google/pantah/uwb/uwb_calibration.mk
-endif
-
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,ravenclaw)
 $(call soong_config_set,lyric,tuning_product,cloudripper)
