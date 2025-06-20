@@ -106,10 +106,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
 
-# Set zram size
-PRODUCT_VENDOR_PROPERTIES += \
-	vendor.zram.size=3g
-
 # Device features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
