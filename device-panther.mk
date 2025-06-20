@@ -134,11 +134,6 @@ ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# Quick Start device-specific settings
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.quick_start.oem_id=00e0 \
-    ro.quick_start.device_id=panther
-
 # Bluetooth device id
 # Panther: 0x4109
 PRODUCT_PRODUCT_PROPERTIES += \
