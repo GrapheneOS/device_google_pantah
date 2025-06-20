@@ -118,17 +118,6 @@ else
         device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# Increment the SVN for any official public releases
-ifdef RELEASE_SVN_PANTHER
-TARGET_SVN ?= $(RELEASE_SVN_PANTHER)
-else
-# Set this for older releases that don't use build flag
-TARGET_SVN ?= 61
-endif
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=$(TARGET_SVN)
-
 # Set device family property for SMR
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.device_family=P10C10L10
