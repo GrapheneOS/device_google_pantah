@@ -125,11 +125,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGVU6C \
     SettingsOverlayGVU6C_VN
 
-# Fingerprint HAL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.udfps.als_feed_forward_supported=true \
-    persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
-
 # Vibrator HAL
 $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
 ACTUATOR_MODEL := luxshare_ict_081545
