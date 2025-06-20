@@ -118,10 +118,6 @@ else
         device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# Set zram size
-PRODUCT_VENDOR_PROPERTIES += \
-	vendor.zram.size=3g
-
 # Increment the SVN for any official public releases
 ifdef RELEASE_SVN_PANTHER
 TARGET_SVN ?= $(RELEASE_SVN_PANTHER)
