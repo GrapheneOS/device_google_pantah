@@ -134,10 +134,6 @@ $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VE
 ACTUATOR_MODEL := luxshare_ict_081545
 ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 
-##Audio Vendor property
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.vendor.audio.cca.enabled=false
-
 # The default value of this variable is false and should only be set to true when
 # the device allows users to enable the seamless transfer feature.
 PRODUCT_PRODUCT_PROPERTIES += \
