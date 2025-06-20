@@ -132,12 +132,6 @@ PRODUCT_PACKAGES += \
     SettingsOverlayGE2AE \
     SettingsOverlayGP4BC
 
-# userdebug specific
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    PRODUCT_COPY_FILES += \
-        device/google/gs201/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
-endif
-
 # Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
