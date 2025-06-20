@@ -114,10 +114,6 @@ else
         device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# Set device family property for SMR
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.device_family=P10C10L10
-
 # Set build properties for SMR builds
 ifeq ($(RELEASE_IS_SMR), true)
     ifneq (,$(RELEASE_BASE_OS_PANTHER))
