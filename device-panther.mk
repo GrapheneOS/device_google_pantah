@@ -122,13 +122,6 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
-# SKU specific RROs
-PRODUCT_PACKAGES += \
-    SettingsOverlayG03Z5 \
-    SettingsOverlayGQML3 \
-    SettingsOverlayGVU6C \
-    SettingsOverlayGVU6C_VN
-
 # userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \

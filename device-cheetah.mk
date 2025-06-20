@@ -122,12 +122,6 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
-# SKU specific RROs
-PRODUCT_PACKAGES += \
-    SettingsOverlayGFE4J \
-    SettingsOverlayGE2AE \
-    SettingsOverlayGP4BC
-
 # userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
