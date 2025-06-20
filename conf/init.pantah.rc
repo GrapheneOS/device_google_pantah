@@ -1,0 +1,95 @@
+# Cheetah/Panther specific init.rc
+
+on init
+    # NFC streset tool name
+    setprop persist.vendor.nfc.streset libstreset21
+    setprop persist.vendor.se.streset libstreset21
+
+on init && property:ro.vendor.factory=1
+    import /vendor/etc/init/hw/init.factory.rc
+
+on early-boot
+    # Wait for insmod_sh to finish all common modules
+    wait_for_prop vendor.common.modules.ready 1
+    start insmod_sh_pantah
+
+service insmod_sh_pantah /vendor/bin/insmod.sh /vendor_dlkm/etc/init.insmod.${ro.hardware}.cfg
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on property:vendor.mfgapi.touchpanel.permission=1
+    chmod 0600 /sys/devices/virtual/sec/tsp/cmd
+    chown system system /sys/devices/virtual/sec/tsp/cmd
+
+# WiFi
+on post-fs-data
+    setprop wifi.direct.interface p2p-dev-wlan0
+    setprop wifi.aware.interface aware_nmi0
+
+    # Speaker amp permission
+    chmod 644 /mnt/vendor/persist/audio/speaker.cal
+
+    # Allow secure_element group to read / write ST33 SPI state
+    chown secure_element secure_element  /sys/class/st33spi/st33spi/st33spi_state
+    chmod 0660  /sys/class/st33spi/st33spi/st33spi_state
+
+# Persist
+on post-fs-data
+    chmod 770 /mnt/vendor/persist/display/hdr_cal_v1
+    chmod 770 /mnt/vendor/persist/display/hdr_cal_v2
+    chmod 770 /mnt/vendor/persist/display/sdr_cal_v1
+    chmod 770 /mnt/vendor/persist/display/sdr_cal_v2
+    chown system system /mnt/vendor/persist/sensors/registry/vd6282_spectral_fac_cal.reg
+    chmod 600 /mnt/vendor/persist/sensors/registry/vd6282_spectral_fac_cal.reg
+
+# NFC
+on property:ro.boot.hardware.revision=PROTO1.0
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+on property:ro.boot.hardware.revision=PROTO1.1
+    setprop persist.vendor.nfc.config_file_name libnfc-hal-st-proto1.conf
+
+# Bluetooth
+on post-fs-data
+    chown bluetooth system /proc/bluetooth/timesync
+    mkdir /data/vendor/bluetooth 0770 bluetooth system
+
+# SecureElement eSE2 cts mode
+on property:persist.vendor.se.ese2.mode=ctsmode
+    write /sys/class/st33spi/st33spi/st33spi_state 33
+
+on init && property:ro.boot.hw.soc.rev=0
+    setprop vendor.powerhal.config powerhint-a0.json
+
+on property:ro.boot.hardware.revision=PROTO1.0
+    setprop vendor.thermal.config "thermal_info_config_proto.json"
+
+on property:ro.boot.hardware.revision=PROTO1.1
+    setprop vendor.thermal.config "thermal_info_config_proto.json"
+
+# Haptics
+on property:vendor.all.modules.ready=1
+    mkdir /mnt/vendor/persist/haptics 0770 system system
+    chmod 770 /mnt/vendor/persist/haptics
+    chmod 440 /mnt/vendor/persist/haptics/cs40l26.cal
+    chown system system /mnt/vendor/persist/haptics
+    chown system system /mnt/vendor/persist/haptics/cs40l26.cal
+
+    chown system system /sys/bus/i2c/devices/8-0043/calibration/f0_stored
+    chown system system /sys/bus/i2c/devices/8-0043/calibration/q_stored
+    chown system system /sys/bus/i2c/devices/8-0043/calibration/redc_stored
+    chown system system /sys/bus/i2c/devices/8-0043/default/vibe_state
+    chown system system /sys/bus/i2c/devices/8-0043/default/num_waves
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_bank
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_index
+    chown system system /sys/bus/i2c/devices/8-0043/default/braking_time_ms
+    chown system system /sys/bus/i2c/devices/8-0043/default/f0_offset
+    chown system system /sys/bus/i2c/devices/8-0043/default/owt_free_space
+    chown system system /sys/bus/i2c/devices/8-0043/default/f0_comp_enable
+    chown system system /sys/bus/i2c/devices/8-0043/default/redc_comp_enable
+    chown system system /sys/bus/i2c/devices/8-0043/default/delay_before_stop_playback_us
+
+    enable vendor.vibrator.cs40l26

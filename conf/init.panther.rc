@@ -1,0 +1,7 @@
+# Panther specific init.rc
+import /vendor/etc/init/hw/init.gs201.rc
+import /vendor/etc/init/hw/init.pantah.rc
+
+on property:vendor.device.modules.ready=1
+    # Start the twoshay touch service
+    start twoshay
