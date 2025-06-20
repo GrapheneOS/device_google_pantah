@@ -118,10 +118,6 @@ else
         device/google/pantah/location/gps_user.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
-# Set support one-handed mode
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.support_one_handed_mode=true
-
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g
