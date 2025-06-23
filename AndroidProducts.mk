@@ -15,16 +15,12 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_cloudripper.mk \
-    $(LOCAL_DIR)/aosp_ravenclaw.mk \
     $(LOCAL_DIR)/aosp_cheetah.mk \
     $(LOCAL_DIR)/aosp_cheetah_hwasan.mk \
     $(LOCAL_DIR)/aosp_panther.mk \
     $(LOCAL_DIR)/aosp_panther_hwasan.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_cloudripper-trunk_staging-userdebug \
-    aosp_ravenclaw-trunk_staging-userdebug \
     aosp_cheetah-trunk_staging-userdebug \
     aosp_cheetah_hwasan-trunk_staging-userdebug \
     aosp_panther-trunk_staging-userdebug \
