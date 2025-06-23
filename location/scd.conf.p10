@@ -1,6 +1,0 @@
-LogEnabled=true
-Log=JAVA
-LogDirectory=/sdcard/gps/broadcom/storage
-NvStorageDir=/data/vendor/gps/
-TcpConnectionTimeout=20
-SecondaryConfigPath=/data/vendor/gps/overlay/scd_overlay.conf
