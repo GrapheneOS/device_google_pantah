@@ -106,13 +106,8 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
-ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-    PRODUCT_COPY_FILES += \
-        device/google/pantah/location/gps_user.6.1.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-else
-    PRODUCT_COPY_FILES += \
-        device/google/pantah/location/gps_user.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-endif
+PRODUCT_COPY_FILES += \
+	device/google/pantah/location/gps.xml.c10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
