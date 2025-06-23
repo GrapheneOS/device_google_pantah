@@ -59,7 +59,6 @@ $(call soong_config_set,google3a_config,target_device,cheetah)
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/google/pantah/conf/init.pantah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.pantah.rc \
 	device/google/pantah/conf/init.cheetah.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.cheetah.rc
 
 # Recovery files
