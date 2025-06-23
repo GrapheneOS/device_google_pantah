@@ -107,9 +107,6 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
-PRODUCT_COPY_FILES += \
-    device/google/pantah/location/lhd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-    device/google/pantah/location/scd_user.conf.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
 ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
     PRODUCT_COPY_FILES += \
         device/google/pantah/location/gps_user.6.1.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
