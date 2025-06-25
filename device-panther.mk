@@ -122,6 +122,13 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
+# SKU specific RROs
+PRODUCT_PACKAGES += \
+    SettingsOverlayG03Z5 \
+    SettingsOverlayGQML3 \
+    SettingsOverlayGVU6C \
+    SettingsOverlayGVU6C_VN
+
 # Vibrator HAL
 $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
 ACTUATOR_MODEL := luxshare_ict_081545
