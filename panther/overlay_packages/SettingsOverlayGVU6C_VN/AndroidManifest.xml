@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.settings.overlay.gvu6c_vn">
+    <application android:hasCode="false" />
+    <overlay android:targetPackage="com.android.settings"
+             android:requiredSystemPropertyName="ro.boot.hardware.sku,ro.boot.hardware.coo"
+             android:requiredSystemPropertyValue="GVU6C,VN"
+             android:isStatic="true"
+             android:priority="1" />
+</manifest>
