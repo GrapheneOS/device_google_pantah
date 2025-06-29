@@ -42,8 +42,6 @@ $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/panth
 $(call inherit-product-if-exists, vendor/google_devices/panther/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersPanther.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/google/pantah/panther/overlay
-
 include device/google/gs201/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/focaltech/focaltech.mk
@@ -108,13 +106,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
-
-# SKU specific RROs
-PRODUCT_PACKAGES += \
-    SettingsOverlayG03Z5 \
-    SettingsOverlayGQML3 \
-    SettingsOverlayGVU6C \
-    SettingsOverlayGVU6C_VN
 
 # Vibrator HAL
 $(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
