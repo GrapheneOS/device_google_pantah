@@ -99,10 +99,6 @@ PRODUCT_SOONG_NAMESPACES += device/google/pantah/panther/
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
-# Location
-PRODUCT_COPY_FILES += \
-	device/google/pantah/location/gps.xml.p10:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
